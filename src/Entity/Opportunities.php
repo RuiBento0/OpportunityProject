@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\OpportunitiesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,6 +36,49 @@ class Opportunities
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $updated_at = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Accounts $id_account = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Users $id_user = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Users $created_by = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Users $updated_by = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $product = null;
+
+    #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'opportunities')]
+    private Collection $products;
+
+    #[ORM\ManyToOne]
+    private ?Contacts $id_contact = null;
+
+    #[ORM\ManyToOne]
+    private ?Departments $id_department = null;
+
+    #[ORM\ManyToOne]
+    private ?Stages $id_stage = null;
+
+    #[ORM\ManyToOne]
+    private ?Sources $id_source = null;
+
+
+    public function __construct()
+    {
+        $this->contacts = new ArrayCollection();
+        $this->departments = new ArrayCollection();
+        $this->uploads = new ArrayCollection();
+        $this->products = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +165,140 @@ class Opportunities
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getIdAccount(): ?accounts
+    {
+        return $this->id_account;
+    }
+
+    public function setIdAccount(?accounts $id_account): self
+    {
+        $this->id_account = $id_account;
+
+        return $this;
+    }
+
+
+
+    public function getIdUser(): ?users
+    {
+        return $this->id_user;
+    }
+
+    public function setIdUser(?users $id_user): self
+    {
+        $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    public function getCreatedBy(): ?users
+    {
+        return $this->created_by;
+    }
+
+    public function setCreatedBy(?users $created_by): self
+    {
+        $this->created_by = $created_by;
+
+        return $this;
+    }
+
+    public function getUpdatedBy(): ?users
+    {
+        return $this->updated_by;
+    }
+
+    public function setUpdatedBy(?users $updated_by): self
+    {
+        $this->updated_by = $updated_by;
+
+        return $this;
+    }
+
+    public function getProduct(): ?string
+    {
+        return $this->product;
+    }
+
+    public function setProduct(string $product): self
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, product>
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
+    public function addProduct(product $product): self
+    {
+        if (!$this->products->contains($product)) {
+            $this->products->add($product);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(product $product): self
+    {
+        $this->products->removeElement($product);
+
+        return $this;
+    }
+
+    public function getIdContact(): ?contacts
+    {
+        return $this->id_contact;
+    }
+
+    public function setIdContact(?contacts $id_contact): self
+    {
+        $this->id_contact = $id_contact;
+
+        return $this;
+    }
+
+    public function getIdDepartment(): ?departments
+    {
+        return $this->id_department;
+    }
+
+    public function setIdDepartment(?departments $id_department): self
+    {
+        $this->id_department = $id_department;
+
+        return $this;
+    }
+
+    public function getIdStage(): ?stages
+    {
+        return $this->id_stage;
+    }
+
+    public function setIdStage(?stages $id_stage): self
+    {
+        $this->id_stage = $id_stage;
+
+        return $this;
+    }
+
+    public function getIdSource(): ?sources
+    {
+        return $this->id_source;
+    }
+
+    public function setIdSource(?sources $id_source): self
+    {
+        $this->id_source = $id_source;
 
         return $this;
     }

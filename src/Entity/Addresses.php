@@ -22,6 +22,13 @@ class Addresses
     #[ORM\Column(length: 255)]
     private ?string $postal_code = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?entities $id_entity = null;
+
+    #[ORM\Column]
+    private ?int $id_in_relation = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +66,30 @@ class Addresses
     public function setPostalCode(string $postal_code): self
     {
         $this->postal_code = $postal_code;
+
+        return $this;
+    }
+
+    public function getIdEntity(): ?entities
+    {
+        return $this->id_entity;
+    }
+
+    public function setIdEntity(?entities $id_entity): self
+    {
+        $this->id_entity = $id_entity;
+
+        return $this;
+    }
+
+    public function getIdInRelation(): ?int
+    {
+        return $this->id_in_relation;
+    }
+
+    public function setIdInRelation(int $id_in_relation): self
+    {
+        $this->id_in_relation = $id_in_relation;
 
         return $this;
     }

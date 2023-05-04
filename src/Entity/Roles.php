@@ -26,6 +26,14 @@ class Roles
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $update_at = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?users $created_by = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?users $updated_by = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +83,30 @@ class Roles
     public function setUpdateAt(\DateTimeInterface $update_at): self
     {
         $this->update_at = $update_at;
+
+        return $this;
+    }
+
+    public function getCreatedBy(): ?users
+    {
+        return $this->created_by;
+    }
+
+    public function setCreatedBy(?users $created_by): self
+    {
+        $this->created_by = $created_by;
+
+        return $this;
+    }
+
+    public function getUpdatedBy(): ?users
+    {
+        return $this->updated_by;
+    }
+
+    public function setUpdatedBy(?users $updated_by): self
+    {
+        $this->updated_by = $updated_by;
 
         return $this;
     }

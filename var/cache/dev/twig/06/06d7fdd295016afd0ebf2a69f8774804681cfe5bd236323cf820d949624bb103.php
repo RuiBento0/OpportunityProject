@@ -57,7 +57,7 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
 
         // line 5
         echo "
-    <h1>fo</h1>
+    <h1>Home</h1>
 
 ";
         
@@ -87,7 +87,7 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
 
 {% block body %}
 
-    <h1>fo</h1>
+    <h1>Home</h1>
 
 {% endblock %}", "index.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\index.html.twig");
     }

@@ -4,13 +4,15 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
-    'movies' => [[], ['_controller' => 'App\\Controller\\MoviesController::index'], [], [['text', '/movies']], [], [], []],
-    'create_movie' => [[], ['_controller' => 'App\\Controller\\MoviesController::create'], [], [['text', '/movies/create']], [], [], []],
-    'edit_movie' => [['id'], ['_controller' => 'App\\Controller\\MoviesController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/movies/edit']], [], [], []],
-    'delete_movie' => [['id'], ['_controller' => 'App\\Controller\\MoviesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/movies/delete']], [], [], []],
-    'movie' => [['id'], ['_controller' => 'App\\Controller\\MoviesController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/movies']], [], [], []],
+    'app_accounts' => [[], ['_controller' => 'App\\Controller\\AccountsController::list'], [], [['text', '/accounts/list']], [], [], []],
+    'app_contacts' => [[], ['_controller' => 'App\\Controller\\ContactsController::list'], [], [['text', '/contacts/list']], [], [], []],
+    'app_leads' => [[], ['_controller' => 'App\\Controller\\LeadsController::list'], [], [['text', '/leads/list']], [], [], []],
+    'app_mailer_sendemail' => [[], ['_controller' => 'App\\Controller\\MailerController::sendEmail'], [], [['text', '/email']], [], [], []],
+    'app_mailer_sendemail2' => [[], ['_controller' => 'App\\Controller\\MailerController::sendEmail2'], [], [['text', '/email2']], [], [], []],
+    'app_opportunities' => [[], ['_controller' => 'App\\Controller\\OpportunitiesController::list'], [], [['text', '/opportunities/list']], [], [], []],
+    'app_index' => [[], ['_controller' => 'App\\Controller\\OpportunitiesController::index2'], [], [['text', '/index']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
-    'app_lucky_number' => [[], ['_controller' => 'App\\Controller\\LuckyController::number'], [], [['text', '/lucky/number']], [], [], []],
+    'app_login_token' => [['token'], ['_controller' => 'App\\Controller\\SecurityController::loginwithtoken'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/login']], [], [], []],
 ];

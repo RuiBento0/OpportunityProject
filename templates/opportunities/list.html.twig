@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+  <table class="table table-hover" style="text-align:center">
+            <thead class="table-secondary">
+                <tr>
+                <th onclick="sortTable(0)" style="-webkit-user-select: none; width: 5%; cursor: pointer" style="width: 5%" scope="col">{% trans %}Name{% endtrans %}</th>
+                <th onclick="sortTable(1)" style="-webkit-user-select: none; width: 8%; cursor: pointer" style="width: 8%" scope="col">{% trans %}Amount{% endtrans %}</th>
+                <th onclick="sortTable(2)" style="-webkit-user-select: none; width: 8%; cursor: pointer" style="width: 8%" scope="col">{% trans %}Probability{% endtrans %}</th>
+                <th onclick="sortTable(3)" style="-webkit-user-select: none; width: 8%; cursor: pointer" style="width: 8%" scope="col">{% trans %}Description{% endtrans %}</th>
+                <th onclick="sortTable(4)" style="-webkit-user-select: none; width: 6%; cursor: pointer" style="width: 6%" scope="col">{% trans %}Close Date{% endtrans %}</th>
+                <th onclick="sortTable(5)" style="-webkit-user-select: none; width: 8%; cursor: pointer" style="width: 8%" scope="col">{% trans %}Created By{% endtrans %}</th>
+                <th onclick="sortTable(6)" style="-webkit-user-select: none; width: 6%; cursor: pointer" style="width: 6%" scope="col">{% trans %}Created At{% endtrans %}</th>
+                <th style="width: 19%;cursor: default; -webkit-user-select: none;" scope="col">{% trans %}Actions{% endtrans %}</th>
+                </tr>
+            </thead>
+
+            <tbody id="myTable">
+                <tr>
+
+                {% for opportunity in opportunities %}
+
+                        <td style="vertical-align: middle">{{ opportunity.name }}</td>
+                        <td style="vertical-align: middle">{{ opportunity.amount }}</td>
+                        <td style="vertical-align: middle">{{ opportunity.probability }}</td>
+                        <td style="vertical-align: middle">{{ opportunity.description }}</td>
+                        <td style="vertical-align: middle">{{ opportunity.closedate|date('Y-m-d') }}</td>
+                        <td style="vertical-align: middle">{{ opportunity.createdby.name }}</td>
+                        <td style="vertical-align: middle">{{ opportunity.createdat|date('Y-m-d H:i:s') }}</td>
+
+                        <td style="-webkit-user-select: none; vertical-align: middle"></td>
+
+                {% endfor %}
+
+                </tr>
+            </tbody>
+    </table>
+{% endblock %} 

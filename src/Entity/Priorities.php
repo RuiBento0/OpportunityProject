@@ -26,6 +26,14 @@ class Priorities
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $updated_at = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?users $created_by = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?users $updated_by = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +83,30 @@ class Priorities
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getCreatedBy(): ?users
+    {
+        return $this->created_by;
+    }
+
+    public function setCreatedBy(?users $created_by): self
+    {
+        $this->created_by = $created_by;
+
+        return $this;
+    }
+
+    public function getUpdatedBy(): ?users
+    {
+        return $this->updated_by;
+    }
+
+    public function setUpdatedBy(?users $updated_by): self
+    {
+        $this->updated_by = $updated_by;
 
         return $this;
     }

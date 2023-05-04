@@ -35,6 +35,13 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?bool $active = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $tokens = null;
+
+    #[ORM\ManyToOne]
+    private ?roles $user_role = null;
+
+  
     public function getId(): ?int
     {
         return $this->id;
@@ -128,4 +135,31 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getTokens(): ?string
+    {
+        return $this->tokens;
+    }
+
+    public function setTokens(?string $tokens): self
+    {
+        $this->tokens = $tokens;
+
+        return $this;
+    }
+
+    public function getUserRole(): ?roles
+    {
+        return $this->user_role;
+    }
+
+    public function setUserRole(?roles $user_role): self
+    {
+        $this->user_role = $user_role;
+
+        return $this;
+    }
+
+ 
+
 }

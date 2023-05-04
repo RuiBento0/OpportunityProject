@@ -1,0 +1,47 @@
+{% extends './base.html.twig' %} 
+
+{% block body %}
+  <table class="table table-hover" style="text-align:center">
+            <thead class="table-secondary">
+                <tr>
+                <th onclick="sortTable(0)" style="-webkit-user-select: none; width: 5%; cursor: pointer" style="width: 5%" scope="col">{% trans %}Name{% endtrans %}</th>
+                <th onclick="sortTable(2)" style="-webkit-user-select: none; width: 6%; cursor: pointer" style="width: 6%" scope="col">{% trans %}Created By{% endtrans %}</th>
+                <th onclick="sortTable(3)" style="-webkit-user-select: none; width: 6%; cursor: pointer" style="width: 6%" scope="col">{% trans %}Created At{% endtrans %}</th>
+                <th style="width: 19%;cursor: default; -webkit-user-select: none;" scope="col">{% trans %}Actions{% endtrans %}</th>
+                </tr>
+            </thead>
+
+            <tbody id="myTable">
+                <tr>
+
+                {% for account in accounts %}
+
+                        <td style="vertical-align: middle">{{ account.name }}</td>
+                        <td style="vertical-align: middle">{{ account.createdby.name }}</td>
+                        <td style="vertical-align: middle">{{ account.createdat|date('Y-m-d H:i:s') }}</td>
+
+                        <td style="-webkit-user-select: none; vertical-align: middle">
+
+                {# {% if app.user.id is defined%} #}
+                        {# {% if app.user.userRole.roles == "SUPERADMIN" %} #}
+                        <a href="/account/{{account.id}}">
+                            <span class="btn btn-outline-info col-lg-3" style="text-align: center">Show</a></span>
+                        <a href="/account/edit/{{account.id}}">
+                            <span class="btn btn-outline-success col-lg-3" style="text-align: center">Edit</a></span>
+                        <a href="/account/delete/{{account.id}}" onclick="return confirm('Are you sure you want to permanently remove this item?')">
+                                <span class="btn btn-outline-danger col-lg-3" style="text-align: center">Delete</a></span>
+                        {# {% endif %} #}
+
+                        {# {% if app.user.userRole.roles == "VIEWER" %} #}
+
+{#                         <a href="/tickets/{{contact.id}}">
+                            <span class="btn btn-outline-info col-lg-3  " style="text-align: center;">Show</a></span> #}
+
+                        {# {% endif %}  #}
+                    {# {% endif %} #}
+                    </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+{% endblock %} 

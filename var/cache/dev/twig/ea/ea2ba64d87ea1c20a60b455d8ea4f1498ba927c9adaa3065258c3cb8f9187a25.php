@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* ./base.html.twig */
+/* base.html.twig */
 class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f7ca43 extends Template
 {
     private $source;
@@ -27,10 +27,9 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
         $this->parent = false;
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'header' => [$this, 'block_header'],
+            'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
-            'footer' => [$this, 'block_footer'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -38,191 +37,403 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./base.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
-<html>
+<html lang=\"en\">
     <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        <script src=\"https://cdn.tailwindcss.com\"></script>
-        <script src=\"https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js\" defer></script>
-    </head>
-    <body class=\"bg-gray-100 h-screen antialiased leading-none font-sans\">
-            ";
+        <meta charset=\"utf-8\" />
+        <title> CRM Central </title>
+        <link rel=\"icon\" href=\"img/CRM2.ico\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <meta content=\"Premium Multipurpose Admin & Dashboard Template\" name=\"description\" />
+        <meta content=\"\" name=\"author\" />
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
+        ";
         // line 11
-        $this->displayBlock('header', $context, $blocks);
-        // line 102
-        echo "
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 19
+        echo "        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+    </head>
+
+    <body id=\"body\">
+    <!-- Top Bar Start -->
+        <div class=\"topbar\">            
+            <!-- Navbar -->
+            <nav class=\"navbar-custom\" id=\"navbar-custom\">    
+                <ul class=\"list-unstyled topbar-nav float-end mb-0\">
+                    <li class=\"dropdown\">
+                        <!-- Add fields here-->
+                    </li><!--end topbar-language-->
+                    
+                    <li class=\"dropdown notification-list\">
+                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                            aria-haspopup=\"false\" aria-expanded=\"false\">
+                            <i class=\"ti ti-mail\"></i>
+                        </a>
+                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
+                        
+                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
+                                Emails <span class=\"badge bg-soft-primary badge-pill\">3</span>
+                            </h6> 
+                            <div class=\"notification-menu\" data-simplebar>
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-1.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-4.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-2.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-5.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-3.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                            </div>
+                            <!-- All-->
+                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
+                                View all <i class=\"fi-arrow-right\"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class=\"dropdown notification-list\">
+                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                            aria-haspopup=\"false\" aria-expanded=\"false\">
+                            <i class=\"ti ti-bell\"></i>
+                            <span class=\"alert-badge\"></span>
+                        </a>
+                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
+                        
+                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
+                                Notifications <span class=\"badge bg-soft-primary badge-pill\">2</span>
+                            </h6> 
+                            <div class=\"notification-menu\" data-simplebar>
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-chart-arcs\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-device-computer-camera\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">                                                    
+                                            <i class=\"ti ti-diamond\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-drone\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-users\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                            </div>
+                            <!-- All-->
+                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
+                                View all <i class=\"fi-arrow-right\"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class=\"dropdown\">
+                        <a class=\"nav-link dropdown-toggle nav-user\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                            aria-haspopup=\"false\" aria-expanded=\"false\">
+                            <div class=\"d-flex align-items-center\">
+                                <div>
+                                    <small class=\"d-none d-md-block font-11\">
+
+                                    </small>
+                                    <span class=\"d-none d-md-block fw-semibold font-12\">";
+        // line 209
+        echo "<i class=\"mdi mdi-chevron-down\"></i></span>
+                                </div>
+                            </div>
+                        </a> 
+                        <div class=\"dropdown-menu dropdown-menu-end\">
+                            <a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
+                            <a class=\"dropdown-item\" href=\"/Options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
+                            <div class=\"dropdown-divider mb-0\"></div>
+                            <a class=\"dropdown-item\" href=\"/logout\"><i class=\"ti ti-power font-16 me-1 align-text-bottom\"></i> Logout</a>
+                        </div>
+                    </li><!--end topbar-profile-->
+                    <li class=\"notification-list\">
+                        <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/Options\"  type=\"button\" >
+                            <i class=\"ti ti-settings ti-spin\"></i>
+                        </a>
+                    </li>   
+                </ul><!--end topbar-nav-->
+
+                <ul class=\"list-unstyled topbar-nav mb-0\">                        
+                    <li>
+                        <button class=\"nav-link button-menu-mobile nav-icon\" id=\"togglemenu\">
+                            <i class=\"ti ti-menu-2\"></i>
+                        </button>
+                    </li> 
+                    <li class=\"hide-phone app-search\">
+                        <form role=\"search\" action=\"#\" method=\"get\">
+                            <input type=\"search\" name=\"search\" class=\"form-control top-search mb-0\" placeholder=\"Type text...\">
+                            <button type=\"submit\"><i class=\"ti ti-search\"></i></button>
+                        </form>
+                    </li>                       
+                </ul>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    <!-- Top Bar End -->
+
+        <div class=\"main-menu-inner\">
             ";
-        // line 103
+        // line 246
+        $this->loadTemplate("/sidebar.html.twig", "base.html.twig", 246)->display($context);
+        // line 247
+        echo "        </div> 
+
+        <div class=\"page-wrapper\">
+            <div class=\"page-content-tab\">
+
+
+            ";
+        // line 254
+        echo "                ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "flashes", [0 => "notice"], "method", false, false, false, 254));
+        foreach ($context['_seq'] as $context["_key"] => $context["notice"]) {
+            // line 255
+            echo "                    <div class=\"alert alert-light alert-dismissible fade show border-0\" role=\"alert\">
+                        ";
+            // line 256
+            echo twig_escape_filter($this->env, $context["notice"], "html", null, true);
+            echo "
+                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                    </div>  
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notice'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 260
+        echo "
+                ";
+        // line 261
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 261, $this->source); })()), "flashes", [0 => "delete"], "method", false, false, false, 261));
+        foreach ($context['_seq'] as $context["_key"] => $context["notice"]) {
+            // line 262
+            echo "                    <div class=\"card-body\" style = \"position: absolute; width:300px; top: 10px; z-index: 10; right:10px; \"> 
+                        <div class=\"alert custom-alert custom-alert-primary icon-custom-alert shadow-sm fade show\" style=\"background-color:white;\"role=\"alert\">                                            
+                            <i class=\"mdi mdi-alert-outline alert-icon text-primary align-self-center font-30 me-3\"></i>
+                            <div class=\"alert-text my-1\">
+                                <h5 class=\"mb-1 fw-bold mt-0\">Message</h5>
+                                <span> ";
+            // line 267
+            echo twig_escape_filter($this->env, $context["notice"], "html", null, true);
+            echo "</span>
+                            </div>                                        
+                            <div class=\"alert-close\">
+                                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                            </div>
+                        </div>                                                                                           
+                    </div><!--end card-body--> 
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notice'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 275
+        echo "
+
+                ";
+        // line 277
         $this->displayBlock('body', $context, $blocks);
-        // line 104
-        echo "
-            ";
-        // line 105
-        $this->displayBlock('footer', $context, $blocks);
-        // line 112
+        // line 280
+        echo "            </div>
+        </div>
+            
+         ";
+        // line 283
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 294
         echo "    </body>
-</html>";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+</html>
 
-    }
-
-    // line 5
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Welcome!";
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
     // line 11
-    public function block_header($context, array $blocks = [])
+    public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 12
-        echo "                <header>
-                    <nav
-                            class=\"flex items-center justify-between flex-wrap p-6 fixed w-full z-10 top-0\"
-                            x-data=\"{ isOpen: false }\"
-                            @keydown.escape=\"isOpen = false\"
-                            :class=\"{ 'shadow-lg bg-gray-600' : isOpen , 'bg-gray-600' : !isOpen}\">
-
-                        <div class=\"flex items-center flex-shrink-0 text-white mr-6\">
-                            <a
-                                    class=\"text-white no-underline hover:text-white hover:no-underline\"
-                                    href=\"/\">
-            <span class=\"text-2xl pl-2 font-extrabold\">
-                Movies
-            </span>
-                            </a>
-                        </div>
-
-                        <button
-                                @click=\"isOpen = !isOpen\"
-                                type=\"button\"
-                                class=\"block lg:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white\"
-                                :class=\"{ 'transition transform-180': isOpen }\">
-
-                            <svg
-                                    class=\"h-6 w-6 fill-current\"
-                                    xmlns=\"http://www.w3.org/2000/svg\"
-                                    viewBox=\"0 0 24 24\">
-
-                                <path
-                                        x-show=\"isOpen\"
-                                        fill-rule=\"evenodd\"
-                                        clip-rule=\"evenodd\"
-                                        d=\"M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z\"
-                                />
-
-                                <path
-                                        x-show=\"!isOpen\"
-                                        fill-rule=\"evenodd\"
-                                        d=\"M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z\"
-                                />
-                            </svg>
-                        </button>
-
-                        <div
-                                class=\"w-full flex-grow lg:flex lg:items-center lg:w-auto\"
-                                :class=\"{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }\"
-                                @click.away=\"isOpen = false\"
-                                x-show.transition=\"true\">
-
-                            <ul class=\"pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center\">
-                                <li class=\"mr-3\">
-                                    <a
-                                            class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/\"
-                                            @click=\"isOpen = false\">
-                                        Home
-                                    </a>
-                                </li>
-
-                                <li class=\"mr-3\">
-                                    <a
-                                            class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/movies\"
-                                            @click=\"isOpen = false\"
-                                    >Movies
-                                    </a>
-                                </li>
-
-                                <li class=\"mr-3\">
-                                    <a
-                                            class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/contact\"
-                                            @click=\"isOpen = false\">
-                                        Contact
-                                    </a>
-                                </li>
-
-                                <li class=\"mr-3\">
-                                    <a
-                                        class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                        href=\"/";
-        // line 92
-        echo ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "user", [], "any", false, false, false, 92)) ? ("logout") : ("login"));
-        echo "\"
-                                        @click=\"isOpen = false\">
-                                        ";
-        // line 94
-        echo ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 94, $this->source); })()), "user", [], "any", false, false, false, 94)) ? ("Logout") : ("Login"));
-        echo "
-                                    </a>
-                                </li>                                
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            ";
+        echo "            <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
+            <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.css\" rel=\"stylesheet\" type=\"text/css\" />
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 103
+    // line 277
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 278
+        echo "            
+                ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 105
-    public function block_footer($context, array $blocks = [])
+    // line 283
+    public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 106
-        echo "                <footer class=\"bg-gray-600 py-6 mt-20\">
-                    <p class=\"w-25 w-4/5 text-center pb-3 m-auto text-base text-gray-100 pt-6\">
-                        Copyright 2021 Code With Dary. All Rights Reserved
-                    </p>
-                </footer>
-            ";
+        // line 284
+        echo "
+        <script src=\"";
+        // line 285
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/js/teste.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 286
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/plugins/dragula/dragula.min.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 287
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/pages/dragula.init.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 288
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/plugins/apexcharts/apexcharts.min.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 289
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/pages/crm-index.init.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 290
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/js/app.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+      
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -230,128 +441,317 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
 
     public function getTemplateName()
     {
-        return "./base.html.twig";
+        return "base.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
     }
 
     public function getDebugInfo()
     {
-        return array (  220 => 106,  213 => 105,  201 => 103,  186 => 94,  181 => 92,  99 => 12,  92 => 11,  79 => 5,  71 => 112,  69 => 105,  66 => 104,  64 => 103,  61 => 102,  59 => 11,  50 => 5,  44 => 1,);
+        return array (  432 => 290,  428 => 289,  424 => 288,  420 => 287,  416 => 286,  412 => 285,  409 => 284,  402 => 283,  394 => 278,  387 => 277,  374 => 12,  367 => 11,  357 => 294,  355 => 283,  350 => 280,  348 => 277,  344 => 275,  330 => 267,  323 => 262,  319 => 261,  316 => 260,  306 => 256,  303 => 255,  298 => 254,  290 => 247,  288 => 246,  249 => 209,  57 => 19,  55 => 11,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
-<html>
+<html lang=\"en\">
     <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        <script src=\"https://cdn.tailwindcss.com\"></script>
-        <script src=\"https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js\" defer></script>
+        <meta charset=\"utf-8\" />
+        <title> CRM Central </title>
+        <link rel=\"icon\" href=\"img/CRM2.ico\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <meta content=\"Premium Multipurpose Admin & Dashboard Template\" name=\"description\" />
+        <meta content=\"\" name=\"author\" />
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
+        {% block stylesheets %}
+            <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
+            <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.css\" rel=\"stylesheet\" type=\"text/css\" />
+        {% endblock %}
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
     </head>
-    <body class=\"bg-gray-100 h-screen antialiased leading-none font-sans\">
-            {% block header %}
-                <header>
-                    <nav
-                            class=\"flex items-center justify-between flex-wrap p-6 fixed w-full z-10 top-0\"
-                            x-data=\"{ isOpen: false }\"
-                            @keydown.escape=\"isOpen = false\"
-                            :class=\"{ 'shadow-lg bg-gray-600' : isOpen , 'bg-gray-600' : !isOpen}\">
 
-                        <div class=\"flex items-center flex-shrink-0 text-white mr-6\">
-                            <a
-                                    class=\"text-white no-underline hover:text-white hover:no-underline\"
-                                    href=\"/\">
-            <span class=\"text-2xl pl-2 font-extrabold\">
-                Movies
-            </span>
+    <body id=\"body\">
+    <!-- Top Bar Start -->
+        <div class=\"topbar\">            
+            <!-- Navbar -->
+            <nav class=\"navbar-custom\" id=\"navbar-custom\">    
+                <ul class=\"list-unstyled topbar-nav float-end mb-0\">
+                    <li class=\"dropdown\">
+                        <!-- Add fields here-->
+                    </li><!--end topbar-language-->
+                    
+                    <li class=\"dropdown notification-list\">
+                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                            aria-haspopup=\"false\" aria-expanded=\"false\">
+                            <i class=\"ti ti-mail\"></i>
+                        </a>
+                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
+                        
+                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
+                                Emails <span class=\"badge bg-soft-primary badge-pill\">3</span>
+                            </h6> 
+                            <div class=\"notification-menu\" data-simplebar>
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-1.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-4.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-2.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-5.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <img src=\"/images/users/user-3.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                            </div>
+                            <!-- All-->
+                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
+                                View all <i class=\"fi-arrow-right\"></i>
                             </a>
                         </div>
+                    </li>
 
-                        <button
-                                @click=\"isOpen = !isOpen\"
-                                type=\"button\"
-                                class=\"block lg:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white\"
-                                :class=\"{ 'transition transform-180': isOpen }\">
-
-                            <svg
-                                    class=\"h-6 w-6 fill-current\"
-                                    xmlns=\"http://www.w3.org/2000/svg\"
-                                    viewBox=\"0 0 24 24\">
-
-                                <path
-                                        x-show=\"isOpen\"
-                                        fill-rule=\"evenodd\"
-                                        clip-rule=\"evenodd\"
-                                        d=\"M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z\"
-                                />
-
-                                <path
-                                        x-show=\"!isOpen\"
-                                        fill-rule=\"evenodd\"
-                                        d=\"M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z\"
-                                />
-                            </svg>
-                        </button>
-
-                        <div
-                                class=\"w-full flex-grow lg:flex lg:items-center lg:w-auto\"
-                                :class=\"{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }\"
-                                @click.away=\"isOpen = false\"
-                                x-show.transition=\"true\">
-
-                            <ul class=\"pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center\">
-                                <li class=\"mr-3\">
-                                    <a
-                                            class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/\"
-                                            @click=\"isOpen = false\">
-                                        Home
-                                    </a>
-                                </li>
-
-                                <li class=\"mr-3\">
-                                    <a
-                                            class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/movies\"
-                                            @click=\"isOpen = false\"
-                                    >Movies
-                                    </a>
-                                </li>
-
-                                <li class=\"mr-3\">
-                                    <a
-                                            class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                            href=\"/contact\"
-                                            @click=\"isOpen = false\">
-                                        Contact
-                                    </a>
-                                </li>
-
-                                <li class=\"mr-3\">
-                                    <a
-                                        class=\"inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4\"
-                                        href=\"/{{app.user ? 'logout' : 'login'}}\"
-                                        @click=\"isOpen = false\">
-                                        {{ app.user ? 'Logout' : 'Login' }}
-                                    </a>
-                                </li>                                
-                            </ul>
+                    <li class=\"dropdown notification-list\">
+                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                            aria-haspopup=\"false\" aria-expanded=\"false\">
+                            <i class=\"ti ti-bell\"></i>
+                            <span class=\"alert-badge\"></span>
+                        </a>
+                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
+                        
+                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
+                                Notifications <span class=\"badge bg-soft-primary badge-pill\">2</span>
+                            </h6> 
+                            <div class=\"notification-menu\" data-simplebar>
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-chart-arcs\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-device-computer-camera\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">                                                    
+                                            <i class=\"ti ti-diamond\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-drone\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
+                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href=\"#\" class=\"dropdown-item py-3\">
+                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
+                                    <div class=\"media\">
+                                        <div class=\"avatar-md bg-soft-primary\">
+                                            <i class=\"ti ti-users\"></i>
+                                        </div>
+                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
+                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
+                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                            </div>
+                            <!-- All-->
+                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
+                                View all <i class=\"fi-arrow-right\"></i>
+                            </a>
                         </div>
-                    </nav>
-                </header>
-            {% endblock %}
+                    </li>
 
-            {% block body %}{% endblock %}
+                    <li class=\"dropdown\">
+                        <a class=\"nav-link dropdown-toggle nav-user\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                            aria-haspopup=\"false\" aria-expanded=\"false\">
+                            <div class=\"d-flex align-items-center\">
+                                <div>
+                                    <small class=\"d-none d-md-block font-11\">
 
-            {% block footer %}
-                <footer class=\"bg-gray-600 py-6 mt-20\">
-                    <p class=\"w-25 w-4/5 text-center pb-3 m-auto text-base text-gray-100 pt-6\">
-                        Copyright 2021 Code With Dary. All Rights Reserved
-                    </p>
-                </footer>
-            {% endblock %}
+                                    </small>
+                                    <span class=\"d-none d-md-block fw-semibold font-12\">{# {{app.user.email}}  #}<i class=\"mdi mdi-chevron-down\"></i></span>
+                                </div>
+                            </div>
+                        </a> 
+                        <div class=\"dropdown-menu dropdown-menu-end\">
+                            <a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
+                            <a class=\"dropdown-item\" href=\"/Options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
+                            <div class=\"dropdown-divider mb-0\"></div>
+                            <a class=\"dropdown-item\" href=\"/logout\"><i class=\"ti ti-power font-16 me-1 align-text-bottom\"></i> Logout</a>
+                        </div>
+                    </li><!--end topbar-profile-->
+                    <li class=\"notification-list\">
+                        <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/Options\"  type=\"button\" >
+                            <i class=\"ti ti-settings ti-spin\"></i>
+                        </a>
+                    </li>   
+                </ul><!--end topbar-nav-->
+
+                <ul class=\"list-unstyled topbar-nav mb-0\">                        
+                    <li>
+                        <button class=\"nav-link button-menu-mobile nav-icon\" id=\"togglemenu\">
+                            <i class=\"ti ti-menu-2\"></i>
+                        </button>
+                    </li> 
+                    <li class=\"hide-phone app-search\">
+                        <form role=\"search\" action=\"#\" method=\"get\">
+                            <input type=\"search\" name=\"search\" class=\"form-control top-search mb-0\" placeholder=\"Type text...\">
+                            <button type=\"submit\"><i class=\"ti ti-search\"></i></button>
+                        </form>
+                    </li>                       
+                </ul>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    <!-- Top Bar End -->
+
+        <div class=\"main-menu-inner\">
+            {% include '/sidebar.html.twig' %}
+        </div> 
+
+        <div class=\"page-wrapper\">
+            <div class=\"page-content-tab\">
+
+
+            {# pop up message Created #}
+                {% for notice in app.flashes('notice') %}
+                    <div class=\"alert alert-light alert-dismissible fade show border-0\" role=\"alert\">
+                        {{ notice }}
+                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                    </div>  
+                {% endfor %}
+
+                {% for notice in app.flashes('delete') %}
+                    <div class=\"card-body\" style = \"position: absolute; width:300px; top: 10px; z-index: 10; right:10px; \"> 
+                        <div class=\"alert custom-alert custom-alert-primary icon-custom-alert shadow-sm fade show\" style=\"background-color:white;\"role=\"alert\">                                            
+                            <i class=\"mdi mdi-alert-outline alert-icon text-primary align-self-center font-30 me-3\"></i>
+                            <div class=\"alert-text my-1\">
+                                <h5 class=\"mb-1 fw-bold mt-0\">Message</h5>
+                                <span> {{ notice }}</span>
+                            </div>                                        
+                            <div class=\"alert-close\">
+                                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                            </div>
+                        </div>                                                                                           
+                    </div><!--end card-body--> 
+                {% endfor %}
+
+
+                {% block body %}
+            
+                {% endblock %}
+            </div>
+        </div>
+            
+         {% block javascripts %}
+
+        <script src=\"{{ asset('plugins/metric/dist/assets/js/teste.js') }}\"></script>
+        <script src=\"{{ asset('plugins/metric/dist/assets/plugins/dragula/dragula.min.js') }}\"></script>
+        <script src=\"{{ asset('plugins/metric/dist/assets/pages/dragula.init.js') }}\"></script>
+        <script src=\"{{ asset('plugins/metric/dist/assets/plugins/apexcharts/apexcharts.min.js') }}\"></script>
+        <script src=\"{{ asset('plugins/metric/dist/assets/pages/crm-index.init.js') }}\"></script>
+        <script src=\"{{ asset('plugins/metric/dist/assets/js/app.js') }}\"></script>
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+      
+        {% endblock %}
     </body>
-</html>", "./base.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\base.html.twig");
+</html>
+
+", "base.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\base.html.twig");
     }
 }
