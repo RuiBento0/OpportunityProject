@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* base.html.twig */
+/* ./base.html.twig */
 class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f7ca43 extends Template
 {
     private $source;
@@ -37,7 +37,7 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -252,13 +252,13 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
                         </a> 
                         <div class=\"dropdown-menu dropdown-menu-end\">
                             <a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
-                            <a class=\"dropdown-item\" href=\"/Options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
+                            <a class=\"dropdown-item\" href=\"/options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
                             <div class=\"dropdown-divider mb-0\"></div>
                             <a class=\"dropdown-item\" href=\"/logout\"><i class=\"ti ti-power font-16 me-1 align-text-bottom\"></i> Logout</a>
                         </div>
                     </li><!--end topbar-profile-->
                     <li class=\"notification-list\">
-                        <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/Options\"  type=\"button\" >
+                        <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/options\"  type=\"button\" >
                             <i class=\"ti ti-settings ti-spin\"></i>
                         </a>
                     </li>   
@@ -285,7 +285,7 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
         <div class=\"main-menu-inner\">
             ";
         // line 246
-        $this->loadTemplate("/sidebar.html.twig", "base.html.twig", 246)->display($context);
+        $this->loadTemplate("/sidebar.html.twig", "./base.html.twig", 246)->display($context);
         // line 247
         echo "        </div> 
 
@@ -441,7 +441,7 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
 
     public function getTemplateName()
     {
-        return "base.html.twig";
+        return "./base.html.twig";
     }
 
     public function isTraitable()
@@ -670,13 +670,13 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
                         </a> 
                         <div class=\"dropdown-menu dropdown-menu-end\">
                             <a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
-                            <a class=\"dropdown-item\" href=\"/Options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
+                            <a class=\"dropdown-item\" href=\"/options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
                             <div class=\"dropdown-divider mb-0\"></div>
                             <a class=\"dropdown-item\" href=\"/logout\"><i class=\"ti ti-power font-16 me-1 align-text-bottom\"></i> Logout</a>
                         </div>
                     </li><!--end topbar-profile-->
                     <li class=\"notification-list\">
-                        <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/Options\"  type=\"button\" >
+                        <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/options\"  type=\"button\" >
                             <i class=\"ti ti-settings ti-spin\"></i>
                         </a>
                     </li>   
@@ -752,6 +752,6 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
     </body>
 </html>
 
-", "base.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\base.html.twig");
+", "./base.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\base.html.twig");
     }
 }

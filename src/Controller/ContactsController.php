@@ -27,5 +27,13 @@ class ContactsController extends AbstractController
             'contacts' => $contact,
         ]);
     }
+
+    #[Route('/contacts/create', methods:['GET'], name: 'app_contacts_new')]
+    public function new(ContactsRepository $contactsRepository, Request $request): Response
+    {
+        return $this->render('contacts/new.html.twig',[
+            
+        ]);
+    }
 }
 ?>

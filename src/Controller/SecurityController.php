@@ -16,7 +16,7 @@ class SecurityController extends AbstractController
 
     }
 
-    #[Route(path: '/login', name: 'app_login')]
+    #[Route(path: '/login', name: 'app_login',methods:['POST','GET'])]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if($_POST){
@@ -58,5 +58,70 @@ class SecurityController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error, 'username' => $userusername]);
+    }
+
+    #[Route('/register', name: 'app_register')]
+    public function register(MailerInterface $mailer, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    {
+        $flag = 0;
+
+        $token = new Users();
+        $user = new Users();
+        $roles = new Roles();
+
+
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the plain password
+            function getTokens($len=32){
+                return substr(md5(openssl_random_pseudo_bytes(20)), -$len);
+            }
+
+            $token = getTokens(10);
+
+            $user->setTokens($token);
+
+            $data = $form->getData();
+            $email = $data->getEmail();
+
+            $confirmemail = (new Email())
+            ->from('ruibento@sosconsultoria.pt')
+            ->to($email)
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            //->priority(Email::PRIORITY_HIGH)
+            ->subject('Welcome to CRM Central!')
+            ->text('Sending emails is fun again!')
+            ->html('<a href="http://127.0.0.1:8000/login/' . $token . '">Confirm email</a>');
+
+            $mailer->send($confirmemail);
+
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+            );
+
+            $user->setActive(1);
+            $user->setTokens($token);
+            $userRole = $this->RolesRepository->find(3); // set automaticly user to "USER" role
+
+            $user->setUserRole($userRole); 
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $flag = 1;
+        }
+
+        return $this->render('registration/register.html.twig', [
+            'registrationForm' => $form->createView(),
+            'flag' => $flag,
+        ]);
+
     }
 }

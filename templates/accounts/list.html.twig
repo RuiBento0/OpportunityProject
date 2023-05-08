@@ -1,6 +1,181 @@
 {% extends './base.html.twig' %} 
 
 {% block body %}
+<div class="page-wrapper">
+
+            <!-- Page Content-->
+            {# <div class="page-content-tab"> #}
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/index">CRM Central</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item"><a href="/accounts">Accounts</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item active">List</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Accounts</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                        
+                        <p><input style="width: 300px;" id="myInput" onkeyup="myFunction()" type="text" placeholder="Search..." class="form-control"></p><br>
+
+                        <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Accounts Details</h4>             
+                                        </div><!--end col-->                                       
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                        <div class="row">
+                        <div class="col-lg-4">                            
+                            <div class="card">                               
+                                <div class="card-body"> 
+                                    <div class="media mb-3">
+                                        <div class="media-body align-self-center"> 
+                                            <h4 class="mt-0 mb-0 font-16">Dorothy Key 
+                                            </h4>
+                                            <p class="text-muted mb-0 font-12">New York USA</p>                                                                                                                                      
+                                        </div><!--end media body-->                                            
+                                    </div> <!--end media-->                                    
+                                    <ul class="list-unstyled mb-2">
+                                        <li class=""><i data-feather="calendar" class="align-self-center icon-xs icon-dual me-1"></i> <b>Date</b> : 20 june 2020</li>
+                                        <li class="mt-2"><i data-feather="phone" class="align-self-center icon-xs icon-dual me-1"></i> <b> phone </b> : +91 23456 78910</li>
+                                        <li class="mt-2"><i data-feather="mail" class="align-self-center icon-xs icon-dual me-1"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
+                                    </ul>                                                                     
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Show</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Delete</button>
+                                    </div>
+                                </div><!--end card-body-->                                                                     
+                            </div>  <!--end card-->                          
+                        </div><!--end col-->
+                        <div class="col-lg-4">                            
+                            <div class="card">                               
+                                <div class="card-body"> 
+                                    <div class="media mb-3">
+                                        <div class="media-body align-self-center"> 
+                                            <h4 class="mt-0 mb-0 font-16">Donald Gardner 
+                                            </h4>
+                                            <p class="text-muted mb-0 font-12">Dealer, Washington</p>                                                                                                                                      
+                                        </div><!--end media body-->                                            
+                                    </div> <!--end media-->                                    
+                                    <ul class="list-unstyled mb-2">
+                                        <li class=""><i data-feather="calendar" class="align-self-center icon-xs icon-dual me-1"></i> <b>Date</b> : 20 june 2020</li>
+                                        <li class="mt-2"><i data-feather="phone" class="align-self-center icon-xs icon-dual me-1"></i> <b> phone </b> : +91 23456 78910</li>
+                                        <li class="mt-2"><i data-feather="mail" class="align-self-center icon-xs icon-dual me-1"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
+                                    </ul>                                                                      
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Show</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Delete</button>
+                                    </div>
+                                </div><!--end card-body-->                                                                     
+                            </div>  <!--end card-->                          
+                        </div><!--end col-->
+                        <div class="col-lg-4">                            
+                            <div class="card">                               
+                                <div class="card-body"> 
+                                    <div class="media mb-3">
+                                        <div class="media-body align-self-center"> 
+                                            <h4 class="mt-0 mb-0 font-16">Joseph Cross 
+                                            </h4>
+                                            <p class="text-muted mb-0 font-12">Tokyo Japan</p>                                                                                                                                      
+                                        </div><!--end media body-->                                            
+                                    </div> <!--end media-->                                    
+                                    <ul class="list-unstyled mb-2">
+                                        <li class=""><i data-feather="calendar" class="align-self-center icon-xs icon-dual me-1"></i> <b>Date</b> : 20 june 2020</li>
+                                        <li class="mt-2"><i data-feather="phone" class="align-self-center icon-xs icon-dual me-1"></i> <b> phone </b> : +91 23456 78910</li>
+                                        <li class="mt-2"><i data-feather="mail" class="align-self-center icon-xs icon-dual me-1"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
+                                    </ul>                                                                       
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Show</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Delete</button>
+                                    </div>
+                                </div><!--end card-body-->                                                                     
+                            </div>  <!--end card-->                          
+                        </div><!--end col-->
+                    </div><!--end row-->
+                    <div class="row">
+                        <div class="col-lg-4">                            
+                            <div class="card">                               
+                                <div class="card-body"> 
+                                    <div class="media mb-3">
+                                        <div class="media-body align-self-center"> 
+                                            <h4 class="mt-0 mb-0 font-16">Nancy Flanary
+                                            </h4>
+                                            <p class="text-muted mb-0 font-12">Sydeny Australia</p>                                                                                                                                      
+                                        </div><!--end media body-->                                            
+                                    </div> <!--end media-->                                    
+                                    <ul class="list-unstyled mb-2">
+                                        <li class=""><i data-feather="calendar" class="align-self-center icon-xs icon-dual me-1"></i> <b>Date</b> : 20 june 2020</li>
+                                        <li class="mt-2"><i data-feather="phone" class="align-self-center icon-xs icon-dual me-1"></i> <b> phone </b> : +91 23456 78910</li>
+                                        <li class="mt-2"><i data-feather="mail" class="align-self-center icon-xs icon-dual me-1"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
+                                    </ul>                                                                      
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Send SMS</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Send Email</button>
+                                    </div>
+                                </div><!--end card-body-->                                                                     
+                            </div>  <!--end card-->                          
+                        </div><!--end col-->
+                        <div class="col-lg-4">                            
+                            <div class="card">                               
+                                <div class="card-body"> 
+                                    <div class="media mb-3">
+                                        <div class="media-body align-self-center"> 
+                                            <h4 class="mt-0 mb-0 font-16">Sherron Nelson 
+                                            </h4>
+                                            <p class="text-muted mb-0 font-12">Berlin, Germany</p>                                                                                                                                      
+                                        </div><!--end media body-->                                            
+                                    </div> <!--end media-->                                    
+                                    <ul class="list-unstyled mb-2">
+                                        <li class=""><i data-feather="calendar" class="align-self-center icon-xs icon-dual me-1"></i> <b>Date</b> : 20 june 2020</li>
+                                        <li class="mt-2"><i data-feather="phone" class="align-self-center icon-xs icon-dual me-1"></i> <b> phone </b> : +91 23456 78910</li>
+                                        <li class="mt-2"><i data-feather="mail" class="align-self-center icon-xs icon-dual me-1"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
+                                    </ul>                                                                     
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Send SMS</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Send Email</button>
+                                    </div>
+                                </div><!--end card-body-->                                                                     
+                            </div>  <!--end card-->                          
+                        </div><!--end col-->
+                        <div class="col-lg-4">                            
+                            <div class="card">                               
+                                <div class="card-body"> 
+                                    <div class="media mb-3">
+                                        <div class="media-body align-self-center"> 
+                                            <h4 class="mt-0 mb-0 font-16">Richard Curtis 
+                                            </h4>
+                                            <p class="text-muted mb-0 font-12">Dealer, Washington</p>                                                                                                                                      
+                                        </div><!--end media body-->                                            
+                                    </div> <!--end media-->                                    
+                                    <ul class="list-unstyled mb-2">
+                                        <li class=""><i data-feather="calendar" class="align-self-center icon-xs icon-dual me-1"></i> <b>Date</b> : 20 june 2020</li>
+                                        <li class="mt-2"><i data-feather="phone" class="align-self-center icon-xs icon-dual me-1"></i> <b> phone </b> : +91 23456 78910</li>
+                                        <li class="mt-2"><i data-feather="mail" class="align-self-center icon-xs icon-dual me-1"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
+                                    </ul>                                                                      
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Send SMS</button>
+                                        <button type="button" class="btn btn-sm btn-de-primary">Send Email</button>
+                                    </div>
+                                </div><!--end card-body-->                                                                     
+                            </div>  <!--end card-->                          
+                        </div><!--end col-->
+                    </div><!--end row-->
+
   <table class="table table-hover" style="text-align:center">
             <thead class="table-secondary">
                 <tr>
@@ -22,26 +197,73 @@
 
                         <td style="-webkit-user-select: none; vertical-align: middle">
 
-                {# {% if app.user.id is defined%} #}
-                        {# {% if app.user.userRole.roles == "SUPERADMIN" %} #}
+                 {% if app.user.id is defined%} 
+                         {% if app.user.userRole.role == "SUPERADMIN" %} 
                         <a href="/account/{{account.id}}">
                             <span class="btn btn-outline-info col-lg-3" style="text-align: center">Show</a></span>
                         <a href="/account/edit/{{account.id}}">
                             <span class="btn btn-outline-success col-lg-3" style="text-align: center">Edit</a></span>
                         <a href="/account/delete/{{account.id}}" onclick="return confirm('Are you sure you want to permanently remove this item?')">
                                 <span class="btn btn-outline-danger col-lg-3" style="text-align: center">Delete</a></span>
-                        {# {% endif %} #}
+                        {% endif %} 
 
-                        {# {% if app.user.userRole.roles == "VIEWER" %} #}
+                         {% if app.user.userRole.role == "USER" %} 
 
-{#                         <a href="/tickets/{{contact.id}}">
-                            <span class="btn btn-outline-info col-lg-3  " style="text-align: center;">Show</a></span> #}
+                        <a href="/account/{{contact.id}}">
+                            <span class="btn btn-outline-info col-lg-3  " style="text-align: center;">Show</a></span> 
 
-                        {# {% endif %}  #}
-                    {# {% endif %} #}
+                         {% endif %}  
+                     {% endif %} 
                     </td>
                     </tr>
                 {% endfor %}
             </tbody>
     </table>
+<br><br>
+     <footer class="footer text-center text-sm-start">
+                    &copy; <script>
+                        document.write(new Date().getFullYear())
+                    </script> CRM Central <span class="text-muted d-none d-sm-inline-block float-end">Crafted by Bento</span>
+                </footer>
+    
+
+<script type="text/javascript">
+
+    function myFunction() 
+    {
+        var input, filter, table, tr, td, i, TxtValue, x, flag;
+
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++)
+        {
+            flag = 0;
+
+            for (x = 0; x < tr[i].getElementsByTagName("td").length-1; x++)
+            {
+                td = tr[i].getElementsByTagName("td")[x];
+                if (td) 
+                {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) 
+                    {
+                        flag = 1;
+                    } 
+                }
+            }
+            if(flag==1)
+            {
+                tr[i].style.display = "";
+            }
+            else
+            {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
 {% endblock %} 

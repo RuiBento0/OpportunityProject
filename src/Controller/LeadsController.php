@@ -28,11 +28,12 @@ class LeadsController extends AbstractController
         ]);
     }
 
-/*     #[Route('/leads', name: 'app_leads')]
-    public function index(): Response
+    #[Route('/leads/create', methods:['GET'], name: 'app_leads_new')]
+    public function new(LeadsRepository $leadsRepository, Request $request): Response
     {
-        return $this->render('leads/index.html.twig', [
-            'controller_name' => 'LeadsController',
+        return $this->render('leads/new.html.twig',[
+            
         ]);
-    } */
+    }
+
 }

@@ -39,7 +39,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $tokens = null;
 
     #[ORM\ManyToOne]
-    private ?roles $user_role = null;
+    private ?Roles $user_role = null;
 
   
     public function getId(): ?int

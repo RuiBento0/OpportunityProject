@@ -27,5 +27,15 @@ class AccountsController extends AbstractController
             'accounts' => $account,
         ]);
     }
+
+    #[Route('/accounts/create', methods:['GET'], name: 'app_accounts_new')]
+    public function new(AccountsRepository $accountsRepository, Request $request): Response
+    {
+        return $this->render('accounts/new.html.twig',[
+            
+        ]);
+    }
+
+    
 }
 ?>

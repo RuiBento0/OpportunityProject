@@ -28,11 +28,11 @@ class Roles
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?users $created_by = null;
+    private ?Users $created_by = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?users $updated_by = null;
+    private ?Users $updated_by = null;
 
     public function getId(): ?int
     {

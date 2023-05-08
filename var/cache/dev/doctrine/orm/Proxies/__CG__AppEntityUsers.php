@@ -67,10 +67,10 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'user_role'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'user_role'];
     }
 
     /**
@@ -344,6 +344,28 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTokens', [$tokens]);
 
         return parent::setTokens($tokens);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUserRole(): ?\App\Entity\roles
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUserRole', []);
+
+        return parent::getUserRole();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUserRole(?\App\Entity\roles $user_role): \App\Entity\Users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUserRole', [$user_role]);
+
+        return parent::setUserRole($user_role);
     }
 
 }

@@ -24,16 +24,12 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+            'body' => [$this, 'block_body'],
+            'stylesheets' => [$this, 'block_stylesheets'],
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,110 +38,150 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "security/login.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "security/login.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "
+";
+        // line 2
+        $this->displayBlock('body', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Log in!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-    }
-
-    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "<form method=\"post\">
-    ";
-        // line 7
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 7, $this->source); })())) {
-            // line 8
-            echo "        <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })()), "messageKey", [], "any", false, false, false, 8), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })()), "messageData", [], "any", false, false, false, 8), "security"), "html", null, true);
-            echo "</div>
-    ";
-        }
-        // line 10
+        // line 3
+        echo "<title> CRM Central </title>
+";
+        // line 4
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 12
         echo "
-    ";
-        // line 11
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) {
-            // line 12
-            echo "        <div class=\"mb-3\">
-            You are logged in as ";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "username", [], "any", false, false, false, 13), "html", null, true);
-            echo ", <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Logout</a>
-        </div>
-    ";
-        }
-        // line 16
-        echo "
-    <div class=\"w-4/5 m-auto text-center\">
-        <div class=\"py-12 border-b border-gray-200\">
-            <h1 class=\"text-6xl pt-12 pb-8\">
-                Login
-            </h1>
-    
-            <input 
-                type=\"email\" 
-                value=\"";
-        // line 25
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 25, $this->source); })()), "html", null, true);
+<body id=\"body\" class=\"auth-page card-bg\">
+   <!-- Log In page -->
+    <div class=\"container-fluid\">
+        <div class=\"row vh-100\">
+            <div class=\"col-12\">
+                <div class=\"card-body p-0\">
+                    <div class=\"row d-flex align-items-center\">
+                        <div class=\"col-md-5 col-xl-3 col-lg-4\">
+                            <div class=\"card mb-0 border-0\">
+                                <div class=\"card-body p-0\">
+                                    <div class=\"text-center p-3\">
+                                        <a href=\"/login\" class=\"logo logo-admin\">
+                                            <img src=\"img/CRM2.png\" height=\"50\" alt=\"logo\" class=\"auth-logo\">
+                                        </a>
+                                        <h4 class=\"mt-3 mb-1 fw-semibold font-18\">Let's Get Started CRM Central</h4>   
+                                        <p class=\"text-muted  mb-0\">Sign in to continue to CRM Central.</p>  
+                                    </div>
+                                </div><!--end card-body-->
+                                <div class=\"card-body pt-0\">                                    
+                                    <form class=\"my-4\" method=\"POST\">  
+                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                            type=\"email\" 
+                                            value=\"";
+        // line 35
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 35, $this->source); })()), "html", null, true);
         echo "\" 
-                name=\"email\" 
-                id=\"inputEmail\" 
-                class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
-                placeholder=\"Email\"
-                autocomplete=\"email\" 
-                required 
-                autofocus
-            >
+                                            name=\"email\" 
+                                            id=\"inputEmail\" 
+                                            class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
+                                            placeholder=\"Email\"
+                                            autocomplete=\"email\" 
+                                            required 
+                                            autofocus
+                                        >
 
-            <input 
-                type=\"password\" 
-                name=\"password\" 
-                id=\"inputPassword\" 
-                class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
-                autocomplete=\"current-password\" 
-                placeholder=\"Password\"
-                required
-            >
 
-            <input 
-                type=\"hidden\" 
-                name=\"_csrf_token\"
-                value=\"";
-        // line 48
+
+                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                            type=\"password\" 
+                                            name=\"password\" 
+                                            id=\"inputPassword\" 
+                                            class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
+                                            autocomplete=\"current-password\" 
+                                            placeholder=\"Password\"
+                                            required
+                                        >
+
+                                        <input 
+                                            type=\"hidden\" 
+                                            name=\"_csrf_token\"
+                                            value=\"";
+        // line 60
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
-            >
+                                        >
+            
+                                        <div class=\"form-group row mt-3\">
+                                            <div class=\"col-sm-6\">
+                                               
+                                            </div><!--end col--> 
+                                            <div class=\"col-sm-6 text-end\">
+                                                <a href=\"/reset-password\" class=\"text-muted font-13\"><i class=\"dripicons-lock\"></i> Forgot password?</a>                                    
+                                            </div><!--end col--> 
+                                        </div><!--end form-group--> 
+            
+                                        <div class=\"form-group mb-0 row\">
+                                            <div class=\"col-12\">
+                                                <div class=\"d-grid mt-3\">
+                                                    <button class=\"btn btn-primary\" type=\"submit\">Log In <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
+                                                </div>
+                                            </div><!--end col--> 
+                                        </div> <!--end form-group-->                           
+                                    </form><!--end form-->
+                                    <hr class=\"hr-dashed mt-4\">
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div><!--end col-->
+                        <div class=\"col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg\">
+                            <div class=\"accountbg d-flex align-items-center\"> 
+                                <div class=\"account-title text-center text-white\">
+                                    <img src=\"img/CRM2.png\" alt=\"\" class=\"thumb-sm\">
+                                    <h4 class=\"mt-3 text-white\">Welcome To <span class=\"text-warning\">CRM Central</span> </h4>
+                                    <h1 class=\"text-white\">Let's Get Started</h1>
+                                    <p class=\"font-18 mt-3\">Every contact we have with a customer influences whether or not they´ll come back.</p>
+                                    <p class=\"font-18 mt-3\">We have to be great every time or we´ll lose them.</p>
+                                    <div class=\"border w-25 mx-auto border-warning\"></div>
+                                </div>
+                            </div><!--end /div-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end card-body-->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
 
-            <button 
-                class=\"uppercase mt-15 bg-blue-500 text-gray-100 text-lg w-1/5 mt-10 font-extrabold py-4 px-8 rounded-3xl\" 
-                type=\"submit\">
-                Sign in
-            </button>
-        </form>
-    </div>
-</div>
+    <!-- App js -->
+    <script src=\"assets/js/app.js\"></script>
+    
+</body>
+
+</html>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 4
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 5
+        echo "            <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
+            <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.css\" rel=\"stylesheet\" type=\"text/css\" />
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -157,76 +193,120 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
         return "security/login.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  137 => 48,  111 => 25,  100 => 16,  92 => 13,  89 => 12,  87 => 11,  84 => 10,  78 => 8,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  179 => 5,  172 => 4,  116 => 60,  88 => 35,  63 => 12,  61 => 4,  58 => 3,  45 => 2,  42 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
-
-{% block title %}Log in!{% endblock %}
-
+        return new Source("
 {% block body %}
-<form method=\"post\">
-    {% if error %}
-        <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+<title> CRM Central </title>
+{% block stylesheets %}
+            <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
+            <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"/plugins/metric/dist/assets/css/app.css\" rel=\"stylesheet\" type=\"text/css\" />
+{% endblock %}
 
-    {% if app.user %}
-        <div class=\"mb-3\">
-            You are logged in as {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
-        </div>
-    {% endif %}
+<body id=\"body\" class=\"auth-page card-bg\">
+   <!-- Log In page -->
+    <div class=\"container-fluid\">
+        <div class=\"row vh-100\">
+            <div class=\"col-12\">
+                <div class=\"card-body p-0\">
+                    <div class=\"row d-flex align-items-center\">
+                        <div class=\"col-md-5 col-xl-3 col-lg-4\">
+                            <div class=\"card mb-0 border-0\">
+                                <div class=\"card-body p-0\">
+                                    <div class=\"text-center p-3\">
+                                        <a href=\"/login\" class=\"logo logo-admin\">
+                                            <img src=\"img/CRM2.png\" height=\"50\" alt=\"logo\" class=\"auth-logo\">
+                                        </a>
+                                        <h4 class=\"mt-3 mb-1 fw-semibold font-18\">Let's Get Started CRM Central</h4>   
+                                        <p class=\"text-muted  mb-0\">Sign in to continue to CRM Central.</p>  
+                                    </div>
+                                </div><!--end card-body-->
+                                <div class=\"card-body pt-0\">                                    
+                                    <form class=\"my-4\" method=\"POST\">  
+                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                            type=\"email\" 
+                                            value=\"{{ last_username }}\" 
+                                            name=\"email\" 
+                                            id=\"inputEmail\" 
+                                            class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
+                                            placeholder=\"Email\"
+                                            autocomplete=\"email\" 
+                                            required 
+                                            autofocus
+                                        >
 
-    <div class=\"w-4/5 m-auto text-center\">
-        <div class=\"py-12 border-b border-gray-200\">
-            <h1 class=\"text-6xl pt-12 pb-8\">
-                Login
-            </h1>
+
+
+                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                            type=\"password\" 
+                                            name=\"password\" 
+                                            id=\"inputPassword\" 
+                                            class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
+                                            autocomplete=\"current-password\" 
+                                            placeholder=\"Password\"
+                                            required
+                                        >
+
+                                        <input 
+                                            type=\"hidden\" 
+                                            name=\"_csrf_token\"
+                                            value=\"{{ csrf_token('authenticate') }}\"
+                                        >
+            
+                                        <div class=\"form-group row mt-3\">
+                                            <div class=\"col-sm-6\">
+                                               
+                                            </div><!--end col--> 
+                                            <div class=\"col-sm-6 text-end\">
+                                                <a href=\"/reset-password\" class=\"text-muted font-13\"><i class=\"dripicons-lock\"></i> Forgot password?</a>                                    
+                                            </div><!--end col--> 
+                                        </div><!--end form-group--> 
+            
+                                        <div class=\"form-group mb-0 row\">
+                                            <div class=\"col-12\">
+                                                <div class=\"d-grid mt-3\">
+                                                    <button class=\"btn btn-primary\" type=\"submit\">Log In <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
+                                                </div>
+                                            </div><!--end col--> 
+                                        </div> <!--end form-group-->                           
+                                    </form><!--end form-->
+                                    <hr class=\"hr-dashed mt-4\">
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div><!--end col-->
+                        <div class=\"col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg\">
+                            <div class=\"accountbg d-flex align-items-center\"> 
+                                <div class=\"account-title text-center text-white\">
+                                    <img src=\"img/CRM2.png\" alt=\"\" class=\"thumb-sm\">
+                                    <h4 class=\"mt-3 text-white\">Welcome To <span class=\"text-warning\">CRM Central</span> </h4>
+                                    <h1 class=\"text-white\">Let's Get Started</h1>
+                                    <p class=\"font-18 mt-3\">Every contact we have with a customer influences whether or not they´ll come back.</p>
+                                    <p class=\"font-18 mt-3\">We have to be great every time or we´ll lose them.</p>
+                                    <div class=\"border w-25 mx-auto border-warning\"></div>
+                                </div>
+                            </div><!--end /div-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end card-body-->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+
+    <!-- App js -->
+    <script src=\"assets/js/app.js\"></script>
     
-            <input 
-                type=\"email\" 
-                value=\"{{ last_username }}\" 
-                name=\"email\" 
-                id=\"inputEmail\" 
-                class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
-                placeholder=\"Email\"
-                autocomplete=\"email\" 
-                required 
-                autofocus
-            >
+</body>
 
-            <input 
-                type=\"password\" 
-                name=\"password\" 
-                id=\"inputPassword\" 
-                class=\"bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none\" 
-                autocomplete=\"current-password\" 
-                placeholder=\"Password\"
-                required
-            >
-
-            <input 
-                type=\"hidden\" 
-                name=\"_csrf_token\"
-                value=\"{{ csrf_token('authenticate') }}\"
-            >
-
-            <button 
-                class=\"uppercase mt-15 bg-blue-500 text-gray-100 text-lg w-1/5 mt-10 font-extrabold py-4 px-8 rounded-3xl\" 
-                type=\"submit\">
-                Sign in
-            </button>
-        </form>
-    </div>
-</div>
+</html>
 {% endblock %}", "security/login.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\security\\login.html.twig");
     }
 }

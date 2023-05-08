@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* sidebar.html.twig */
+/* /sidebar.html.twig */
 class __TwigTemplate_429a0f56b19c0b4b36227d89a6b7867b35523a6606aa0c8fbdc785fa6eda3ae0 extends Template
 {
     private $source;
@@ -34,7 +34,7 @@ class __TwigTemplate_429a0f56b19c0b4b36227d89a6b7867b35523a6606aa0c8fbdc785fa6ed
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sidebar.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/sidebar.html.twig"));
 
         // line 1
         echo "  <div class=\"leftbar-tab-menu\">
@@ -153,24 +153,9 @@ class __TwigTemplate_429a0f56b19c0b4b36227d89a6b7867b35523a6606aa0c8fbdc785fa6ed
                             </div><!--end sidebarCRM-->
                         </li><!--end nav-item-->
 
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#sidebarProducts\" data-bs-toggle=\"collapse\" role=\"button\"
-                                aria-expanded=\"false\" aria-controls=\"sidebarProducts\">
-                                Products
-                            </a>
-                            <div class=\"collapse \" id=\"sidebarProducts\">
-                                <ul class=\"nav flex-column\">
-                                    <li class=\"nav-item\">
-                                        <a class=\"nav-link\" href=\"products/list\">List</a>
-                                    </li><!--end nav-item-->
-                                    <li class=\"nav-item\">
-                                        <a class=\"nav-link\" href=\"/products/create\">New</a>
-                                    </li><!--end nav-item-->
-                                   
-                                </ul><!--end nav-->
-                            </div><!--end sidebarProducts-->
-                        </li><!--end nav-item-->
-
+                        ";
+        // line 134
+        echo "
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#sidebarLeads\" data-bs-toggle=\"collapse\" role=\"button\"
                                 aria-expanded=\"false\" aria-controls=\"sidebarLeads\">
@@ -307,12 +292,12 @@ class __TwigTemplate_429a0f56b19c0b4b36227d89a6b7867b35523a6606aa0c8fbdc785fa6ed
 
     public function getTemplateName()
     {
-        return "sidebar.html.twig";
+        return "/sidebar.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array (  40 => 1,);
+        return array (  158 => 134,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -433,7 +418,7 @@ class __TwigTemplate_429a0f56b19c0b4b36227d89a6b7867b35523a6606aa0c8fbdc785fa6ed
                             </div><!--end sidebarCRM-->
                         </li><!--end nav-item-->
 
-                        <li class=\"nav-item\">
+                        {# <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#sidebarProducts\" data-bs-toggle=\"collapse\" role=\"button\"
                                 aria-expanded=\"false\" aria-controls=\"sidebarProducts\">
                                 Products
@@ -449,7 +434,7 @@ class __TwigTemplate_429a0f56b19c0b4b36227d89a6b7867b35523a6606aa0c8fbdc785fa6ed
                                    
                                 </ul><!--end nav-->
                             </div><!--end sidebarProducts-->
-                        </li><!--end nav-item-->
+                        </li><!--end nav-item--> #}
 
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#sidebarLeads\" data-bs-toggle=\"collapse\" role=\"button\"
@@ -579,6 +564,6 @@ class __TwigTemplate_429a0f56b19c0b4b36227d89a6b7867b35523a6606aa0c8fbdc785fa6ed
         </div>
         <!--end menu-body-->
     </div><!-- end main-menu-inner-->
-</div>", "sidebar.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\sidebar.html.twig");
+</div>", "/sidebar.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\sidebar.html.twig");
     }
 }

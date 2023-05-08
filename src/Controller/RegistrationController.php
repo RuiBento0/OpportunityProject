@@ -15,11 +15,20 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
+use App\Repository\RolesRepository;
+
 class RegistrationController extends AbstractController
 {
+    public function __construct(RolesRepository $RolesRepository)
+    {
+        $this->RolesRepository = $RolesRepository;
+    }
+
     #[Route('/register', name: 'app_register')]
     public function register(MailerInterface $mailer, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+        $flag = 0;
+
         $token = new Users();
         $user = new Users();
         $roles = new Roles();
@@ -63,18 +72,19 @@ class RegistrationController extends AbstractController
 
             $user->setActive(1);
             $user->setTokens($token);
-/*             $userRole = $this->RolesRepository->find(3); // set automaticly user to "USER" role
+            $userRole = $this->RolesRepository->find(3); // set automaticly user to "USER" role
 
-            $user->setUserRole($userRole); */
+            $user->setUserRole($userRole); 
 
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_index');
+            $flag = 1;
         }
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
+            'flag' => $flag,
         ]);
 
     }

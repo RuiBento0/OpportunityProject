@@ -28,7 +28,7 @@ class Locations
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?locationstype $id_location_type = null;
+    private ?LocationsType $id_location_type = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]

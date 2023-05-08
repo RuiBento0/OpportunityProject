@@ -29,6 +29,15 @@ class OpportunitiesController extends AbstractController
         ]);
     }
 
+    #[Route('/opportunities/create', methods:['GET'], name: 'app_opportunities_new')]
+    public function new(OpportunitiesRepository $opportunitiesRepository, Request $request): Response
+    {
+        return $this->render('opportunities/new.html.twig',[
+            
+        ]);
+    }
+
+
    #[Route('/index', name: 'app_index')]
     public function index2(): Response
     {
