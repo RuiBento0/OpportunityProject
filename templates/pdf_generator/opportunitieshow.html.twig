@@ -1,0 +1,101 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business</title>
+  <style>
+    #banner {
+      background-color: #608E34;
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table td, table th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<div id="banner">
+  <h1>opportunities Details</h1>
+  </div>
+  <br>
+  <table>
+    <tr>
+      <td>Id</td>
+      <td>{{ opportunities.id }}</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{ opportunities.name }}</td>
+    </tr>
+    <tr>
+      <td>Probability</td>
+      <td>{{ opportunities.probability }} %</td>
+    </tr>
+    <tr>
+      <td>Stage</td>
+      <td>{{ opportunities.idsource.name }}</td>
+    </tr>
+    <tr>
+      <td>Account</td>
+      <td>{{ opportunities.idaccount.name }}</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>{{ opportunities.iduser.name }}</td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td>{{ opportunities.idcontact.name }}</td>
+    </tr>
+    <tr>
+      <td>Created By</td>
+      <td>{{ opportunities.createdby.name }}</td>
+    </tr>
+    <tr>
+      <td>Created At</td>
+      <td>{{ opportunities.createdat|date('Y-m-d H:i:s') }}</td>
+    </tr>
+    <tr>
+      <td>Update By</td>
+      <td>{{ opportunities.updatedBy.name }}</td>
+    </tr>
+    <tr>
+      <td>Updated At</td>
+      <td>{{ opportunities.updatedAt|date('Y-m-d H:i:s') }}</td>
+    </tr>
+    
+    <tr>
+      <td>Description</td>
+      <td>{{ opportunities.description }}</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+{% endblock %}

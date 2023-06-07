@@ -67,10 +67,10 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'user_role'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'user_role', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'photo'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'user_role'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'tokens', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'user_role', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'photo'];
     }
 
     /**
@@ -366,6 +366,72 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUserRole', [$user_role]);
 
         return parent::setUserRole($user_role);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCreatedAt', []);
+
+        return parent::getCreatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCreatedAt(?\DateTimeInterface $created_at): \App\Entity\Users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCreatedAt', [$created_at]);
+
+        return parent::setCreatedAt($created_at);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedAt', []);
+
+        return parent::getUpdatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): \App\Entity\Users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updated_at]);
+
+        return parent::setUpdatedAt($updated_at);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPhoto(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPhoto', []);
+
+        return parent::getPhoto();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPhoto(?string $photo): \App\Entity\Users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPhoto', [$photo]);
+
+        return parent::setPhoto($photo);
     }
 
 }

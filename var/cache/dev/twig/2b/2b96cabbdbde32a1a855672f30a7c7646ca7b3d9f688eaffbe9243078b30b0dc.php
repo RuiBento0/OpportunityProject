@@ -70,7 +70,7 @@ class __TwigTemplate_7f36d0c72a4668a4ea6ae36e923d56bd8a904bdcbf5f27f347f07639223
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
@@ -82,16 +82,18 @@ class __TwigTemplate_7f36d0c72a4668a4ea6ae36e923d56bd8a904bdcbf5f27f347f07639223
                         </div><!--end col-->
 
                         <div style=\"margin-top:0px; margin-bottom:20px;padding-left:10px; padding-right:25px\">
+                        <form action=\"/options/stages/create\">
                             <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"";
-        // line 29
+        // line 30
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Search", [], "messages");
         echo "...\" class=\"form-control\"></input>
                             <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">";
-        // line 30
+        // line 31
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Create Stage", [], "messages");
         echo "</button>
+                        </form>
                         </div>
-                        
+
                         <div class=\"row\">
                         <div class=\"col-12\">
                             <div class=\"card\">
@@ -102,66 +104,98 @@ class __TwigTemplate_7f36d0c72a4668a4ea6ae36e923d56bd8a904bdcbf5f27f347f07639223
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
-                <br>
-                    <div class=\"row\" style=\"width: 90%; margin: auto;\">
-                        
-                                <div class=\"card-body\">    
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-hover\" style=\"text-align:center\">
-                        <thead class=\"table-secondary\">
-                            <tr>
-                            <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">";
+                                <div class=\"card-body\">                                    
+                                    <div class=\"table-responsive\" style=\"\">
+                                        <table class=\"table mb-0\">
+                                            <thead>
+                                            <tr>
+                                                <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; cursor: pointer\"  scope=\"col\">";
+        // line 50
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Id", [], "messages");
+        echo "</th>
+                                                <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; cursor: pointer\"  scope=\"col\">";
         // line 51
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Name", [], "messages");
         echo "</th>
-                            <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">";
+                                                <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">";
         // line 52
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Actions", [], "messages");
         echo "</th>
-                            </tr>
-                        </thead>
+                                            </tr><!--end tr-->
+                                            </thead>
+                                            <tbody id=\"myTable\">
+                                                    <tr>
 
-                        <tbody id=\"myTable\">
-                            <tr>
-                            
-                            ";
-        // line 59
+                                                    ";
+        // line 58
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["stages"]) || array_key_exists("stages", $context) ? $context["stages"] : (function () { throw new RuntimeError('Variable "stages" does not exist.', 59, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["stage"]) {
+        $context['_seq'] = twig_ensure_traversable($context["stages"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["stages"]) {
+            // line 59
+            echo "
+                                                        <td style=\"vertical-align: middle\">";
             // line 60
-            echo "                            
-                                    <td style=\"vertical-align: middle\">";
-            // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "name", [], "any", false, false, false, 61), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stages"], "id", [], "any", false, false, false, 60), "html", null, true);
             echo "</td>
- 
+                                                        <td style=\"vertical-align: middle\">";
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stages"], "name", [], "any", false, false, false, 61), "html", null, true);
+            echo "</td>
 
-                                    <td style=\"-webkit-user-select: none; vertical-align: middle\">
-  
-                                    ";
+
+                                                        <td style=\"-webkit-user-select: none; vertical-align: middle\">
+
+                                                        ";
             // line 66
             if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 66), "id", [], "any", true, true, false, 66)) {
                 // line 67
-                echo "                                    <a href=\"stage/show\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
-                                    <a href=\"stage/edit\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                    <a href=\"stage/delete\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
-                                    ";
+                echo "                                                        <a href=\"stages/show/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stages"], "id", [], "any", false, false, false, 67), "html", null, true);
+                echo "\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                                        <a href=\"stages/edit/";
+                // line 68
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stages"], "id", [], "any", false, false, false, 68), "html", null, true);
+                echo "\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                        <a href=\"stages/delete/";
+                // line 69
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stages"], "id", [], "any", false, false, false, 69), "html", null, true);
+                echo "\"><i class=\"las la-trash-alt text-secondary font-16\" onclick=\"return confirm('are you sure?')\"></i></a>
+                                                        ";
             }
             // line 71
-            echo "                                    </td>
-                                </tr>
-                            ";
+            echo "                                                        </td>
+                                                    </tr>
+                                                    ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['stage'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['stages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 74
-        echo "                                        </table><!--end /table-->
-                                    </div><!--end /tableresponsive-->  
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!-- end col -->
+        echo "                                                </tbody>
+                                        </table> 
+                                    </div>          
+                                </div><!--end row-->                                     
+                            </div><!--end card-body--> 
+                        </div><!--end card--> 
+                            <div>
+                            <div class=\"col-auto\" style=\"float:right\">
+                                            <nav aria-label=\"...\">
+                                                <ul class=\"pagination pagination-sm mb-0\">
+                                                    <li class=\"page-item disabled\">
+                                                        <a class=\"page-link\" href=\"#\" tabindex=\"-1\">Previous</a>
+                                                    </li>
+                                                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">2 <span class=\"sr-only\">(current)</span></a>
+                                                    </li>
+                                                    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                         </div> <!--end col-->    
+                        </div> <!--end col-->                               
                     </div><!--end row-->
 
 <script type=\"text/javascript\">
@@ -221,7 +255,7 @@ class __TwigTemplate_7f36d0c72a4668a4ea6ae36e923d56bd8a904bdcbf5f27f347f07639223
 
     public function getDebugInfo()
     {
-        return array (  160 => 74,  152 => 71,  146 => 67,  144 => 66,  136 => 61,  133 => 60,  129 => 59,  119 => 52,  115 => 51,  91 => 30,  87 => 29,  65 => 9,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  174 => 74,  166 => 71,  161 => 69,  157 => 68,  152 => 67,  150 => 66,  142 => 61,  138 => 60,  135 => 59,  131 => 58,  122 => 52,  118 => 51,  114 => 50,  92 => 31,  88 => 30,  65 => 9,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -242,7 +276,7 @@ class __TwigTemplate_7f36d0c72a4668a4ea6ae36e923d56bd8a904bdcbf5f27f347f07639223
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
@@ -254,10 +288,12 @@ class __TwigTemplate_7f36d0c72a4668a4ea6ae36e923d56bd8a904bdcbf5f27f347f07639223
                         </div><!--end col-->
 
                         <div style=\"margin-top:0px; margin-bottom:20px;padding-left:10px; padding-right:25px\">
+                        <form action=\"/options/stages/create\">
                             <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"{% trans %}Search{% endtrans %}...\" class=\"form-control\"></input>
                             <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">{% trans %}Create Stage{% endtrans %}</button>
+                        </form>
                         </div>
-                        
+
                         <div class=\"row\">
                         <div class=\"col-12\">
                             <div class=\"card\">
@@ -268,42 +304,60 @@ class __TwigTemplate_7f36d0c72a4668a4ea6ae36e923d56bd8a904bdcbf5f27f347f07639223
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
-                <br>
-                    <div class=\"row\" style=\"width: 90%; margin: auto;\">
-                        
-                                <div class=\"card-body\">    
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-hover\" style=\"text-align:center\">
-                        <thead class=\"table-secondary\">
-                            <tr>
-                            <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">{% trans %}Name{% endtrans %}</th>
-                            <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">{% trans %}Actions{% endtrans %}</th>
-                            </tr>
-                        </thead>
+                                <div class=\"card-body\">                                    
+                                    <div class=\"table-responsive\" style=\"\">
+                                        <table class=\"table mb-0\">
+                                            <thead>
+                                            <tr>
+                                                <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; cursor: pointer\"  scope=\"col\">{% trans %}Id{% endtrans %}</th>
+                                                <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; cursor: pointer\"  scope=\"col\">{% trans %}Name{% endtrans %}</th>
+                                                <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">{% trans %}Actions{% endtrans %}</th>
+                                            </tr><!--end tr-->
+                                            </thead>
+                                            <tbody id=\"myTable\">
+                                                    <tr>
 
-                        <tbody id=\"myTable\">
-                            <tr>
-                            
-                            {% for stage in stages %}
-                            
-                                    <td style=\"vertical-align: middle\">{{ stage.name }}</td>
- 
+                                                    {% for stages in stages %}
 
-                                    <td style=\"-webkit-user-select: none; vertical-align: middle\">
-  
-                                    {% if app.user.id is defined%}
-                                    <a href=\"stage/show\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
-                                    <a href=\"stage/edit\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                    <a href=\"stage/delete\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
-                                    {% endif %}
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                                        </table><!--end /table-->
-                                    </div><!--end /tableresponsive-->  
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!-- end col -->
+                                                        <td style=\"vertical-align: middle\">{{ stages.id }}</td>
+                                                        <td style=\"vertical-align: middle\">{{ stages.name }}</td>
+
+
+                                                        <td style=\"-webkit-user-select: none; vertical-align: middle\">
+
+                                                        {% if app.user.id is defined%}
+                                                        <a href=\"stages/show/{{ stages.id }}\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                                        <a href=\"stages/edit/{{ stages.id }}\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                        <a href=\"stages/delete/{{ stages.id }}\"><i class=\"las la-trash-alt text-secondary font-16\" onclick=\"return confirm('are you sure?')\"></i></a>
+                                                        {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                        </table> 
+                                    </div>          
+                                </div><!--end row-->                                     
+                            </div><!--end card-body--> 
+                        </div><!--end card--> 
+                            <div>
+                            <div class=\"col-auto\" style=\"float:right\">
+                                            <nav aria-label=\"...\">
+                                                <ul class=\"pagination pagination-sm mb-0\">
+                                                    <li class=\"page-item disabled\">
+                                                        <a class=\"page-link\" href=\"#\" tabindex=\"-1\">Previous</a>
+                                                    </li>
+                                                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">2 <span class=\"sr-only\">(current)</span></a>
+                                                    </li>
+                                                    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                         </div> <!--end col-->    
+                        </div> <!--end col-->                               
                     </div><!--end row-->
 
 <script type=\"text/javascript\">

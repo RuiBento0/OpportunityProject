@@ -20,6 +20,7 @@
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="WebpackEncoreBundle">Symfony\WebpackEncoreBundle\WebpackEncoreBundle</parameter>
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
+      <parameter key="BabDevPagerfantaBundle">BabDev\PagerfantaBundle\BabDevPagerfantaBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -65,6 +66,10 @@
       <parameter key="SymfonyCastsResetPasswordBundle" type="collection">
         <parameter key="path">C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\symfonycasts\reset-password-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\ResetPassword</parameter>
+      </parameter>
+      <parameter key="BabDevPagerfantaBundle" type="collection">
+        <parameter key="path">C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\babdev\pagerfanta-bundle</parameter>
+        <parameter key="namespace">BabDev\PagerfantaBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -207,6 +212,8 @@
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project/templates</parameter>
+    <parameter key="babdev_pagerfanta.default_twig_template">@Pagerfanta/default.html.twig</parameter>
+    <parameter key="babdev_pagerfanta.default_view">default</parameter>
     <parameter key="console.command.ids" type="collection"/>
   </parameters>
   <services>
@@ -218,22 +225,86 @@
     <service id="App\Controller\AccountsController" class="App\Controller\AccountsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="security.helper"/>
       <argument type="service" id="App\Repository\AccountsRepository"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Repository\PhonesRepository"/>
+      <argument type="service" id="App\Repository\EmailsRepository"/>
+      <argument type="service" id="App\Repository\AddressesRepository"/>
+      <argument type="service" id="App\Repository\EntitiesRepository"/>
+      <argument type="service" id="App\Repository\DepartmentsRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\AccountsController"/>
+      </call>
+    </service>
+    <service id="App\Controller\AuthenticationController" class="App\Controller\AuthenticationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="security.helper"/>
+      <argument type="service" id="security.user_password_hasher"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Repository\UsersRepository"/>
+      <argument type="service" id="App\Repository\RolesRepository"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\AuthenticationController"/>
       </call>
     </service>
     <service id="App\Controller\ContactsController" class="App\Controller\ContactsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="security.helper"/>
       <argument type="service" id="App\Repository\ContactsRepository"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Repository\PhonesRepository"/>
+      <argument type="service" id="App\Repository\EmailsRepository"/>
+      <argument type="service" id="App\Repository\AddressesRepository"/>
+      <argument type="service" id="App\Repository\EntitiesRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\ContactsController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ExcelGeneratorController" class="App\Controller\ExcelGeneratorController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="security.helper"/>
+      <argument type="service" id="App\Repository\AccountsTypeRepository"/>
+      <argument type="service" id="App\Repository\AreaRepository"/>
+      <argument type="service" id="App\Repository\AccountsRepository"/>
+      <argument type="service" id="App\Repository\ContactsRepository"/>
+      <argument type="service" id="App\Repository\UsersRepository"/>
+      <argument type="service" id="App\Repository\PhonesRepository"/>
+      <argument type="service" id="App\Repository\EmailsRepository"/>
+      <argument type="service" id="App\Repository\LeadsRepository"/>
+      <argument type="service" id="App\Repository\OpportunitiesRepository"/>
+      <argument type="service" id="App\Repository\DepartmentsRepository"/>
+      <argument type="service" id="App\Repository\StagesRepository"/>
+      <argument type="service" id="App\Repository\SourcesRepository"/>
+      <argument type="service" id="App\Repository\CampaignRepository"/>
+      <argument type="service" id="App\Repository\StatusRepository"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\ExcelGeneratorController"/>
       </call>
     </service>
     <service id="App\Controller\LeadsController" class="App\Controller\LeadsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="security.helper"/>
+      <argument type="service" id="App\Repository\AccountsRepository"/>
+      <argument type="service" id="security.user_password_hasher"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Repository\OpportunitiesRepository"/>
+      <argument type="service" id="App\Repository\LocationsRepository"/>
+      <argument type="service" id="App\Repository\DepartmentsRepository"/>
+      <argument type="service" id="App\Repository\CategoriesRepository"/>
+      <argument type="service" id="App\Repository\EntitiesRepository"/>
+      <argument type="service" id="App\Repository\PrioritiesRepository"/>
+      <argument type="service" id="App\Repository\StatusRepository"/>
+      <argument type="service" id="App\Repository\StagesRepository"/>
+      <argument type="service" id="App\Repository\AreaRepository"/>
+      <argument type="service" id="App\Repository\AccountsTypeRepository"/>
+      <argument type="service" id="App\Repository\CampaignRepository"/>
+      <argument type="service" id="App\Repository\SourcesRepository"/>
       <argument type="service" id="App\Repository\LeadsRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\LeadsController"/>
@@ -249,6 +320,7 @@
     <service id="App\Controller\MainController" class="App\Controller\MainController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="App\Repository\UsersRepository"/>
       <argument type="service" id="App\Repository\RolesRepository"/>
       <argument type="service" id="App\Repository\DepartmentsRepository"/>
@@ -259,6 +331,13 @@
       <argument type="service" id="App\Repository\StagesRepository"/>
       <argument type="service" id="App\Repository\AreaRepository"/>
       <argument type="service" id="App\Repository\AccountsTypeRepository"/>
+      <argument type="service" id="App\Repository\CampaignRepository"/>
+      <argument type="service" id="App\Repository\SourcesRepository"/>
+      <argument type="service" id="App\Repository\LocationsRepository"/>
+      <argument type="service" id="App\Repository\ContactsRepository"/>
+      <argument type="service" id="App\Repository\AccountsRepository"/>
+      <argument type="service" id="App\Repository\LeadsRepository"/>
+      <argument type="service" id="App\Repository\OpportunitiesRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\MainController"/>
       </call>
@@ -266,9 +345,58 @@
     <service id="App\Controller\OpportunitiesController" class="App\Controller\OpportunitiesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="security.helper"/>
+      <argument type="service" id="security.user_password_hasher"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Repository\LocationsRepository"/>
+      <argument type="service" id="App\Repository\DepartmentsRepository"/>
+      <argument type="service" id="App\Repository\CategoriesRepository"/>
+      <argument type="service" id="App\Repository\EntitiesRepository"/>
+      <argument type="service" id="App\Repository\PrioritiesRepository"/>
+      <argument type="service" id="App\Repository\StatusRepository"/>
+      <argument type="service" id="App\Repository\StagesRepository"/>
+      <argument type="service" id="App\Repository\AccountsTypeRepository"/>
+      <argument type="service" id="App\Repository\CampaignRepository"/>
+      <argument type="service" id="App\Repository\SourcesRepository"/>
       <argument type="service" id="App\Repository\OpportunitiesRepository"/>
+      <argument type="service" id="App\Repository\UsersRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\OpportunitiesController"/>
+      </call>
+    </service>
+    <service id="App\Controller\OptionsController" class="App\Controller\OptionsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="security.helper"/>
+      <argument type="service" id="security.user_password_hasher"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Repository\LocationsRepository"/>
+      <argument type="service" id="App\Repository\DepartmentsRepository"/>
+      <argument type="service" id="App\Repository\CategoriesRepository"/>
+      <argument type="service" id="App\Repository\EntitiesRepository"/>
+      <argument type="service" id="App\Repository\PrioritiesRepository"/>
+      <argument type="service" id="App\Repository\StatusRepository"/>
+      <argument type="service" id="App\Repository\StagesRepository"/>
+      <argument type="service" id="App\Repository\AreaRepository"/>
+      <argument type="service" id="App\Repository\AccountsTypeRepository"/>
+      <argument type="service" id="App\Repository\CampaignRepository"/>
+      <argument type="service" id="App\Repository\SourcesRepository"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\OptionsController"/>
+      </call>
+    </service>
+    <service id="App\Controller\PdfGeneratorController" class="App\Controller\PdfGeneratorController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\AccountsRepository"/>
+      <argument type="service" id="App\Repository\ContactsRepository"/>
+      <argument type="service" id="App\Repository\UsersRepository"/>
+      <argument type="service" id="App\Repository\PhonesRepository"/>
+      <argument type="service" id="App\Repository\EmailsRepository"/>
+      <argument type="service" id="App\Repository\LeadsRepository"/>
+      <argument type="service" id="App\Repository\OpportunitiesRepository"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\PdfGeneratorController"/>
       </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
@@ -277,15 +405,6 @@
       <argument type="service" id="App\Repository\RolesRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\RegistrationController"/>
-      </call>
-    </service>
-    <service id="App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <argument type="service" id="symfonycasts.reset_password.helper"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\ResetPasswordController"/>
       </call>
     </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
@@ -299,19 +418,64 @@
     <service id="App\Form\AccountsFormType" class="App\Form\AccountsFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\AreaFormType" class="App\Form\AreaFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CampaignFormType" class="App\Form\CampaignFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CategoriesFormType" class="App\Form\CategoriesFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ContactsFormType" class="App\Form\ContactsFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ConvertedFormType" class="App\Form\ConvertedFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\DepartmentsFormType" class="App\Form\DepartmentsFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EntitiesFormType" class="App\Form\EntitiesFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\LeadsFormType" class="App\Form\LeadsFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\LocationsFormType" class="App\Form\LocationsFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\OpportunitiesFormType" class="App\Form\OpportunitiesFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PhonesFormType" class="App\Form\PhonesFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PrioritiesFormType" class="App\Form\PrioritiesFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RolesFormType" class="App\Form\RolesFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SourceFormType" class="App\Form\SourceFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\StagesFormType" class="App\Form\StagesFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\StatusFormType" class="App\Form\StatusFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\TypesFormType" class="App\Form\TypesFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\UserFormType" class="App\Form\UserFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\AccountsRepository" class="App\Repository\AccountsRepository" autowire="true" autoconfigure="true">
@@ -946,11 +1110,26 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AccountsFormType</argument>
+        <argument>App\Form\AreaFormType</argument>
+        <argument>App\Form\CampaignFormType</argument>
+        <argument>App\Form\CategoriesFormType</argument>
         <argument>App\Form\ContactsFormType</argument>
+        <argument>App\Form\ConvertedFormType</argument>
+        <argument>App\Form\DepartmentsFormType</argument>
+        <argument>App\Form\EntitiesFormType</argument>
         <argument>App\Form\LeadsFormType</argument>
+        <argument>App\Form\LocationsFormType</argument>
         <argument>App\Form\OpportunitiesFormType</argument>
+        <argument>App\Form\PhonesFormType</argument>
+        <argument>App\Form\PrioritiesFormType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
+        <argument>App\Form\RolesFormType</argument>
+        <argument>App\Form\SourceFormType</argument>
+        <argument>App\Form\StagesFormType</argument>
+        <argument>App\Form\StatusFormType</argument>
+        <argument>App\Form\TypesFormType</argument>
+        <argument>App\Form\UserFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1429,6 +1608,22 @@
           <argument>onKernelException</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="pagerfanta.event_listener.convert_not_valid_max_per_page_to_not_found"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>512</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="pagerfanta.event_listener.convert_not_valid_current_page_to_not_found"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>512</argument>
       </call>
       <call method="addListener">
         <argument>kernel.response</argument>
@@ -2128,7 +2323,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.6IUub4W"/>
+      <argument type="service" id=".service_locator..V1ECbp"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2872,7 +3067,7 @@
     <service id="security.logout.listener.default.main" class="Symfony\Component\Security\Http\EventListener\DefaultLogoutListener">
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
       <argument type="service" id="security.http_utils"/>
-      <argument>/</argument>
+      <argument>app_main</argument>
     </service>
     <service id="security.logout.listener.session.main" class="Symfony\Component\Security\Http\EventListener\SessionLogoutListener">
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
@@ -3819,6 +4014,9 @@
       <call method="addExtension">
         <argument type="service" id="webpack_encore.twig_stimulus_extension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="pagerfanta.twig_extension"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3848,6 +4046,12 @@
           <argument>suggestTag</argument>
         </argument>
       </call>
+      <call method="registerUndefinedFunctionCallback">
+        <argument type="collection">
+          <argument type="service" id="pagerfanta.undefined_callable_handler"/>
+          <argument>onUndefinedFunction</argument>
+        </argument>
+      </call>
       <configurator service="twig.configurator.environment" method="configure"/>
     </service>
     <service id="twig.app_variable" class="Symfony\Bridge\Twig\AppVariable">
@@ -3867,6 +4071,7 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
+        <argument key="C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\pagerfanta\twig/templates/">Pagerfanta</argument>
         <argument key="C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
         <argument key="C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
@@ -3882,6 +4087,10 @@
       <tag name="twig.loader"/>
       <argument type="collection"/>
       <argument>C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project</argument>
+      <call method="addPath">
+        <argument>C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\pagerfanta\twig/templates/</argument>
+        <argument>Pagerfanta</argument>
+      </call>
       <call method="addPath">
         <argument>C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
@@ -3905,6 +4114,14 @@
       <call method="addPath">
         <argument>C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>!DoctrineMigrations</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\babdev\pagerfanta-bundle/templates</argument>
+        <argument>BabDevPagerfanta</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project\vendor\babdev\pagerfanta-bundle/templates</argument>
+        <argument>!BabDevPagerfanta</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\RuiMiguelCarvalhoBen\Documents\symfony-cli\my_project/templates</argument>
@@ -3986,7 +4203,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader">
-      <argument type="service" id=".service_locator.L1OAKmd"/>
+      <argument type="service" id=".service_locator.rnvIzxf"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
       <argument type="service" id="twig"/>
@@ -4177,12 +4394,101 @@
       <argument>3600</argument>
       <argument>3600</argument>
     </service>
+    <service id="pagerfanta.route_generator_factory" class="BabDev\PagerfantaBundle\RouteGenerator\RequestAwareRouteGeneratorFactory" public="true">
+      <tag name="container.private" package="babdev/pagerfanta-bundle" version="3.5"/>
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="property_accessor" on-invalid="ignore"/>
+    </service>
+    <service id="pagerfanta.view.default" class="Pagerfanta\View\DefaultView">
+      <tag name="pagerfanta.view" alias="default"/>
+    </service>
+    <service id="pagerfanta.view.foundation6" class="Pagerfanta\View\Foundation6View">
+      <tag name="pagerfanta.view" alias="foundation6"/>
+    </service>
+    <service id="pagerfanta.view.semantic_ui" class="Pagerfanta\View\SemanticUiView">
+      <tag name="pagerfanta.view" alias="semantic_ui"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap" class="Pagerfanta\View\TwitterBootstrapView">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap3" class="Pagerfanta\View\TwitterBootstrap3View">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap3"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap4" class="Pagerfanta\View\TwitterBootstrap4View">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap4"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap5" class="Pagerfanta\View\TwitterBootstrap5View">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap5"/>
+    </service>
+    <service id="pagerfanta.view_factory" class="Pagerfanta\View\ViewFactory" public="true">
+      <tag name="container.private" package="babdev/pagerfanta-bundle" version="3.5"/>
+      <call method="set">
+        <argument>default</argument>
+        <argument type="service" id="pagerfanta.view.default"/>
+      </call>
+      <call method="set">
+        <argument>foundation6</argument>
+        <argument type="service" id="pagerfanta.view.foundation6"/>
+      </call>
+      <call method="set">
+        <argument>semantic_ui</argument>
+        <argument type="service" id="pagerfanta.view.semantic_ui"/>
+      </call>
+      <call method="set">
+        <argument>twitter_bootstrap</argument>
+        <argument type="service" id="pagerfanta.view.twitter_bootstrap"/>
+      </call>
+      <call method="set">
+        <argument>twitter_bootstrap3</argument>
+        <argument type="service" id="pagerfanta.view.twitter_bootstrap3"/>
+      </call>
+      <call method="set">
+        <argument>twitter_bootstrap4</argument>
+        <argument type="service" id="pagerfanta.view.twitter_bootstrap4"/>
+      </call>
+      <call method="set">
+        <argument>twitter_bootstrap5</argument>
+        <argument type="service" id="pagerfanta.view.twitter_bootstrap5"/>
+      </call>
+      <call method="set">
+        <argument>twig</argument>
+        <argument type="service" id="pagerfanta.view.twig"/>
+      </call>
+    </service>
+    <service id="pagerfanta.twig_extension" class="Pagerfanta\Twig\Extension\PagerfantaExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="pagerfanta.twig_runtime" class="Pagerfanta\Twig\Extension\PagerfantaRuntime">
+      <tag name="twig.runtime"/>
+      <argument>default</argument>
+      <argument type="service" id="pagerfanta.view_factory"/>
+      <argument type="service" id="pagerfanta.route_generator_factory"/>
+    </service>
+    <service id="pagerfanta.undefined_callable_handler" class="BabDev\PagerfantaBundle\Twig\UndefinedCallableHandler"/>
+    <service id="pagerfanta.view.twig" class="Pagerfanta\Twig\View\TwigView">
+      <tag name="pagerfanta.view" alias="twig"/>
+      <argument type="service" id="twig"/>
+      <argument>@Pagerfanta/default.html.twig</argument>
+    </service>
+    <service id="pagerfanta.event_listener.convert_not_valid_max_per_page_to_not_found" class="BabDev\PagerfantaBundle\EventListener\ConvertNotValidCurrentPageToNotFoundListener">
+      <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" priority="512"/>
+    </service>
+    <service id="pagerfanta.event_listener.convert_not_valid_current_page_to_not_found" class="BabDev\PagerfantaBundle\EventListener\ConvertNotValidMaxPerPageToNotFoundListener">
+      <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" priority="512"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AccountsController" class="App\Controller\AccountsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AccountsController" class="App\Controller\AccountsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AccountsController" class="App\Controller\AccountsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AuthenticationController" class="App\Controller\AuthenticationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AuthenticationController" class="App\Controller\AuthenticationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AuthenticationController" class="App\Controller\AuthenticationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactsController" class="App\Controller\ContactsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactsController" class="App\Controller\ContactsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactsController" class="App\Controller\ContactsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ExcelGeneratorController" class="App\Controller\ExcelGeneratorController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ExcelGeneratorController" class="App\Controller\ExcelGeneratorController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ExcelGeneratorController" class="App\Controller\ExcelGeneratorController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LeadsController" class="App\Controller\LeadsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LeadsController" class="App\Controller\LeadsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LeadsController" class="App\Controller\LeadsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4195,27 +4501,60 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OpportunitiesController" class="App\Controller\OpportunitiesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OpportunitiesController" class="App\Controller\OpportunitiesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\OpportunitiesController" class="App\Controller\OpportunitiesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OptionsController" class="App\Controller\OptionsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OptionsController" class="App\Controller\OptionsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\OptionsController" class="App\Controller\OptionsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PdfGeneratorController" class="App\Controller\PdfGeneratorController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PdfGeneratorController" class="App\Controller\PdfGeneratorController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PdfGeneratorController" class="App\Controller\PdfGeneratorController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AccountsFormType" class="App\Form\AccountsFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AccountsFormType" class="App\Form\AccountsFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AreaFormType" class="App\Form\AreaFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AreaFormType" class="App\Form\AreaFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CampaignFormType" class="App\Form\CampaignFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CampaignFormType" class="App\Form\CampaignFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoriesFormType" class="App\Form\CategoriesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CategoriesFormType" class="App\Form\CategoriesFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactsFormType" class="App\Form\ContactsFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactsFormType" class="App\Form\ContactsFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ConvertedFormType" class="App\Form\ConvertedFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ConvertedFormType" class="App\Form\ConvertedFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DepartmentsFormType" class="App\Form\DepartmentsFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\DepartmentsFormType" class="App\Form\DepartmentsFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EntitiesFormType" class="App\Form\EntitiesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EntitiesFormType" class="App\Form\EntitiesFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LeadsFormType" class="App\Form\LeadsFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\LeadsFormType" class="App\Form\LeadsFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LocationsFormType" class="App\Form\LocationsFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\LocationsFormType" class="App\Form\LocationsFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OpportunitiesFormType" class="App\Form\OpportunitiesFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\OpportunitiesFormType" class="App\Form\OpportunitiesFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PhonesFormType" class="App\Form\PhonesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PhonesFormType" class="App\Form\PhonesFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PrioritiesFormType" class="App\Form\PrioritiesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PrioritiesFormType" class="App\Form\PrioritiesFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RolesFormType" class="App\Form\RolesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RolesFormType" class="App\Form\RolesFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SourceFormType" class="App\Form\SourceFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SourceFormType" class="App\Form\SourceFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\StagesFormType" class="App\Form\StagesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\StagesFormType" class="App\Form\StagesFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\StatusFormType" class="App\Form\StatusFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\StatusFormType" class="App\Form\StatusFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TypesFormType" class="App\Form\TypesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\TypesFormType" class="App\Form\TypesFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserFormType" class="App\Form\UserFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\UserFormType" class="App\Form\UserFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AccountsRepository" class="App\Repository\AccountsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AccountsRepository" class="App\Repository\AccountsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AccountsTypeRepository" class="App\Repository\AccountsTypeRepository" autowire="true" abstract="true"/>
@@ -4599,16 +4938,24 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.WX6edlh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.M9PMcRV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="accountsRepository" type="service_closure" id="App\Repository\AccountsRepository"/>
+        <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
     </service>
-    <service id=".service_locator.3_A.QSe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Eb10OZq" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="contactsRepository" type="service_closure" id="App\Repository\ContactsRepository"/>
+        <argument key="security" type="service_closure" id="security.helper"/>
+        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
+      </argument>
+    </service>
+    <service id=".service_locator.JiduedT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
+        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
     <service id=".service_locator.R3NbhXz" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -4629,6 +4976,12 @@
         <argument key="mailer2" type="service_closure" id="mailer.mailer"/>
       </argument>
     </service>
+    <service id=".service_locator.SxWgT3I" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
+      </argument>
+    </service>
     <service id=".service_locator.v5preZg" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4643,70 +4996,140 @@
         <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.SxWgT3I" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
-      </argument>
-    </service>
     <service id=".service_locator.UDgw6Ol" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".errored.paPPCyT" class="App\Controller\MailerInterface"/>
-    <service id=".errored.Du4jWMt" class="App\Controller\Request"/>
-    <service id=".errored.n.tTe3L" class="App\Controller\UserPasswordHasherInterface"/>
-    <service id=".errored.ISsV3qS" class="App\Controller\EntityManagerInterface"/>
-    <service id=".service_locator.bmnKsCa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.4u5os03" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="entityManager" type="service_closure" id=".errored.ISsV3qS"/>
-        <argument key="mailer" type="service_closure" id=".errored.paPPCyT"/>
-        <argument key="request" type="service_closure" id=".errored.Du4jWMt"/>
-        <argument key="userPasswordHasher" type="service_closure" id=".errored.n.tTe3L"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.othuHXY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.e0eBX1Q" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\AccountsController::list" type="service_closure" id=".service_locator.WX6edlh"/>
-        <argument key="App\Controller\AccountsController::new" type="service_closure" id=".service_locator.WX6edlh"/>
-        <argument key="App\Controller\ContactsController::list" type="service_closure" id=".service_locator.3_A.QSe"/>
-        <argument key="App\Controller\ContactsController::new" type="service_closure" id=".service_locator.3_A.QSe"/>
+        <argument key="App\Controller\AccountsController::createaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AccountsController::editaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AuthenticationController::createrole" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AuthenticationController::createuser" type="service_closure" id=".service_locator.JiduedT"/>
+        <argument key="App\Controller\AuthenticationController::editrole" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AuthenticationController::edituser" type="service_closure" id=".service_locator.Eb10OZq"/>
+        <argument key="App\Controller\ContactsController::createcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ContactsController::editcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::excelgeneratoraccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::excelgeneratorcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::excelgeneratorleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::excelgeneratoropportunities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::excelgeneratorusers" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::exceluploadaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::exceluploadcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::exceluploadleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::exceluploadopportunities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::reportexcelaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController::reportexcelconverted" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\LeadsController::convertleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\LeadsController::createleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\LeadsController::editlead" type="service_closure" id=".service_locator.M9PMcRV"/>
         <argument key="App\Controller\LeadsController::list" type="service_closure" id=".service_locator.R3NbhXz"/>
-        <argument key="App\Controller\LeadsController::new" type="service_closure" id=".service_locator.R3NbhXz"/>
         <argument key="App\Controller\MailerController::sendEmail" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\MailerController::sendEmail2" type="service_closure" id=".service_locator.gvsgc.U"/>
+        <argument key="App\Controller\MainController::listprofile" type="service_closure" id=".service_locator.SxWgT3I"/>
+        <argument key="App\Controller\OpportunitiesController::createopportunities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OpportunitiesController::editlead" type="service_closure" id=".service_locator.M9PMcRV"/>
         <argument key="App\Controller\OpportunitiesController::list" type="service_closure" id=".service_locator.v5preZg"/>
-        <argument key="App\Controller\OpportunitiesController::new" type="service_closure" id=".service_locator.v5preZg"/>
+        <argument key="App\Controller\OptionsController::createaccountstype" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createarea" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createcampaign" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createcategories" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createdepartments" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createentities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createlocations" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createpriorities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createsources" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createstages" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::createstatus" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editaccountstype" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editarea" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editcampaign" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editcategories" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editcsource" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editdepartments" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editentities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editlocations" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editpriorities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editstages" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController::editstatus" type="service_closure" id=".service_locator.M9PMcRV"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.e6b0BD8"/>
-        <argument key="App\Controller\ResetPasswordController::request" type="service_closure" id=".service_locator.CpaXrFh"/>
-        <argument key="App\Controller\ResetPasswordController::reset" type="service_closure" id=".service_locator.SxWgT3I"/>
+        <argument key="App\Controller\SecurityController::createpassword" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\SecurityController::loginwithtoken" type="service_closure" id=".service_locator.UDgw6Ol"/>
-        <argument key="App\Controller\SecurityController::register" type="service_closure" id=".service_locator.bmnKsCa"/>
+        <argument key="App\Controller\SecurityController::newpassword" type="service_closure" id=".service_locator.4u5os03"/>
+        <argument key="App\Controller\SecurityController::resetpassword" type="service_closure" id=".service_locator.e6b0BD8"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
-        <argument key="App\Controller\AccountsController:list" type="service_closure" id=".service_locator.WX6edlh"/>
-        <argument key="App\Controller\AccountsController:new" type="service_closure" id=".service_locator.WX6edlh"/>
-        <argument key="App\Controller\ContactsController:list" type="service_closure" id=".service_locator.3_A.QSe"/>
-        <argument key="App\Controller\ContactsController:new" type="service_closure" id=".service_locator.3_A.QSe"/>
+        <argument key="App\Controller\AccountsController:createaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AccountsController:editaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AuthenticationController:createrole" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AuthenticationController:createuser" type="service_closure" id=".service_locator.JiduedT"/>
+        <argument key="App\Controller\AuthenticationController:editrole" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\AuthenticationController:edituser" type="service_closure" id=".service_locator.Eb10OZq"/>
+        <argument key="App\Controller\ContactsController:createcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ContactsController:editcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:excelgeneratoraccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:excelgeneratorcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:excelgeneratorleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:excelgeneratoropportunities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:excelgeneratorusers" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:exceluploadaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:exceluploadcontacts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:exceluploadleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:exceluploadopportunities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:reportexcelaccounts" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\ExcelGeneratorController:reportexcelconverted" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\LeadsController:convertleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\LeadsController:createleads" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\LeadsController:editlead" type="service_closure" id=".service_locator.M9PMcRV"/>
         <argument key="App\Controller\LeadsController:list" type="service_closure" id=".service_locator.R3NbhXz"/>
-        <argument key="App\Controller\LeadsController:new" type="service_closure" id=".service_locator.R3NbhXz"/>
         <argument key="App\Controller\MailerController:sendEmail" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\MailerController:sendEmail2" type="service_closure" id=".service_locator.gvsgc.U"/>
+        <argument key="App\Controller\MainController:listprofile" type="service_closure" id=".service_locator.SxWgT3I"/>
+        <argument key="App\Controller\OpportunitiesController:createopportunities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OpportunitiesController:editlead" type="service_closure" id=".service_locator.M9PMcRV"/>
         <argument key="App\Controller\OpportunitiesController:list" type="service_closure" id=".service_locator.v5preZg"/>
-        <argument key="App\Controller\OpportunitiesController:new" type="service_closure" id=".service_locator.v5preZg"/>
+        <argument key="App\Controller\OptionsController:createaccountstype" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createarea" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createcampaign" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createcategories" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createdepartments" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createentities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createlocations" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createpriorities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createsources" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createstages" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:createstatus" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editaccountstype" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editarea" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editcampaign" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editcategories" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editcsource" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editdepartments" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editentities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editlocations" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editpriorities" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editstages" type="service_closure" id=".service_locator.M9PMcRV"/>
+        <argument key="App\Controller\OptionsController:editstatus" type="service_closure" id=".service_locator.M9PMcRV"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.e6b0BD8"/>
-        <argument key="App\Controller\ResetPasswordController:request" type="service_closure" id=".service_locator.CpaXrFh"/>
-        <argument key="App\Controller\ResetPasswordController:reset" type="service_closure" id=".service_locator.SxWgT3I"/>
+        <argument key="App\Controller\SecurityController:createpassword" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\SecurityController:loginwithtoken" type="service_closure" id=".service_locator.UDgw6Ol"/>
-        <argument key="App\Controller\SecurityController:register" type="service_closure" id=".service_locator.bmnKsCa"/>
+        <argument key="App\Controller\SecurityController:newpassword" type="service_closure" id=".service_locator.4u5os03"/>
+        <argument key="App\Controller\SecurityController:resetpassword" type="service_closure" id=".service_locator.e6b0BD8"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
       </argument>
@@ -4770,15 +5193,30 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.6IUub4W" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..V1ECbp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AccountsFormType" type="service_closure" id="App\Form\AccountsFormType"/>
+        <argument key="App\Form\AreaFormType" type="service_closure" id="App\Form\AreaFormType"/>
+        <argument key="App\Form\CampaignFormType" type="service_closure" id="App\Form\CampaignFormType"/>
+        <argument key="App\Form\CategoriesFormType" type="service_closure" id="App\Form\CategoriesFormType"/>
         <argument key="App\Form\ContactsFormType" type="service_closure" id="App\Form\ContactsFormType"/>
+        <argument key="App\Form\ConvertedFormType" type="service_closure" id="App\Form\ConvertedFormType"/>
+        <argument key="App\Form\DepartmentsFormType" type="service_closure" id="App\Form\DepartmentsFormType"/>
+        <argument key="App\Form\EntitiesFormType" type="service_closure" id="App\Form\EntitiesFormType"/>
         <argument key="App\Form\LeadsFormType" type="service_closure" id="App\Form\LeadsFormType"/>
+        <argument key="App\Form\LocationsFormType" type="service_closure" id="App\Form\LocationsFormType"/>
         <argument key="App\Form\OpportunitiesFormType" type="service_closure" id="App\Form\OpportunitiesFormType"/>
+        <argument key="App\Form\PhonesFormType" type="service_closure" id="App\Form\PhonesFormType"/>
+        <argument key="App\Form\PrioritiesFormType" type="service_closure" id="App\Form\PrioritiesFormType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service_closure" id="App\Form\ResetPasswordRequestFormType"/>
+        <argument key="App\Form\RolesFormType" type="service_closure" id="App\Form\RolesFormType"/>
+        <argument key="App\Form\SourceFormType" type="service_closure" id="App\Form\SourceFormType"/>
+        <argument key="App\Form\StagesFormType" type="service_closure" id="App\Form\StagesFormType"/>
+        <argument key="App\Form\StatusFormType" type="service_closure" id="App\Form\StatusFormType"/>
+        <argument key="App\Form\TypesFormType" type="service_closure" id="App\Form\TypesFormType"/>
+        <argument key="App\Form\UserFormType" type="service_closure" id="App\Form\UserFormType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -4881,9 +5319,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
+    <service id=".service_locator.l1ae.Qz.App\Controller\AuthenticationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\AuthenticationController"/>
+      <argument>App\Controller\AuthenticationController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
+    </service>
     <service id=".service_locator.l1ae.Qz.App\Controller\ContactsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ContactsController"/>
       <argument>App\Controller\ContactsController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
+    </service>
+    <service id=".service_locator.l1ae.Qz.App\Controller\ExcelGeneratorController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ExcelGeneratorController"/>
+      <argument>App\Controller\ExcelGeneratorController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
@@ -4911,15 +5361,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
-    <service id=".service_locator.l1ae.Qz.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
-      <argument>App\Controller\RegistrationController</argument>
+    <service id=".service_locator.l1ae.Qz.App\Controller\OptionsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\OptionsController"/>
+      <argument>App\Controller\OptionsController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
-    <service id=".service_locator.l1ae.Qz.App\Controller\ResetPasswordController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ResetPasswordController"/>
-      <argument>App\Controller\ResetPasswordController</argument>
+    <service id=".service_locator.l1ae.Qz.App\Controller\PdfGeneratorController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PdfGeneratorController"/>
+      <argument>App\Controller\PdfGeneratorController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
+    </service>
+    <service id=".service_locator.l1ae.Qz.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
+      <argument>App\Controller\RegistrationController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
@@ -5058,12 +5514,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.othuHXY"/>
+      <argument type="service" id=".service_locator.e0eBX1Q"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.othuHXY"/>
+      <argument type="service" id=".service_locator.e0eBX1Q"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5633,12 +6089,13 @@
         <argument key="maker.auto_command.make_stimulus_controller" type="service_closure" id=".maker.auto_command.make_stimulus_controller.lazy"/>
       </argument>
     </service>
-    <service id=".service_locator.L1OAKmd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.rnvIzxf" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Twig\Extension\CsrfRuntime" type="service_closure" id="twig.runtime.security_csrf"/>
         <argument key="Symfony\Bridge\Twig\Extension\HttpKernelRuntime" type="service_closure" id="twig.runtime.httpkernel"/>
         <argument key="Symfony\Component\Form\FormRenderer" type="service_closure" id="twig.form.renderer"/>
+        <argument key="Pagerfanta\Twig\Extension\PagerfantaRuntime" type="service_closure" id="pagerfanta.twig_runtime"/>
       </argument>
     </service>
     <service id="App\Kernel" alias="kernel" public="true"/>
@@ -5747,19 +6204,23 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
+    <service id="Pagerfanta\RouteGenerator\RouteGeneratorFactoryInterface" alias="pagerfanta.route_generator_factory"/>
+    <service id="Pagerfanta\View\ViewFactory" alias="pagerfanta.view_factory"/>
+    <service id="Pagerfanta\View\ViewFactoryInterface" alias="pagerfanta.view_factory"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.othuHXY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.e0eBX1Q"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~2XLhXrg"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
+    <service id=".service_locator.J0d0ctP" alias=".service_locator.Eb10OZq"/>
     <service id=".service_locator.GFDohWa" alias=".service_locator.e6b0BD8"/>
-    <service id=".service_locator.6dlR2s." alias=".service_locator.bmnKsCa"/>
-    <service id=".service_locator.8rRj0TC" alias=".service_locator.othuHXY"/>
+    <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
+    <service id=".service_locator.8RBwPZ7" alias=".service_locator.e0eBX1Q"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.l6ELYLY"/>
-    <service id=".service_locator.me5g4Hd" alias=".service_locator.6IUub4W"/>
+    <service id=".service_locator.wAMMPaI" alias=".service_locator..V1ECbp"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
     <service id=".service_locator.jkb6XQV" alias=".service_locator.l1ae.Qz"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
@@ -5779,15 +6240,17 @@
     <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
-    <service id=".service_locator..BiZ4L9" alias=".service_locator.WX6edlh"/>
-    <service id=".service_locator.klNwYaN" alias=".service_locator.3_A.QSe"/>
+    <service id=".service_locator.tF0tk8K" alias=".service_locator.M9PMcRV"/>
+    <service id=".service_locator.vFXOPxS" alias=".service_locator.Eb10OZq"/>
+    <service id=".service_locator.v60vCyD" alias=".service_locator.JiduedT"/>
     <service id=".service_locator.5AU9R0k" alias=".service_locator.R3NbhXz"/>
     <service id=".service_locator.yciRRzv" alias=".service_locator.CpaXrFh"/>
     <service id=".service_locator.RYo0TVe" alias=".service_locator.gvsgc.U"/>
+    <service id=".service_locator.9VB8ElW" alias=".service_locator.SxWgT3I"/>
     <service id=".service_locator.uEHVHzO" alias=".service_locator.v5preZg"/>
     <service id=".service_locator.8kCMttK" alias=".service_locator.e6b0BD8"/>
-    <service id=".service_locator.9VB8ElW" alias=".service_locator.SxWgT3I"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
+    <service id=".service_locator.LzwvCJx" alias=".service_locator.4u5os03"/>
     <service id=".service_locator.ADknlmN" alias=".service_locator.l1ae.Qz"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
     <service id=".service_locator.aa1PbBb" alias=".service_locator.nLgZj7R"/>

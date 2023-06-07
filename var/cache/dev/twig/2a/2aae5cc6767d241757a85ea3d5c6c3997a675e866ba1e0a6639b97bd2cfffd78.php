@@ -69,7 +69,7 @@ class __TwigTemplate_309294f02e0b28308f39304341c91c58989766f97286b3529fc575e7b4b
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/accounts\">Accounts</a>
                                         </li><!--end nav-item-->
@@ -80,8 +80,18 @@ class __TwigTemplate_309294f02e0b28308f39304341c91c58989766f97286b3529fc575e7b4b
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                         
-                        <p><input style=\"width: 300px;\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"Search...\" class=\"form-control\"></p><br>
-
+                        <form action=\"/options/contacts/create\">
+                            <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"";
+        // line 28
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Search", [], "messages");
+        echo "...\" class=\"form-control\"></input>
+                            <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">";
+        // line 29
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Create Accounts", [], "messages");
+        echo "</button>
+                        </form>
+                        </div>
+                        <br>
                         <div class=\"row\">
                         <div class=\"col-12\">
                             <div class=\"card\">
@@ -92,255 +102,111 @@ class __TwigTemplate_309294f02e0b28308f39304341c91c58989766f97286b3529fc575e7b4b
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
+
+
+
+
+
+
+
                         <div class=\"row\">
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Dorothy Key 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">New York USA</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                     
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Show</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Edit</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Delete</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Donald Gardner 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Dealer, Washington</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                      
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Show</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Edit</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Delete</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Joseph Cross 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Tokyo Japan</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                       
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Show</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Edit</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Delete</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                    </div><!--end row-->
-                    <div class=\"row\">
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Nancy Flanary
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Sydeny Australia</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                      
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send SMS</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send Email</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Sherron Nelson 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Berlin, Germany</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                     
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send SMS</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send Email</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Richard Curtis 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Dealer, Washington</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                      
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send SMS</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send Email</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                    </div><!--end row-->
-
-  <table class=\"table table-hover\" style=\"text-align:center\">
-            <thead class=\"table-secondary\">
-                <tr>
-                <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">";
-        // line 182
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Name", [], "messages");
-        echo "</th>
-                <th onclick=\"sortTable(2)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">";
-        // line 183
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Created By", [], "messages");
-        echo "</th>
-                <th onclick=\"sortTable(3)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">";
-        // line 184
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Created At", [], "messages");
-        echo "</th>
-                <th style=\"width: 19%;cursor: default; -webkit-user-select: none;\" scope=\"col\">";
-        // line 185
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Actions", [], "messages");
-        echo "</th>
-                </tr>
-            </thead>
-
-            <tbody id=\"myTable\">
-                <tr>
-
-                ";
-        // line 192
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["accounts"]) || array_key_exists("accounts", $context) ? $context["accounts"] : (function () { throw new RuntimeError('Variable "accounts" does not exist.', 192, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["account"]) {
-            // line 193
-            echo "
-                        <td style=\"vertical-align: middle\">";
-            // line 194
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "name", [], "any", false, false, false, 194), "html", null, true);
-            echo "</td>
-                        <td style=\"vertical-align: middle\">";
-            // line 195
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["account"], "createdby", [], "any", false, false, false, 195), "name", [], "any", false, false, false, 195), "html", null, true);
-            echo "</td>
-                        <td style=\"vertical-align: middle\">";
-            // line 196
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "createdat", [], "any", false, false, false, 196), "Y-m-d H:i:s"), "html", null, true);
-            echo "</td>
-
-                        <td style=\"-webkit-user-select: none; vertical-align: middle\">
-
-                 ";
-            // line 200
-            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 200), "id", [], "any", true, true, false, 200)) {
-                echo " 
-                         ";
-                // line 201
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 201, $this->source); })()), "user", [], "any", false, false, false, 201), "userRole", [], "any", false, false, false, 201), "role", [], "any", false, false, false, 201) == "SUPERADMIN")) {
-                    echo " 
-                        <a href=\"/account/";
-                    // line 202
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "id", [], "any", false, false, false, 202), "html", null, true);
-                    echo "\">
-                            <span class=\"btn btn-outline-info col-lg-3\" style=\"text-align: center\">Show</a></span>
-                        <a href=\"/account/edit/";
-                    // line 204
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "id", [], "any", false, false, false, 204), "html", null, true);
-                    echo "\">
-                            <span class=\"btn btn-outline-success col-lg-3\" style=\"text-align: center\">Edit</a></span>
-                        <a href=\"/account/delete/";
-                    // line 206
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "id", [], "any", false, false, false, 206), "html", null, true);
-                    echo "\" onclick=\"return confirm('Are you sure you want to permanently remove this item?')\">
-                                <span class=\"btn btn-outline-danger col-lg-3\" style=\"text-align: center\">Delete</a></span>
                         ";
+        // line 51
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["accounts"]) || array_key_exists("accounts", $context) ? $context["accounts"] : (function () { throw new RuntimeError('Variable "accounts" does not exist.', 51, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["account"]) {
+            echo " 
+                        <div class=\"col-lg-4\">                            
+                            <div class=\"card\">                               
+                                <div class=\"card-body\"> 
+                                    <div class=\"media mb-3\">
+                                        <div class=\"media-body align-self-center\"> 
+       
+                                            <h4 class=\"mt-0 mb-0 font-16\">";
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "name", [], "any", false, false, false, 58), "html", null, true);
+            echo "
+                                            </h4>
+                                            <p class=\"text-muted mb-0 font-12\">";
+            // line 60
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "name", [], "any", false, false, false, 60), "html", null, true);
+            echo "</p>                                                                                                                                      
+                                        </div><!--end media body-->                                            
+                                    </div> <!--end media-->                                    
+                                    <ul class=\"list-unstyled mb-2\">
+                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Address</b> : ";
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "name", [], "any", false, false, false, 64), "html", null, true);
+            echo "</li>
+                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : ";
+            // line 65
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "name", [], "any", false, false, false, 65), "html", null, true);
+            echo "</li>
+                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : ";
+            // line 66
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "name", [], "any", false, false, false, 66), "html", null, true);
+            echo "</li>                                        
+                                    </ul>                                                                     
+                                    <div>
+                                    ";
+            // line 69
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 69), "id", [], "any", true, true, false, 69)) {
+                echo " 
+                                        ";
+                // line 70
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 70, $this->source); })()), "user", [], "any", false, false, false, 70), "userRole", [], "any", false, false, false, 70), "role", [], "any", false, false, false, 70) == "SUPERADMIN")) {
+                    echo " 
+                                            <a href=\"accounts/show/";
+                    // line 71
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "id", [], "any", false, false, false, 71), "html", null, true);
+                    echo "\"><a class=\"btn btn-sm btn-de-primary\">Show</a></a>                                                       
+                                            <a href=\"accounts/edit/";
+                    // line 72
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "id", [], "any", false, false, false, 72), "html", null, true);
+                    echo "\"><a class=\"btn btn-sm btn-de-primary\">Edit</a></a>
+                                            <a href=\"accounts/delete/";
+                    // line 73
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "id", [], "any", false, false, false, 73), "html", null, true);
+                    echo "\"><a class=\"btn btn-sm btn-de-primary\" onclick=\"return confirm('are you sure?')\">Delete</a></a>
+                                        ";
                 }
-                // line 208
+                // line 74
                 echo " 
 
-                         ";
-                // line 210
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 210, $this->source); })()), "user", [], "any", false, false, false, 210), "userRole", [], "any", false, false, false, 210), "role", [], "any", false, false, false, 210) == "USER")) {
+                                        ";
+                // line 76
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 76, $this->source); })()), "user", [], "any", false, false, false, 76), "userRole", [], "any", false, false, false, 76), "role", [], "any", false, false, false, 76) == "USER")) {
                     echo " 
-
-                        <a href=\"/account/";
-                    // line 212
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 212, $this->source); })()), "id", [], "any", false, false, false, 212), "html", null, true);
-                    echo "\">
-                            <span class=\"btn btn-outline-info col-lg-3  \" style=\"text-align: center;\">Show</a></span> 
-
-                         ";
+                                                <a href=\"accounts/show/";
+                    // line 77
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["account"], "id", [], "any", false, false, false, 77), "html", null, true);
+                    echo "\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                        ";
                 }
-                // line 215
+                // line 78
                 echo "  
-                     ";
+                                    ";
             }
-            // line 216
+            // line 79
             echo " 
-                    </td>
-                    </tr>
-                ";
+                                    </div>
+                     
+                                </div><!--end card-body-->                                                                      
+                            </div>  <!--end card-->  
+                                            
+                        </div><!--end col-->
+         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['account'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 220
-        echo "            </tbody>
-    </table>
+        // line 86
+        echo " 
 <br><br>
      <footer class=\"footer text-center text-sm-start\">
                     &copy; <script>
                         document.write(new Date().getFullYear())
-                    </script> CRM Central <span class=\"text-muted d-none d-sm-inline-block float-end\">Crafted by Bento</span>
+                    </script> Business <span class=\"text-muted d-none d-sm-inline-block float-end\">Crafted by Bento</span>
                 </footer>
     
 
@@ -401,7 +267,7 @@ class __TwigTemplate_309294f02e0b28308f39304341c91c58989766f97286b3529fc575e7b4b
 
     public function getDebugInfo()
     {
-        return array (  337 => 220,  328 => 216,  324 => 215,  317 => 212,  312 => 210,  308 => 208,  302 => 206,  297 => 204,  292 => 202,  288 => 201,  284 => 200,  277 => 196,  273 => 195,  269 => 194,  266 => 193,  262 => 192,  252 => 185,  248 => 184,  244 => 183,  240 => 182,  64 => 8,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  204 => 86,  191 => 79,  187 => 78,  182 => 77,  178 => 76,  174 => 74,  169 => 73,  165 => 72,  161 => 71,  157 => 70,  153 => 69,  147 => 66,  143 => 65,  139 => 64,  132 => 60,  127 => 58,  115 => 51,  90 => 29,  86 => 28,  64 => 8,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -421,7 +287,7 @@ class __TwigTemplate_309294f02e0b28308f39304341c91c58989766f97286b3529fc575e7b4b
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/accounts\">Accounts</a>
                                         </li><!--end nav-item-->
@@ -432,8 +298,12 @@ class __TwigTemplate_309294f02e0b28308f39304341c91c58989766f97286b3529fc575e7b4b
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                         
-                        <p><input style=\"width: 300px;\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"Search...\" class=\"form-control\"></p><br>
-
+                        <form action=\"/options/contacts/create\">
+                            <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"{% trans %}Search{% endtrans %}...\" class=\"form-control\"></input>
+                            <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">{% trans %}Create Accounts{% endtrans %}</button>
+                        </form>
+                        </div>
+                        <br>
                         <div class=\"row\">
                         <div class=\"col-12\">
                             <div class=\"card\">
@@ -444,194 +314,55 @@ class __TwigTemplate_309294f02e0b28308f39304341c91c58989766f97286b3529fc575e7b4b
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
+
+
+
+
+
+
+
                         <div class=\"row\">
+                        {% for account in accounts %} 
                         <div class=\"col-lg-4\">                            
                             <div class=\"card\">                               
                                 <div class=\"card-body\"> 
                                     <div class=\"media mb-3\">
                                         <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Dorothy Key 
+       
+                                            <h4 class=\"mt-0 mb-0 font-16\">{{ account.name }}
                                             </h4>
-                                            <p class=\"text-muted mb-0 font-12\">New York USA</p>                                                                                                                                      
+                                            <p class=\"text-muted mb-0 font-12\">{{ account.name }}</p>                                                                                                                                      
                                         </div><!--end media body-->                                            
                                     </div> <!--end media-->                                    
                                     <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
+                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Address</b> : {{ account.name }}</li>
+                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : {{ account.name }}</li>
+                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : {{ account.name }}</li>                                        
                                     </ul>                                                                     
                                     <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Show</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Edit</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Delete</button>
+                                    {% if app.user.id is defined%} 
+                                        {% if app.user.userRole.role == \"SUPERADMIN\" %} 
+                                            <a href=\"accounts/show/{{ account.id }}\"><a class=\"btn btn-sm btn-de-primary\">Show</a></a>                                                       
+                                            <a href=\"accounts/edit/{{ account.id }}\"><a class=\"btn btn-sm btn-de-primary\">Edit</a></a>
+                                            <a href=\"accounts/delete/{{ account.id }}\"><a class=\"btn btn-sm btn-de-primary\" onclick=\"return confirm('are you sure?')\">Delete</a></a>
+                                        {% endif %} 
+
+                                        {% if app.user.userRole.role == \"USER\" %} 
+                                                <a href=\"accounts/show/{{ account.id }}\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                        {% endif %}  
+                                    {% endif %} 
                                     </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
+                     
+                                </div><!--end card-body-->                                                                      
+                            </div>  <!--end card-->  
+                                            
                         </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Donald Gardner 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Dealer, Washington</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                      
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Show</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Edit</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Delete</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Joseph Cross 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Tokyo Japan</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                       
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Show</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Edit</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Delete</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                    </div><!--end row-->
-                    <div class=\"row\">
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Nancy Flanary
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Sydeny Australia</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                      
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send SMS</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send Email</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Sherron Nelson 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Berlin, Germany</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                     
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send SMS</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send Email</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                        <div class=\"col-lg-4\">                            
-                            <div class=\"card\">                               
-                                <div class=\"card-body\"> 
-                                    <div class=\"media mb-3\">
-                                        <div class=\"media-body align-self-center\"> 
-                                            <h4 class=\"mt-0 mb-0 font-16\">Richard Curtis 
-                                            </h4>
-                                            <p class=\"text-muted mb-0 font-12\">Dealer, Washington</p>                                                                                                                                      
-                                        </div><!--end media body-->                                            
-                                    </div> <!--end media-->                                    
-                                    <ul class=\"list-unstyled mb-2\">
-                                        <li class=\"\"><i data-feather=\"calendar\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b>Date</b> : 20 june 2020</li>
-                                        <li class=\"mt-2\"><i data-feather=\"phone\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> phone </b> : +91 23456 78910</li>
-                                        <li class=\"mt-2\"><i data-feather=\"mail\" class=\"align-self-center icon-xs icon-dual me-1\"></i> <b> Email </b> : mannat.theme@gmail.com</li>                                        
-                                    </ul>                                                                      
-                                    <div>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send SMS</button>
-                                        <button type=\"button\" class=\"btn btn-sm btn-de-primary\">Send Email</button>
-                                    </div>
-                                </div><!--end card-body-->                                                                     
-                            </div>  <!--end card-->                          
-                        </div><!--end col-->
-                    </div><!--end row-->
-
-  <table class=\"table table-hover\" style=\"text-align:center\">
-            <thead class=\"table-secondary\">
-                <tr>
-                <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">{% trans %}Name{% endtrans %}</th>
-                <th onclick=\"sortTable(2)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">{% trans %}Created By{% endtrans %}</th>
-                <th onclick=\"sortTable(3)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">{% trans %}Created At{% endtrans %}</th>
-                <th style=\"width: 19%;cursor: default; -webkit-user-select: none;\" scope=\"col\">{% trans %}Actions{% endtrans %}</th>
-                </tr>
-            </thead>
-
-            <tbody id=\"myTable\">
-                <tr>
-
-                {% for account in accounts %}
-
-                        <td style=\"vertical-align: middle\">{{ account.name }}</td>
-                        <td style=\"vertical-align: middle\">{{ account.createdby.name }}</td>
-                        <td style=\"vertical-align: middle\">{{ account.createdat|date('Y-m-d H:i:s') }}</td>
-
-                        <td style=\"-webkit-user-select: none; vertical-align: middle\">
-
-                 {% if app.user.id is defined%} 
-                         {% if app.user.userRole.role == \"SUPERADMIN\" %} 
-                        <a href=\"/account/{{account.id}}\">
-                            <span class=\"btn btn-outline-info col-lg-3\" style=\"text-align: center\">Show</a></span>
-                        <a href=\"/account/edit/{{account.id}}\">
-                            <span class=\"btn btn-outline-success col-lg-3\" style=\"text-align: center\">Edit</a></span>
-                        <a href=\"/account/delete/{{account.id}}\" onclick=\"return confirm('Are you sure you want to permanently remove this item?')\">
-                                <span class=\"btn btn-outline-danger col-lg-3\" style=\"text-align: center\">Delete</a></span>
-                        {% endif %} 
-
-                         {% if app.user.userRole.role == \"USER\" %} 
-
-                        <a href=\"/account/{{contact.id}}\">
-                            <span class=\"btn btn-outline-info col-lg-3  \" style=\"text-align: center;\">Show</a></span> 
-
-                         {% endif %}  
-                     {% endif %} 
-                    </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-    </table>
+         {% endfor %} 
 <br><br>
      <footer class=\"footer text-center text-sm-start\">
                     &copy; <script>
                         document.write(new Date().getFullYear())
-                    </script> CRM Central <span class=\"text-muted d-none d-sm-inline-block float-end\">Crafted by Bento</span>
+                    </script> Business <span class=\"text-muted d-none d-sm-inline-block float-end\">Crafted by Bento</span>
                 </footer>
     
 

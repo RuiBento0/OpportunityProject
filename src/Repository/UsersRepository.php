@@ -76,10 +76,25 @@ class UsersRepository extends ServiceEntityRepository implements PasswordUpgrade
         $conn = $this->getEntityManager()->getConnection();
 
         $sql = '
-            UPDATE users SET tokens=NULL WHERE id = :id
+            UPDATE users SET tokens=NULL,active=1 WHERE id = :id
             ';
         $stmt = $conn->prepare($sql);
         $resultSet = $stmt->executeQuery(['id' => $userid]);
+
+        // returns an array of arrays (i.e. a raw data set)
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function findbyEmail($email): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM users
+            WHERE email = :email
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['email' => $email]);
 
         // returns an array of arrays (i.e. a raw data set)
         return $resultSet->fetchAllAssociative();

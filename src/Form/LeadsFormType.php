@@ -8,6 +8,10 @@ use App\Entity\Status;
 use App\Entity\Priorities;
 use App\Entity\Accounts;
 use App\Entity\Departments;
+use App\Entity\Campaign;
+use App\Entity\Area;
+use App\Entity\Sources;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,15 +38,15 @@ class LeadsFormType extends AbstractType
             'label' => false,
         ])
 
-        ->add('accounts', EntityType::class, [
-            'class' => Accounts::class,
-            'choice_label' => 'getName',
+        ->add('account', TextType::class, [
             'attr' => [
-                'class' => 'form-select',
-                'placeholder' => 'form.placeholder.accounts'
+                'class' => 'form-control',
+                'placeholder' => 'Name'
             ],
             'label' => false,
-           ])
+        ])
+
+         
 
         ->add('amount', TextType::class, [
             'attr' => [
@@ -60,7 +64,7 @@ class LeadsFormType extends AbstractType
             'label' => false,
         ])
 
-        ->add('campaign', EntityType::class, [
+        ->add('id_campaign', EntityType::class, [
             'class' => Campaign::class,
             'choice_label' => 'getName',
             'attr' => [
@@ -70,7 +74,7 @@ class LeadsFormType extends AbstractType
             'label' => false,
            ])
 
-        ->add('area', EntityType::class, [
+        ->add('id_area', EntityType::class, [
             'class' => Area::class,
             'choice_label' => 'getName',
             'attr' => [
@@ -80,7 +84,7 @@ class LeadsFormType extends AbstractType
             'label' => false,
            ])
 
-        ->add('departments', EntityType::class, [
+        ->add('id_department', EntityType::class, [
             'class' => Departments::class,
             'choice_label' => 'getName',
             'attr' => [
@@ -90,7 +94,7 @@ class LeadsFormType extends AbstractType
             'label' => false,
            ])
 
-        ->add('status', EntityType::class, [
+        ->add('id_status', EntityType::class, [
             'class' => Status::class,
             'choice_label' => 'getName',
             'attr' => [
@@ -100,12 +104,22 @@ class LeadsFormType extends AbstractType
             'label' => false,
            ])
 
-           ->add('source', EntityType::class, [
-            'class' => Source::class,
+           ->add('id_source', EntityType::class, [
+            'class' => Sources::class,
             'choice_label' => 'getName',
             'attr' => [
                 'class' => 'form-select',
                 'placeholder' => 'form.placeholder.source'
+            ],
+            'label' => false,
+           ])
+
+           ->add('id_user', EntityType::class, [
+            'class' => Users::class,
+            'choice_label' => 'getName',
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'form.placeholder.user'
             ],
             'label' => false,
            ])

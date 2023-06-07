@@ -70,28 +70,30 @@ class __TwigTemplate_cb1a180e66631290cbbf965e3928be0542f6731b53890130dbc4fcb8ed6
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item active\">Accounts Type</li>
                                     </ol>
                                 </div>
-                                <h4 class=\"page-title\">Accounts Type</h4>
-                            </div><!--end page-title-box-->
+                                <h4 class=\"page-title\">Options</h4>
+                                </div><!--end page-title-box-->
                         </div><!--end col-->
 
                         <div style=\"margin-top:0px; margin-bottom:20px;padding-left:10px; padding-right:25px\">
+                        <form action=\"/options/accountstype/create\">
                             <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"";
-        // line 29
+        // line 30
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Search", [], "messages");
         echo "...\" class=\"form-control\"></input>
                             <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">";
-        // line 30
+        // line 31
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Create Account Type", [], "messages");
         echo "</button>
+                                </form>
                         </div>
-                        
+
                         <div class=\"row\">
                         <div class=\"col-12\">
                             <div class=\"card\">
@@ -102,75 +104,111 @@ class __TwigTemplate_cb1a180e66631290cbbf965e3928be0542f6731b53890130dbc4fcb8ed6
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
-                <br>
-                    <div class=\"row\" style=\"width: 90%; margin: auto;\">
-                        
-                                <div class=\"card-body\">    
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-hover\" style=\"text-align:center\">
-                        <thead class=\"table-secondary\">
-                            <tr>
-                            <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">";
+                                <div class=\"card-body\">                                    
+                                    <div class=\"table-responsive\" style=\"\">
+                                        <table class=\"table mb-0\">
+                                            <thead>
+                                            <tr>
+                                                <th onclick=\"sortTable(0)\" style=\"cursor: pointer\" scope=\"col\">";
+        // line 50
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Id", [], "messages");
+        echo "</th>
+                                                <th onclick=\"sortTable(1)\" style=\"cursor: pointer\" scope=\"col\">";
         // line 51
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Name", [], "messages");
         echo "</th>
-                            <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">";
+                                                <th onclick=\"sortTable(2)\" style=\"cursor: pointer\" scope=\"col\">";
         // line 52
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Active", [], "messages");
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Status", [], "messages");
         echo "</th>
-                            <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">";
+                                                <th style=\"width: 10%;cursor: default;\" scope=\"col\">";
         // line 53
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Actions", [], "messages");
         echo "</th>
-                            </tr>
-                        </thead>
+                                            </tr><!--end tr-->
+                                            </thead>
+                                            <tbody id=\"myTable\">
+                                                    <tr>
 
-                        <tbody id=\"myTable\">
-                            <tr>
-                            
-                            ";
-        // line 60
+                                                    ";
+        // line 59
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($context["accountstype"]);
-        foreach ($context['_seq'] as $context["_key"] => $context["accountstype"]) {
+        $context['_seq'] = twig_ensure_traversable((isset($context["accountstype"]) || array_key_exists("accountstype", $context) ? $context["accountstype"] : (function () { throw new RuntimeError('Variable "accountstype" does not exist.', 59, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["type"]) {
+            // line 60
+            echo "                                                        <tr>
+                                                            <td> ";
             // line 61
-            echo "                            
-                                    <td style=\"vertical-align: middle\">";
-            // line 62
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["accountstype"], "name", [], "any", false, false, false, 62), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["type"], "id", [], "any", false, false, false, 61), "html", null, true);
             echo "</td>
-                                    <td style=\"vertical-align: middle\">";
+                                                            <td> ";
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["type"], "name", [], "any", false, false, false, 62), "html", null, true);
+            echo "</td>
+                                                            <td> ";
             // line 63
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["accountstype"], "active", [], "any", false, false, false, 63), "html", null, true);
+            if ((twig_get_attribute($this->env, $this->source, $context["type"], "active", [], "any", false, false, false, 63) == 1)) {
+                echo "Active";
+            }
+            if ((twig_get_attribute($this->env, $this->source, $context["type"], "active", [], "any", false, false, false, 63) == 0)) {
+                echo "Disable";
+            }
             echo "</td>
 
-                                    <td style=\"-webkit-user-select: none; vertical-align: middle\">
-  
+                                                            <td style=\"-webkit-user-select: none; vertical-align: middle\">
                                     
-                                    ";
-            // line 68
-            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 68), "id", [], "any", true, true, false, 68)) {
+                                                                ";
+            // line 67
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 67), "id", [], "any", true, true, false, 67)) {
+                // line 68
+                echo "                                                                    <a href=\"accountstype/show/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["type"], "id", [], "any", false, false, false, 68), "html", null, true);
+                echo "\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                                                    <a href=\"accountstype/edit/";
                 // line 69
-                echo "                                    <a href=\"accountstype/show\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
-                                    <a href=\"accountstype/edit\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                    <a href=\"accountstype/delete\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
-                                    ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["type"], "id", [], "any", false, false, false, 69), "html", null, true);
+                echo "\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                                    <a href=\"accountstype/delete/";
+                // line 70
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["type"], "id", [], "any", false, false, false, 70), "html", null, true);
+                echo "\"><i class=\"las la-trash-alt text-secondary font-16\" onclick=\"return confirm('are you sure?')\"></i></a>
+                                                                ";
             }
-            // line 73
+            // line 72
             echo "                                    
-                                    </td>
-                                </tr>
-                            ";
+                                                             </td>
+                                                        </tr>
+                                                    ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['accountstype'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['type'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 77
-        echo "                                        </table><!--end /table-->
-                                    </div><!--end /tableresponsive-->  
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!-- end col -->
+        // line 76
+        echo "                                                </tbody>
+                                        </table> 
+                                    </div>          
+                                </div><!--end row-->                                     
+                            </div><!--end card-body--> 
+                        </div><!--end card--> 
+                            <div>
+                            <div class=\"col-auto\" style=\"float:right\">
+                                            <nav aria-label=\"...\">
+                                                <ul class=\"pagination pagination-sm mb-0\">
+                                                    <li class=\"page-item disabled\">
+                                                        <a class=\"page-link\" href=\"#\" tabindex=\"-1\">Previous</a>
+                                                    </li>
+                                                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">2 <span class=\"sr-only\">(current)</span></a>
+                                                    </li>
+                                                    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                         </div> <!--end col-->    
+                        </div> <!--end col-->                               
                     </div><!--end row-->
 
 <script type=\"text/javascript\">
@@ -230,7 +268,7 @@ class __TwigTemplate_cb1a180e66631290cbbf965e3928be0542f6731b53890130dbc4fcb8ed6
 
     public function getDebugInfo()
     {
-        return array (  169 => 77,  160 => 73,  154 => 69,  152 => 68,  144 => 63,  140 => 62,  137 => 61,  133 => 60,  123 => 53,  119 => 52,  115 => 51,  91 => 30,  87 => 29,  65 => 9,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  187 => 76,  178 => 72,  173 => 70,  169 => 69,  164 => 68,  162 => 67,  150 => 63,  146 => 62,  142 => 61,  139 => 60,  135 => 59,  126 => 53,  122 => 52,  118 => 51,  114 => 50,  92 => 31,  88 => 30,  65 => 9,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -251,22 +289,24 @@ class __TwigTemplate_cb1a180e66631290cbbf965e3928be0542f6731b53890130dbc4fcb8ed6
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item active\">Accounts Type</li>
                                     </ol>
                                 </div>
-                                <h4 class=\"page-title\">Accounts Type</h4>
-                            </div><!--end page-title-box-->
+                                <h4 class=\"page-title\">Options</h4>
+                                </div><!--end page-title-box-->
                         </div><!--end col-->
 
                         <div style=\"margin-top:0px; margin-bottom:20px;padding-left:10px; padding-right:25px\">
+                        <form action=\"/options/accountstype/create\">
                             <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"{% trans %}Search{% endtrans %}...\" class=\"form-control\"></input>
                             <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">{% trans %}Create Account Type{% endtrans %}</button>
+                                </form>
                         </div>
-                        
+
                         <div class=\"row\">
                         <div class=\"col-12\">
                             <div class=\"card\">
@@ -277,45 +317,62 @@ class __TwigTemplate_cb1a180e66631290cbbf965e3928be0542f6731b53890130dbc4fcb8ed6
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
-                <br>
-                    <div class=\"row\" style=\"width: 90%; margin: auto;\">
-                        
-                                <div class=\"card-body\">    
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-hover\" style=\"text-align:center\">
-                        <thead class=\"table-secondary\">
-                            <tr>
-                            <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">{% trans %}Name{% endtrans %}</th>
-                            <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">{% trans %}Active{% endtrans %}</th>
-                            <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">{% trans %}Actions{% endtrans %}</th>
-                            </tr>
-                        </thead>
+                                <div class=\"card-body\">                                    
+                                    <div class=\"table-responsive\" style=\"\">
+                                        <table class=\"table mb-0\">
+                                            <thead>
+                                            <tr>
+                                                <th onclick=\"sortTable(0)\" style=\"cursor: pointer\" scope=\"col\">{% trans %}Id{% endtrans %}</th>
+                                                <th onclick=\"sortTable(1)\" style=\"cursor: pointer\" scope=\"col\">{% trans %}Name{% endtrans %}</th>
+                                                <th onclick=\"sortTable(2)\" style=\"cursor: pointer\" scope=\"col\">{% trans %}Status{% endtrans %}</th>
+                                                <th style=\"width: 10%;cursor: default;\" scope=\"col\">{% trans %}Actions{% endtrans %}</th>
+                                            </tr><!--end tr-->
+                                            </thead>
+                                            <tbody id=\"myTable\">
+                                                    <tr>
 
-                        <tbody id=\"myTable\">
-                            <tr>
-                            
-                            {% for accountstype in accountstype %}
-                            
-                                    <td style=\"vertical-align: middle\">{{ accountstype.name }}</td>
-                                    <td style=\"vertical-align: middle\">{{ accountstype.active }}</td>
+                                                    {% for type in accountstype %}
+                                                        <tr>
+                                                            <td> {{ type.id }}</td>
+                                                            <td> {{ type.name }}</td>
+                                                            <td> {% if type.active == 1 %}Active{% endif %}{% if type.active == 0 %}Disable{% endif %}</td>
 
-                                    <td style=\"-webkit-user-select: none; vertical-align: middle\">
-  
+                                                            <td style=\"-webkit-user-select: none; vertical-align: middle\">
                                     
-                                    {% if app.user.id is defined%}
-                                    <a href=\"accountstype/show\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
-                                    <a href=\"accountstype/edit\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                    <a href=\"accountstype/delete\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
-                                    {% endif %}
+                                                                {% if app.user.id is defined%}
+                                                                    <a href=\"accountstype/show/{{ type.id }}\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                                                    <a href=\"accountstype/edit/{{ type.id }}\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                                    <a href=\"accountstype/delete/{{ type.id }}\"><i class=\"las la-trash-alt text-secondary font-16\" onclick=\"return confirm('are you sure?')\"></i></a>
+                                                                {% endif %}
                                     
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                                        </table><!--end /table-->
-                                    </div><!--end /tableresponsive-->  
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div> <!-- end col -->
+                                                             </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                        </table> 
+                                    </div>          
+                                </div><!--end row-->                                     
+                            </div><!--end card-body--> 
+                        </div><!--end card--> 
+                            <div>
+                            <div class=\"col-auto\" style=\"float:right\">
+                                            <nav aria-label=\"...\">
+                                                <ul class=\"pagination pagination-sm mb-0\">
+                                                    <li class=\"page-item disabled\">
+                                                        <a class=\"page-link\" href=\"#\" tabindex=\"-1\">Previous</a>
+                                                    </li>
+                                                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">2 <span class=\"sr-only\">(current)</span></a>
+                                                    </li>
+                                                    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                         </div> <!--end col-->    
+                        </div> <!--end col-->                               
                     </div><!--end row-->
 
 <script type=\"text/javascript\">

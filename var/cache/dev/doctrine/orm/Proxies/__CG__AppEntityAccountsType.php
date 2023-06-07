@@ -67,10 +67,10 @@ class AccountsType extends \App\Entity\AccountsType implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'active'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'active', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'updated_by'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'active'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'active', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\AccountsType' . "\0" . 'updated_by'];
     }
 
     /**
@@ -234,6 +234,94 @@ class AccountsType extends \App\Entity\AccountsType implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setActive', [$active]);
 
         return parent::setActive($active);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCreatedAt', []);
+
+        return parent::getCreatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCreatedAt(?\DateTimeInterface $created_at): \App\Entity\AccountsType
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCreatedAt', [$created_at]);
+
+        return parent::setCreatedAt($created_at);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedAt', []);
+
+        return parent::getUpdatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): \App\Entity\AccountsType
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updated_at]);
+
+        return parent::setUpdatedAt($updated_at);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCreatedBy(): ?\App\Entity\users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCreatedBy', []);
+
+        return parent::getCreatedBy();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCreatedBy(?\App\Entity\users $created_by): \App\Entity\AccountsType
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCreatedBy', [$created_by]);
+
+        return parent::setCreatedBy($created_by);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedBy(): ?\App\Entity\users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedBy', []);
+
+        return parent::getUpdatedBy();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedBy(?\App\Entity\users $updated_by): \App\Entity\AccountsType
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedBy', [$updated_by]);
+
+        return parent::setUpdatedBy($updated_by);
     }
 
 }

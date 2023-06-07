@@ -123,7 +123,18 @@
      }
  });
  document.querySelectorAll(".leftbar-tab-menu a").forEach(function (element, index) {
-     var pageUrl = window.location.href.split(/[?#]/)[0];
+    var teste = window.location.href.split(/[?#]/)[0];
+
+    if(teste.search("#")=='-1'){
+        var t = teste.split('/');
+        var t1 = t[0]+"//"+t[2]+"/"+t[3]+"/"+t[4]; 
+    }
+    var pageUrl = t1;
+
+    console.log(pageUrl);
+    console.log(element.href);
+
+     //var pageUrl = window.location.href.split(/[?#]/)[0];
      if (element.href == pageUrl) {
          element.classList.add("active");
          if(!element.parentElement.parentElement.classList.contains('navbar-nav')){

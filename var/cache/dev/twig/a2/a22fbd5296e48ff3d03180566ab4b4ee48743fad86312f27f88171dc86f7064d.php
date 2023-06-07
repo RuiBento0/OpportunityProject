@@ -55,7 +55,7 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "<title> CRM Central </title>
+        echo "<title> Business </title>
 ";
         // line 4
         $this->displayBlock('stylesheets', $context, $blocks);
@@ -75,13 +75,13 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
                                         <a href=\"/login\" class=\"logo logo-admin\">
                                             <img src=\"img/CRM2.png\" height=\"50\" alt=\"logo\" class=\"auth-logo\">
                                         </a>
-                                        <h4 class=\"mt-3 mb-1 fw-semibold font-18\">Let's Get Started CRM Central</h4>   
-                                        <p class=\"text-muted  mb-0\">Sign in to continue to CRM Central.</p>  
+                                        <h4 class=\"mt-3 mb-1 fw-semibold font-18\">Business</h4>   
+                                        <p class=\"text-muted  mb-0\">Sign in to continue.</p>  
                                     </div>
                                 </div><!--end card-body-->
                                 <div class=\"card-body pt-0\">                                    
-                                    <form class=\"my-4\" method=\"POST\">  
-                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                    <form action=\"/login\"class=\"my-4\" method=\"POST\">  
+                                        <input class=\"form-control\" style=\"margin-bottom:10px; border-color:#608E34\" 
                                             type=\"email\" 
                                             value=\"";
         // line 35
@@ -98,7 +98,7 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
 
 
 
-                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                        <input class=\"form-control\" style=\"margin-bottom:10px; border-color:#608E34\"
                                             type=\"password\" 
                                             name=\"password\" 
                                             id=\"inputPassword\" 
@@ -122,14 +122,14 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
                                                
                                             </div><!--end col--> 
                                             <div class=\"col-sm-6 text-end\">
-                                                <a href=\"/reset-password\" class=\"text-muted font-13\"><i class=\"dripicons-lock\"></i> Forgot password?</a>                                    
+                                                <a href=\"/resetpassword\" class=\"text-muted font-13\"><i class=\"dripicons-lock\"></i> Forgot password?</a>                                    
                                             </div><!--end col--> 
                                         </div><!--end form-group--> 
             
-                                        <div class=\"form-group mb-0 row\">
-                                            <div class=\"col-12\">
-                                                <div class=\"d-grid mt-3\">
-                                                    <button class=\"btn btn-primary\" type=\"submit\">Log In <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
+                                        <div class=\"form-group mb-0 row\" >
+                                            <div class=\"col-12\" >
+                                                <div class=\"d-grid mt-3\" >
+                                                    <button class=\"btn btn-primary\" type=\"submit\" style=\"background-color:#608E34 ; border-color:#608E34\" >Log In <i class=\"fas fa-sign-in-alt ms-1\" ></i></button>
                                                 </div>
                                             </div><!--end col--> 
                                         </div> <!--end form-group-->                           
@@ -138,17 +138,11 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
-                        <div class=\"col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg\">
+                        <div class=\"col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg\" style=\"background-size: cover;background-repeat: no-repeat; background-image: url('/img/sss.jpg')\">
                             <div class=\"accountbg d-flex align-items-center\"> 
-                                <div class=\"account-title text-center text-white\">
-                                    <img src=\"img/CRM2.png\" alt=\"\" class=\"thumb-sm\">
-                                    <h4 class=\"mt-3 text-white\">Welcome To <span class=\"text-warning\">CRM Central</span> </h4>
-                                    <h1 class=\"text-white\">Let's Get Started</h1>
-                                    <p class=\"font-18 mt-3\">Every contact we have with a customer influences whether or not they´ll come back.</p>
-                                    <p class=\"font-18 mt-3\">We have to be great every time or we´ll lose them.</p>
-                                    <div class=\"border w-25 mx-auto border-warning\"></div>
-                                </div>
-                            </div><!--end /div-->
+                               ";
+        // line 94
+        echo "                            </div><!--end /div-->
                         </div><!--end col-->
                     </div><!--end row-->
                 </div><!--end card-body-->
@@ -157,9 +151,9 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
     </div><!--end container-->
 
     <!-- App js -->
-    <script src=\"assets/js/app.js\"></script>
-    
-</body>
+ ";
+        // line 105
+        echo "</body>
 
 </html>
 ";
@@ -176,8 +170,9 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 5
-        echo "            <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
-            <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+        echo "            ";
+        // line 6
+        echo "            <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/app.min.css\" rel=\"stylesheet\" type=\"text/css\" />
@@ -195,16 +190,16 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
 
     public function getDebugInfo()
     {
-        return array (  179 => 5,  172 => 4,  116 => 60,  88 => 35,  63 => 12,  61 => 4,  58 => 3,  45 => 2,  42 => 1,);
+        return array (  175 => 6,  173 => 5,  166 => 4,  156 => 105,  145 => 94,  116 => 60,  88 => 35,  63 => 12,  61 => 4,  58 => 3,  45 => 2,  42 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("
 {% block body %}
-<title> CRM Central </title>
+<title> Business </title>
 {% block stylesheets %}
-            <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
+            {# <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\"> #}
             <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
@@ -226,13 +221,13 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
                                         <a href=\"/login\" class=\"logo logo-admin\">
                                             <img src=\"img/CRM2.png\" height=\"50\" alt=\"logo\" class=\"auth-logo\">
                                         </a>
-                                        <h4 class=\"mt-3 mb-1 fw-semibold font-18\">Let's Get Started CRM Central</h4>   
-                                        <p class=\"text-muted  mb-0\">Sign in to continue to CRM Central.</p>  
+                                        <h4 class=\"mt-3 mb-1 fw-semibold font-18\">Business</h4>   
+                                        <p class=\"text-muted  mb-0\">Sign in to continue.</p>  
                                     </div>
                                 </div><!--end card-body-->
                                 <div class=\"card-body pt-0\">                                    
-                                    <form class=\"my-4\" method=\"POST\">  
-                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                    <form action=\"/login\"class=\"my-4\" method=\"POST\">  
+                                        <input class=\"form-control\" style=\"margin-bottom:10px; border-color:#608E34\" 
                                             type=\"email\" 
                                             value=\"{{ last_username }}\" 
                                             name=\"email\" 
@@ -246,7 +241,7 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
 
 
 
-                                        <input class=\"form-control\" style=\"margin-bottom:10px\"
+                                        <input class=\"form-control\" style=\"margin-bottom:10px; border-color:#608E34\"
                                             type=\"password\" 
                                             name=\"password\" 
                                             id=\"inputPassword\" 
@@ -267,14 +262,14 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
                                                
                                             </div><!--end col--> 
                                             <div class=\"col-sm-6 text-end\">
-                                                <a href=\"/reset-password\" class=\"text-muted font-13\"><i class=\"dripicons-lock\"></i> Forgot password?</a>                                    
+                                                <a href=\"/resetpassword\" class=\"text-muted font-13\"><i class=\"dripicons-lock\"></i> Forgot password?</a>                                    
                                             </div><!--end col--> 
                                         </div><!--end form-group--> 
             
-                                        <div class=\"form-group mb-0 row\">
-                                            <div class=\"col-12\">
-                                                <div class=\"d-grid mt-3\">
-                                                    <button class=\"btn btn-primary\" type=\"submit\">Log In <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
+                                        <div class=\"form-group mb-0 row\" >
+                                            <div class=\"col-12\" >
+                                                <div class=\"d-grid mt-3\" >
+                                                    <button class=\"btn btn-primary\" type=\"submit\" style=\"background-color:#608E34 ; border-color:#608E34\" >Log In <i class=\"fas fa-sign-in-alt ms-1\" ></i></button>
                                                 </div>
                                             </div><!--end col--> 
                                         </div> <!--end form-group-->                           
@@ -283,16 +278,16 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
-                        <div class=\"col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg\">
+                        <div class=\"col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg\" style=\"background-size: cover;background-repeat: no-repeat; background-image: url('/img/sss.jpg')\">
                             <div class=\"accountbg d-flex align-items-center\"> 
-                                <div class=\"account-title text-center text-white\">
+                               {#  <div class=\"account-title text-center text-white\">
                                     <img src=\"img/CRM2.png\" alt=\"\" class=\"thumb-sm\">
-                                    <h4 class=\"mt-3 text-white\">Welcome To <span class=\"text-warning\">CRM Central</span> </h4>
+                                    <h4 class=\"mt-3 text-white\">Welcome To <span class=\"text-warning\">Business</span> </h4>
                                     <h1 class=\"text-white\">Let's Get Started</h1>
                                     <p class=\"font-18 mt-3\">Every contact we have with a customer influences whether or not they´ll come back.</p>
                                     <p class=\"font-18 mt-3\">We have to be great every time or we´ll lose them.</p>
                                     <div class=\"border w-25 mx-auto border-warning\"></div>
-                                </div>
+                                </div> #}
                             </div><!--end /div-->
                         </div><!--end col-->
                     </div><!--end row-->
@@ -302,8 +297,8 @@ class __TwigTemplate_c287d446cf4008c8e5376887eca95f6b83221bbe923ef96df274ed3b916
     </div><!--end container-->
 
     <!-- App js -->
-    <script src=\"assets/js/app.js\"></script>
-    
+ {#    <script src=\"assets/js/app.js\"></script>
+     #}
 </body>
 
 </html>

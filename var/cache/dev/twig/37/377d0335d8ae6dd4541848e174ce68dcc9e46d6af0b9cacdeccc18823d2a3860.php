@@ -67,7 +67,7 @@ class __TwigTemplate_75ffce230f1a520179eb5c86f63a81ea3c7a485429e6d86e6e8f5362b36
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/opportunities\">Opportunities</a>
                                         </li><!--end nav-item-->
@@ -263,7 +263,7 @@ class __TwigTemplate_75ffce230f1a520179eb5c86f63a81ea3c7a485429e6d86e6e8f5362b36
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/opportunities\">Opportunities</a>
                                         </li><!--end nav-item-->

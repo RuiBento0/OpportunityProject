@@ -33,7 +33,6 @@ class Accounts
     private ?Users $id_user = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
     private ?AccountsType $id_type = null;
 
     #[ORM\ManyToOne]

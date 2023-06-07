@@ -41,7 +41,7 @@ class __TwigTemplate_95459c68f35e741ef45e68335255e355239b44ff1597dce4671782be261
         echo "<!DOCTYPE html>
 <html lang=\"en\">
 
-<title> CRM Central </title>
+<title> Business </title>
 <head>
 ";
         // line 6
@@ -49,7 +49,7 @@ class __TwigTemplate_95459c68f35e741ef45e68335255e355239b44ff1597dce4671782be261
         // line 14
         echo "</head>
 
-<body id=\"body\" class=\"auth-page\" style=\"background-image: url('.png'); background-size: cover;background-color:pink; background-position: center center;\">
+<body id=\"body\" class=\"auth-page\" style=\"background-image: url('p-1.png'); background-size: cover; background-position: center center;\">
     <!-- Log In page -->
     <div class=\"container\">
         <div class=\"row vh-100 d-flex justify-content-center\">
@@ -57,37 +57,33 @@ class __TwigTemplate_95459c68f35e741ef45e68335255e355239b44ff1597dce4671782be261
                 <div class=\"row\">
                     <div class=\"col-lg-5 mx-auto\">
                         <div class=\"card\">
-                            <div class=\"card-body p-0 auth-header-box\">
+                            <div class=\"card-body p-0 auth-header-box\" style=\"background-color:#608E34 ; border-color:#608E34\">
                                 <div class=\"text-center p-3\">
                                     <a href=\"/login\" class=\"logo logo-admin\">
                                         <img src=\"img/CRM2.png\" height=\"50\" alt=\"logo\" class=\"auth-logo\">
                                     </a>
                                     <h4 class=\"mt-3 mb-1 fw-semibold text-white font-18\">Reset Password</h4>   
-                                    <p class=\"text-muted  mb-0\">Enter your Email and instructions will be sent to you!</p>  
+                                    <p class=\"mb-0\" style=\"color:white\">Enter your Email and instructions will be sent to you!</p>  
                                 </div>
                             </div>
                             <div class=\"card-body pt-0\">
-                                <form class=\"my-4\">
+                                <form class=\"my-4\" method=\"POST\" action=\"/resetpassword\">
                                     <div class=\"form-group mb-3\">
                                         <label class=\"form-label\" for=\"username\">Email</label>
-                                        <input type=\"text\" class=\"form-control\" id=\"userEmail\" name=\"Email\" placeholder=\"Enter Email Address\">                               
-                                    </div><!--end form-group--> 
+                                        <input type=\"email\" class=\"form-control\" name=\"email\" style=\"border-color:#608E34\"> </input>
+                                        <br>
+                                        </div><!--end form-group--> 
 
                                     <div class=\"form-group mb-0 row\">
                                         <div class=\"col-12\">
-                                            <button class=\"btn btn-primary w-100\" type=\"button\">Reset <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
+                                            <button class=\"btn btn-primary w-100\" type=\"submit\" style=\"background-color:#608E34 ; border-color:#608E34\">Reset <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
                                         </div><!--end col--> 
-                                    </div> <!--end form-group-->                           
+                                    </div> <!--end form-group-->  
+                                                          
                                 </form><!--end form-->
                                 <div class=\"text-center text-muted\">
-                                    <p class=\"mb-1\">Remember It ?  <a href=\"/login\" class=\"text-primary ms-2\">Sign in here</a></p>
+                                    <p class=\"mb-1\">Remember It ?  <a href=\"/login\"  style=\"color:#608E34\">Sign in here</a></p>
                                 </div>
-                            </div><!--end card-body-->
-                            <div class=\"card-body bg-light-alt text-center\">
-                                &copy; <script>
-                                    document.write(new Date().getFullYear())
-                                </script> CRM Central                                          
-                            </div>
                         </div><!--end card-->
                     </div><!--end col-->
                 </div><!--end row-->
@@ -133,7 +129,7 @@ class __TwigTemplate_95459c68f35e741ef45e68335255e355239b44ff1597dce4671782be261
 
     public function getDebugInfo()
     {
-        return array (  117 => 7,  110 => 6,  50 => 14,  48 => 6,  41 => 1,);
+        return array (  113 => 7,  106 => 6,  50 => 14,  48 => 6,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -141,7 +137,7 @@ class __TwigTemplate_95459c68f35e741ef45e68335255e355239b44ff1597dce4671782be261
         return new Source("<!DOCTYPE html>
 <html lang=\"en\">
 
-<title> CRM Central </title>
+<title> Business </title>
 <head>
 {% block stylesheets %}
             <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
@@ -153,7 +149,7 @@ class __TwigTemplate_95459c68f35e741ef45e68335255e355239b44ff1597dce4671782be261
 {% endblock %}
 </head>
 
-<body id=\"body\" class=\"auth-page\" style=\"background-image: url('.png'); background-size: cover;background-color:pink; background-position: center center;\">
+<body id=\"body\" class=\"auth-page\" style=\"background-image: url('p-1.png'); background-size: cover; background-position: center center;\">
     <!-- Log In page -->
     <div class=\"container\">
         <div class=\"row vh-100 d-flex justify-content-center\">
@@ -161,37 +157,33 @@ class __TwigTemplate_95459c68f35e741ef45e68335255e355239b44ff1597dce4671782be261
                 <div class=\"row\">
                     <div class=\"col-lg-5 mx-auto\">
                         <div class=\"card\">
-                            <div class=\"card-body p-0 auth-header-box\">
+                            <div class=\"card-body p-0 auth-header-box\" style=\"background-color:#608E34 ; border-color:#608E34\">
                                 <div class=\"text-center p-3\">
                                     <a href=\"/login\" class=\"logo logo-admin\">
                                         <img src=\"img/CRM2.png\" height=\"50\" alt=\"logo\" class=\"auth-logo\">
                                     </a>
                                     <h4 class=\"mt-3 mb-1 fw-semibold text-white font-18\">Reset Password</h4>   
-                                    <p class=\"text-muted  mb-0\">Enter your Email and instructions will be sent to you!</p>  
+                                    <p class=\"mb-0\" style=\"color:white\">Enter your Email and instructions will be sent to you!</p>  
                                 </div>
                             </div>
                             <div class=\"card-body pt-0\">
-                                <form class=\"my-4\">
+                                <form class=\"my-4\" method=\"POST\" action=\"/resetpassword\">
                                     <div class=\"form-group mb-3\">
                                         <label class=\"form-label\" for=\"username\">Email</label>
-                                        <input type=\"text\" class=\"form-control\" id=\"userEmail\" name=\"Email\" placeholder=\"Enter Email Address\">                               
-                                    </div><!--end form-group--> 
+                                        <input type=\"email\" class=\"form-control\" name=\"email\" style=\"border-color:#608E34\"> </input>
+                                        <br>
+                                        </div><!--end form-group--> 
 
                                     <div class=\"form-group mb-0 row\">
                                         <div class=\"col-12\">
-                                            <button class=\"btn btn-primary w-100\" type=\"button\">Reset <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
+                                            <button class=\"btn btn-primary w-100\" type=\"submit\" style=\"background-color:#608E34 ; border-color:#608E34\">Reset <i class=\"fas fa-sign-in-alt ms-1\"></i></button>
                                         </div><!--end col--> 
-                                    </div> <!--end form-group-->                           
+                                    </div> <!--end form-group-->  
+                                                          
                                 </form><!--end form-->
                                 <div class=\"text-center text-muted\">
-                                    <p class=\"mb-1\">Remember It ?  <a href=\"/login\" class=\"text-primary ms-2\">Sign in here</a></p>
+                                    <p class=\"mb-1\">Remember It ?  <a href=\"/login\"  style=\"color:#608E34\">Sign in here</a></p>
                                 </div>
-                            </div><!--end card-body-->
-                            <div class=\"card-body bg-light-alt text-center\">
-                                &copy; <script>
-                                    document.write(new Date().getFullYear())
-                                </script> CRM Central                                          
-                            </div>
                         </div><!--end card-->
                     </div><!--end col-->
                 </div><!--end row-->

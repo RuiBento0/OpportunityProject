@@ -70,7 +70,7 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
@@ -82,14 +82,16 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                         </div><!--end col-->
 
                         <div style=\"margin-top:0px; margin-bottom:20px;padding-left:10px; padding-right:25px\">
+                        <form action=\"/options/roles/create\">
                             <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"";
-        // line 29
+        // line 30
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Search", [], "messages");
         echo "...\" class=\"form-control\"></input>
                             <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">";
-        // line 30
+        // line 31
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Create Role", [], "messages");
         echo "</button>
+                        </form>
                         </div>
                         
                         <div class=\"row\">
@@ -111,15 +113,19 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                         <thead class=\"table-secondary\">
                             <tr>
                             <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">";
-        // line 51
+        // line 53
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Id", [], "messages");
+        echo "</th>
+                            <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">";
+        // line 54
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Role", [], "messages");
         echo "</th>
-                            <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">";
-        // line 52
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Active", [], "messages");
+                            <th onclick=\"sortTable(2)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">";
+        // line 55
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Status", [], "messages");
         echo "</th>
                             <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">";
-        // line 53
+        // line 56
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Actions", [], "messages");
         echo "</th>
                             </tr>
@@ -129,33 +135,50 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                             <tr>
                             
                             ";
-        // line 60
+        // line 63
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["roles"]) || array_key_exists("roles", $context) ? $context["roles"] : (function () { throw new RuntimeError('Variable "roles" does not exist.', 60, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["roles"]) || array_key_exists("roles", $context) ? $context["roles"] : (function () { throw new RuntimeError('Variable "roles" does not exist.', 63, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-            // line 61
+            // line 64
             echo "                            
                                     <td style=\"vertical-align: middle\">";
-            // line 62
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["role"], "role", [], "any", false, false, false, 62), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 65), "html", null, true);
             echo "</td>
                                     <td style=\"vertical-align: middle\">";
-            // line 63
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["role"], "active", [], "any", false, false, false, 63), "html", null, true);
+            // line 66
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["role"], "role", [], "any", false, false, false, 66), "html", null, true);
+            echo "</td>
+                                    <td style=\"vertical-align: middle\">";
+            // line 67
+            if ((twig_get_attribute($this->env, $this->source, $context["role"], "active", [], "any", false, false, false, 67) == 1)) {
+                echo "Active";
+            }
+            if ((twig_get_attribute($this->env, $this->source, $context["role"], "active", [], "any", false, false, false, 67) == 0)) {
+                echo "Disable";
+            }
             echo "</td>
 
                                     <td style=\"-webkit-user-select: none; vertical-align: middle\">
   
                                     ";
-            // line 67
-            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 67), "id", [], "any", true, true, false, 67)) {
-                // line 68
-                echo "                                    <a href=\"role/show\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
-                                    <a href=\"role/edit\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                    <a href=\"role/delete\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
+            // line 71
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 71), "id", [], "any", true, true, false, 71)) {
+                // line 72
+                echo "                                    <a href=\"role/show/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 72), "html", null, true);
+                echo "\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                    <a href=\"role/edit/";
+                // line 73
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 73), "html", null, true);
+                echo "\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                    <a href=\"role/delete/";
+                // line 74
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 74), "html", null, true);
+                echo "\"><i class=\"las la-trash-alt text-secondary font-16\" onclick=\"return confirm('are you sure?')\"></i></a>
                                     ";
             }
-            // line 72
+            // line 76
             echo "                                    </td>
                                 </tr>
                             ";
@@ -163,7 +186,7 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
+        // line 79
         echo "                                        </table><!--end /table-->
                                     </div><!--end /tableresponsive-->  
                                 </div><!--end card-body-->
@@ -228,7 +251,7 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
 
     public function getDebugInfo()
     {
-        return array (  167 => 75,  159 => 72,  153 => 68,  151 => 67,  144 => 63,  140 => 62,  137 => 61,  133 => 60,  123 => 53,  119 => 52,  115 => 51,  91 => 30,  87 => 29,  65 => 9,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  190 => 79,  182 => 76,  177 => 74,  173 => 73,  168 => 72,  166 => 71,  154 => 67,  150 => 66,  146 => 65,  143 => 64,  139 => 63,  129 => 56,  125 => 55,  121 => 54,  117 => 53,  92 => 31,  88 => 30,  65 => 9,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -249,7 +272,7 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
@@ -261,8 +284,10 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                         </div><!--end col-->
 
                         <div style=\"margin-top:0px; margin-bottom:20px;padding-left:10px; padding-right:25px\">
+                        <form action=\"/options/roles/create\">
                             <input type=\"text\" style=\"float:left; width:300px\" id=\"myInput\" onkeyup=\"myFunction()\" type=\"text\" placeholder=\"{% trans %}Search{% endtrans %}...\" class=\"form-control\"></input>
                             <button type=\"submit\" style=\"float:right\"class=\"btn btn-outline-secondary\">{% trans %}Create Role{% endtrans %}</button>
+                        </form>
                         </div>
                         
                         <div class=\"row\">
@@ -283,8 +308,9 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                                         <table class=\"table table-hover\" style=\"text-align:center\">
                         <thead class=\"table-secondary\">
                             <tr>
-                            <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">{% trans %}Role{% endtrans %}</th>
-                            <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">{% trans %}Active{% endtrans %}</th>
+                            <th onclick=\"sortTable(0)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">{% trans %}Id{% endtrans %}</th>
+                            <th onclick=\"sortTable(1)\" style=\"-webkit-user-select: none; width: 5%; cursor: pointer\" style=\"width: 5%\" scope=\"col\">{% trans %}Role{% endtrans %}</th>
+                            <th onclick=\"sortTable(2)\" style=\"-webkit-user-select: none; width: 6%; cursor: pointer\" style=\"width: 6%\" scope=\"col\">{% trans %}Status{% endtrans %}</th>
                             <th style=\"width: 10%;cursor: default; -webkit-user-select: none;\" scope=\"col\">{% trans %}Actions{% endtrans %}</th>
                             </tr>
                         </thead>
@@ -294,15 +320,16 @@ class __TwigTemplate_707ddff95183957a9893a4f733f6c7382a3ede2847869ec2d72313f5741
                             
                             {% for role in roles %}
                             
+                                    <td style=\"vertical-align: middle\">{{ role.id }}</td>
                                     <td style=\"vertical-align: middle\">{{ role.role }}</td>
-                                    <td style=\"vertical-align: middle\">{{ role.active }}</td>
+                                    <td style=\"vertical-align: middle\">{% if role.active == 1 %}Active{% endif %}{% if role.active == 0 %}Disable{% endif %}</td>
 
                                     <td style=\"-webkit-user-select: none; vertical-align: middle\">
   
                                     {% if app.user.id is defined%}
-                                    <a href=\"role/show\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
-                                    <a href=\"role/edit\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                    <a href=\"role/delete\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
+                                    <a href=\"role/show/{{ role.id }}\"><i class=\"mdi mdi-eye-outline text-secondary font-16\"></i></a>
+                                    <a href=\"role/edit/{{ role.id }}\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                    <a href=\"role/delete/{{ role.id }}\"><i class=\"las la-trash-alt text-secondary font-16\" onclick=\"return confirm('are you sure?')\"></i></a>
                                     {% endif %}
                                     </td>
                                 </tr>

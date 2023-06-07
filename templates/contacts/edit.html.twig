@@ -1,0 +1,334 @@
+{% extends "./base.html.twig" %}
+
+{% block body %}
+<form method="POST">
+    {{ form_start(form) }}
+    <div class="page-wrapper">
+
+                <!-- Page Content-->
+                {# <div class="page-content-tab"> #}
+
+                    <div class="container-fluid">
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                    <div class="float-end">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/index">Business</a>
+                                            </li><!--end nav-item-->
+                                            <li class="breadcrumb-item"><a href="/business">Business</a>
+                                            </li><!--end nav-item-->
+                                            <li class="breadcrumb-item"><a href="/business/contacts">Contacts</a>
+                                            </li><!--end nav-item-->
+                                            <li class="breadcrumb-item active">Edit</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Edit {{ contacts.name }}</h4>
+                                </div><!--end page-title-box-->
+                            </div><!--end col-->
+                        </div>
+                        <!-- end page title end breadcrumb -->
+                        <div class="row">
+                            <div class="col-12 col-lg-8 mx-auto">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-6 mb-3">
+                                                        <label for="projectName" class="form-label">Name</label>
+                                                        {{ form_row(form.name) }}
+                                                </div>
+
+                                                <div class="col-md-6 mb-3">
+                                                        <label for="projectName" class="form-label">Surname</label>
+                                                        {{ form_row(form.surname) }}
+                                                </div>
+
+                                                <div class="col-md-6 mb-3">
+                                                        <label for="projectName" class="form-label">User</label>
+                                                        {{ form_row(form.iduser) }}
+                                                </div>
+
+                                                <div class="col-md-6 mb-3">
+                                                        <label for="projectName" class="form-label">Account</label>
+                                                        {{ form_row(form.idaccount) }}
+                                                </div>
+
+                                                <div class="col-md-16 mb-3">
+                                                        <label for="projectName" class="form-label">Description</label>
+                                                        {{ form_row(form.description) }}
+                                               </div>
+                                        </div>           
+                                    </div> <!--end card-body-->                                           
+                                </div><!--end card-->
+                            </div> <!--end col-->                                          
+                        </div><!--end row-->
+
+                     <div class="row">
+                    <div class="col-12 col-lg-8 mx-auto">
+                        <div style="width:50%; display:inline-block; float:right;margin-left:15px">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="containerphone">
+                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('phone')">Add Phone Field</button>
+                                    </div> <!--end container-->
+                                </div> <!--end card-body-->
+                            </div> <!--end card-body-->
+                        </div> <!--end col-->
+                        <div class="card">
+                            <div class="card-body">
+                                
+                                    <div id="containeremail">
+                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('email')">Add Email Field</button>
+                                    </div> <!--end container-->
+                                </div> <!--end card-body-->
+                            </div> <!--end card-body-->
+                        
+                    </div> <!--end col-->                                          
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-12 col-lg-8 mx-auto">
+                        <div style="width:100%; display:inline-block; float:right;margin-left:15px">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="containeraddress">
+                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('address')">Add Address Field</button>
+                                    </div> <!--end container-->
+                                </div> <!--end card-body-->
+                            </div> <!--end card-body-->
+                        </div> <!--end col-->                        
+                    </div> <!--end col-->                                          
+                </div><!--end row-->
+                    
+
+                    <div class="row">
+                        <div class="col-12 col-lg-8 mx-auto">
+                            <div class="form-group">
+                                <a style="float:right" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0" onclick="window.history.back()" >Back</a>                                                                                           
+                            </div>
+                        
+                            <div class="form-group">
+                                <button type="submit" style="float:right; margin-right:15px" class="btn btn-de-success btn-sm text-light px-4 mt-3 mb-0">Edit</button>                                                                                                                                                                                     
+                            </div>                 
+                        </div> <!--end col-->                                          
+                    </div><!--end row-->
+
+            {{ form_end(form) }}
+            </form>
+
+<script type="text/javascript">
+
+        $(document).ready(function () {
+
+            document.body.classList.toggle('enlarge-menu');
+
+
+            {% for phone in phones %}
+                addInputFieldWithValue("phone", "{{ phone.phone }}");
+            {% endfor %}
+
+            {% for email in emails %}
+                addInputFieldWithValue("email", "{{ email.email }}");
+            {% endfor %}
+
+            {% for address in addresses %}
+                AddAdress("{{ address.address }}" ,"{{ address.city }}" ,"{{ address.postal_code }}");
+            {% endfor %}
+          
+        });
+
+</script>
+
+<script>
+let CreateInputAddress = null;
+let CreateInputCity = null;
+let CreateInputPostalCode = null;
+
+
+
+function addInputField(fieldadded) {
+      const container = document.getElementById("container" + fieldadded);
+      
+      const deleteButton = document.createElement("button");
+      deleteButton.classList.add("las");
+      deleteButton.classList.add("la-trash-alt");
+      deleteButton.classList.add("deletebutton");
+
+      if (fieldadded === "phone") {
+        const CreateInput = document.createElement("input");
+        CreateInput.classList.add("textboxphone");
+        CreateInput.name = fieldadded + '[]';
+        container.appendChild(CreateInput).placeholder = "Phone";
+           deleteButton.addEventListener("click", function() {
+            container.removeChild(CreateInput);
+            container.removeChild(deleteButton);
+        });
+      }
+
+      if (fieldadded === "email") {
+        const CreateInput = document.createElement("input");
+        CreateInput.classList.add("textboxemail");
+        CreateInput.name = fieldadded + '[]';
+        container.appendChild(CreateInput).placeholder = "Email";
+           deleteButton.addEventListener("click", function() {
+            container.removeChild(CreateInput);
+            container.removeChild(deleteButton);
+        });
+      }
+
+      if (fieldadded === "address") {
+        const CreateInputAddress = document.createElement("input");
+        const CreateInputCity = document.createElement("input");
+        const CreateInputPostalCode = document.createElement("input");
+
+        CreateInputAddress.classList.add("textboxaddress");
+        CreateInputCity.classList.add("textboxaddress");
+        CreateInputPostalCode.classList.add("textboxaddress");
+
+        CreateInputAddress.name = fieldadded + 'address' + '[]';
+        CreateInputCity.name = fieldadded + 'city' + '[]';
+        CreateInputPostalCode.name = fieldadded + 'postalcode' + '[]';
+
+        CreateInputAddress.placeholder = "Address";
+        CreateInputCity.placeholder = "City";
+        CreateInputPostalCode.placeholder = "Postal Code";
+
+        container.appendChild(CreateInputAddress);
+        container.appendChild(CreateInputCity);
+        container.appendChild(CreateInputPostalCode);
+
+          deleteButton.addEventListener("click", function() {
+         
+                event.preventDefault();
+                container.removeChild(CreateInputAddress);
+                container.removeChild(CreateInputCity);
+                container.removeChild(CreateInputPostalCode);
+                container.removeChild(deleteButton);
+        });
+      }
+
+      container.appendChild(deleteButton);
+    }
+
+function addInputFieldWithValue(fieldadded, valuetoadd) {
+
+     const CreateInput = document.createElement("input");
+    CreateInput.name = fieldadded + '[]';
+    if(fieldadded == "phone" ){
+    CreateInput.classList.add("textboxphone");
+    }
+    
+    if(fieldadded == "email" ){
+    CreateInput.classList.add("textboxemail");
+    }
+
+    if(fieldadded == "address" ){
+    CreateInputAddress.classList.add("textboxaddress");
+    CreateInputCity.classList.add("textboxaddress");
+    CreateInputPostalCode.classList.add("textboxaddress");
+    }
+
+    CreateInput.value=valuetoadd;
+
+    const container = document.getElementById("container" + fieldadded);
+    container.appendChild(CreateInput);
+    
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("las");
+    deleteButton.classList.add("la-trash-alt");
+    deleteButton.classList.add("deletebutton");
+
+    
+    deleteButton.addEventListener("click", function() {
+        container.removeChild(CreateInput);
+        container.removeChild(deleteButton);
+    });
+    container.appendChild(deleteButton);
+}
+
+function AddAdress(fieldAddress, fieldCity, fieldPostalCode) {
+    
+        const CreateInputAddress = document.createElement("input");
+        const CreateInputCity = document.createElement("input");
+        const CreateInputPostalCode = document.createElement("input");
+        const container = document.getElementById("containeraddress");
+
+        CreateInputAddress.classList.add("textboxaddress");
+        CreateInputCity.classList.add("textboxaddress");
+        CreateInputPostalCode.classList.add("textboxaddress");
+
+        CreateInputAddress.name = 'address' + 'address' + '[]';
+        CreateInputCity.name = 'address' + 'city' + '[]';
+        CreateInputPostalCode.name = 'address' + 'postalcode' + '[]';
+
+        CreateInputAddress.placeholder = "Address";
+        CreateInputCity.placeholder = "City";
+        CreateInputPostalCode.placeholder = "Postal Code";
+
+        CreateInputAddress.value=fieldAddress;
+        CreateInputCity.value=fieldCity;
+        CreateInputPostalCode.value=fieldPostalCode;
+
+        container.appendChild(CreateInputAddress);
+        container.appendChild(CreateInputCity);
+        container.appendChild(CreateInputPostalCode);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("las");
+        deleteButton.classList.add("la-trash-alt");
+        deleteButton.classList.add("deletebutton");
+
+        deleteButton.addEventListener("click", function() {
+        container.removeChild(CreateInput);
+        container.removeChild(deleteButton);
+        });
+        container.appendChild(deleteButton);
+}
+
+</script>
+
+<style>
+.deletebutton {
+border: none;
+outline: none;
+background: none;
+font-size: 20px;
+color: red;
+}
+
+.textboxphone{
+width: 195px;
+height: 30px;
+padding: 5px;
+border: 1px solid #e8ebf3;
+border-radius: 4px;
+margin-bottom: 5px;
+font-size: .8125rem;
+}
+
+.textboxemail{
+width: 185px;
+height: 30px;
+padding: 5px;
+border: 1px solid #e8ebf3;
+border-radius: 4px;
+margin-bottom: 5px;
+font-size: .8125rem;
+}
+
+.textboxaddress{
+width: 185px;
+height: 30px;
+padding: 5px;
+border: 1px solid #e8ebf3;
+border-radius: 4px;
+margin-bottom: 5px;
+font-size: .8125rem;
+margin-right: 10px;
+display: inline-block;
+}
+
+</style>
+
+{% endblock %}

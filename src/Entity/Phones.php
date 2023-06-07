@@ -15,10 +15,13 @@ class Phones
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?entities $id_entity = null;
+    private ?Entities $id_entity = null;
 
     #[ORM\Column]
     private ?int $id_in_relation = null;
+
+    #[ORM\Column]
+    private ?int $phone = null;
 
     public function getId(): ?int
     {
@@ -45,6 +48,18 @@ class Phones
     public function setIdInRelation(int $id_in_relation): self
     {
         $this->id_in_relation = $id_in_relation;
+
+        return $this;
+    }
+
+    public function getPhone(): ?int
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(int $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }

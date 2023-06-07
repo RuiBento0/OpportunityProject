@@ -37,12 +37,9 @@ class Product
     #[ORM\ManyToOne]
     private ?Users $updated_by = null;
 
-    #[ORM\ManyToMany(targetEntity: Opportunities::class, mappedBy: 'products')]
-    private Collection $opportunities;
 
     public function __construct()
     {
-        $this->opportunities = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -130,33 +127,6 @@ class Product
     public function setUpdatedBy(?users $updated_by): self
     {
         $this->updated_by = $updated_by;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Opportunities>
-     */
-    public function getOpportunities(): Collection
-    {
-        return $this->opportunities;
-    }
-
-    public function addOpportunity(Opportunities $opportunity): self
-    {
-        if (!$this->opportunities->contains($opportunity)) {
-            $this->opportunities->add($opportunity);
-            $opportunity->addProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOpportunity(Opportunities $opportunity): self
-    {
-        if ($this->opportunities->removeElement($opportunity)) {
-            $opportunity->removeProduct($this);
-        }
 
         return $this;
     }

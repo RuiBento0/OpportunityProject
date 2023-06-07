@@ -1,0 +1,67 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business</title>
+  <style>
+    #banner {
+      background-color: #608E34;
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 10px;
+      color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div id="banner">
+    <h1>Leads</h1>
+  </div>
+  <br>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Account</th>
+      <th>User</th>
+      <th>Area</th>
+      <th>Status</th>
+      <th>Source</th>
+      <th>Department</th>
+      <th>Amount</th>
+      <th>Description</th>
+    </tr>
+{% for lead in leads %}
+    <tr>
+      <td>{{ lead.id }}</td>
+      <td>{{ lead.name }}</td>
+      <td>{{ lead.account }}</td>
+      <td>{{ lead.iduser.name }}</td>
+      <td>{{ lead.idarea.name }}</td>
+      <td>{{ lead.idstatus.name }}</td>
+      <td>{{ lead.idsource.name }}</td>
+      <td>{{ lead.iddepartment.name }}</td>
+      <td>{{ lead.amount }} $</td>
+      <td>{{ lead.description }}</td>
+    </tr>
+{% endfor %}
+    <!-- Add more rows as needed -->
+  </table>
+</body>
+</html>
+
+{% endblock %}

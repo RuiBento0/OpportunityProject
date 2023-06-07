@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %} 
+
+{% block body %}
+
+   <div class="page-wrapper">
+
+            <!-- Page Content-->
+            {# <div class="page-content-tab"> #}
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/index">Business</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item"><a href="/options">Settings</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item active">Locations</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Settings</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+
+                        <div style="margin-top:0px; margin-bottom:20px;padding-left:10px; padding-right:25px">
+                        <form action="/options/locations/create">
+                            <input type="text" style="float:left; width:300px" id="myInput" onkeyup="myFunction()" type="text" placeholder="{% trans %}Search{% endtrans %}..." class="form-control"></input>
+                            <button type="submit" style="float:right"class="btn btn-outline-secondary">{% trans %}Create Location{% endtrans %}</button>
+                        </form>
+                        </div>
+                        
+                        <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Locations Details</h4>             
+                                        </div><!--end col-->                                       
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class="card-body">                                    
+                                    <div class="table-responsive" style="">
+                                        <table class="table mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th onclick="sortTable(0)" style="-webkit-user-select: none; width: 5%; cursor: pointer" style="width: 5%" scope="col">{% trans %}Id{% endtrans %}</th>
+                                                <th onclick="sortTable(1)" style="-webkit-user-select: none; width: 5%; cursor: pointer" style="width: 5%" scope="col">{% trans %}Name{% endtrans %}</th>
+                                                <th onclick="sortTable(2)" style="-webkit-user-select: none; width: 6%; cursor: pointer" style="width: 6%" scope="col">{% trans %}Status{% endtrans %}</th>
+                                                <th style="width: 10%;cursor: default; -webkit-user-select: none;" scope="col">{% trans %}Actions{% endtrans %}</th>
+                                            </tr><!--end tr-->
+                                            </thead>
+                                            <tbody id="myTable">
+                                                    <tr>
+
+                                                    {% for locations in locations %}
+                            
+                                                        <td style="vertical-align: middle">{{ locations.id }}</td>
+                                                        <td style="vertical-align: middle">{{ locations.name }}</td>
+                                                        <td style="vertical-align: middle">{% if locations.active == 1 %}Active{% endif %}{% if locations.active == 0 %}Disable{% endif %}</td>
+
+                                                        <td style="-webkit-user-select: none; vertical-align: middle">
+
+                                                            {% if app.user.id is defined%}
+                                                            <a href="locations/show/{{ locations.id }}"><i class="mdi mdi-eye-outline text-secondary font-16"></i></a>
+                                                            <a href="locations/edit/{{ locations.id }}"><i class="las la-pen text-secondary font-16"></i></a>
+                                                            <a href="locations/delete/{{ locations.id }}"><i class="las la-trash-alt text-secondary font-16" onclick="return confirm('are you sure?')"></i></a>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                        </table> 
+                                    </div>          
+                                </div><!--end row-->                                     
+                            </div><!--end card-body--> 
+                        </div><!--end card--> 
+                            <div>
+                            <div class="col-auto" style="float:right">
+                                            <nav aria-label="...">
+                                                <ul class="pagination pagination-sm mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                         </div> <!--end col-->    
+                        </div> <!--end col-->                               
+                    </div><!--end row-->
+
+<script type="text/javascript">
+
+    function myFunction() 
+    {
+        var input, filter, table, tr, td, i, TxtValue, x, flag;
+
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++)
+        {
+            flag = 0;
+
+            for (x = 0; x < tr[i].getElementsByTagName("td").length-1; x++)
+            {
+                td = tr[i].getElementsByTagName("td")[x];
+                if (td) 
+                {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) 
+                    {
+                        flag = 1;
+                    } 
+                }
+            }
+            if(flag==1)
+            {
+                tr[i].style.display = "";
+            }
+            else
+            {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+{% endblock %} 

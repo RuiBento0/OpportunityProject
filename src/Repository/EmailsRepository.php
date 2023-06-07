@@ -39,6 +39,34 @@ class EmailsRepository extends ServiceEntityRepository
         }
     }
 
+    public function deleteEmailbyId($entity, $idinrelation): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            DELETE FROM emails
+            WHERE id_entity_id = :entity AND id_in_relation = :idinrelation
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['entity' => $entity,'idinrelation' => $idinrelation ]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function findEmailbyId($entity, $idinrelation): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM emails
+            WHERE id_entity_id = :entity AND id_in_relation = :idinrelation
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['entity' => $entity,'idinrelation' => $idinrelation ]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
 //    /**
 //     * @return Emails[] Returns an array of Emails objects
 //     */

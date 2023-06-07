@@ -5,9 +5,14 @@ namespace App\Form;
 use App\Entity\Users;
 use App\Entity\Categories;
 use App\Entity\Status;
+use App\Entity\Stages;
 use App\Entity\Priorities;
 use App\Entity\Accounts;
 use App\Entity\Departments;
+use App\Entity\Campaign;
+use App\Entity\Sources;
+use App\Entity\Contacts;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -35,14 +40,24 @@ class OpportunitiesFormType extends AbstractType
             'label' => false,
         ])
 
-        ->add('accounts', EntityType::class, [
+        ->add('product', TextType::class, [
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'Product'
+            ],
+            'label' => false,
+        ])
+
+        ->add('id_account', EntityType::class, [
             'class' => Accounts::class,
             'choice_label' => 'getName',
             'attr' => [
                 'class' => 'form-select',
-                'placeholder' => 'form.placeholder.accounts'
+                'placeholder' => 'form.placeholder.id_account'
             ],
             'label' => false,
+            'required' => false,
+            'empty_data' => null,
            ])
 
         ->add('amount', TextType::class, [
@@ -53,7 +68,15 @@ class OpportunitiesFormType extends AbstractType
             'label' => false,
         ])
 
-        ->add('closedate', DateTimeType::class, [
+        ->add('probability', TextType::class, [
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'probability'
+            ],
+            'label' => false,
+        ])
+
+        ->add('closedate', DateType::class, [
             'attr' => [
                 'class' => 'form-control',
                 'placeholder' => 'CloseDate'
@@ -61,7 +84,7 @@ class OpportunitiesFormType extends AbstractType
             'label' => false,
         ])
 
-        ->add('description', TextareaType::class, [
+        ->add('description', TextType::class, [
             'attr' => [
                 'class' => 'form-control',
                 'placeholder' => 'Description'
@@ -69,52 +92,52 @@ class OpportunitiesFormType extends AbstractType
             'label' => false,
         ])
 
-        ->add('campaign', EntityType::class, [
-            'class' => Campaign::class,
+        ->add('id_contact', EntityType::class, [
+            'class' => Contacts::class,
             'choice_label' => 'getName',
             'attr' => [
                 'class' => 'form-select',
-                'placeholder' => 'form.placeholder.campaign'
+                'placeholder' => 'form.placeholder.id_contact'
             ],
             'label' => false,
            ])
 
-        ->add('area', EntityType::class, [
-            'class' => Area::class,
-            'choice_label' => 'getName',
-            'attr' => [
-                'class' => 'form-select',
-                'placeholder' => 'form.placeholder.area'
-            ],
-            'label' => false,
-           ])
-
-        ->add('departments', EntityType::class, [
+        ->add('id_department', EntityType::class, [
             'class' => Departments::class,
             'choice_label' => 'getName',
             'attr' => [
                 'class' => 'form-select',
-                'placeholder' => 'form.placeholder.departments'
+                'placeholder' => 'form.placeholder.id_department'
             ],
             'label' => false,
            ])
 
-        ->add('status', EntityType::class, [
-            'class' => Status::class,
+           ->add('id_source', EntityType::class, [
+            'class' => Sources::class,
             'choice_label' => 'getName',
             'attr' => [
                 'class' => 'form-select',
-                'placeholder' => 'form.placeholder.status'
+                'placeholder' => 'form.placeholder.id_source'
             ],
             'label' => false,
            ])
 
-           ->add('source', EntityType::class, [
-            'class' => Source::class,
+           ->add('id_user', EntityType::class, [
+            'class' => Users::class,
             'choice_label' => 'getName',
             'attr' => [
                 'class' => 'form-select',
-                'placeholder' => 'form.placeholder.source'
+                'placeholder' => 'form.placeholder.id_user'
+            ],
+            'label' => false,
+           ])
+
+           ->add('id_stage', EntityType::class, [
+            'class' => Stages::class,
+            'choice_label' => 'getName',
+            'attr' => [
+                'class' => 'form-select',
+                'placeholder' => 'form.placeholder.id_stage'
             ],
             'label' => false,
            ])

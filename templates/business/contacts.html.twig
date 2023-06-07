@@ -1,0 +1,150 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="page-wrapper">
+
+            <!-- Page Content-->
+            {# <div class="page-content-tab"> #}
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/index">Business</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item"><a href="/business/contacts">Contacts</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item active">List</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Contacts</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+
+                        <form action="/business/contacts/create">
+                            <input type="text" style="float:left; width:300px" id="myInput" onkeyup="myFunction()" type="text" placeholder="{% trans %}Search{% endtrans %}..." class="form-control"></input>
+                            <button type="submit" style="float:right"class="btn btn-outline-secondary">{% trans %}Create Contacts{% endtrans %}</button>
+                            <a href="/pdf/generator/contacts" type="submit" target="_blank" style="float:right; width:10%; margin-right:20px"class="btn btn-outline-danger">{% trans %} PDF{% endtrans %}</a>
+                            <a href="/excel/generator/contacts" style="float:right; width:12%; margin-right:5px"class="btn btn-outline-success">{% trans %}Export Excel{% endtrans %}</a>
+                            <a href="/excel/upload/contacts" type="submit" style="float:right; width:12%; margin-right:5px"class="btn btn-outline-blue">{% trans %}Import Excel{% endtrans %}</a>
+                        </form>
+                        </div>
+                        <br>
+                        <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Contacts Details</h4>             
+                                        </div><!--end col-->                                       
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class="card-body">                                    
+                                    <div class="table-responsive" style="">
+                                        <table class="table mb-0" id="pagination">
+                                            <thead>
+                                                <tr>
+                                                    <th onclick="sortTable(0)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Id</th>
+                                                    <th onclick="sortTable(1)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Name</th>
+                                                    <th onclick="sortTable(2)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Account</th>
+                                                    <th onclick="sortTable(3)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Email</th>
+                                                    <th onclick="sortTable(4)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Phone</th>
+                                                    <th style="margin:auto" scope="col">Actions</th>
+                                                </tr><!--end tr-->
+                                            </thead>
+                                            <tbody id="myTable">
+                                                    <tr>
+
+                                                    {% for contact in contacts %}
+
+                                                            <td style="vertical-align: middle">{{ contact.id }}</td>
+                                                            <td style="vertical-align: middle">{{ contact.name }} {{ contact.surname }}</td>
+                                                            {# <td style="vertical-align: middle">{{ contact.iduser.name }}</td> #}
+                                                            <td style="vertical-align: middle">{{ contact.accname }}</td>
+                                                            <td style="vertical-align: middle">{{ contact.phones }}</td>
+                                                            <td style="vertical-align: middle">{{ contact.emails }}</td>
+                                                            <td style="-webkit-user-select: none; vertical-align: middle">
+
+                                                        {% if app.user.id is defined%} 
+                                                            {% if app.user.userRole.role == "SUPERADMIN" %} 
+                                                                <a href="contacts/show/{{ contact.id }}"><i class="mdi mdi-eye-outline text-secondary font-16"></i></a>                                                       
+                                                                <a href="contacts/edit/{{ contact.id }}"><i class="las la-pen text-secondary font-16"></i></a>
+                                                                <a href="contacts/delete/{{ contact.id }}"><i class="las la-trash-alt text-secondary font-16" onclick="return confirm('are you sure?')"></i></a>
+                                                            {% endif %} 
+
+                                                            {% if app.user.userRole.role == "USER" %} 
+                                                                    <a href="contacts/show/{{ contact.id }}"><i class="mdi mdi-eye-outline text-secondary font-16"></i></a>
+                                                            {% endif %}  
+                                                        {% endif %} 
+                                                        </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                        </table>
+                                                             
+                                    </div>  
+                                    <div class="row">
+                                        <form  class="col">
+                                           
+                                        </form>
+                                             
+                                                                   
+                                    </div><!--end row-->                                     
+                                </div><!--end card-body--> 
+                            </div><!--end card-->   
+                        </div> <!--end col-->                               
+                    </div><!--end row-->
+
+                    
+                    <br><br>
+     <footer class="footer text-center text-sm-start">
+                    &copy; <script>
+                        document.write(new Date().getFullYear())
+                    </script> Business <span class="text-muted d-none d-sm-inline-block float-end">Crafted by Bento</span>
+                </footer>
+
+<script type="text/javascript">
+
+    function myFunction() 
+    {
+        var input, filter, table, tr, td, i, TxtValue, x, flag;
+
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++)
+        {
+            flag = 0;
+
+            for (x = 0; x < tr[i].getElementsByTagName("td").length-1; x++)
+            {
+                td = tr[i].getElementsByTagName("td")[x];
+                if (td) 
+                {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) 
+                    {
+                        flag = 1;
+                    } 
+                }
+            }
+            if(flag==1)
+            {
+                tr[i].style.display = "";
+            }
+            else
+            {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+{% endblock %} 

@@ -24,7 +24,7 @@ class Addresses
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?entities $id_entity = null;
+    private ?Entities $id_entity = null;
 
     #[ORM\Column]
     private ?int $id_in_relation = null;

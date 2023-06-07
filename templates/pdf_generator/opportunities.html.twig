@@ -1,0 +1,71 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business</title>
+  <style>
+    #banner {
+      background-color: #608E34;
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 10px;
+      color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div id="banner">
+    <h1>opportunities</h1>
+  </div>
+  <br>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Account</th>
+      <th>User</th>
+      <th>Contact</th>
+      <th>Stage</th>
+      <th>Source</th>
+      <th>Department</th>
+      <th>Amount</th>
+      <th>Probability</th>
+      <th>Description</th>
+      <th>Close Date</th>
+    </tr>
+{% for opportunity in opportunities %}
+    <tr>
+      <td>{{ opportunity.id }}</td>
+      <td>{{ opportunity.name }}</td>
+      <td>{{ opportunity.idaccount.name }}</td>
+      <td>{{ opportunity.iduser.name }}</td>
+      <td>{{ opportunity.idcontact.name }}</td>
+      <td>{{ opportunity.IdStage.name }}</td>
+      <td>{{ opportunity.idsource.name }}</td>
+      <td>{{ opportunity.iddepartment.name }}</td>
+      <td>{{ opportunity.amount }} $</td>
+      <td>{{ opportunity.probability }} %</td>
+      <td>{{ opportunity.description }}</td>
+      <td>{{ opportunity.closedate|date('Y-m-d') }}</td>
+    </tr>
+{% endfor %}
+    <!-- Add more rows as needed -->
+  </table>
+</body>
+</html>
+
+{% endblock %}

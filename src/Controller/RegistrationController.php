@@ -51,15 +51,29 @@ class RegistrationController extends AbstractController
             $email = $data->getEmail();
 
             $confirmemail = (new Email())
-            ->from('ruibento@sosconsultoria.pt')
-            ->to($email)
-            //->cc('cc@example.com')
-            //->bcc('bcc@example.com')
-            //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
-            ->subject('Welcome to CRM Central!')
-            ->text('Sending emails is fun again!')
-            ->html('<a href="http://127.0.0.1:8000/login/' . $token . '">Confirm email</a>');
+                ->from('ruiruibentobento@gmail.com')
+                ->to($email)
+                //->cc('cc@example.com')
+                //->bcc('bcc@example.com')
+                //->replyTo('test@example.com')
+                //->priority(Email::PRIORITY_HIGH)
+                ->subject('Business')
+                ->text('Confirm Registration')
+                ->html('<table width="100%" cellpadding="0" cellspacing="0" style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                    <tr style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                        <td class="content-block" style="font-size: 14px; text-decoration: none; line-height: 2em; font-weight: bold">
+                            Business
+                        </td>
+                    </tr>
+                    Please confirm your email address by clicking the link below.                                                             
+                        <a href="http://127.0.0.1:8000/logint/'.$token.'" style="color: #608E34; font-size: 14px; text-decoration: none; line-height: 2em; font-weight: bold; cursor: pointer; display: block; border-radius: 5px; text-transform: capitalize; border: none; padding: 10px 0px;">Confirm email address</a>
+                    <tr style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif">
+                        <td class="content-block" style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; padding-top: 5px; vertical-align: top; margin: 0; text-align: right;" valign="top">
+                            &mdash; <b>CRM</b> - Admin Dashboard
+                        </td>
+                    </tr>
+                </table>
+                    ');
 
             $mailer->send($confirmemail);
 

@@ -36,7 +36,6 @@ class Contacts
     private ?Users $id_user = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
     private ?Accounts $id_account = null;
 
     #[ORM\ManyToOne]

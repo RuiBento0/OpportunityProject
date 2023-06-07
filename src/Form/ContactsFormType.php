@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Users;
+use App\Entity\Accounts;
 use App\Entity\Adreesses;
 use App\Entity\Phones;
 use App\Entity\Emails;
@@ -33,11 +34,45 @@ class ContactsFormType extends AbstractType
             'label' => false,
         ])
 
+        ->add('surname', TextType::class, [
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'Surname'
+            ],
+            'label' => false,
+        ])
 
+        ->add('description', TextType::class, [
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'Description'
+            ],
+            'label' => false,
+        ])
 
+        ->add('iduser', EntityType::class, [
+            'class' => Users::class,
+            'choice_label' => 'getName',
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'form.placeholder.user'
+            ],
+            'label' => false,
+           ])
 
-
+           ->add('idaccount', EntityType::class, [
+            'class' => Accounts::class,
+            'choice_label' => 'getName',
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'form.placeholder.user'
+            ],
+            'label' => false,
+            'required' => false,
+            'empty_data' => null,
+           ])
         ;
+        
     }
 
     public function configureOptions(OptionsResolver $resolver): void

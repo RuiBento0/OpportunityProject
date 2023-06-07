@@ -1,0 +1,79 @@
+{% extends "./base.html.twig" %}
+
+{% block body %}
+
+<div class="page-wrapper">
+
+            <!-- Page Content-->
+            {# <div class="page-content-tab"> #}
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/index">Business</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item"><a href="/authentication">Authentication</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item"><a href="/authentication/users">User</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item active">Create</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Create User</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        <div class="col-12 col-lg-8 mx-auto">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form method="POST">
+                                    {{ form_start(form) }}
+                                        <div class="form-group row">
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Name</label>
+                                                    {{ form_row(form.name) }}
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Email</label>
+                                                    {{ form_row(form.email) }}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group row">
+
+
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Role</label>
+                                                    {{ form_row(form.userRole) }}
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Password</label>
+                                                   {{ form_row(form.password) }}
+                                            </div>
+                                            
+                                        </div>
+
+                                        <br>
+                                    <div class="form-group">
+                                            <a style="float:right; margin-right: 5px;" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0" onclick="window.history.back()" >Back</a>                                                                                           
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <button type="submit" style="float:right; margin-right:15px" class="btn btn-de-success btn-sm text-light px-4 mt-3 mb-0">Create</button>                                                                                                                                                                                     
+                                        </div>
+                                        {{ form_end(form) }}
+                                        </form>
+                                </div> <!--end card-body-->                                           
+                            </div><!--end card-->
+                        </div> <!--end col-->                                          
+                    </div><!--end row-->
+
+{% endblock %}

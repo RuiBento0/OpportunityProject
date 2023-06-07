@@ -39,6 +39,34 @@ class LeadsRepository extends ServiceEntityRepository
         }
     }
 
+    public function newcountLeads(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+        SELECT COUNT(id) AS counter 
+        FROM leads 
+        WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 WEEK)  
+        
+          ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function findByConverted(): array
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.id_status = :id')
+            ->setParameter('id', 6)
+            ->orderBy('l.updated_at', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Leads[] Returns an array of Leads objects
 //     */

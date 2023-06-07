@@ -9,6 +9,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
+use App\Entity\Roles;
+use App\Form\RegistrationFormType;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
 class SecurityController extends AbstractController
 {
     public function __construct(private UsersRepository $UsersRepository)
@@ -16,28 +25,33 @@ class SecurityController extends AbstractController
 
     }
 
-    #[Route(path: '/login', name: 'app_login',methods:['POST','GET'])]
+    #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        if($_POST){
-                $UserL = $this->UsersRepository->checktoken($userid);
-    
-                return $this->redirectToRoute('app_index');
-                }
+      
 
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
+        
+        
+        if($_POST){
+          
+            $UserL = $this->UsersRepository->checktoken($userid);
+
+            return $this->redirectToRoute('app_index');
+            }
+            
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        throw new \LogicException();
     }
 
-    #[Route(path: '/login/{token}', name: 'app_login_token')]
+    #[Route(path: '/logint/{token}', name: 'app_login_token')]
     public function loginwithtoken($token, AuthenticationUtils $authenticationUtils): Response
     {
         $UsersRepository = $this->UsersRepository->findbyToken($token);
@@ -60,68 +74,178 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error, 'username' => $userusername]);
     }
 
-    #[Route('/register', name: 'app_register')]
-    public function register(MailerInterface $mailer, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    #[Route('/resetpassword', methods:['GET','POST'],name: 'app_reset_password')]
+    public function resetpassword(MailerInterface $mailer, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $flag = 0;
 
         $token = new Users();
-        $user = new Users();
+    
         $roles = new Roles();
 
+        
 
-        $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
+        if (isset($_POST["email"])) {
+                
+            $email=$_POST["email"];
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+            $users = $this->UsersRepository->findbyEmail($email);
+
+            foreach($users as $user1){
+                $userid= $user1["id"];
+            }
+
+
             function getTokens($len=32){
                 return substr(md5(openssl_random_pseudo_bytes(20)), -$len);
             }
 
             $token = getTokens(10);
 
+
+            $user=$this->UsersRepository->find($userid);
+
             $user->setTokens($token);
 
-            $data = $form->getData();
-            $email = $data->getEmail();
 
             $confirmemail = (new Email())
-            ->from('ruibento@sosconsultoria.pt')
-            ->to($email)
-            //->cc('cc@example.com')
-            //->bcc('bcc@example.com')
-            //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
-            ->subject('Welcome to CRM Central!')
-            ->text('Sending emails is fun again!')
-            ->html('<a href="http://127.0.0.1:8000/login/' . $token . '">Confirm email</a>');
+                ->from('ruiruibentobento@gmail.com')
+                ->to($email)
+                //->cc('cc@example.com')
+                //->bcc('bcc@example.com')
+                //->replyTo('test@example.com')
+                //->priority(Email::PRIORITY_HIGH)
+                ->subject('Business')
+                ->text('Confirm Registration')
+                ->html('<table width="100%" cellpadding="0" cellspacing="0" style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                    <tr style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                        <td class="content-block" style="font-size: 14px; text-decoration: none; line-height: 2em; font-weight: bold">
+                            Business
+                        </td>
+                    </tr>
+                    Please change your password by clicking the link below.                                                             
+                        <a href="http://127.0.0.1:8000/newpassword/'.$token.'" style="color: #608E34; font-size: 14px; text-decoration: none; line-height: 2em; font-weight: bold; cursor: pointer; display: block; border-radius: 5px; text-transform: capitalize; border: none; padding: 10px 0px;">Change Password here</a>
+                    <tr style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif">
+                        <td class="content-block" style="font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; padding-top: 5px; vertical-align: top; margin: 0; text-align: right;" valign="top">
+                            &mdash; <b>CRM</b> - Admin Dashboard
+                        </td>
+                    </tr>
+                </table>
+                    ');
 
             $mailer->send($confirmemail);
 
-            $user->setPassword(
-                $userPasswordHasher->hashPassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
-
-            $user->setActive(1);
             $user->setTokens($token);
-            $userRole = $this->RolesRepository->find(3); // set automaticly user to "USER" role
-
-            $user->setUserRole($userRole); 
 
             $entityManager->persist($user);
             $entityManager->flush();
-
+            
             $flag = 1;
+
+            return $this->render('reset_password/check_email.html.twig', [
+                'email'=>$email,
+            ]);  
+            
         }
 
-        return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
-            'flag' => $flag,
-        ]);
+        return $this->render('reset_password/request.html.twig', [
+        ]);          
+    }
 
+    #[Route(path: '/newpassword/{token}',methods:['GET','POST'], name: 'app_newpassword')]
+    public function newpassword($token, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    {
+
+
+        if(isset($_POST["newpassword"]))
+        {
+
+            $user = new Users;
+
+            $UsersRepository = $this->UsersRepository->findbyToken($token);
+
+            foreach($UsersRepository as $Users){
+                $username=$Users['email'];
+                $userid = $Users['id'];
+            }
+
+            $user=$this->UsersRepository->find($userid);
+            
+            print_r($user->getPassword());
+            print_r("<br>");
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                        $user,
+                        $_POST['newpassword']
+                    )
+                );
+
+            print_r($user->getPassword());
+
+            
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+                
+                $user = $this->UsersRepository->removetoken($userid);
+
+             
+                return $this->redirectToRoute('app_login',[
+                    
+                ]);
+
+              
+        }
+
+
+        return $this->render('reset_password/reset.html.twig', [
+            'token'=>$token,
+        ]);
+    }
+
+    #[Route(path: '/password/{token}',methods:['GET','POST'], name: 'app_password')]
+    public function createpassword($token, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    {
+
+
+        if(isset($_POST["createpassword"]))
+        {
+
+            $user = new Users;
+
+            $UsersRepository = $this->UsersRepository->findbyToken($token);
+
+            foreach($UsersRepository as $Users){
+                $username=$Users['email'];
+                $userid = $Users['id'];
+            }
+
+            $user=$this->UsersRepository->find($userid);
+            
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                        $user,
+                        $_POST['createpassword']
+                    )
+                );
+
+            print_r($user->getPassword());
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+                
+                $user = $this->UsersRepository->removetoken($userid);
+             
+                return $this->redirectToRoute('app_login',[
+                    
+                ]);
+
+              
+        }
+
+
+        return $this->render('reset_password/createpassword.html.twig', [
+            'token'=>$token,
+        ]);
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* ./base.html.twig */
+/* base.html.twig */
 class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f7ca43 extends Template
 {
     private $source;
@@ -37,24 +37,30 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./base.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
-        echo "<!DOCTYPE html>
+        echo "
+<!DOCTYPE html>
 <html lang=\"en\">
     <head>
         <meta charset=\"utf-8\" />
-        <title> CRM Central </title>
-        <link rel=\"icon\" href=\"img/CRM2.ico\">
+        <title> Business </title>
+        <link rel=\"icon\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/business3.ico"), "html", null, true);
+        echo "\">
+
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
         <meta content=\"Premium Multipurpose Admin & Dashboard Template\" name=\"description\" />
         <meta content=\"\" name=\"author\" />
         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
         ";
-        // line 11
+        // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 19
+        // line 22
         echo "        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+        
     </head>
 
     <body id=\"body\">
@@ -66,202 +72,97 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
                     <li class=\"dropdown\">
                         <!-- Add fields here-->
                     </li><!--end topbar-language-->
-                    
-                    <li class=\"dropdown notification-list\">
-                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
-                            aria-haspopup=\"false\" aria-expanded=\"false\">
-                            <i class=\"ti ti-mail\"></i>
-                        </a>
-                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
-                        
-                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
-                                Emails <span class=\"badge bg-soft-primary badge-pill\">3</span>
-                            </h6> 
-                            <div class=\"notification-menu\" data-simplebar>
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-1.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-4.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-2.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-5.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-3.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                            </div>
-                            <!-- All-->
-                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
-                                View all <i class=\"fi-arrow-right\"></i>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li class=\"dropdown notification-list\">
-                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
-                            aria-haspopup=\"false\" aria-expanded=\"false\">
-                            <i class=\"ti ti-bell\"></i>
-                            <span class=\"alert-badge\"></span>
-                        </a>
-                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
-                        
-                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
-                                Notifications <span class=\"badge bg-soft-primary badge-pill\">2</span>
-                            </h6> 
-                            <div class=\"notification-menu\" data-simplebar>
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-chart-arcs\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-device-computer-camera\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">                                                    
-                                            <i class=\"ti ti-diamond\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-drone\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-users\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                            </div>
-                            <!-- All-->
-                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
-                                View all <i class=\"fi-arrow-right\"></i>
-                            </a>
-                        </div>
-                    </li>
 
                     <li class=\"dropdown\">
                         <a class=\"nav-link dropdown-toggle nav-user\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
                             aria-haspopup=\"false\" aria-expanded=\"false\">
                             <div class=\"d-flex align-items-center\">
+                                <img src=\"";
+        // line 40
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("uploads/userimg/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "user", [], "any", false, false, false, 40), "photo", [], "any", false, false, false, 40)) . "")), "html", null, true);
+        echo "\" alt=\"profile-user\" class=\"rounded-circle me-2 thumb-sm\" />
                                 <div>
-                                    <small class=\"d-none d-md-block font-11\">
-
-                                    </small>
-                                    <span class=\"d-none d-md-block fw-semibold font-12\">";
-        // line 209
-        echo "<i class=\"mdi mdi-chevron-down\"></i></span>
+                                    <small class=\"d-none d-md-block font-11\">";
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 42, $this->source); })()), "user", [], "any", false, false, false, 42), "userRole", [], "any", false, false, false, 42), "role", [], "any", false, false, false, 42), "html", null, true);
+        echo "</small>
+                                    <span class=\"d-none d-md-block fw-semibold font-12\" style=\"text-transform: capitalize\"> ";
+        // line 43
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43), "name", [], "any", false, false, false, 43), "html", null, true);
+        echo " <i
+                                            class=\"mdi mdi-chevron-down\"></i></span>
                                 </div>
                             </div>
-                        </a> 
+                        </a>
                         <div class=\"dropdown-menu dropdown-menu-end\">
-                            <a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
+                            <a class=\"dropdown-item\" href=\"/profile/";
+        // line 49
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "user", [], "any", false, false, false, 49), "id", [], "any", false, false, false, 49), "html", null, true);
+        echo "\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
+                             ";
+        // line 50
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 50), "id", [], "any", true, true, false, 50)) {
+            echo " 
+
+                            ";
+            // line 52
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 52, $this->source); })()), "user", [], "any", false, false, false, 52), "userRole", [], "any", false, false, false, 52), "role", [], "any", false, false, false, 52) == "SUPERADMIN")) {
+                echo " 
                             <a class=\"dropdown-item\" href=\"/options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
-                            <div class=\"dropdown-divider mb-0\"></div>
+                            ";
+            }
+            // line 54
+            echo " 
+
+                            ";
+            // line 56
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56), "userRole", [], "any", false, false, false, 56), "role", [], "any", false, false, false, 56) == "USER")) {
+                echo " 
+
+                            ";
+            }
+            // line 58
+            echo "  
+                         ";
+        }
+        // line 60
+        echo "                            <div class=\"dropdown-divider mb-0\"></div>
                             <a class=\"dropdown-item\" href=\"/logout\"><i class=\"ti ti-power font-16 me-1 align-text-bottom\"></i> Logout</a>
                         </div>
                     </li><!--end topbar-profile-->
+
+                    ";
+        // line 65
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 65), "id", [], "any", true, true, false, 65)) {
+            echo " 
+
+                            ";
+            // line 67
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 67, $this->source); })()), "user", [], "any", false, false, false, 67), "userRole", [], "any", false, false, false, 67), "role", [], "any", false, false, false, 67) == "SUPERADMIN")) {
+                echo " 
                     <li class=\"notification-list\">
                         <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/options\"  type=\"button\" >
                             <i class=\"ti ti-settings ti-spin\"></i>
                         </a>
-                    </li>   
+                    </li>
+                    ";
+            }
+            // line 73
+            echo " 
+
+                            ";
+            // line 75
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 75, $this->source); })()), "user", [], "any", false, false, false, 75), "userRole", [], "any", false, false, false, 75), "role", [], "any", false, false, false, 75) == "USER")) {
+                echo " 
+
+                            ";
+            }
+            // line 77
+            echo "  
+                         ";
+        }
+        // line 78
+        echo "   
                 </ul><!--end topbar-nav-->
 
                 <ul class=\"list-unstyled topbar-nav mb-0\">                        
@@ -284,9 +185,9 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
 
         <div class=\"main-menu-inner\">
             ";
-        // line 246
-        $this->loadTemplate("/sidebar.html.twig", "./base.html.twig", 246)->display($context);
-        // line 247
+        // line 100
+        $this->loadTemplate("/sidebar.html.twig", "base.html.twig", 100)->display($context);
+        // line 101
         echo "        </div> 
 
         <div class=\"page-wrapper\">
@@ -294,15 +195,15 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
 
 
             ";
-        // line 254
+        // line 108
         echo "                ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "flashes", [0 => "notice"], "method", false, false, false, 254));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 108, $this->source); })()), "flashes", [0 => "notice"], "method", false, false, false, 108));
         foreach ($context['_seq'] as $context["_key"] => $context["notice"]) {
-            // line 255
+            // line 109
             echo "                    <div class=\"alert alert-light alert-dismissible fade show border-0\" role=\"alert\">
                         ";
-            // line 256
+            // line 110
             echo twig_escape_filter($this->env, $context["notice"], "html", null, true);
             echo "
                         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
@@ -312,21 +213,21 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notice'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 260
+        // line 114
         echo "
                 ";
-        // line 261
+        // line 115
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 261, $this->source); })()), "flashes", [0 => "delete"], "method", false, false, false, 261));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 115, $this->source); })()), "flashes", [0 => "delete"], "method", false, false, false, 115));
         foreach ($context['_seq'] as $context["_key"] => $context["notice"]) {
-            // line 262
+            // line 116
             echo "                    <div class=\"card-body\" style = \"position: absolute; width:300px; top: 10px; z-index: 10; right:10px; \"> 
                         <div class=\"alert custom-alert custom-alert-primary icon-custom-alert shadow-sm fade show\" style=\"background-color:white;\"role=\"alert\">                                            
                             <i class=\"mdi mdi-alert-outline alert-icon text-primary align-self-center font-30 me-3\"></i>
                             <div class=\"alert-text my-1\">
                                 <h5 class=\"mb-1 fw-bold mt-0\">Message</h5>
                                 <span> ";
-            // line 267
+            // line 121
             echo twig_escape_filter($this->env, $context["notice"], "html", null, true);
             echo "</span>
                             </div>                                        
@@ -340,57 +241,56 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notice'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 275
+        // line 129
         echo "
 
                 ";
-        // line 277
+        // line 131
         $this->displayBlock('body', $context, $blocks);
-        // line 280
+        // line 134
         echo "            </div>
         </div>
             
          ";
-        // line 283
+        // line 137
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 294
-        echo "    </body>
-</html>
-
+        // line 150
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 11
+    // line 13
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 12
+        // line 14
         echo "            <link rel=\"shortcut icon\" href=\"/images/logoheader.jpg\">
             <link href=\"/plugins/metric/dist/assets/plugins/dragula/dragula.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/app.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/app.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"assets/plugins/lightpicker/litepicker.css\" rel=\"stylesheet\" type=\"text/css\" />
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 277
+    // line 131
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 278
+        // line 132
         echo "            
                 ";
         
@@ -398,42 +298,44 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
 
     }
 
-    // line 283
+    // line 137
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 284
+        // line 138
         echo "
         <script src=\"";
-        // line 285
+        // line 139
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/js/teste.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 286
+        // line 140
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/plugins/dragula/dragula.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 287
+        // line 141
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/pages/dragula.init.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 288
+        // line 142
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/plugins/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 289
+        // line 143
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/pages/crm-index.init.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 290
+        // line 144
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("plugins/metric/dist/assets/js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
       
-        ";
+    </body>
+</html>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -441,7 +343,7 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
 
     public function getTemplateName()
     {
-        return "./base.html.twig";
+        return "base.html.twig";
     }
 
     public function isTraitable()
@@ -451,17 +353,19 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
 
     public function getDebugInfo()
     {
-        return array (  432 => 290,  428 => 289,  424 => 288,  420 => 287,  416 => 286,  412 => 285,  409 => 284,  402 => 283,  394 => 278,  387 => 277,  374 => 12,  367 => 11,  357 => 294,  355 => 283,  350 => 280,  348 => 277,  344 => 275,  330 => 267,  323 => 262,  319 => 261,  316 => 260,  306 => 256,  303 => 255,  298 => 254,  290 => 247,  288 => 246,  249 => 209,  57 => 19,  55 => 11,  43 => 1,);
+        return array (  332 => 144,  328 => 143,  324 => 142,  320 => 141,  316 => 140,  312 => 139,  309 => 138,  302 => 137,  294 => 132,  287 => 131,  273 => 14,  266 => 13,  258 => 150,  256 => 137,  251 => 134,  249 => 131,  245 => 129,  231 => 121,  224 => 116,  220 => 115,  217 => 114,  207 => 110,  204 => 109,  199 => 108,  191 => 101,  189 => 100,  165 => 78,  161 => 77,  155 => 75,  151 => 73,  141 => 67,  136 => 65,  129 => 60,  125 => 58,  119 => 56,  115 => 54,  109 => 52,  104 => 50,  100 => 49,  91 => 43,  87 => 42,  82 => 40,  62 => 22,  60 => 13,  51 => 7,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!DOCTYPE html>
+        return new Source("
+<!DOCTYPE html>
 <html lang=\"en\">
     <head>
         <meta charset=\"utf-8\" />
-        <title> CRM Central </title>
-        <link rel=\"icon\" href=\"img/CRM2.ico\">
+        <title> Business </title>
+        <link rel=\"icon\" href=\"{{ asset('img/business3.ico') }}\">
+
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
         <meta content=\"Premium Multipurpose Admin & Dashboard Template\" name=\"description\" />
         <meta content=\"\" name=\"author\" />
@@ -473,8 +377,10 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
             <link href=\"/plugins/metric/dist/assets/css/icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/app.min.css\" rel=\"stylesheet\" type=\"text/css\" />
             <link href=\"/plugins/metric/dist/assets/css/app.css\" rel=\"stylesheet\" type=\"text/css\" />
+            <link href=\"assets/plugins/lightpicker/litepicker.css\" rel=\"stylesheet\" type=\"text/css\" />
         {% endblock %}
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+        
     </head>
 
     <body id=\"body\">
@@ -486,200 +392,50 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
                     <li class=\"dropdown\">
                         <!-- Add fields here-->
                     </li><!--end topbar-language-->
-                    
-                    <li class=\"dropdown notification-list\">
-                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
-                            aria-haspopup=\"false\" aria-expanded=\"false\">
-                            <i class=\"ti ti-mail\"></i>
-                        </a>
-                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
-                        
-                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
-                                Emails <span class=\"badge bg-soft-primary badge-pill\">3</span>
-                            </h6> 
-                            <div class=\"notification-menu\" data-simplebar>
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-1.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-4.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-2.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-5.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <img src=\"/images/users/user-3.jpg\" alt=\"\" class=\"thumb-sm rounded-circle\">
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                            </div>
-                            <!-- All-->
-                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
-                                View all <i class=\"fi-arrow-right\"></i>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li class=\"dropdown notification-list\">
-                        <a class=\"nav-link dropdown-toggle arrow-none nav-icon\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
-                            aria-haspopup=\"false\" aria-expanded=\"false\">
-                            <i class=\"ti ti-bell\"></i>
-                            <span class=\"alert-badge\"></span>
-                        </a>
-                        <div class=\"dropdown-menu dropdown-menu-end dropdown-lg pt-0\">
-                        
-                            <h6 class=\"dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center\">
-                                Notifications <span class=\"badge bg-soft-primary badge-pill\">2</span>
-                            </h6> 
-                            <div class=\"notification-menu\" data-simplebar>
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-chart-arcs\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing and industry.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">10 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-device-computer-camera\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Meeting with designers</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">40 min ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">                                                    
-                                            <i class=\"ti ti-diamond\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">UX 3 Task complete.</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">1 hr ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-drone\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Your order is placed</h6>
-                                            <small class=\"text-muted mb-0\">It is a long established fact that a reader.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                                <!-- item-->
-                                <a href=\"#\" class=\"dropdown-item py-3\">
-                                    <small class=\"float-end text-muted ps-2\">2 hrs ago</small>
-                                    <div class=\"media\">
-                                        <div class=\"avatar-md bg-soft-primary\">
-                                            <i class=\"ti ti-users\"></i>
-                                        </div>
-                                        <div class=\"media-body align-self-center ms-2 text-truncate\">
-                                            <h6 class=\"my-0 fw-normal text-dark\">Payment Successfull</h6>
-                                            <small class=\"text-muted mb-0\">Dummy text of the printing.</small>
-                                        </div><!--end media-body-->
-                                    </div><!--end media-->
-                                </a><!--end-item-->
-                            </div>
-                            <!-- All-->
-                            <a href=\"javascript:void(0);\" class=\"dropdown-item text-center text-primary\">
-                                View all <i class=\"fi-arrow-right\"></i>
-                            </a>
-                        </div>
-                    </li>
 
                     <li class=\"dropdown\">
                         <a class=\"nav-link dropdown-toggle nav-user\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\"
                             aria-haspopup=\"false\" aria-expanded=\"false\">
                             <div class=\"d-flex align-items-center\">
+                                <img src=\"{{ asset('uploads/userimg/' ~ app.user.photo ~ '') }}\" alt=\"profile-user\" class=\"rounded-circle me-2 thumb-sm\" />
                                 <div>
-                                    <small class=\"d-none d-md-block font-11\">
-
-                                    </small>
-                                    <span class=\"d-none d-md-block fw-semibold font-12\">{# {{app.user.email}}  #}<i class=\"mdi mdi-chevron-down\"></i></span>
+                                    <small class=\"d-none d-md-block font-11\">{{ app.user.userRole.role }}</small>
+                                    <span class=\"d-none d-md-block fw-semibold font-12\" style=\"text-transform: capitalize\"> {{ app.user.name }} <i
+                                            class=\"mdi mdi-chevron-down\"></i></span>
                                 </div>
                             </div>
-                        </a> 
+                        </a>
                         <div class=\"dropdown-menu dropdown-menu-end\">
-                            <a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
+                            <a class=\"dropdown-item\" href=\"/profile/{{ app.user.id }}\"><i class=\"ti ti-user font-16 me-1 align-text-bottom\"></i> Profile</a>
+                             {% if app.user.id is defined%} 
+
+                            {% if app.user.userRole.role == \"SUPERADMIN\" %} 
                             <a class=\"dropdown-item\" href=\"/options\"><i class=\"ti ti-settings font-16 me-1 align-text-bottom\"></i> Settings</a>
+                            {% endif %} 
+
+                            {% if app.user.userRole.role == \"USER\" %} 
+
+                            {% endif %}  
+                         {% endif %}
                             <div class=\"dropdown-divider mb-0\"></div>
                             <a class=\"dropdown-item\" href=\"/logout\"><i class=\"ti ti-power font-16 me-1 align-text-bottom\"></i> Logout</a>
                         </div>
                     </li><!--end topbar-profile-->
+
+                    {% if app.user.id is defined%} 
+
+                            {% if app.user.userRole.role == \"SUPERADMIN\" %} 
                     <li class=\"notification-list\">
                         <a class=\"nav-link arrow-none nav-icon offcanvas-btn\" href=\"/options\"  type=\"button\" >
                             <i class=\"ti ti-settings ti-spin\"></i>
                         </a>
-                    </li>   
+                    </li>
+                    {% endif %} 
+
+                            {% if app.user.userRole.role == \"USER\" %} 
+
+                            {% endif %}  
+                         {% endif %}   
                 </ul><!--end topbar-nav-->
 
                 <ul class=\"list-unstyled topbar-nav mb-0\">                        
@@ -748,10 +504,10 @@ class __TwigTemplate_ce6ff1874cac6add1f2013d2bb6474d492ca4ed3248517b78ecbd6c500f
         <script src=\"{{ asset('plugins/metric/dist/assets/js/app.js') }}\"></script>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
       
-        {% endblock %}
     </body>
 </html>
+{% endblock %}
 
-", "./base.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\base.html.twig");
     }
 }

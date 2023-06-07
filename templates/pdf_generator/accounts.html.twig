@@ -1,0 +1,63 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business</title>
+  <style>
+    #banner {
+      background-color: #608E34;
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 10px;
+      color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<img src="https://sosconsultoria.pt/wp-content/uploads/2017/02/header-logo.jpg"  width="120" height="70" alt="Logo"/>
+<img src="https://127.0.0.1:8000/img/business.png"  width="120" height="70" alt="Logo"/>
+<body>
+  <div id="banner" style="margin-top: 20px">
+    <h1>Accounts</h1>
+  </div>
+  <br>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Adress</th>
+    </tr>
+{% for account in accounts %}
+    <tr>
+      <td>{{ account.id }}</td>
+      <td>{{ account.name }}</td>
+      <td>jonas@gmail.com</td>
+      <td>1234567890</td>
+      <td>Rua do Cão</td>
+    </tr>
+{% endfor %}
+    <!-- Add more rows as needed -->
+  </table>
+</body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
+</html>
+{% endblock %}

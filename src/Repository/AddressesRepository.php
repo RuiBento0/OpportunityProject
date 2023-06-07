@@ -39,6 +39,34 @@ class AddressesRepository extends ServiceEntityRepository
         }
     }
 
+    public function deleteAddressbyId($entity, $idinrelation): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            DELETE FROM addresses
+            WHERE id_entity_id = :entity AND id_in_relation = :idinrelation
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['entity' => $entity,'idinrelation' => $idinrelation ]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function findAddressbyId($entity, $idinrelation): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM addresses
+            WHERE id_entity_id = :entity AND id_in_relation = :idinrelation
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['entity' => $entity,'idinrelation' => $idinrelation ]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
 //    /**
 //     * @return Addresses[] Returns an array of Addresses objects
 //     */

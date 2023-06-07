@@ -39,6 +39,79 @@ class AccountsRepository extends ServiceEntityRepository
         }
     }
 
+    public function countAccounts(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT COUNT(id) AS counter
+            FROM accounts
+            
+          ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function newcountAccounts(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+        SELECT COUNT(id) AS counter 
+        FROM accounts 
+        WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 WEEK)  
+
+           
+            
+          ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+    
+    public function listAccounts(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+                SELECT a.id, a.name,
+                (SELECT GROUP_CONCAT(ph.phone SEPARATOR " / ") 
+                    FROM phones ph
+                    WHERE ph.id_entity_id = 3 AND ph.id_in_relation = a.id ) AS phones ,
+                (SELECT GROUP_CONCAT(e.email SEPARATOR " / ") 
+                    FROM emails e
+                    WHERE e.id_entity_id = 3 AND e.id_in_relation = a.id )
+                as emails,
+                (SELECT GROUP_CONCAT(ad.address SEPARATOR " / ") 
+                    FROM addresses ad
+                    WHERE ad.id_entity_id = 3 AND ad.id_in_relation = a.id )
+                as addresses
+            FROM accounts a
+
+            ';
+
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function SetNullOpp($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+        UPDATE opportunities SET id_account_id = NULL WHERE id_account_id = :id            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['id' => $id ]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+
 //    /**
 //     * @return Accounts[] Returns an array of Accounts objects
 //     */

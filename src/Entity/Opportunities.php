@@ -14,62 +14,61 @@ class Opportunities
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    public ?int $id = null;
 
     #[ORM\Column(length: 180)]
-    private ?string $name = null;
+    public ?string $name = null;
 
     #[ORM\Column]
-    private ?float $amount = null;
+    public ?float $amount = null;
 
     #[ORM\Column]
-    private ?int $probability = null;
+    public ?int $probability = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $close_date = null;
+    public ?\DateTimeInterface $close_date = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    public ?string $description = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $created_at = null;
+    public ?\DateTimeInterface $created_at = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $updated_at = null;
+    public ?\DateTimeInterface $updated_at = null;
+
+    #[ORM\ManyToOne]
+    public ?Accounts $id_account = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Accounts $id_account = null;
+    public ?Users $id_user = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Users $id_user = null;
+    public ?Users $created_by = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Users $created_by = null;
-
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Users $updated_by = null;
+    public ?Users $updated_by = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $product = null;
-
-    #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'opportunities')]
-    private Collection $products;
+    public ?string $product = null;
 
     #[ORM\ManyToOne]
-    private ?Contacts $id_contact = null;
+    public ?Contacts $id_contact = null;
 
     #[ORM\ManyToOne]
-    private ?Departments $id_department = null;
+    public ?Departments $id_department = null;
 
     #[ORM\ManyToOne]
-    private ?Stages $id_stage = null;
+    public ?Stages $id_stage = null;
 
     #[ORM\ManyToOne]
-    private ?Sources $id_source = null;
+    public ?Sources $id_source = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Leads $lead_id = null;
 
 
     public function __construct()
@@ -77,7 +76,6 @@ class Opportunities
         $this->contacts = new ArrayCollection();
         $this->departments = new ArrayCollection();
         $this->uploads = new ArrayCollection();
-        $this->products = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -231,30 +229,6 @@ class Opportunities
         return $this;
     }
 
-    /**
-     * @return Collection<int, product>
-     */
-    public function getProducts(): Collection
-    {
-        return $this->products;
-    }
-
-    public function addProduct(product $product): self
-    {
-        if (!$this->products->contains($product)) {
-            $this->products->add($product);
-        }
-
-        return $this;
-    }
-
-    public function removeProduct(product $product): self
-    {
-        $this->products->removeElement($product);
-
-        return $this;
-    }
-
     public function getIdContact(): ?contacts
     {
         return $this->id_contact;
@@ -299,6 +273,18 @@ class Opportunities
     public function setIdSource(?sources $id_source): self
     {
         $this->id_source = $id_source;
+
+        return $this;
+    }
+
+    public function getLeadId(): ?leads
+    {
+        return $this->lead_id;
+    }
+
+    public function setLeadId(?leads $lead_id): self
+    {
+        $this->lead_id = $lead_id;
 
         return $this;
     }

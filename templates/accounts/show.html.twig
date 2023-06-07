@@ -1,0 +1,126 @@
+{% extends "./base.html.twig" %}
+
+{% block body %}
+
+<div class="page-wrapper">
+
+            <!-- Page Content-->
+            {# <div class="page-content-tab"> #}
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/index">Business</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item"><a href="/business/accounts">Accounts</a>
+                                        </li><!--end nav-item-->
+                                        <li class="breadcrumb-item active">Show</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Show {{ accounts.name }}</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        <div class="col-12 col-lg-8 mx-auto">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group row">
+                                            <div class="col-md-8 mb-3">
+                                                    <label for="projectName" class="form-label">Name</label>
+                                                    <div class="form-control">
+                                                        {{ accounts.name }}
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                    <label for="projectName" class="form-label">Id</label>
+                                                    <div class="form-control">
+                                                        {{ accounts.id }}
+                                                    </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Created By</label>
+                                                    <div class="form-control">
+                                                        {{ accounts.createdby.name }}
+                                                    </div>
+                                            </div> 
+                                            
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Created At</label>
+                                                    <div class="form-control">
+                                                        {{ accounts.createdat|date('Y-m-d H:i:s') }}
+                                                    </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Updated By</label>
+                                                    <div class="form-control">
+                                                        {{ accounts.updatedBy.name }}
+                                                    </div>
+                                            </div> 
+                                            
+                                            <div class="col-md-6 mb-3">
+                                                    <label for="projectName" class="form-label">Updated At</label>
+                                                    <div class="form-control">
+                                                        {{ accounts.updatedAt|date('Y-m-d H:i:s') }}
+                                                    </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <div class="col-md-12 mb-3">
+                                                    <label for="projectName" class="form-label">Description</label>
+                                                    <div class="form-control">
+                                                        {{ accounts.description }}
+                                                    </div>
+                                            </div> 
+
+                                             <div class="col-md-12 mb-3">
+                                                    <label for="projectName" class="form-label">Departments</label>
+                                                    <div class="form-control">
+                                                    {% for department in accounts.departments %}
+                                                        <p>{{ department.name }}</p>
+                                                    {% endfor %}
+                                                        
+                                                    </div>
+                                            </div> 
+                                        </div>
+                                        <br>
+                                    </form>
+                                        <form>
+                                        
+                                        <div class="form-group"> 
+                                            <a style="float:right" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0 " onclick="window.history.back()" >Back</a>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <a href="/pdf/generator/accounts/{{ accounts.id}}" type="submit" target="_blank"  style="float:right; margin-right:15px" class="btn btn-de-danger btn-sm text-light px-4 mt-3 mb-0 ">{% trans %} PDF{% endtrans %}</a>
+                                        </div>
+                                    </form>
+                                </div> <!--end card-body-->                                           
+                            </div><!--end card-->
+                        </div> <!--end col-->                                          
+                    </div><!--end row-->
+
+<script type="text/javascript">
+
+            $(document).ready(function () {
+            document.body.classList.toggle('enlarge-menu');
+        });
+    
+    </script>
+{% endblock %}

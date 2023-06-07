@@ -1,0 +1,54 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business</title>
+  <style>
+    #banner {
+      background-color: #608E34;
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 10px;
+      color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div id="banner">
+    <h1>Contacts</h1>
+  </div>
+  <br>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+    </tr>
+{% for contact in contacts %}
+    <tr>
+      <td>{{ contact.id }}</td>
+      <td>{{ contact.name }} {{ contact.surname }}</td>
+      <td>jonas@gmail.com</td>
+      <td>1234567890</td>
+    </tr>
+{% endfor %}
+    <!-- Add more rows as needed -->
+  </table>
+</body>
+</html>
+
+{% endblock %}

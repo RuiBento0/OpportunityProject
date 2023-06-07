@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* index.html.twig */
+/* /index.html.twig */
 class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340ea543 extends Template
 {
     private $source;
@@ -39,9 +39,9 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -69,14 +69,12 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"#\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
-                                        <li class=\"breadcrumb-item\"><a href=\"#\">Home</a>
-                                        </li><!--end nav-item-->
-                                        <li class=\"breadcrumb-item active\">Dashboard</li>
+                                        <li class=\"breadcrumb-item active\">Business</li>
                                     </ol>
                                 </div>
-                                <h4 class=\"page-title\">Dashboard</h4>
+                                <h4 class=\"page-title\">Business</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                     </div>
@@ -87,9 +85,24 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">
                                         <div class=\"col\">
-                                            <p class=\"text-dark mb-1 fw-semibold\">Projects</p>
-                                            <h4 class=\"my-1\">77</h4>
-                                            <p class=\"mb-0 text-truncate text-muted\"><span class=\"text-success\"><i class=\"mdi mdi-checkbox-marked-circle-outline me-1\"></i></span>26 Project Complete</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">Accounts</p>
+                                            <h4 class=\"my-1\">
+                                            ";
+        // line 36
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["accountscount"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["accountscount"]) {
+            // line 37
+            echo "                                            ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["accountscount"], "counter", [], "any", false, false, false, 37), "html", null, true);
+            echo "
+                                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['accountscount'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 39
+        echo "                                            </h4>
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
@@ -105,9 +118,24 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">                                                
                                         <div class=\"col\">
-                                            <p class=\"text-dark mb-1 fw-semibold\">Tasks</p>
-                                            <h4 class=\"my-1\">41</h4>
-                                            <p class=\"mb-0 text-truncate text-muted\"> Weekly Avg.Sessions</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">New Accounts</p>
+                                            <h4 class=\"my-1\">
+                                            ";
+        // line 57
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["newcountaccounts"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["newcountaccounts"]) {
+            // line 58
+            echo "                                            ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["newcountaccounts"], "counter", [], "any", false, false, false, 58), "html", null, true);
+            echo "
+                                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['newcountaccounts'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 60
+        echo "                                            </h4>     
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
@@ -123,14 +151,28 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">
                                         <div class=\"col\">  
-                                            <p class=\"text-dark mb-1 fw-semibold\">Total Hours</p>  
-                                            <h4 class=\"my-1\">801:30</h4>   
-                                            <p class=\"mb-0 text-truncate text-muted\"><span class=\"text-muted\">01:33</span> / 
-                                                <span class=\"text-muted\">9:30</span>  Duration</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">New Opportunities</p>  
+                                            <h4 class=\"my-1\">
+                                            ";
+        // line 78
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["newcountopportunities"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["newcountopportunities"]) {
+            // line 79
+            echo "                                            ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["newcountopportunities"], "counter", [], "any", false, false, false, 79), "html", null, true);
+            echo "
+                                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['newcountopportunities'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 81
+        echo "                                            </h4>   
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
-                                                <i data-feather=\"clock\" class=\"align-self-center text-muted icon-sm\"></i>  
+                                                <i data-feather=\"dollar-sign\" class=\"align-self-center text-muted icon-sm\"></i>  
                                             </div>
                                         </div> 
                                     </div>
@@ -142,9 +184,24 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">                                                
                                         <div class=\"col\">
-                                            <p class=\"text-dark mb-1 fw-semibold\">Budget</p>
-                                            <h4 class=\"my-1\">\$24100</h4>   
-                                            <p class=\"mb-0 text-truncate text-muted\"><span class=\"text-dark\">\$14k</span> Total used budgets</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">New Leads</p>
+                                            <h4 class=\"my-1\">
+                                            ";
+        // line 99
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["newcountleads"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["newcountleads"]) {
+            // line 100
+            echo "                                            ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["newcountleads"], "counter", [], "any", false, false, false, 100), "html", null, true);
+            echo "
+                                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['newcountleads'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 102
+        echo "                                            </h4>   
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
@@ -159,37 +216,6 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
 
                     <div class=\"row\">
                         
-                        <div class=\"col-lg-8\">
-                            <div class=\"card\">
-                                <div class=\"card-header\">
-                                    <div class=\"row align-items-center\">
-                                        <div class=\"col\">                      
-                                            <h4 class=\"card-title\">Overview</h4>                      
-                                        </div><!--end col-->
-                                        <div class=\"col-auto\"> 
-                                            <div class=\"dropdown\">
-                                                <a href=\"#\" class=\"btn btn-sm btn-outline-light dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                                    <i class=\"mdi mdi-dots-horizontal text-muted\"></i> 
-                                                </a>
-                                                <div class=\"dropdown-menu dropdown-menu-end\">
-                                                    <a class=\"dropdown-item\" href=\"#\">Purchases</a>
-                                                    <a class=\"dropdown-item\" href=\"#\">Emails</a>
-                                                </div>
-                                            </div>       
-                                        </div><!--end col-->
-                                    </div>  <!--end row-->                                  
-                                </div><!--end card-header-->
-                                <div class=\"card-body\">
-                                    <div class=\"text-center\">
-                                        <div id=\"overview\" class=\"apex-charts\"></div>
-                                        <h6 class=\"text-primary bg-soft-primary p-3 mb-0\">
-                                            <i data-feather=\"calendar\" class=\"align-self-center icon-xs me-1\"></i>
-                                            01 January 2021 to 01 January 2021
-                                        </h6>
-                                    </div>                                     
-                                </div><!--end card-body--> 
-                            </div><!--end card--> 
-                        </div> <!--end col--> 
                         <div class=\"col-lg-4\">
                             <div class=\"card\">
                                 <div class=\"card-header\">
@@ -206,514 +232,169 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
-                    </div><!--end row-->
-                    <div class=\"row\">
-                        <div class=\"col-lg-4\">
+                    
+                    <div class=\"col-md-6 col-lg-8\">
                             <div class=\"card\">
                                 <div class=\"card-header\">
                                     <div class=\"row align-items-center\">
                                         <div class=\"col\">                      
-                                            <h4 class=\"card-title\">Tasks Performance</h4>                      
+                                            <h4 class=\"card-title\">Monthly Trends</h4>                   
+                                        </div><!--end col-->                                      
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class=\"card-body\">
+                                    <div class=\"row\">
+                                        <div class=\"col-xxl-6\">
+                                            <div id=\"email_report\" class=\"apex-charts\"></div>
                                         </div><!--end col-->
-                                        <div class=\"col-auto\"> 
-                                            <div class=\"dropdown\">
-                                                <a href=\"#\" class=\"btn btn-sm btn-outline-light dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                                    <i class=\"mdi mdi-dots-horizontal text-muted\"></i> 
-                                                </a>
-                                                <div class=\"dropdown-menu dropdown-menu-end\">
-                                                    <a class=\"dropdown-item\" href=\"#\">Purchases</a>
-                                                    <a class=\"dropdown-item\" href=\"#\">Emails</a>
-                                                </div>
-                                            </div>       
+                                        <div class=\"col-xxl-6 align-self-center\">
+                                            <ul class=\"list-unstyled\">
+                                                <li class=\"list-item mb-2\">
+                                                    <i class=\"fas fa-play text-primary me-2\"></i>Leads
+                                                </li>
+                                                <li class=\"list-item mb-2\">
+                                                    <i class=\"fas fa-play text-info me-2\"></i>Opportunities
+                                                </li>
+                                                <li class=\"list-item\">
+                                                    <i class=\"fas fa-play me-2\" style=\"color: #fdb5c8;\"></i>Wins
+                                                </li>
+                                            </ul>
+                                            <button type=\"button\" class=\"btn btn-sm btn-de-primary\">View Details <i class=\"mdi mdi-arrow-right\"></i></button>
+                                        </div><!--end col-->
+                                    </div> <!--end row--> 
+                                    <div class=\"text-center mt-4\">
+                                        <h6 class=\"bg-light-alt py-3 px-2 mb-0\">
+                                            <i data-feather=\"calendar\" class=\"align-self-center icon-xs me-1\"></i>
+                                            01 January to 31 Janaury 2021
+                                        </h6>
+                                    </div>  
+                                </div><!--end card-body-->
+                            </div><!--end  card-->                                                                                                          
+                        </div><!--end col-->
+                    </div>  <!--end row--> 
+
+                 
+                           
+                    <div class=\"row\">
+                        <div class=\"col-lg-8\">
+                            <div class=\"card\">
+                                <div class=\"card-header\">
+                                    <div class=\"row align-items-center\">
+                                        <div class=\"col\">                      
+                                            <h4 class=\"card-title\">Users</h4>                      
                                         </div><!--end col-->
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class=\"card-body\">
-                                    <div class=\"text-center\">
-                                        <div id=\"task_status\" class=\"apex-charts\"></div>
-                                        <h6 class=\"text-primary bg-soft-primary p-3 mb-0\">
-                                            <i data-feather=\"calendar\" class=\"align-self-center icon-xs me-1\"></i>
-                                            01 January 2021 to 31 June 2021
-                                        </h6>
-                                    </div>                                     
-                                </div><!--end card-body--> 
-                            </div><!--end card-->                             
-                        </div> <!--end col--> 
-                        <div class=\"col-lg-8\">
-                            <div class=\"card\">
-                                <div class=\"card-body\">    
-                                    <!-- Nav tabs -->
-                                    <ul class=\"nav nav-tabs\" role=\"tablist\">
-                                        <li class=\"nav-item\">
-                                            <a class=\"nav-link fw-semibold pt-0\" data-bs-toggle=\"tab\" href=\"#Project1_Tab\" role=\"tab\">Project1</a>
-                                        </li>
-                                        <li class=\"nav-item\">
-                                            <a class=\"nav-link active fw-semibold pt-0\" data-bs-toggle=\"tab\" href=\"#Project2_Tab\" role=\"tab\">Project2</a>
-                                        </li>
-                                        <li class=\"nav-item\">
-                                            <a class=\"nav-link fw-semibold pt-0\" data-bs-toggle=\"tab\" href=\"#Project3_Tab\" role=\"tab\">Project3</a>
-                                        </li>
-                                    </ul>
-                                </div><!--end card-body-->
-                                <div class=\"card-body pt-0\">
-                                    <!-- Tab panes -->
-                                    <div class=\"tab-content\">
-                                        <div class=\"tab-pane\" id=\"Project1_Tab\" role=\"tabpanel\">  
-                                            <div class=\"row\">
-                                                <div class=\"col-md-6\">
-                                                    <div class=\"media mb-3\">
-                                                        <img src=\"assets/images/small/project-3.jpg\" alt=\"\" class=\"thumb-md rounded-circle\">                                      
-                                                        <div class=\"media-body align-self-center text-truncate ms-3\">                                                            
-                                                            <h4 class=\"m-0 fw-semibold text-dark font-16\">Payment App</h4>   
-                                                            <p class=\"text-muted mb-0 font-13\"><span class=\"text-dark\">Client : </span>Kevin  J. Heal</p>                                         
-                                                        </div><!--end media-body-->
-                                                    </div>       
-                                                </div><!--end col-->
-                                                <div class=\"col-md-6 text-lg-end  mb-2 mb-lg-0\">
-                                                    <h6 class=\"fw-semibold m-0\">Start : <span class=\"text-muted fw-normal\"> 02 June 2021</span></h6>
-                                                    <h6 class=\"fw-semibold  mb-0 mt-2\">Deadline : <span class=\"text-muted fw-normal\"> 31 Oct 2021</span></h6>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                                                           
-                                            <div class=\"holder\">
-                                                <ul class=\"steppedprogress pt-1\">
-                                                    <li class=\"complete\"><span>Planing</span></li>
-                                                    <li class=\"complete\"><span>Design</span></li>
-                                                    <li class=\"complete continuous\"><span>Development</span></li>
-                                                    <li class=\"\"><span>Testing</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class=\"task-box\">
-                                                <div class=\"task-priority-icon\"><i class=\"fas fa-circle text-success\"></i></div>                                                
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <h6 class=\"fw-semibold m-0 align-self-center\">All Hours : <span class=\"text-muted fw-normal\"> 530 / 281:30</span></h6>
-                                                    <h6 class=\"fw-semibold\">Today : <span class=\"text-muted fw-normal\"> 2:45</span><span class=\"badge badge-soft-pink fw-semibold ms-2\"><i class=\"far fa-fw fa-clock\"></i> 35 days left</span></h6>
-                                                </div>
-                                                <p class=\"text-muted mb-1\">There are many variations of passages of Lorem Ipsum available, 
-                                                    but the majority have suffered alteration in some form.
-                                                </p>
-                                                <p class=\"text-muted text-end mb-1\">34% Complete</p>
-                                                <div class=\"progress mb-3\" style=\"height: 4px;\">
-                                                    <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 34%;\" aria-valuenow=\"34\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                </div>
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <div class=\"img-group\">
-                                                        <a class=\"user-avatar\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-8.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-5.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-4.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-6.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a href=\"\" class=\"btn btn-soft-primary btn-icon-circle btn-icon-circle-sm\">
-                                                            <i class=\"las la-plus\"></i>6
-                                                        </a>
-                                                    </div><!--end img-group--> 
-                                                    <ul class=\"list-inline mb-0 align-self-center\">                                                                    
-                                                        <li class=\"list-item d-inline-block me-2\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-format-list-bulleted text-success font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">34/100</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-comment-outline text-primary font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">3</span>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"ms-2\" href=\"#\">
-                                                                <i class=\"mdi mdi-pencil-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-trash-can-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                    </ul>
-                                                </div>                                        
-                                            </div><!--end task-box-->  
-                                            <hr class=\"hr-dashed\">
-                                            <div class=\"row mt-3\">                                                
-                                                <div class=\"col-md\">
-                                                    <div class=\"d-flex  mb-2 mb-lg-0\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Last Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">28 Oct 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class=\"col-md-auto\">
-                                                    <div class=\"d-flex\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Next Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">06 Nov 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                            </div><!--end row-->                                         
-                                        </div><!--end tab-pane-->
+                                    <div class=\"table-responsive\">
+                                        <table class=\"table mb-0\">
+                                            <thead class=\"thead-light\">
+                                                <tr>
+                                                    <th onclick=\"sortTable(0)\" style=\"cursor: pointer\">";
+        // line 191
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Users", [], "messages");
+        echo "</th>
+                                                    <th onclick=\"sortTable(1)\" style=\"cursor: pointer\">";
+        // line 192
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Email", [], "messages");
+        echo "</th>
+                                                    <th onclick=\"sortTable(3)\" style=\"cursor: pointer\">";
+        // line 193
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Role", [], "messages");
+        echo "</th>
+                                                    <th onclick=\"sortTable(4)\" style=\"cursor: pointer\">";
+        // line 194
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Status", [], "messages");
+        echo "</th>
+                                                    <th>";
+        // line 195
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Actions", [], "messages");
+        echo "</th>
+                                                </tr><!--end tr-->
+                                            </thead>
+        
+                                            <tbody>
+                                                <tr>
+                                                    ";
+        // line 201
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 201, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+            // line 202
+            echo "                                                        <td><img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("uploads/userimg/" . twig_get_attribute($this->env, $this->source, $context["user"], "photo", [], "any", false, false, false, 202)) . "")), "html", null, true);
+            echo "\" alt=\"profile-user\" class=\"rounded-circle me-2 thumb-sm\" />";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 202), "html", null, true);
+            echo "</td>
+                                                        <td>";
+            // line 203
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 203), "html", null, true);
+            echo "</td>
+                                                        <td>";
+            // line 204
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["user"], "userRole", [], "any", false, false, false, 204), "role", [], "any", false, false, false, 204), "html", null, true);
+            echo "</td>
+                                                        <td>";
+            // line 205
+            if ((twig_get_attribute($this->env, $this->source, $context["user"], "active", [], "any", false, false, false, 205) == 1)) {
+                echo "Active";
+            }
+            if ((twig_get_attribute($this->env, $this->source, $context["user"], "active", [], "any", false, false, false, 205) == 0)) {
+                echo "Disable";
+            }
+            echo "</td>
 
-                                        <div class=\"tab-pane active\" id=\"Project2_Tab\" role=\"tabpanel\">
-                                            <div class=\"row\">
-                                                <div class=\"col-md-6\">
-                                                    <div class=\"media mb-3\">
-                                                        <img src=\"assets/images/small/project-2.jpg\" alt=\"\" class=\"thumb-md rounded-circle\">                                      
-                                                        <div class=\"media-body align-self-center text-truncate ms-3\">
-                                                            
-                                                            <h4 class=\"m-0 fw-semibold text-dark font-16\">Banking</h4>   
-                                                            <p class=\"text-muted  mb-0 font-13\"><span class=\"text-dark\">Client : </span>Hyman M. Cross</p>                                         
-                                                        </div><!--end media-body-->
-                                                    </div>       
-                                                </div><!--end col-->
-                                                <div class=\"col-md-6 text-lg-end mb-2 mb-lg-0\">
-                                                    <h6 class=\"fw-semibold m-0\">Start : <span class=\"text-muted fw-normal\"> 15 Nov 2021</span></h6>
-                                                    <h6 class=\"fw-semibold mb-0 mt-2\">Deadline : <span class=\"text-muted fw-normal\"> 28 Fab 2021</span></h6>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                                                           
-                                            <div class=\"holder\">
-                                                <ul class=\"steppedprogress pt-1\">
-                                                    <li class=\"complete\"><span>Planing</span></li>
-                                                    <li class=\"complete continuous\"><span>Design</span></li>
-                                                    <li class=\"\"><span>Development</span></li>
-                                                    <li class=\"\"><span>Testing</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class=\"task-box\">
-                                                <div class=\"task-priority-icon\"><i class=\"fas fa-circle text-success\"></i></div>                                                
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <h6 class=\"fw-semibold m-0 align-self-center\">All Hours : <span class=\"text-muted fw-normal\"> 530 / 281:30</span></h6>
-                                                    <h6 class=\"fw-semibold\">Today : <span class=\"text-muted fw-normal\"> 2:45</span><span class=\"badge badge-soft-pink fw-semibold ms-2\"><i class=\"far fa-fw fa-clock\"></i> 35 days left</span></h6>
-                                                </div>
-                                                <p class=\"text-muted mb-1\">There are many variations of passages of Lorem Ipsum available, 
-                                                    but the majority have suffered alteration in some form.
-                                                </p>
-                                                <p class=\"text-muted text-end mb-1\">15% Complete</p>
-                                                <div class=\"progress mb-3\" style=\"height: 4px;\">
-                                                    <div class=\"progress-bar bg-purple\" role=\"progressbar\" style=\"width: 15%;\" aria-valuenow=\"15\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                </div>
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <div class=\"img-group\">
-                                                        <a class=\"user-avatar\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-8.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-5.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-4.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-6.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a href=\"\" class=\"btn btn-soft-primary btn-icon-circle btn-icon-circle-sm\">
-                                                            <i class=\"las la-plus\"></i>4
-                                                        </a>
-                                                    </div><!--end img-group--> 
-                                                    <ul class=\"list-inline mb-0 align-self-center\">                                                                    
-                                                        <li class=\"list-item d-inline-block me-2\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-format-list-bulleted text-success font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">15/100</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-comment-outline text-primary font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">3</span>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"ms-2\" href=\"#\">
-                                                                <i class=\"mdi mdi-pencil-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-trash-can-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                    </ul>
-                                                </div>                                        
-                                            </div><!--end task-box-->
-                                            <hr class=\"hr-dashed\">
-                                            <div class=\"row mt-3\">                                                
-                                                <div class=\"col-md\">
-                                                    <div class=\"d-flex mb-2 mb-lg-0\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Last Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">28 Oct 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class=\"col-md-auto\">
-                                                    <div class=\"d-flex\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Next Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">06 Nov 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                        </div><!--end tab-pane-->
+                                                        <td style=\"-webkit-user-select: none; vertical-align: middle\">
 
-                                        <div class=\"tab-pane\" id=\"Project3_Tab\" role=\"tabpanel\">  
-                                            <div class=\"row\">
-                                                <div class=\"col-md-6\">
-                                                    <div class=\"media mb-3\">
-                                                        <img src=\"assets/images/small/project-1.jpg\" alt=\"\" class=\"thumb-md rounded-circle\">                                      
-                                                        <div class=\"media-body align-self-center text-truncate ms-3\">
-                                                            
-                                                            <h4 class=\"m-0 fw-semibold text-dark font-16\">Transfer Money</h4>   
-                                                            <p class=\"text-muted  mb-0 font-13\"><span class=\"text-dark\">Client : </span>Kevin  J. Heal</p>                                         
-                                                        </div><!--end media-body-->
-                                                    </div>       
-                                                </div><!--end col-->
-                                                <div class=\"col-md-6 text-lg-end  mb-2 mb-lg-0\">
-                                                    <h6 class=\"fw-semibold m-0\">Start : <span class=\"text-muted fw-normal\"> 01 Jan 2021</span></h6>
-                                                    <h6 class=\"fw-semibold mb-0 mt-2\">Deadline : <span class=\"text-muted fw-normal\"> 15 Mar 2021</span></h6>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                                                           
-                                            <div class=\"holder\">
-                                                <ul class=\"steppedprogress pt-1\">
-                                                    <li class=\"complete\"><span>Planing</span></li>
-                                                    <li class=\"complete\"><span>Design</span></li>
-                                                    <li class=\"complete\"><span>Development</span></li>
-                                                    <li class=\"complete finish\"><span>Testing</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class=\"task-box\">
-                                                <div class=\"task-priority-icon\"><i class=\"fas fa-check text-danger\"></i></div>                                                
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <h6 class=\"fw-semibold m-0 align-self-center\">All Hours : <span class=\"text-muted fw-normal\"> 530 / 481:30</span></h6>
-                                                    <h6 class=\"fw-semibold\">Today : <span class=\"text-muted fw-normal\"> 2:45</span><span class=\"badge badge-soft-pink fw-semibold ms-2\"><i class=\"far fa-fw fa-clock\"></i> 2 days left</span></h6>
-                                                </div>
-                                                <p class=\"text-muted mb-1\">There are many variations of passages of Lorem Ipsum available, 
-                                                    but the majority have suffered alteration in some form.
-                                                </p>
-                                                <p class=\"text-muted text-end mb-1\">100% Complete</p>
-                                                <div class=\"progress mb-3\" style=\"height: 4px;\">
-                                                    <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 100%;\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                </div>
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <div class=\"img-group\">
-                                                        <a class=\"user-avatar\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-8.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-5.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-4.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-6.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a href=\"\" class=\"btn btn-soft-primary btn-icon-circle btn-icon-circle-sm\">
-                                                            <i class=\"las la-plus\"></i>2
-                                                        </a>
-                                                    </div><!--end img-group--> 
-                                                    <ul class=\"list-inline mb-0 align-self-center\">                                                                    
-                                                        <li class=\"list-item d-inline-block me-2\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-format-list-bulleted text-success font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">100/100</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-comment-outline text-primary font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">3</span>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"ms-2\" href=\"#\">
-                                                                <i class=\"mdi mdi-pencil-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-trash-can-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                    </ul>
-                                                </div>                                        
-                                            </div><!--end task-box-->  
-                                            <hr class=\"hr-dashed\">
-                                            <div class=\"row mt-3\">                                                
-                                                <div class=\"col-md\">
-                                                    <div class=\"d-flex  mb-2 mb-lg-0\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Last Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">28 Oct 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class=\"col-md-auto\">
-                                                    <div class=\"d-flex\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Next Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">06 Nov 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                            </div><!--end row-->                                         
-                                        </div><!--end tab-pane-->
-                                    </div>        
+                                                    ";
+            // line 209
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 209), "id", [], "any", true, true, false, 209)) {
+                // line 210
+                echo "                                                        <a href=\"options/user/edit/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 210), "html", null, true);
+                echo "\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                        <a href=\"options/user/delete/";
+                // line 211
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 211), "html", null, true);
+                echo "\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
+                                                    ";
+            }
+            // line 212
+            echo " 
+                                                        </td>
+                                                    </tr>
+                                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 215
+        echo "                                    
+                                            </tbody>
+                                        </table> 
+                                        <div class=\"col-auto\" style=\"float:right\">
+                                            <nav aria-label=\"...\">
+                                                <ul class=\"pagination pagination-sm mb-0\">
+                                                    <li class=\"page-item disabled\">
+                                                        <a class=\"page-link\" href=\"#\" tabindex=\"-1\">Previous</a>
+                                                    </li>
+                                                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">2 <span class=\"sr-only\">(current)</span></a>
+                                                    </li>
+                                                    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                        </div> <!--end col-->
+                                    </div>  
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
-                        
-                    </div><!--end row-->
 
-                    <div class=\"row\"> 
-                                              
-                        <div class=\"col-lg-8\">
-                            <div class=\"card\">  
-                                <div class=\"card-header\">
-                                    <div class=\"row align-items-center\">
-                                        <div class=\"col\">                      
-                                            <h4 class=\"card-title\">All Projects</h4>                      
-                                        </div><!--end col-->
-                                        <div class=\"col-auto\"> 
-                                            <a href=\"#\" class=\"text-primary\">View All</a>   
-                                        </div><!--end col-->
-                                    </div>  <!--end row-->                                  
-                                </div><!--end card-header-->                                
-                                <div class=\"card-body\">
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-hover mb-0\">
-                                            <thead class=\"thead-light\">
-                                                <tr>
-                                                    <th>Project Name</th>
-                                                    <th>Client Name</th>
-                                                    <th>Start Date</th>
-                                                    <th>Deadline</th>
-                                                    <th>Status</th>
-                                                    <th>Progress</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Product Devlopment</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-2.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Kevin J. Heal
-                                                    </td>
-                                                    <td>20/3/2021</td>
-                                                    <td>5/5/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-success\">Active</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">92%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 92%;\" aria-valuenow=\"92\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>New Office Building</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-3.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Frank M. Lyons
-                                                    </td>
-                                                    <td>11/6/2021</td>
-                                                    <td>15/7/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-warning\">Panding</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">0%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 0%;\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Website &amp; Blog</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-4.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Hyman M. Cross
-                                                    </td>
-                                                    <td>21/6/2021</td>
-                                                    <td>3/7/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-warning\">Panding</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">0%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 0%;\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Market Research</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-5.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Angelo E. Butler
-                                                    </td>
-                                                    <td>30/4/2021</td>
-                                                    <td>1/6/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-success\">Active</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">78%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 78%;\" aria-valuenow=\"78\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Export Marketing</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-6.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Robert C. Golding
-                                                    </td>
-                                                    <td>20/3/2021</td>
-                                                    <td>5/5/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-success\">Active</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">45%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 45%;\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <td>Website &amp; Blog</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-8.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Phillip T. Morse
-                                                    </td>
-                                                    <td>8/4/2021</td>
-                                                    <td>2/6/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-danger\">Complete</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">100%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-pink\" role=\"progressbar\" style=\"width: 100%;\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>                                                                                                  
-                                            </tbody>
-                                        </table>
-                                                                                       
-                                    </div><!--end table-responsive--> 
-                                </div><!--end card-body-->                                                                                                        
-                            </div><!--end card-->
-                        </div><!--end col-->  
-                        <div class=\"col-lg-4\">
+                    <div class=\"col-lg-4\">
                             <div class=\"card\">   
                                 <div class=\"card-header\">
                                     <div class=\"row align-items-center\">
@@ -732,9 +413,10 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                             </div>          
                                         </div><!--end col-->
                                     </div>  <!--end row-->                                  
-                                </div><!--end card-header-->                                              
+                                </div><!--end card-header-->  
+
                                 <div class=\"card-body p-0\"> 
-                                    <div class=\"p-3\" style=\"height: 420px;\" data-simplebar>
+                                    <div class=\"p-3\" style=\"height: 425px;\" data-simplebar>
                                         <div class=\"activity\">
                                             <div class=\"activity-info\">
                                                 <div class=\"icon-info-activity\">
@@ -800,7 +482,7 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                                         <p class=\"text-muted mb-0 font-13 w-75\"><span>Lucy Peterson</span> 
                                                             was added to the group, group name is <a href=\"\">Overtake</a>
                                                         </p>
-                                                        <small class=\"text-muted\">14 Nov 2021</small>
+                                                        <small class=\"text-muted\">14 Nov 2019</small>
                                                     </div>    
                                                 </div>
                                             </div> 
@@ -813,7 +495,7 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                                         <p class=\"text-muted mb-0 font-13 w-75\"><span>Joseph Rust</span> 
                                                             opened new showcase <a href=\"\">Mannat #112233</a> with theme market
                                                         </p>
-                                                        <small class=\"text-muted\">15 Nov 2021</small>
+                                                        <small class=\"text-muted\">15 Nov 2019</small>
                                                     </div>    
                                                 </div>
                                             </div>                                                                                                                                      
@@ -821,9 +503,8 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                     </div><!--end analytics-dash-activity-->
                                 </div>  <!--end card-body-->                                     
                             </div><!--end card--> 
-                        </div><!--end col-->     
+                        </div><!--end col--> 
                     </div><!--end row-->
-
                 </div><!-- container -->
 
                 <!--Start Rightbar-->
@@ -869,6 +550,16 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                 <!--end Rightbar/offcanvas-->
                  <!--end Rightbar-->
                  
+                <!--Start Footer-->
+                <!-- Footer Start -->
+                <br><br>
+                 <footer class=\"footer text-center text-sm-start\">
+                    &copy; <script>
+                        document.write(new Date().getFullYear())
+                    </script> Business <span class=\"text-muted d-none d-sm-inline-block float-end\">Crafted by Bento</span>
+                </footer>
+                <!-- end Footer -->                
+                <!--end footer-->
             </div>
             <!-- end page content -->
         </div>
@@ -893,7 +584,7 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
 
     public function getTemplateName()
     {
-        return "index.html.twig";
+        return "/index.html.twig";
     }
 
     public function isTraitable()
@@ -903,12 +594,12 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
 
     public function getDebugInfo()
     {
-        return array (  59 => 5,  52 => 4,  35 => 1,);
+        return array (  372 => 215,  363 => 212,  358 => 211,  353 => 210,  351 => 209,  339 => 205,  335 => 204,  331 => 203,  324 => 202,  320 => 201,  311 => 195,  307 => 194,  303 => 193,  299 => 192,  295 => 191,  204 => 102,  195 => 100,  191 => 99,  171 => 81,  162 => 79,  158 => 78,  138 => 60,  129 => 58,  125 => 57,  105 => 39,  96 => 37,  92 => 36,  59 => 5,  52 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source(" {% extends 'base.html.twig' %} 
+        return new Source("{% extends 'base.html.twig' %} 
 
 
 {% block body %}
@@ -925,14 +616,12 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"#\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
-                                        <li class=\"breadcrumb-item\"><a href=\"#\">Home</a>
-                                        </li><!--end nav-item-->
-                                        <li class=\"breadcrumb-item active\">Dashboard</li>
+                                        <li class=\"breadcrumb-item active\">Business</li>
                                     </ol>
                                 </div>
-                                <h4 class=\"page-title\">Dashboard</h4>
+                                <h4 class=\"page-title\">Business</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                     </div>
@@ -943,9 +632,12 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">
                                         <div class=\"col\">
-                                            <p class=\"text-dark mb-1 fw-semibold\">Projects</p>
-                                            <h4 class=\"my-1\">77</h4>
-                                            <p class=\"mb-0 text-truncate text-muted\"><span class=\"text-success\"><i class=\"mdi mdi-checkbox-marked-circle-outline me-1\"></i></span>26 Project Complete</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">Accounts</p>
+                                            <h4 class=\"my-1\">
+                                            {% for accountscount in accountscount %}
+                                            {{ accountscount.counter }}
+                                            {% endfor %}
+                                            </h4>
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
@@ -961,9 +653,12 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">                                                
                                         <div class=\"col\">
-                                            <p class=\"text-dark mb-1 fw-semibold\">Tasks</p>
-                                            <h4 class=\"my-1\">41</h4>
-                                            <p class=\"mb-0 text-truncate text-muted\"> Weekly Avg.Sessions</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">New Accounts</p>
+                                            <h4 class=\"my-1\">
+                                            {% for newcountaccounts in newcountaccounts %}
+                                            {{ newcountaccounts.counter }}
+                                            {% endfor %}
+                                            </h4>     
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
@@ -979,14 +674,16 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">
                                         <div class=\"col\">  
-                                            <p class=\"text-dark mb-1 fw-semibold\">Total Hours</p>  
-                                            <h4 class=\"my-1\">801:30</h4>   
-                                            <p class=\"mb-0 text-truncate text-muted\"><span class=\"text-muted\">01:33</span> / 
-                                                <span class=\"text-muted\">9:30</span>  Duration</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">New Opportunities</p>  
+                                            <h4 class=\"my-1\">
+                                            {% for newcountopportunities in newcountopportunities %}
+                                            {{ newcountopportunities.counter }}
+                                            {% endfor %}
+                                            </h4>   
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
-                                                <i data-feather=\"clock\" class=\"align-self-center text-muted icon-sm\"></i>  
+                                                <i data-feather=\"dollar-sign\" class=\"align-self-center text-muted icon-sm\"></i>  
                                             </div>
                                         </div> 
                                     </div>
@@ -998,9 +695,12 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 <div class=\"card-body\">
                                     <div class=\"row d-flex justify-content-center\">                                                
                                         <div class=\"col\">
-                                            <p class=\"text-dark mb-1 fw-semibold\">Budget</p>
-                                            <h4 class=\"my-1\">\$24100</h4>   
-                                            <p class=\"mb-0 text-truncate text-muted\"><span class=\"text-dark\">\$14k</span> Total used budgets</p>
+                                            <p class=\"text-dark mb-1 fw-semibold\">New Leads</p>
+                                            <h4 class=\"my-1\">
+                                            {% for newcountleads in newcountleads %}
+                                            {{ newcountleads.counter }}
+                                            {% endfor %}
+                                            </h4>   
                                         </div>
                                         <div class=\"col-auto align-self-center\">
                                             <div class=\"bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle\">
@@ -1015,37 +715,6 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
 
                     <div class=\"row\">
                         
-                        <div class=\"col-lg-8\">
-                            <div class=\"card\">
-                                <div class=\"card-header\">
-                                    <div class=\"row align-items-center\">
-                                        <div class=\"col\">                      
-                                            <h4 class=\"card-title\">Overview</h4>                      
-                                        </div><!--end col-->
-                                        <div class=\"col-auto\"> 
-                                            <div class=\"dropdown\">
-                                                <a href=\"#\" class=\"btn btn-sm btn-outline-light dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                                    <i class=\"mdi mdi-dots-horizontal text-muted\"></i> 
-                                                </a>
-                                                <div class=\"dropdown-menu dropdown-menu-end\">
-                                                    <a class=\"dropdown-item\" href=\"#\">Purchases</a>
-                                                    <a class=\"dropdown-item\" href=\"#\">Emails</a>
-                                                </div>
-                                            </div>       
-                                        </div><!--end col-->
-                                    </div>  <!--end row-->                                  
-                                </div><!--end card-header-->
-                                <div class=\"card-body\">
-                                    <div class=\"text-center\">
-                                        <div id=\"overview\" class=\"apex-charts\"></div>
-                                        <h6 class=\"text-primary bg-soft-primary p-3 mb-0\">
-                                            <i data-feather=\"calendar\" class=\"align-self-center icon-xs me-1\"></i>
-                                            01 January 2021 to 01 January 2021
-                                        </h6>
-                                    </div>                                     
-                                </div><!--end card-body--> 
-                            </div><!--end card--> 
-                        </div> <!--end col--> 
                         <div class=\"col-lg-4\">
                             <div class=\"card\">
                                 <div class=\"card-header\">
@@ -1062,514 +731,114 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
-                    </div><!--end row-->
-                    <div class=\"row\">
-                        <div class=\"col-lg-4\">
+                    
+                    <div class=\"col-md-6 col-lg-8\">
                             <div class=\"card\">
                                 <div class=\"card-header\">
                                     <div class=\"row align-items-center\">
                                         <div class=\"col\">                      
-                                            <h4 class=\"card-title\">Tasks Performance</h4>                      
+                                            <h4 class=\"card-title\">Monthly Trends</h4>                   
+                                        </div><!--end col-->                                      
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class=\"card-body\">
+                                    <div class=\"row\">
+                                        <div class=\"col-xxl-6\">
+                                            <div id=\"email_report\" class=\"apex-charts\"></div>
                                         </div><!--end col-->
-                                        <div class=\"col-auto\"> 
-                                            <div class=\"dropdown\">
-                                                <a href=\"#\" class=\"btn btn-sm btn-outline-light dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                                    <i class=\"mdi mdi-dots-horizontal text-muted\"></i> 
-                                                </a>
-                                                <div class=\"dropdown-menu dropdown-menu-end\">
-                                                    <a class=\"dropdown-item\" href=\"#\">Purchases</a>
-                                                    <a class=\"dropdown-item\" href=\"#\">Emails</a>
-                                                </div>
-                                            </div>       
+                                        <div class=\"col-xxl-6 align-self-center\">
+                                            <ul class=\"list-unstyled\">
+                                                <li class=\"list-item mb-2\">
+                                                    <i class=\"fas fa-play text-primary me-2\"></i>Leads
+                                                </li>
+                                                <li class=\"list-item mb-2\">
+                                                    <i class=\"fas fa-play text-info me-2\"></i>Opportunities
+                                                </li>
+                                                <li class=\"list-item\">
+                                                    <i class=\"fas fa-play me-2\" style=\"color: #fdb5c8;\"></i>Wins
+                                                </li>
+                                            </ul>
+                                            <button type=\"button\" class=\"btn btn-sm btn-de-primary\">View Details <i class=\"mdi mdi-arrow-right\"></i></button>
+                                        </div><!--end col-->
+                                    </div> <!--end row--> 
+                                    <div class=\"text-center mt-4\">
+                                        <h6 class=\"bg-light-alt py-3 px-2 mb-0\">
+                                            <i data-feather=\"calendar\" class=\"align-self-center icon-xs me-1\"></i>
+                                            01 January to 31 Janaury 2021
+                                        </h6>
+                                    </div>  
+                                </div><!--end card-body-->
+                            </div><!--end  card-->                                                                                                          
+                        </div><!--end col-->
+                    </div>  <!--end row--> 
+
+                 
+                           
+                    <div class=\"row\">
+                        <div class=\"col-lg-8\">
+                            <div class=\"card\">
+                                <div class=\"card-header\">
+                                    <div class=\"row align-items-center\">
+                                        <div class=\"col\">                      
+                                            <h4 class=\"card-title\">Users</h4>                      
                                         </div><!--end col-->
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class=\"card-body\">
-                                    <div class=\"text-center\">
-                                        <div id=\"task_status\" class=\"apex-charts\"></div>
-                                        <h6 class=\"text-primary bg-soft-primary p-3 mb-0\">
-                                            <i data-feather=\"calendar\" class=\"align-self-center icon-xs me-1\"></i>
-                                            01 January 2021 to 31 June 2021
-                                        </h6>
-                                    </div>                                     
-                                </div><!--end card-body--> 
-                            </div><!--end card-->                             
-                        </div> <!--end col--> 
-                        <div class=\"col-lg-8\">
-                            <div class=\"card\">
-                                <div class=\"card-body\">    
-                                    <!-- Nav tabs -->
-                                    <ul class=\"nav nav-tabs\" role=\"tablist\">
-                                        <li class=\"nav-item\">
-                                            <a class=\"nav-link fw-semibold pt-0\" data-bs-toggle=\"tab\" href=\"#Project1_Tab\" role=\"tab\">Project1</a>
-                                        </li>
-                                        <li class=\"nav-item\">
-                                            <a class=\"nav-link active fw-semibold pt-0\" data-bs-toggle=\"tab\" href=\"#Project2_Tab\" role=\"tab\">Project2</a>
-                                        </li>
-                                        <li class=\"nav-item\">
-                                            <a class=\"nav-link fw-semibold pt-0\" data-bs-toggle=\"tab\" href=\"#Project3_Tab\" role=\"tab\">Project3</a>
-                                        </li>
-                                    </ul>
-                                </div><!--end card-body-->
-                                <div class=\"card-body pt-0\">
-                                    <!-- Tab panes -->
-                                    <div class=\"tab-content\">
-                                        <div class=\"tab-pane\" id=\"Project1_Tab\" role=\"tabpanel\">  
-                                            <div class=\"row\">
-                                                <div class=\"col-md-6\">
-                                                    <div class=\"media mb-3\">
-                                                        <img src=\"assets/images/small/project-3.jpg\" alt=\"\" class=\"thumb-md rounded-circle\">                                      
-                                                        <div class=\"media-body align-self-center text-truncate ms-3\">                                                            
-                                                            <h4 class=\"m-0 fw-semibold text-dark font-16\">Payment App</h4>   
-                                                            <p class=\"text-muted mb-0 font-13\"><span class=\"text-dark\">Client : </span>Kevin  J. Heal</p>                                         
-                                                        </div><!--end media-body-->
-                                                    </div>       
-                                                </div><!--end col-->
-                                                <div class=\"col-md-6 text-lg-end  mb-2 mb-lg-0\">
-                                                    <h6 class=\"fw-semibold m-0\">Start : <span class=\"text-muted fw-normal\"> 02 June 2021</span></h6>
-                                                    <h6 class=\"fw-semibold  mb-0 mt-2\">Deadline : <span class=\"text-muted fw-normal\"> 31 Oct 2021</span></h6>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                                                           
-                                            <div class=\"holder\">
-                                                <ul class=\"steppedprogress pt-1\">
-                                                    <li class=\"complete\"><span>Planing</span></li>
-                                                    <li class=\"complete\"><span>Design</span></li>
-                                                    <li class=\"complete continuous\"><span>Development</span></li>
-                                                    <li class=\"\"><span>Testing</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class=\"task-box\">
-                                                <div class=\"task-priority-icon\"><i class=\"fas fa-circle text-success\"></i></div>                                                
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <h6 class=\"fw-semibold m-0 align-self-center\">All Hours : <span class=\"text-muted fw-normal\"> 530 / 281:30</span></h6>
-                                                    <h6 class=\"fw-semibold\">Today : <span class=\"text-muted fw-normal\"> 2:45</span><span class=\"badge badge-soft-pink fw-semibold ms-2\"><i class=\"far fa-fw fa-clock\"></i> 35 days left</span></h6>
-                                                </div>
-                                                <p class=\"text-muted mb-1\">There are many variations of passages of Lorem Ipsum available, 
-                                                    but the majority have suffered alteration in some form.
-                                                </p>
-                                                <p class=\"text-muted text-end mb-1\">34% Complete</p>
-                                                <div class=\"progress mb-3\" style=\"height: 4px;\">
-                                                    <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 34%;\" aria-valuenow=\"34\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                </div>
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <div class=\"img-group\">
-                                                        <a class=\"user-avatar\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-8.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-5.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-4.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-6.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a href=\"\" class=\"btn btn-soft-primary btn-icon-circle btn-icon-circle-sm\">
-                                                            <i class=\"las la-plus\"></i>6
-                                                        </a>
-                                                    </div><!--end img-group--> 
-                                                    <ul class=\"list-inline mb-0 align-self-center\">                                                                    
-                                                        <li class=\"list-item d-inline-block me-2\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-format-list-bulleted text-success font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">34/100</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-comment-outline text-primary font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">3</span>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"ms-2\" href=\"#\">
-                                                                <i class=\"mdi mdi-pencil-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-trash-can-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                    </ul>
-                                                </div>                                        
-                                            </div><!--end task-box-->  
-                                            <hr class=\"hr-dashed\">
-                                            <div class=\"row mt-3\">                                                
-                                                <div class=\"col-md\">
-                                                    <div class=\"d-flex  mb-2 mb-lg-0\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Last Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">28 Oct 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class=\"col-md-auto\">
-                                                    <div class=\"d-flex\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Next Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">06 Nov 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                            </div><!--end row-->                                         
-                                        </div><!--end tab-pane-->
+                                    <div class=\"table-responsive\">
+                                        <table class=\"table mb-0\">
+                                            <thead class=\"thead-light\">
+                                                <tr>
+                                                    <th onclick=\"sortTable(0)\" style=\"cursor: pointer\">{% trans %}Users{% endtrans %}</th>
+                                                    <th onclick=\"sortTable(1)\" style=\"cursor: pointer\">{% trans %}Email{% endtrans %}</th>
+                                                    <th onclick=\"sortTable(3)\" style=\"cursor: pointer\">{% trans %}Role{% endtrans %}</th>
+                                                    <th onclick=\"sortTable(4)\" style=\"cursor: pointer\">{% trans %}Status{% endtrans %}</th>
+                                                    <th>{% trans %}Actions{% endtrans %}</th>
+                                                </tr><!--end tr-->
+                                            </thead>
+        
+                                            <tbody>
+                                                <tr>
+                                                    {% for user in users %}
+                                                        <td><img src=\"{{ asset('uploads/userimg/' ~ user.photo ~ '') }}\" alt=\"profile-user\" class=\"rounded-circle me-2 thumb-sm\" />{{ user.name }}</td>
+                                                        <td>{{ user.email }}</td>
+                                                        <td>{{ user.userRole.role }}</td>
+                                                        <td>{% if user.active == 1 %}Active{% endif %}{% if user.active == 0 %}Disable{% endif %}</td>
 
-                                        <div class=\"tab-pane active\" id=\"Project2_Tab\" role=\"tabpanel\">
-                                            <div class=\"row\">
-                                                <div class=\"col-md-6\">
-                                                    <div class=\"media mb-3\">
-                                                        <img src=\"assets/images/small/project-2.jpg\" alt=\"\" class=\"thumb-md rounded-circle\">                                      
-                                                        <div class=\"media-body align-self-center text-truncate ms-3\">
-                                                            
-                                                            <h4 class=\"m-0 fw-semibold text-dark font-16\">Banking</h4>   
-                                                            <p class=\"text-muted  mb-0 font-13\"><span class=\"text-dark\">Client : </span>Hyman M. Cross</p>                                         
-                                                        </div><!--end media-body-->
-                                                    </div>       
-                                                </div><!--end col-->
-                                                <div class=\"col-md-6 text-lg-end mb-2 mb-lg-0\">
-                                                    <h6 class=\"fw-semibold m-0\">Start : <span class=\"text-muted fw-normal\"> 15 Nov 2021</span></h6>
-                                                    <h6 class=\"fw-semibold mb-0 mt-2\">Deadline : <span class=\"text-muted fw-normal\"> 28 Fab 2021</span></h6>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                                                           
-                                            <div class=\"holder\">
-                                                <ul class=\"steppedprogress pt-1\">
-                                                    <li class=\"complete\"><span>Planing</span></li>
-                                                    <li class=\"complete continuous\"><span>Design</span></li>
-                                                    <li class=\"\"><span>Development</span></li>
-                                                    <li class=\"\"><span>Testing</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class=\"task-box\">
-                                                <div class=\"task-priority-icon\"><i class=\"fas fa-circle text-success\"></i></div>                                                
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <h6 class=\"fw-semibold m-0 align-self-center\">All Hours : <span class=\"text-muted fw-normal\"> 530 / 281:30</span></h6>
-                                                    <h6 class=\"fw-semibold\">Today : <span class=\"text-muted fw-normal\"> 2:45</span><span class=\"badge badge-soft-pink fw-semibold ms-2\"><i class=\"far fa-fw fa-clock\"></i> 35 days left</span></h6>
-                                                </div>
-                                                <p class=\"text-muted mb-1\">There are many variations of passages of Lorem Ipsum available, 
-                                                    but the majority have suffered alteration in some form.
-                                                </p>
-                                                <p class=\"text-muted text-end mb-1\">15% Complete</p>
-                                                <div class=\"progress mb-3\" style=\"height: 4px;\">
-                                                    <div class=\"progress-bar bg-purple\" role=\"progressbar\" style=\"width: 15%;\" aria-valuenow=\"15\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                </div>
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <div class=\"img-group\">
-                                                        <a class=\"user-avatar\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-8.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-5.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-4.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-6.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a href=\"\" class=\"btn btn-soft-primary btn-icon-circle btn-icon-circle-sm\">
-                                                            <i class=\"las la-plus\"></i>4
-                                                        </a>
-                                                    </div><!--end img-group--> 
-                                                    <ul class=\"list-inline mb-0 align-self-center\">                                                                    
-                                                        <li class=\"list-item d-inline-block me-2\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-format-list-bulleted text-success font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">15/100</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-comment-outline text-primary font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">3</span>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"ms-2\" href=\"#\">
-                                                                <i class=\"mdi mdi-pencil-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-trash-can-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                    </ul>
-                                                </div>                                        
-                                            </div><!--end task-box-->
-                                            <hr class=\"hr-dashed\">
-                                            <div class=\"row mt-3\">                                                
-                                                <div class=\"col-md\">
-                                                    <div class=\"d-flex mb-2 mb-lg-0\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Last Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">28 Oct 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class=\"col-md-auto\">
-                                                    <div class=\"d-flex\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Next Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">06 Nov 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                        </div><!--end tab-pane-->
+                                                        <td style=\"-webkit-user-select: none; vertical-align: middle\">
 
-                                        <div class=\"tab-pane\" id=\"Project3_Tab\" role=\"tabpanel\">  
-                                            <div class=\"row\">
-                                                <div class=\"col-md-6\">
-                                                    <div class=\"media mb-3\">
-                                                        <img src=\"assets/images/small/project-1.jpg\" alt=\"\" class=\"thumb-md rounded-circle\">                                      
-                                                        <div class=\"media-body align-self-center text-truncate ms-3\">
-                                                            
-                                                            <h4 class=\"m-0 fw-semibold text-dark font-16\">Transfer Money</h4>   
-                                                            <p class=\"text-muted  mb-0 font-13\"><span class=\"text-dark\">Client : </span>Kevin  J. Heal</p>                                         
-                                                        </div><!--end media-body-->
-                                                    </div>       
-                                                </div><!--end col-->
-                                                <div class=\"col-md-6 text-lg-end  mb-2 mb-lg-0\">
-                                                    <h6 class=\"fw-semibold m-0\">Start : <span class=\"text-muted fw-normal\"> 01 Jan 2021</span></h6>
-                                                    <h6 class=\"fw-semibold mb-0 mt-2\">Deadline : <span class=\"text-muted fw-normal\"> 15 Mar 2021</span></h6>
-                                                </div><!--end col-->
-                                            </div><!--end row-->
-                                                                           
-                                            <div class=\"holder\">
-                                                <ul class=\"steppedprogress pt-1\">
-                                                    <li class=\"complete\"><span>Planing</span></li>
-                                                    <li class=\"complete\"><span>Design</span></li>
-                                                    <li class=\"complete\"><span>Development</span></li>
-                                                    <li class=\"complete finish\"><span>Testing</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class=\"task-box\">
-                                                <div class=\"task-priority-icon\"><i class=\"fas fa-check text-danger\"></i></div>                                                
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <h6 class=\"fw-semibold m-0 align-self-center\">All Hours : <span class=\"text-muted fw-normal\"> 530 / 481:30</span></h6>
-                                                    <h6 class=\"fw-semibold\">Today : <span class=\"text-muted fw-normal\"> 2:45</span><span class=\"badge badge-soft-pink fw-semibold ms-2\"><i class=\"far fa-fw fa-clock\"></i> 2 days left</span></h6>
-                                                </div>
-                                                <p class=\"text-muted mb-1\">There are many variations of passages of Lorem Ipsum available, 
-                                                    but the majority have suffered alteration in some form.
-                                                </p>
-                                                <p class=\"text-muted text-end mb-1\">100% Complete</p>
-                                                <div class=\"progress mb-3\" style=\"height: 4px;\">
-                                                    <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 100%;\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                </div>
-                                                <div class=\"d-flex justify-content-between\">
-                                                    <div class=\"img-group\">
-                                                        <a class=\"user-avatar\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-8.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-5.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-4.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a class=\"user-avatar ms-n3\" href=\"#\">
-                                                            <img src=\"assets/images/users/user-6.jpg\" alt=\"user\" class=\"thumb-xs rounded-circle\">
-                                                        </a>
-                                                        <a href=\"\" class=\"btn btn-soft-primary btn-icon-circle btn-icon-circle-sm\">
-                                                            <i class=\"las la-plus\"></i>2
-                                                        </a>
-                                                    </div><!--end img-group--> 
-                                                    <ul class=\"list-inline mb-0 align-self-center\">                                                                    
-                                                        <li class=\"list-item d-inline-block me-2\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-format-list-bulleted text-success font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">100/100</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-comment-outline text-primary font-15\"></i>
-                                                                <span class=\"text-muted fw-bold\">3</span>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"ms-2\" href=\"#\">
-                                                                <i class=\"mdi mdi-pencil-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                        <li class=\"list-item d-inline-block\">
-                                                            <a class=\"\" href=\"#\">
-                                                                <i class=\"mdi mdi-trash-can-outline text-muted font-18\"></i>
-                                                            </a>                                                                               
-                                                        </li>
-                                                    </ul>
-                                                </div>                                        
-                                            </div><!--end task-box-->  
-                                            <hr class=\"hr-dashed\">
-                                            <div class=\"row mt-3\">                                                
-                                                <div class=\"col-md\">
-                                                    <div class=\"d-flex  mb-2 mb-lg-0\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Last Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">28 Oct 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class=\"col-md-auto\">
-                                                    <div class=\"d-flex\">
-                                                        <i data-feather=\"headphones\" class=\"align-self-center text-secondary icon-sm\"></i> 
-                                                        <div class=\"d-block align-self-center ms-2\">
-                                                            <h6 class=\"m-0\">Next Meeting</h6>
-                                                            <p class=\"mb-0 text-muted\">06 Nov 2021 / 10:30AM - 12:30PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end col-->
-                                            </div><!--end row-->                                         
-                                        </div><!--end tab-pane-->
-                                    </div>        
+                                                    {% if app.user.id is defined%}
+                                                        <a href=\"options/user/edit/{{ user.id }}\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                        <a href=\"options/user/delete/{{ user.id }}\"><i class=\"las la-trash-alt text-secondary font-16\"></i></a>
+                                                    {% endif %} 
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}                                    
+                                            </tbody>
+                                        </table> 
+                                        <div class=\"col-auto\" style=\"float:right\">
+                                            <nav aria-label=\"...\">
+                                                <ul class=\"pagination pagination-sm mb-0\">
+                                                    <li class=\"page-item disabled\">
+                                                        <a class=\"page-link\" href=\"#\" tabindex=\"-1\">Previous</a>
+                                                    </li>
+                                                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">2 <span class=\"sr-only\">(current)</span></a>
+                                                    </li>
+                                                    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+                                                    <li class=\"page-item\">
+                                                        <a class=\"page-link\" href=\"#\">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                        </div> <!--end col-->
+                                    </div>  
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
-                        
-                    </div><!--end row-->
 
-                    <div class=\"row\"> 
-                                              
-                        <div class=\"col-lg-8\">
-                            <div class=\"card\">  
-                                <div class=\"card-header\">
-                                    <div class=\"row align-items-center\">
-                                        <div class=\"col\">                      
-                                            <h4 class=\"card-title\">All Projects</h4>                      
-                                        </div><!--end col-->
-                                        <div class=\"col-auto\"> 
-                                            <a href=\"#\" class=\"text-primary\">View All</a>   
-                                        </div><!--end col-->
-                                    </div>  <!--end row-->                                  
-                                </div><!--end card-header-->                                
-                                <div class=\"card-body\">
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-hover mb-0\">
-                                            <thead class=\"thead-light\">
-                                                <tr>
-                                                    <th>Project Name</th>
-                                                    <th>Client Name</th>
-                                                    <th>Start Date</th>
-                                                    <th>Deadline</th>
-                                                    <th>Status</th>
-                                                    <th>Progress</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Product Devlopment</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-2.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Kevin J. Heal
-                                                    </td>
-                                                    <td>20/3/2021</td>
-                                                    <td>5/5/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-success\">Active</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">92%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 92%;\" aria-valuenow=\"92\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>New Office Building</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-3.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Frank M. Lyons
-                                                    </td>
-                                                    <td>11/6/2021</td>
-                                                    <td>15/7/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-warning\">Panding</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">0%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 0%;\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Website &amp; Blog</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-4.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Hyman M. Cross
-                                                    </td>
-                                                    <td>21/6/2021</td>
-                                                    <td>3/7/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-warning\">Panding</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">0%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 0%;\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Market Research</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-5.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Angelo E. Butler
-                                                    </td>
-                                                    <td>30/4/2021</td>
-                                                    <td>1/6/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-success\">Active</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">78%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 78%;\" aria-valuenow=\"78\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Export Marketing</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-6.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Robert C. Golding
-                                                    </td>
-                                                    <td>20/3/2021</td>
-                                                    <td>5/5/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-success\">Active</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">45%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-success\" role=\"progressbar\" style=\"width: 45%;\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <td>Website &amp; Blog</td>
-                                                    <td>
-                                                        <img src=\"assets/images/users/user-8.jpg\" alt=\"\" class=\"thumb-sm rounded me-2\">
-                                                        Phillip T. Morse
-                                                    </td>
-                                                    <td>8/4/2021</td>
-                                                    <td>2/6/2021</td>
-                                                    <td><span class=\"badge badge-md badge-boxed  badge-soft-danger\">Complete</span></td>
-                                                    <td>
-                                                        <small class=\"float-end ms-2 pt-1 font-10\">100%</small>
-                                                        <div class=\"progress mt-2\" style=\"height:3px;\">
-                                                            <div class=\"progress-bar  bg-pink\" role=\"progressbar\" style=\"width: 100%;\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>                                                                                                  
-                                            </tbody>
-                                        </table>
-                                                                                       
-                                    </div><!--end table-responsive--> 
-                                </div><!--end card-body-->                                                                                                        
-                            </div><!--end card-->
-                        </div><!--end col-->  
-                        <div class=\"col-lg-4\">
+                    <div class=\"col-lg-4\">
                             <div class=\"card\">   
                                 <div class=\"card-header\">
                                     <div class=\"row align-items-center\">
@@ -1588,9 +857,10 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                             </div>          
                                         </div><!--end col-->
                                     </div>  <!--end row-->                                  
-                                </div><!--end card-header-->                                              
+                                </div><!--end card-header-->  
+
                                 <div class=\"card-body p-0\"> 
-                                    <div class=\"p-3\" style=\"height: 420px;\" data-simplebar>
+                                    <div class=\"p-3\" style=\"height: 425px;\" data-simplebar>
                                         <div class=\"activity\">
                                             <div class=\"activity-info\">
                                                 <div class=\"icon-info-activity\">
@@ -1656,7 +926,7 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                                         <p class=\"text-muted mb-0 font-13 w-75\"><span>Lucy Peterson</span> 
                                                             was added to the group, group name is <a href=\"\">Overtake</a>
                                                         </p>
-                                                        <small class=\"text-muted\">14 Nov 2021</small>
+                                                        <small class=\"text-muted\">14 Nov 2019</small>
                                                     </div>    
                                                 </div>
                                             </div> 
@@ -1669,7 +939,7 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                                         <p class=\"text-muted mb-0 font-13 w-75\"><span>Joseph Rust</span> 
                                                             opened new showcase <a href=\"\">Mannat #112233</a> with theme market
                                                         </p>
-                                                        <small class=\"text-muted\">15 Nov 2021</small>
+                                                        <small class=\"text-muted\">15 Nov 2019</small>
                                                     </div>    
                                                 </div>
                                             </div>                                                                                                                                      
@@ -1677,9 +947,8 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                                     </div><!--end analytics-dash-activity-->
                                 </div>  <!--end card-body-->                                     
                             </div><!--end card--> 
-                        </div><!--end col-->     
+                        </div><!--end col--> 
                     </div><!--end row-->
-
                 </div><!-- container -->
 
                 <!--Start Rightbar-->
@@ -1725,6 +994,16 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
                 <!--end Rightbar/offcanvas-->
                  <!--end Rightbar-->
                  
+                <!--Start Footer-->
+                <!-- Footer Start -->
+                <br><br>
+                 <footer class=\"footer text-center text-sm-start\">
+                    &copy; <script>
+                        document.write(new Date().getFullYear())
+                    </script> Business <span class=\"text-muted d-none d-sm-inline-block float-end\">Crafted by Bento</span>
+                </footer>
+                <!-- end Footer -->                
+                <!--end footer-->
             </div>
             <!-- end page content -->
         </div>
@@ -1741,6 +1020,6 @@ class __TwigTemplate_342f8b764eb6fafd832194882dde381f402949edfe57a65d0bcf60a4340
     <!--end body-->
 </html>
 
-{% endblock %}", "index.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\index.html.twig");
+{% endblock %}", "/index.html.twig", "C:\\Users\\RuiMiguelCarvalhoBen\\Documents\\symfony-cli\\my_project\\templates\\index.html.twig");
     }
 }

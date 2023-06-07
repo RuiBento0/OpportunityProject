@@ -38,6 +38,57 @@ class OpportunitiesRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function newcountOpportunities(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+        SELECT COUNT(id) AS counter 
+        FROM opportunities 
+        WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 WEEK)  
+        
+          ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function findByStatus($status): array
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.id_stage = :stat')
+            ->setParameter('stat', $status)
+            ->orderBy('o.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findByAccounts($accounts): array
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.id_account = :id')
+            ->setParameter('id', $accounts)
+            ->orderBy('o.updated_at', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findByLead($id): array
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.lead_id = :id')
+            ->setParameter('id', $id)
+            ->orderBy('o.updated_at', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 //    /**
 //     * @return Opportunities[] Returns an array of Opportunities objects

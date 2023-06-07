@@ -39,6 +39,34 @@ class PhonesRepository extends ServiceEntityRepository
         }
     }
 
+    public function deletePhonebyId($entity, $idinrelation): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            DELETE FROM phones
+            WHERE id_entity_id = :entity AND id_in_relation = :idinrelation
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['entity' => $entity,'idinrelation' => $idinrelation ]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function findPhonebyId($entity, $idinrelation): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM phones
+            WHERE id_entity_id = :entity AND id_in_relation = :idinrelation
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['entity' => $entity,'idinrelation' => $idinrelation ]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
 //    /**
 //     * @return Phones[] Returns an array of Phones objects
 //     */

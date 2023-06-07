@@ -144,12 +144,12 @@ class Leads
         return $this;
     }
 
-    public function getIdCampaign(): ?campaign
+    public function getIdCampaign(): ?Campaign
     {
         return $this->id_campaign;
     }
 
-    public function setIdCampaign(?campaign $id_campaign): self
+    public function setIdCampaign(?Campaign $id_campaign): self
     {
         $this->id_campaign = $id_campaign;
 

@@ -70,7 +70,7 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
@@ -98,20 +98,6 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
 
                                             </thead>
                                             <tbody>
-
-                                            <tr>
-                                                <td><a href=\"/options/users\">Users</td>
-                                                <td align=\"left\">                                                       
-                                                    <a href=\"/options/users\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><a href=\"/options/roles\">Roles</td>
-                                                <td align=\"left\">                                                       
-                                                    <a href=\"/options/roles\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                                </td>
-                                            </tr>
         
                                             <tr>
                                                 <td><a href=\"/options/departments\">Departments</td>
@@ -169,6 +155,20 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
                                                 </td>
                                             </tr>
 
+                                             <tr>
+                                                <td><a href=\"/options/campaign\">Campaign</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/options/campaign\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><a href=\"/options/sources\">Sources</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/options/sources\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
+
                                             </tbody>
                                         </table><!--end /table-->
                                     </div><!--end /tableresponsive-->  
@@ -184,20 +184,32 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
                                 <div class=\"card-header\">
                                     <div class=\"row align-items-center\">
                                         <div class=\"col-lg-6\">                      
-                                            <h4 class=\"card-title\">Options Details</h4>             
+                                            <h4 class=\"card-title\">Authentication Details</h4>             
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
 
-                                <div class=\"card-body\">    
+                               <div class=\"card-body\">    
                                     <div class=\"table-responsive\">
                                         <table class=\"table table-hover\">
                                             <thead class=\"thead-light\">
 
                                             </thead>
                                             <tbody>
+        
+                                            <tr>
+                                                <td><a href=\"/authentication/users\">Users</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/authentication/users\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
 
-                                            
+                                            <tr>
+                                                <td><a href=\"/authentication/roles\">Roles</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/authentication/roles\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
 
                                             </tbody>
                                         </table><!--end /table-->
@@ -246,7 +258,7 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
                             <div class=\"page-title-box\">
                                 <div class=\"float-end\">
                                     <ol class=\"breadcrumb\">
-                                        <li class=\"breadcrumb-item\"><a href=\"/index\">CRM Central</a>
+                                        <li class=\"breadcrumb-item\"><a href=\"/index\">Business</a>
                                         </li><!--end nav-item-->
                                         <li class=\"breadcrumb-item\"><a href=\"/options\">Options</a>
                                         </li><!--end nav-item-->
@@ -274,20 +286,6 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
 
                                             </thead>
                                             <tbody>
-
-                                            <tr>
-                                                <td><a href=\"/options/users\">Users</td>
-                                                <td align=\"left\">                                                       
-                                                    <a href=\"/options/users\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><a href=\"/options/roles\">Roles</td>
-                                                <td align=\"left\">                                                       
-                                                    <a href=\"/options/roles\"><i class=\"las la-pen text-secondary font-16\"></i></a>
-                                                </td>
-                                            </tr>
         
                                             <tr>
                                                 <td><a href=\"/options/departments\">Departments</td>
@@ -345,6 +343,20 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
                                                 </td>
                                             </tr>
 
+                                             <tr>
+                                                <td><a href=\"/options/campaign\">Campaign</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/options/campaign\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><a href=\"/options/sources\">Sources</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/options/sources\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
+
                                             </tbody>
                                         </table><!--end /table-->
                                     </div><!--end /tableresponsive-->  
@@ -360,20 +372,32 @@ class __TwigTemplate_efda0f3a0a23909bd8e3985a798bb12d25adcf4d9242bea07d852791cbf
                                 <div class=\"card-header\">
                                     <div class=\"row align-items-center\">
                                         <div class=\"col-lg-6\">                      
-                                            <h4 class=\"card-title\">Options Details</h4>             
+                                            <h4 class=\"card-title\">Authentication Details</h4>             
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
 
-                                <div class=\"card-body\">    
+                               <div class=\"card-body\">    
                                     <div class=\"table-responsive\">
                                         <table class=\"table table-hover\">
                                             <thead class=\"thead-light\">
 
                                             </thead>
                                             <tbody>
+        
+                                            <tr>
+                                                <td><a href=\"/authentication/users\">Users</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/authentication/users\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
 
-                                            
+                                            <tr>
+                                                <td><a href=\"/authentication/roles\">Roles</td>
+                                                <td align=\"left\">                                                       
+                                                    <a href=\"/authentication/roles\"><i class=\"las la-pen text-secondary font-16\"></i></a>
+                                                </td>
+                                            </tr>
 
                                             </tbody>
                                         </table><!--end /table-->

@@ -1,0 +1,199 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        document.body.classList.toggle('enlarge-menu');
+
+        $('#imageToUpload').change(function () {
+            var fileName = $(this).val().split('\\').pop();
+            $('#removeFileButton').show();
+            $('#removeSubmitButton').show();
+
+            // Get the selected file
+            var file = $(this)[0].files[0];
+
+            // Create a FileReader to read the image file
+            var reader = new FileReader();
+
+            // Set the callback function when the file is loaded
+            reader.onload = function (e) {
+                // Update the image source with the new file data
+                $('#profilePicture').attr('src', e.target.result);
+            };
+
+            // Read the image file as a data URL
+            reader.readAsDataURL(file);
+        });
+
+        $('#removeFileButton').click(function () {
+            $('#imageToUpload').val('');
+            $('#removeFileButton').hide();
+            $('#removeSubmitButton').hide();
+
+            // Reset the image source to the default image URL
+            $('#profilePicture').attr('src', '../uploads/userimg/{{ app.user.photo }}');
+        });
+    });
+</script>
+
+
+    <body id="body">
+        
+
+    <div class="page-wrapper">
+
+        <!-- Page Content-->
+        <div class="page-content-tab">
+
+            <div class="container-fluid">
+                <!-- Page-Title -->
+
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="met-profile">
+                                    <div class="row">
+                                        <div class="col-lg-4 align-self-center mb-lg-0">
+                                            <div class="met-profile-main">
+                                                 <form action="/profile/{{ app.user.id }}" method="POST" enctype="multipart/form-data">
+                                                     <div class="met-profile-main-pic">
+                                                         <img src="../uploads/userimg/{{ app.user.photo }}" alt="" height="110" class="rounded-circle" id="profilePicture">
+                                                         <label for="imageToUpload" class="met-profile_main-pic-change">
+                                                             <i class="fas fa-camera"></i>
+                                                         </label>
+                                                     </div>
+
+                                                     <input type="file" id="imageToUpload" name="imageToUpload" class="custom-file-input">
+                                                     <button type="submit" id="removeSubmitButton" class="btn btn-de-success btn-sm text-light px-4 mt-3 remove-file-button">Submit</button>
+                                                     <button type="button" id="removeFileButton" class="btn btn-de-danger btn-sm text-light px-4 mt-3 remove-file-button">Remove</button>
+                                                     <input type="text" id="UserId" name="UserId" value="{{ app.user.name }}" hidden>
+                                                 </form>
+                                                <div class="met-profile_user-detail">
+                                                    <h5 class="met-user-name" style="text-transform: capitalize;">{{ app.user.name }}</h5> 
+                                                    <p class="mb-0 met-user-name-post">{{ app.user.userRole.role }}</p> <br>                                             
+                                                </div>
+                                            </div>                                                
+                                        </div><!--end col-->
+                                        
+                                    <div class="col-lg-4 ms-auto align-self-center">
+                                            <ul class="list-unstyled personal-detail mb-0">
+                                                <li class="mt-2"><i class="las la-envelope text-secondary font-22 align-middle mr-2"></i> <b> Email </b> : {{ app.user.email }} </li>                                                   
+                                            </ul>
+                                           </div>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end f_profile-->                                                                                
+                            </div><!--end card-body-->
+                          
+                            <div class="card-body p-0">    
+                                <!-- Nav tabs -->
+                                                                             
+                                    <div class="tab-pane p-3" id="Settings" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-xl-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">                      
+                                                                <h4 class="card-title">Personal Information</h4>                      
+                                                            </div><!--end col-->                                                       
+                                                        </div>  <!--end row-->                                  
+                                                    </div><!--end card-header-->
+                                                    <div class="card-body">
+                                                    <form action="/profile/{{ app.user.id }}" method="POST">                       
+                                                        <div class="form-group mb-3 row">
+                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">Name</label>
+                                                            <div class="col-lg-9 col-xl-8">
+                                                                <input class="form-control" type="text" id="name" name="name" value="{{ app.user.name }}" style=" border-color:#608E34">
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="form-group mb-3 row">
+                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">Email Address</label>
+                                                            <div class="col-lg-9 col-xl-8">
+                                                                <div class="input-group">
+                                                                    <span class="input-group-text" style=" border-color:#608E34"><i class="las la-at"></i></span>
+                                                                    <input type="email" name="email" id="email" class="form-control" value="{{ app.user.email }}" placeholder="Email" aria-describedby="basic-addon1" style=" border-color:#608E34">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-3 row">
+                                                            <div class="col-lg-9 col-xl-8 offset-lg-3">
+                                                                <button type="submit" class="btn btn-primary" style="background-color: #608E34; border-color: #608E34">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                        </form>                                                  
+                                                    </div>                                            
+                                                </div>
+                                            </div> <!--end col--> 
+                                            <div class="col-lg-6 col-xl-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h4 class="card-title">Change Password</h4>
+                                                    </div><!--end card-header-->
+                                                    <div class="card-body" >
+                                                    <form action="/profile/{{ app.user.id }}" method="POST">
+                                                        <div class="form-group mb-3 row">
+                                                            <label  class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label" style="border-color:#608E34">Current Password</label>
+                                                            <div class="col-lg-9 col-xl-8">
+                                                                <input name="passwordOld" id="passwordOld" class="form-control" type="password" placeholder="Password" style=" border-color:#608E34">
+                                                                <a href="/resetpassword" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a> 
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="form-group mb-3 row">
+                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">New Password</label>
+                                                            <div class="col-lg-9 col-xl-8">
+                                                                <input name="passwordNew" id="passwordNew" class="form-control" type="password" placeholder="New Password" style=" border-color:#608E34">
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group mb-3 row">
+                                                            <div class="col-lg-9 col-xl-8 offset-lg-3">
+                                                                <button type="submit" class="btn btn-primary" style="background-color: #608E34; border-color: #608E34">Change Password</button>
+                                                            </div>
+                                                        </div>
+                                                        </form>
+                                                    </div><!--end card-body-->
+                                                </div><!--end card-->
+                                            </div> <!-- end col -->                                                                              
+                                        </div><!--end row-->
+                                    </div>
+                                </div>        
+                            </div> <!--end card-body-->                            
+                        </div><!--end card-->
+                    </div><!--end col-->
+                </div><!--end row-->
+
+            </div><!-- container -->
+                
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+
+    <!-- Javascript  -->
+    <script src="assets/plugins/tobii/tobii.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
+
+<style>
+    .custom-file-input {
+        display: none;
+    }
+
+    .remove-file-button {
+        display: none;
+        margin-left: 10px;
+    }
+    
+</style>
+{% endblock %}
