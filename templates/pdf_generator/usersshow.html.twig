@@ -1,0 +1,93 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business</title>
+  <style>
+    #banner {
+      background-color: #608E34;
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table td, table th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
+<body>
+  <div id="banner" style="margin-top:20px">
+  <h1>{% trans %}User Details{% endtrans %}</h1>
+  </div>
+  <br>
+  <table>
+    <tr>
+      <td>Id</td>
+      <td>{{ users.id }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Name{% endtrans %}</td>
+      <td>{{ users.name }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Email{% endtrans %}</td>
+      <td>{{ users.email }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Role{% endtrans %}</td>
+      <td>{{ users.userRole.role }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Status{% endtrans %}</td>
+      <td>  {% if users.active == 1 %}
+                    {% trans %}Active{% endtrans %}
+            {% endif %}
+
+            {% if users.active == 0 %}
+                    {% trans %}Disable{% endtrans %}
+            {% endif %}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Created At{% endtrans %}</td>
+      <td>{{ users.createdat|date('Y-m-d H:i:s') }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Update At{% endtrans %}</td>
+      <td>{{ users.updatedat|date('Y-m-d H:i:s') }}</td>
+    </tr>
+  </table>
+</body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
+</html>
+
+{% endblock %}

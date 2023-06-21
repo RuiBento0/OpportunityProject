@@ -26,29 +26,36 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
   <div id="banner">
-    <h1>Contacts</h1>
+    <h1>{% trans %}Contacts{% endtrans %}</h1>
   </div>
   <br>
   <table>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
+      <th>{% trans %}Name{% endtrans %}</th>
+      <th>{% trans %}Email{% endtrans %}</th>
+      <th>{% trans %}Phone Number{% endtrans %}</th>
     </tr>
 {% for contact in contacts %}
     <tr>
       <td>{{ contact.id }}</td>
       <td>{{ contact.name }} {{ contact.surname }}</td>
-      <td>jonas@gmail.com</td>
-      <td>1234567890</td>
+      <td>{{ contact.emails }}</td>
+      <td>{{ contact.phones }}</td>
     </tr>
 {% endfor %}
     <!-- Add more rows as needed -->
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 {% endblock %}

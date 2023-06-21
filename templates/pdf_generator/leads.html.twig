@@ -27,23 +27,24 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
   <div id="banner">
-    <h1>Leads</h1>
+    <h1>{% trans %}Leads{% endtrans %}</h1>
   </div>
   <br>
   <table>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Account</th>
-      <th>User</th>
-      <th>Area</th>
-      <th>Status</th>
-      <th>Source</th>
-      <th>Department</th>
-      <th>Amount</th>
-      <th>Description</th>
+      <th>{% trans %}Name{% endtrans %}</th>
+      <th>{% trans %}Account{% endtrans %}</th>
+      <th>{% trans %}User{% endtrans %}</th>
+      <th>{% trans %}Area{% endtrans %}</th>
+      <th>{% trans %}Status{% endtrans %}</th>
+      <th>{% trans %}Source{% endtrans %}</th>
+      <th>{% trans %}Department{% endtrans %}</th>
+      <th>{% trans %}Amount{% endtrans %}</th>
+      <th>{% trans %}Description{% endtrans %}</th>
     </tr>
 {% for lead in leads %}
     <tr>
@@ -62,6 +63,12 @@
     <!-- Add more rows as needed -->
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 {% endblock %}

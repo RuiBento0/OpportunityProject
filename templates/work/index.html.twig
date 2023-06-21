@@ -2,12 +2,19 @@
 
 {% block body %}
 
+
+<style>
+.hovergray :hover{
+    background-color:#f5f8fc;
+}
+</style>
+
 <div class="page-wrapper">
 
             <!-- Page Content-->
             {# <div class="page-content-tab"> #}
 
-                <div class="container-fluid">
+                <div class="container-fluid" style="width:100%;">
                     <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
@@ -16,10 +23,10 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/index">Business</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item active">Work</li>
+                                        <li class="breadcrumb-item active">{% trans %}Work{% endtrans %}</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Work</h4>
+                                <h4 class="page-title">{% trans %}Work{% endtrans %}</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
 
@@ -28,37 +35,35 @@
                         </form>
                         </div>
                         <br>
-                        <div class="row">
-                        <div class="col-12">  
-                          
+
+                    <div class="row" style="width:100%;">
+                        <div class="col-12">                            
                             <div class="card"> 
-                              
                                 <div class="card-body">
                                     <div class="kanban-board">
-                                        <div class="kanban-col">
+                                        <div class="kanban-col"style="max-width: 16%;" >
                                             <div class="kanban-main-card">                                        
                                                 <div class="kanban-box-title">         
-                                                    <h4 class="header-title mb-3">Leads</h4>
+                                                    <h4 class="header-title mb-3">{% trans %}Leads{% endtrans %}</h4>
                                                     <div class="dropdown kanban-main-dropdown">
                                                         <a class="dropdown-toggle arrow-none" id="drop1" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"></a>
                                                     </div>
                                                 </div>
-                                                
-                                                <div id="project-list-left" class="pb-1">
+                                                <div id="project-list-left" class="pb-1 hovergray" style="width:100%">
+
                                                   {% for leads in leads %}  
                                                     <div class="card" onclick="returnhrefshow('leads',{{ leads.id }})">
-                                              
                                                         <div class="card-body">
                                                             <div class="col-6 align-self-center" >
-                                                                        <a class="float-end" href="#">
-                                                                            <p class="text-muted mb-2">{{ leads.id }}</p>
-                                                                        </a>
+                                                                <a class="float-end" href="">
+                                                                    <p class="text-muted mb-2">{{ leads.id }}</p>
+                                                                </a>
                                                             </div><!--end col-->
                                                             <i class="mdi mdi-circle-outline d-block mt-n2 font-14 text-success"></i>
                                                             <h5 class="my-1 font-14">{{ leads.name }}</h5>
                                                             <p class="text-muted mb-2">{{ leads.idarea.name }}</p>
                                                             <div class="row justify-content-center">
-                                                                <div class="col-6 align-self-center">
+                                                                <div class="">
                                                                     <ul class="list-inline mb-0">                                                                    
                                                                         <li class="list-item d-inline-block mr-2">
                                                                             <a class="" href="#">
@@ -66,32 +71,31 @@
                                                                                 <span class="text-muted font-weight-bold">{{ leads.idstatus.name }}</span>
                                                                             </a>
                                                                         </li>
+                                                                         <a class="float-end" href="#">
+                                                                            <p class="text-muted mb-2">{{ leads.iddepartment.name }}</p>
+                                                                        </a>
                                                                     </ul>
-                                                                </div><!--end col-->
-                                                                <div class="col-6 align-self-center">
-                                                                    <a class="float-end" href="#">
-                                                                        <p class="text-muted mb-2">{{ leads.iddepartment.name }}</p>
-                                                                    </a>
                                                                 </div><!--end col-->
                                                             </div><!--end row-->
                                                         </div><!--end card-body-->
                                                     </div><!--end card-->
                                                     {% endfor %} 
+
                                                 </div><!--end project-list-left-->
                                             </div><!--end /div-->
                                         </div><!--end kanban-col-->
                                    
 
-                                        <div class="kanban-col">
+                                        <div class="kanban-col" style="max-width: 16%;">
                                             <div class="kanban-main-card">                                                    
                                                 <div class="kanban-box-title">
-                                                    <h4 class="header-title mb-3">Qualification</h4>
+                                                    <h4 class="header-title mb-3">{% trans %}Qualification{% endtrans %}</h4>
                                                     <div class="dropdown kanban-main-dropdown">
                                                         <a class="dropdown-toggle arrow-none" id="drop1" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"></a>
                                                     </div>
                                                 </div>
                                                 
-                                                <div id="project-list-center-left" class="pb-1">
+                                                <div id="project-list-center-left" class="pb-1 hovergray">
                                                 {% for OppQualification in OppQualification %}
                                                     <div class="card" onclick="returnhrefshow('opportunities',{{ OppQualification.id }})">
                                                         <div class="card-body">
@@ -104,7 +108,7 @@
                                                             <h5 class="my-1 font-14">{{ OppQualification.name }}</h5>
                                                             <p class="text-muted mb-2">{{ OppQualification.iddepartment.name }}</p>
                                                             <div class="row justify-content-center">
-                                                                <div class="col-6 align-self-center">
+                                                                <div class="">
                                                                     <ul class="list-inline mb-0">                                                                    
                                                                         <li class="list-item d-inline-block mr-2">
                                                                             <a class="" href="#">
@@ -112,13 +116,12 @@
                                                                                 <span class="text-muted font-weight-bold">{{ OppQualification.idstage.name }}</span>
                                                                             </a>
                                                                         </li>
+                                                                         <a class="float-end" href="#">
+                                                                            <p class="text-muted mb-2">{{ OppQualification.iddepartment.name }}</p>
+                                                                        </a>
                                                                     </ul>
                                                                 </div><!--end col-->
-                                                                <div class="col-6 align-self-center">
-                                                                    <a class="float-end" href="#">
-                                                                        <p class="text-muted mb-2">{{ OppQualification.iddepartment.name }}</p>
-                                                                    </a>
-                                                                </div><!--end col-->
+                                                               
                                                             </div><!--end row-->
                                                         </div><!--end card-body-->
                                                     </div><!--end card-->
@@ -128,16 +131,16 @@
                                         </div><!--end kanban-col-->
 
 
-                                       <div class="kanban-col">
+                                       <div class="kanban-col"style="max-width: 16%;">
                                             <div class="kanban-main-card">                                                    
                                                 <div class="kanban-box-title">
-                                                    <h4 class="header-title mb-3">Proposal</h4>
+                                                    <h4 class="header-title mb-3">{% trans %}Proposal{% endtrans %}</h4>
                                                     <div class="dropdown kanban-main-dropdown">
                                                         <a class="dropdown-toggle arrow-none" id="drop1" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"></a>
                                                     </div>
                                                 </div>
                                                 
-                                                <div id="project-list-center-left" class="pb-1">
+                                                <div id="project-list-center-left" class="pb-1 hovergray">
                                                 {% for OppProposal in OppProposal %}
                                                     <div class="card" onclick="returnhrefshow('opportunities',{{ OppProposal.id }})">
                                                         <div class="card-body">
@@ -150,7 +153,7 @@
                                                             <h5 class="my-1 font-14">{{ OppProposal.name }}</h5>
                                                             <p class="text-muted mb-2">{{ OppProposal.iddepartment.name }}</p>
                                                             <div class="row justify-content-center">
-                                                                <div class="col-6 align-self-center">
+                                                                <div class="">
                                                                     <ul class="list-inline mb-0">                                                                    
                                                                         <li class="list-item d-inline-block mr-2">
                                                                             <a class="" href="#">
@@ -158,13 +161,12 @@
                                                                                 <span class="text-muted font-weight-bold">{{ OppProposal.idstage.name }}</span>
                                                                             </a>
                                                                         </li>
-                                                                    </ul>
-                                                                </div><!--end col-->
-                                                                <div class="col-6 align-self-center">
-                                                                    <a class="float-end" href="#">
+                                                                        <a class="float-end" href="#">
                                                                         <p class="text-muted mb-2">{{ OppProposal.iddepartment.name }}</p>
                                                                     </a>
+                                                                    </ul>
                                                                 </div><!--end col-->
+                                                               
                                                             </div><!--end row-->
                                                         </div><!--end card-body-->
                                                     </div><!--end card-->
@@ -173,16 +175,16 @@
                                             </div><!--end /div-->
                                         </div><!--end kanban-col-->
 
-                                        <div class="kanban-col">
+                                        <div class="kanban-col"style="max-width: 16%;">
                                             <div class="kanban-main-card">                                                    
                                                 <div class="kanban-box-title">
-                                                    <h4 class="header-title mb-3">Negotiation</h4>
+                                                    <h4 class="header-title mb-3">{% trans %}Negotiation{% endtrans %}</h4>
                                                     <div class="dropdown kanban-main-dropdown">
                                                         <a class="dropdown-toggle arrow-none" id="drop1" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"></a>
                                                     </div>
                                                 </div>
                                                 
-                                                <div id="project-list-center-left" class="pb-1">
+                                                <div id="project-list-center-left" class="pb-1 hovergray">
                                                 {% for OppNegotiation in OppNegotiation %}
                                                     <div class="card" onclick="returnhrefshow('opportunities',{{ OppNegotiation.id }})">
                                                         <div class="card-body">
@@ -195,7 +197,7 @@
                                                             <h5 class="my-1 font-14">{{ OppNegotiation.name }}</h5>
                                                             <p class="text-muted mb-2">{{ OppNegotiation.iddepartment.name }}</p>
                                                             <div class="row justify-content-center">
-                                                                <div class="col-6 align-self-center">
+                                                                <div class="">
                                                                     <ul class="list-inline mb-0">                                                                    
                                                                         <li class="list-item d-inline-block mr-2">
                                                                             <a class="" href="#">
@@ -203,13 +205,12 @@
                                                                                 <span class="text-muted font-weight-bold">{{ OppNegotiation.idstage.name }}</span>
                                                                             </a>
                                                                         </li>
-                                                                    </ul>
-                                                                </div><!--end col-->
-                                                                <div class="col-6 align-self-center">
-                                                                    <a class="float-end" href="#">
+                                                                         <a class="float-end" href="#">
                                                                         <p class="text-muted mb-2">{{ OppNegotiation.iddepartment.name }}</p>
                                                                     </a>
+                                                                    </ul>
                                                                 </div><!--end col-->
+                                                                
                                                             </div><!--end row-->
                                                         </div><!--end card-body-->
                                                     </div><!--end card-->
@@ -218,16 +219,16 @@
                                             </div><!--end /div-->
                                         </div><!--end kanban-col-->
                                         
-                                        <div class="kanban-col">
+                                        <div class="kanban-col"style="max-width: 16%;">
                                             <div class="kanban-main-card">                                                    
                                                 <div class="kanban-box-title">
-                                                    <h4 class="header-title mb-3">Close Won</h4>
+                                                    <h4 class="header-title mb-3">{% trans %}Close Won{% endtrans %}</h4>
                                                     <div class="dropdown kanban-main-dropdown">
                                                         <a class="dropdown-toggle arrow-none" id="drop1" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"></a>
                                                     </div>
                                                 </div>
                                                 
-                                                <div id="project-list-center-left" class="pb-1">
+                                                <div id="project-list-center-left" class="pb-1 hovergray">
                                                 {% for OppClosedWon in OppClosedWon %}
                                                     <div class="card" onclick="returnhrefshow('opportunities',{{ OppClosedWon.id }})">
                                                         <div class="card-body">
@@ -240,7 +241,7 @@
                                                             <h5 class="my-1 font-14">{{ OppClosedWon.name }}</h5>
                                                             <p class="text-muted mb-2">{{ OppClosedWon.iddepartment.name }}</p>
                                                             <div class="row justify-content-center">
-                                                                <div class="col-6 align-self-center">
+                                                                <div class="">
                                                                     <ul class="list-inline mb-0">                                                                    
                                                                         <li class="list-item d-inline-block mr-2">
                                                                             <a class="" href="#">
@@ -248,13 +249,12 @@
                                                                                 <span class="text-muted font-weight-bold">{{ OppClosedWon.idstage.name }}</span>
                                                                             </a>
                                                                         </li>
-                                                                    </ul>
-                                                                </div><!--end col-->
-                                                                <div class="col-6 align-self-center">
-                                                                    <a class="float-end" href="#">
+                                                                        <a class="float-end" href="#">
                                                                         <p class="text-muted mb-2">{{ OppClosedWon.iddepartment.name }}</p>
                                                                     </a>
+                                                                    </ul>
                                                                 </div><!--end col-->
+                                                                
                                                             </div><!--end row-->
                                                         </div><!--end card-body-->
                                                     </div><!--end card-->
@@ -265,16 +265,16 @@
                                                 
                                             
 
-                                        <div class="kanban-col">
+                                        <div class="kanban-col"style="max-width: 16%;">
                                             <div class="kanban-main-card">                                                    
                                                 <div class="kanban-box-title">
-                                                    <h4 class="header-title mb-3">Close Lost</h4>
+                                                    <h4 class="header-title mb-3">{% trans %}Close Lost{% endtrans %}</h4>
                                                     <div class="dropdown kanban-main-dropdown">
                                                         <a class="dropdown-toggle arrow-none" id="drop1" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"></a>
                                                     </div>
                                                 </div>
                                                 
-                                                <div id="project-list-center-left" class="pb-1">
+                                                <div id="project-list-center-left" class="pb-1 hovergray">
                                                 {% for OppClosedLost in OppClosedLost %}
                                                     <div class="card" onclick="returnhrefshow('opportunities',{{ OppClosedLost.id }})">
                                                         <div class="card-body">
@@ -287,7 +287,7 @@
                                                             <h5 class="my-1 font-14">{{ OppClosedLost.name }}</h5>
                                                             <p class="text-muted mb-2">{{ OppClosedLost.iddepartment.name }}</p>
                                                             <div class="row justify-content-center">
-                                                                <div class="col-6 align-self-center">
+                                                                <div class="">
                                                                     <ul class="list-inline mb-0">                                                                    
                                                                         <li class="list-item d-inline-block mr-2">
                                                                             <a class="" href="#">
@@ -295,13 +295,12 @@
                                                                                 <span class="text-muted font-weight-bold">{{ OppClosedLost.idstage.name }}</span>
                                                                             </a>
                                                                         </li>
-                                                                    </ul>
-                                                                </div><!--end col-->
-                                                                <div class="col-6 align-self-center">
-                                                                    <a class="float-end" href="#">
+                                                                        <a class="float-end" href="#">
                                                                         <p class="text-muted mb-2">{{ OppClosedLost.iddepartment.name }}</p>
                                                                     </a>
+                                                                    </ul>
                                                                 </div><!--end col-->
+                                                              
                                                             </div><!--end row-->
                                                         </div><!--end card-body-->
                                                     </div><!--end card-->
@@ -318,7 +317,15 @@
                 </div><!-- container -->
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+
 <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            document.body.classList.toggle('enlarge-menu');
+
+        });
 
     function myFunction() 
     {

@@ -39,6 +39,14 @@ class AccountsFormType extends AbstractType
             'label' => false,
         ])
 
+        ->add('NIF', TextType::class, [
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'NIF'
+            ],
+            'label' => false,
+        ])
+
         ->add('description', TextAreaType::class, [
             'attr' => [
                 'class' => 'form-control',
@@ -53,16 +61,6 @@ class AccountsFormType extends AbstractType
             'attr' => [
                 'class' => 'form-control',
                 'placeholder' => 'form.placeholder.area'
-            ],
-            'label' => false,
-           ])
-
-           ->add('iduser', EntityType::class, [
-            'class' => Users::class,
-            'choice_label' => 'getName',
-            'attr' => [
-                'class' => 'form-control',
-                'placeholder' => 'form.placeholder.user'
             ],
             'label' => false,
            ])

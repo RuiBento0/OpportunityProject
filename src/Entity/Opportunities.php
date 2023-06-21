@@ -55,7 +55,7 @@ class Opportunities
     #[ORM\Column(length: 255)]
     public ?string $product = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\ManyToOne(cascade: ['persist'])]
     public ?Contacts $id_contact = null;
 
     #[ORM\ManyToOne]

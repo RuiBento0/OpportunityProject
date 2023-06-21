@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="pt" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="inyLZ.6" resname="Accounts">
+        <source>Accounts</source>
+        <target>Contas</target>
+      </trans-unit>
+      <trans-unit id="R1lJisK" resname="Create">
+        <source>Create</source>
+        <target>Criar</target>
+      </trans-unit>
+      <trans-unit id="Df.iNLR" resname="Create Account">
+        <source>Create Account</source>
+        <target>Criar Conta</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nome</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>Utilizador</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Tipo</target>
+      </trans-unit>
+      <trans-unit id="Ak3CBNe" resname="Area">
+        <source>Area</source>
+        <target>Area</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Descrição</target>
+      </trans-unit>
+      <trans-unit id="X5SUxNI" resname="Departments">
+        <source>Departments</source>
+        <target>Departamentos</target>
+      </trans-unit>
+      <trans-unit id="V0rteEC" resname="Add Phone Field">
+        <source>Add Phone Field</source>
+        <target>Adicionar Telemóvel</target>
+      </trans-unit>
+      <trans-unit id="gBq_VsY" resname="Add Email Field">
+        <source>Add Email Field</source>
+        <target>Adicionar Email</target>
+      </trans-unit>
+      <trans-unit id="4KYZqx0" resname="Add Address Field">
+        <source>Add Address Field</source>
+        <target>Adicionar Morada</target>
+      </trans-unit>
+      <trans-unit id="dpAPG.0" resname="Back">
+        <source>Back</source>
+        <target>Voltar</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Editar</target>
+      </trans-unit>
+      <trans-unit id="DfbxytN" resname="Show">
+        <source>Show</source>
+        <target>Mostrar</target>
+      </trans-unit>
+      <trans-unit id="39YLmqX" resname="Created By">
+        <source>Created By</source>
+        <target>Criado Por</target>
+      </trans-unit>
+      <trans-unit id="PUQzcBC" resname="Created At">
+        <source>Created At</source>
+        <target>Criado</target>
+      </trans-unit>
+      <trans-unit id="LKYoCYU" resname="Updated By">
+        <source>Updated By</source>
+        <target>Atualizado Por</target>
+      </trans-unit>
+      <trans-unit id="41yOT1y" resname="Updated At">
+        <source>Updated At</source>
+        <target>Atualizado</target>
+      </trans-unit>
+      <trans-unit id="HTk7AIG" resname="PDF">
+        <source>PDF</source>
+        <target>PDF</target>
+      </trans-unit>
+      <trans-unit id="dKiDoDe" resname="Settings">
+        <source>Settings</source>
+        <target>Definições</target>
+      </trans-unit>
+      <trans-unit id="LyP4yLm" resname="Accounts Type">
+        <source>Accounts Type</source>
+        <target>Tipo de Conta</target>
+      </trans-unit>
+      <trans-unit id="FHEyOTI" resname="Create Account Type">
+        <source>Create Account Type</source>
+        <target>Criar Tipo de Conta</target>
+      </trans-unit>
+      <trans-unit id="kg5BPH1" resname="Status">
+        <source>Status</source>
+        <target>Estado</target>
+      </trans-unit>
+      <trans-unit id="wcEAnT8" resname="Update">
+        <source>Update</source>
+        <target>Atualizado</target>
+      </trans-unit>
+      <trans-unit id="3OgcW.G" resname="Account Type">
+        <source>Account Type</source>
+        <target>Tipo de Conta</target>
+      </trans-unit>
+      <trans-unit id="rwrN1Wc" resname="User Status">
+        <source>User Status</source>
+        <target>Estado de Utilizador</target>
+      </trans-unit>
+      <trans-unit id="10xj32." resname="Update By">
+        <source>Update By</source>
+        <target>Atualizado Por</target>
+      </trans-unit>
+      <trans-unit id="4lxhcev" resname="Create Area">
+        <source>Create Area</source>
+        <target>Criar Area</target>
+      </trans-unit>
+      <trans-unit id="kjQGlYm" resname="Active">
+        <source>Active</source>
+        <target>Ativado</target>
+      </trans-unit>
+      <trans-unit id="t_PkqkJ" resname="Disable">
+        <source>Disable</source>
+        <target>Desativado</target>
+      </trans-unit>
+      <trans-unit id="ZogNLYI" resname="Authentication">
+        <source>Authentication</source>
+        <target>Autenticação</target>
+      </trans-unit>
+      <trans-unit id="byAvVKe" resname="List">
+        <source>List</source>
+        <target>Lista</target>
+      </trans-unit>
+      <trans-unit id="WLvC_7k" resname="Authentication Details">
+        <source>Authentication Details</source>
+        <target>Detalhes de Autenticação</target>
+      </trans-unit>
+      <trans-unit id="awzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Utilizadores</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Cargos</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Procurar</target>
+      </trans-unit>
+      <trans-unit id="SQBVLje" resname="Create Role">
+        <source>Create Role</source>
+        <target>Criar Cargo</target>
+      </trans-unit>
+      <trans-unit id="bLab8tI" resname="Roles Details">
+        <source>Roles Details</source>
+        <target>Detalhes de Cargos</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="FHNqLrn" resname="Role">
+        <source>Role</source>
+        <target>Cargo</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Ações</target>
+      </trans-unit>
+      <trans-unit id="gFMuwLY" resname="Create User">
+        <source>Create User</source>
+        <target>Criar Utilizador</target>
+      </trans-unit>
+      <trans-unit id="eq2dSQN" resname="Export PDF">
+        <source>Export PDF</source>
+        <target>Exportar PDF</target>
+      </trans-unit>
+      <trans-unit id="K0zCwzR" resname="Export Excel">
+        <source>Export Excel</source>
+        <target>Exportar Excel</target>
+      </trans-unit>
+      <trans-unit id="hwYrT5m" resname="Users Details">
+        <source>Users Details</source>
+        <target>Detalhes de Utilizadores</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="kSXg.QL" resname="Create Accounts">
+        <source>Create Accounts</source>
+        <target>Criar Conta</target>
+      </trans-unit>
+      <trans-unit id="OLsgF5O" resname="Import Excel">
+        <source>Import Excel</source>
+        <target>Importar Excel</target>
+      </trans-unit>
+      <trans-unit id="RNTuO0v" resname="Accounts Details">
+        <source>Accounts Details</source>
+        <target>Detalhes de Conta</target>
+      </trans-unit>
+      <trans-unit id="5CM4msZ" resname="Adresses">
+        <source>Adresses</source>
+        <target>Moradas</target>
+      </trans-unit>
+      <trans-unit id="Y9zriAC" resname="Phone">
+        <source>Phone</source>
+        <target>Telemóvel</target>
+      </trans-unit>
+      <trans-unit id="tFBkXev" resname="Contacts">
+        <source>Contacts</source>
+        <target>Contactos</target>
+      </trans-unit>
+      <trans-unit id="rXlT7na" resname="Create Contacts">
+        <source>Create Contacts</source>
+        <target>Criar Contacto</target>
+      </trans-unit>
+      <trans-unit id="GXco_fx" resname="Contacts Details">
+        <source>Contacts Details</source>
+        <target>Detalhes de Contacto</target>
+      </trans-unit>
+      <trans-unit id="fhsNVkH" resname="Account">
+        <source>Account</source>
+        <target>Conta</target>
+      </trans-unit>
+      <trans-unit id="m_NPPlS" resname="opportunities">
+        <source>opportunities</source>
+        <target>Oportunidades</target>
+      </trans-unit>
+      <trans-unit id="LAN9qNP" resname="Converted">
+        <source>Converted</source>
+        <target>Convertido</target>
+      </trans-unit>
+      <trans-unit id="hTqF9D." resname="Converted Opportunity">
+        <source>Converted Opportunity</source>
+        <target>Oportunidade Convertida</target>
+      </trans-unit>
+      <trans-unit id="Yz0pcKg" resname="Close Date">
+        <source>Close Date</source>
+        <target>Data de Termino</target>
+      </trans-unit>
+      <trans-unit id="UwSrmOW" resname="Department">
+        <source>Department</source>
+        <target>Departamento</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contacto</target>
+      </trans-unit>
+      <trans-unit id="3oOIVeS" resname="Stage">
+        <source>Stage</source>
+        <target>Etapa</target>
+      </trans-unit>
+      <trans-unit id="DlcMpvq" resname="Source">
+        <source>Source</source>
+        <target>Origem</target>
+      </trans-unit>
+      <trans-unit id="nJvgG6I" resname="Probability">
+        <source>Probability</source>
+        <target>Probabilidade</target>
+      </trans-unit>
+      <trans-unit id="_574lBd" resname="Product">
+        <source>Product</source>
+        <target>Produto</target>
+      </trans-unit>
+      <trans-unit id="XNQl9Rj" resname="Convert">
+        <source>Convert</source>
+        <target>Converter</target>
+      </trans-unit>
+      <trans-unit id="LxCiZ2l" resname="Leads">
+        <source>Leads</source>
+        <target>Leads</target>
+      </trans-unit>
+      <trans-unit id="Q86TPKy" resname="Create Leads">
+        <source>Create Leads</source>
+        <target>Criar Leads</target>
+      </trans-unit>
+      <trans-unit id="_NpgHUs" resname="Leads Details">
+        <source>Leads Details</source>
+        <target>Detalhes das Leads</target>
+      </trans-unit>
+      <trans-unit id="Hm6HjJ3" resname="Opportunities">
+        <source>Opportunities</source>
+        <target>Oportunidades</target>
+      </trans-unit>
+      <trans-unit id="se9oNaU" resname="Create Opportunity">
+        <source>Create Opportunity</source>
+        <target>Criar Oportunidades</target>
+      </trans-unit>
+      <trans-unit id="2ryRc34" resname="Opportunities Details">
+        <source>Opportunities Details</source>
+        <target>Detalhes das Oportunidades</target>
+      </trans-unit>
+      <trans-unit id="SeltfN9" resname="Amount">
+        <source>Amount</source>
+        <target>Quantia</target>
+      </trans-unit>
+      <trans-unit id="OheqTkq" resname="Stages">
+        <source>Stages</source>
+        <target>Etapas</target>
+      </trans-unit>
+      <trans-unit id="JoKG0u9" resname="Campaign">
+        <source>Campaign</source>
+        <target>Campanha</target>
+      </trans-unit>
+      <trans-unit id="U5MyOrE" resname="Create Campaign">
+        <source>Create Campaign</source>
+        <target>Criar Campanha</target>
+      </trans-unit>
+      <trans-unit id="uLHYlMa" resname="Categories">
+        <source>Categories</source>
+        <target>Categorias</target>
+      </trans-unit>
+      <trans-unit id="rSUkkwr" resname="Create Categorie">
+        <source>Create Categorie</source>
+        <target>Criar Categoria</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>Categoria</target>
+      </trans-unit>
+      <trans-unit id="OXfTUpb" resname="Categorie">
+        <source>Categorie</source>
+        <target>Categoria</target>
+      </trans-unit>
+      <trans-unit id="92LaBfT" resname="Surname">
+        <source>Surname</source>
+        <target>Sobrenome</target>
+      </trans-unit>
+      <trans-unit id="g3uuQLg" resname="&gt;Create">
+        <source>&gt;Create</source>
+        <target><![CDATA[__>Create]]></target>
+      </trans-unit>
+      <trans-unit id="BiVXju6" resname="Create Department">
+        <source>Create Department</source>
+        <target>Criar Department</target>
+      </trans-unit>
+      <trans-unit id="FbYZdLJ" resname="Location">
+        <source>Location</source>
+        <target>Localização</target>
+      </trans-unit>
+      <trans-unit id="f9s8zsD" resname="Entities">
+        <source>Entities</source>
+        <target>Entidades</target>
+      </trans-unit>
+      <trans-unit id="o.muXN." resname="Create Entity">
+        <source>Create Entity</source>
+        <target>Criar Entidade</target>
+      </trans-unit>
+      <trans-unit id="WDRHxqN" resname="&gt;Edit">
+        <source>&gt;Edit</source>
+        <target><![CDATA[__>Edit]]></target>
+      </trans-unit>
+      <trans-unit id="SHJb79v" resname="Insert your accounts excel">
+        <source>Insert your accounts excel</source>
+        <target>Insere o ficheiro excel das contas</target>
+      </trans-unit>
+      <trans-unit id="BAvwR32" resname="browse file">
+        <source>browse file</source>
+        <target>Selecionar Ficheiro</target>
+      </trans-unit>
+      <trans-unit id="3e6TEbt" resname="from device">
+        <source>from device</source>
+        <target>Do dispositivo</target>
+      </trans-unit>
+      <trans-unit id="ygD8z7Q" resname="error">
+        <source>error</source>
+        <target>erro</target>
+      </trans-unit>
+      <trans-unit id="Vx.anma" resname="Please select a file first">
+        <source>Please select a file first</source>
+        <target>Por Favor,Selecione um ficheiro primeiro</target>
+      </trans-unit>
+      <trans-unit id="I3TZF5S" resname="cancel">
+        <source>cancel</source>
+        <target>Cancelar</target>
+      </trans-unit>
+      <trans-unit id="Y6dHrk5" resname="Only Excel files (.xlsx) are allowed">
+        <source>Only Excel files (.xlsx) are allowed</source>
+        <target>Apenas Ficheiros Excel (.xlsx) são permitidos</target>
+      </trans-unit>
+      <trans-unit id="yQRveje" resname="description">
+        <source>description</source>
+        <target>Descrição</target>
+      </trans-unit>
+      <trans-unit id="YZdZVQP" resname="delete">
+        <source>delete</source>
+        <target>Eliminar</target>
+      </trans-unit>
+      <trans-unit id="uiLTY4C" resname="Download Template">
+        <source>Download Template</source>
+        <target>Download Template</target>
+      </trans-unit>
+      <trans-unit id="LP_bqr9" resname="Import">
+        <source>Import</source>
+        <target>Importar</target>
+      </trans-unit>
+      <trans-unit id="WaDnqVx" resname="Insert your contacts excel">
+        <source>Insert your contacts excel</source>
+        <target>Insere o ficheiro excel de contactos </target>
+      </trans-unit>
+      <trans-unit id="fDq_7Yb" resname="Insert your leads excel">
+        <source>Insert your leads excel</source>
+        <target>Insere o ficheiro excel de leads</target>
+      </trans-unit>
+      <trans-unit id="1GrjNF9" resname="Insert your opportunities excel">
+        <source>Insert your opportunities excel</source>
+        <target>Insere o ficheiro excel das oportunidades</target>
+      </trans-unit>
+      <trans-unit id="DARrXG4" resname="&gt;error">
+        <source>&gt;error</source>
+        <target><![CDATA[__>error]]></target>
+      </trans-unit>
+      <trans-unit id="IBIsAxn" resname="New Accounts">
+        <source>New Accounts</source>
+        <target>Novas Contas</target>
+      </trans-unit>
+      <trans-unit id="R4p3nuf" resname="New Opportunities">
+        <source>New Opportunities</source>
+        <target>Novas Oportunidades</target>
+      </trans-unit>
+      <trans-unit id="LkWGf1w" resname="New Leads">
+        <source>New Leads</source>
+        <target>Novas Leads</target>
+      </trans-unit>
+      <trans-unit id="1zcaFo6" resname="Monthly Trends">
+        <source>Monthly Trends</source>
+        <target>Conteúdo do Mês</target>
+      </trans-unit>
+      <trans-unit id="8QyORFP" resname="Create Lead">
+        <source>Create Lead</source>
+        <target>Criar Lead</target>
+      </trans-unit>
+      <trans-unit id="ZFl4KHm" resname="Lead">
+        <source>Lead</source>
+        <target>Lead</target>
+      </trans-unit>
+      <trans-unit id="lcYRcDG" resname="Locations">
+        <source>Locations</source>
+        <target>Localização</target>
+      </trans-unit>
+      <trans-unit id="6STzEOU" resname="Create New Location">
+        <source>Create New Location</source>
+        <target>Criar Nova Localização</target>
+      </trans-unit>
+      <trans-unit id="6Wn4XEf" resname="Opportunity">
+        <source>Opportunity</source>
+        <target>Oportunidade</target>
+      </trans-unit>
+      <trans-unit id="7yld4o1" resname="&gt;User">
+        <source>&gt;User</source>
+        <target><![CDATA[__>User]]></target>
+      </trans-unit>
+      <trans-unit id="khQjdkh" resname="Accounts Type Details">
+        <source>Accounts Type Details</source>
+        <target>Detalhes dos Tipos de Conta</target>
+      </trans-unit>
+      <trans-unit id="UTUA4d8" resname="Area Details">
+        <source>Area Details</source>
+        <target>Detalhes da Area</target>
+      </trans-unit>
+      <trans-unit id="Nr.rTr." resname="Campaign Details">
+        <source>Campaign Details</source>
+        <target>Detalhes de Campanha</target>
+      </trans-unit>
+      <trans-unit id="S0qYV0k" resname="Create Category">
+        <source>Create Category</source>
+        <target>Criar Categoria</target>
+      </trans-unit>
+      <trans-unit id="N5kGpOJ" resname="Categories Details">
+        <source>Categories Details</source>
+        <target>Detalhes das Categorias</target>
+      </trans-unit>
+      <trans-unit id="wYJKZOb" resname="Departments Details">
+        <source>Departments Details</source>
+        <target>Detalhes dos Departamentos</target>
+      </trans-unit>
+      <trans-unit id="2HUg_Pe" resname="Entities Details">
+        <source>Entities Details</source>
+        <target>Detalhes das Entidades</target>
+      </trans-unit>
+      <trans-unit id="dA4HN8i" resname="Create Location">
+        <source>Create Location</source>
+        <target>Criar Localização</target>
+      </trans-unit>
+      <trans-unit id="P_6lyQP" resname="Locations Details">
+        <source>Locations Details</source>
+        <target>Detalhes das Localizações</target>
+      </trans-unit>
+      <trans-unit id="S4Vi90N" resname="Settings Details">
+        <source>Settings Details</source>
+        <target>Detalhes das Definições</target>
+      </trans-unit>
+      <trans-unit id="mAR3xOC" resname="Priorities">
+        <source>Priorities</source>
+        <target>Prioridades</target>
+      </trans-unit>
+      <trans-unit id="yvhbCIj" resname="Sources">
+        <source>Sources</source>
+        <target>Origens</target>
+      </trans-unit>
+      <trans-unit id="lOr3cyN" resname="Create Priority">
+        <source>Create Priority</source>
+        <target>Criar Prioridade</target>
+      </trans-unit>
+      <trans-unit id="aCRfPjO" resname="Priorities Details">
+        <source>Priorities Details</source>
+        <target>Detalhe das Prioridades</target>
+      </trans-unit>
+      <trans-unit id="TUnnSVd" resname="Create Source">
+        <source>Create Source</source>
+        <target>Criar Origem</target>
+      </trans-unit>
+      <trans-unit id="Lvgmt1N" resname="Source Details">
+        <source>Source Details</source>
+        <target>Detalhes da Origem</target>
+      </trans-unit>
+      <trans-unit id="9l8Debm" resname="&gt;Stages">
+        <source>&gt;Stages</source>
+        <target><![CDATA[__>Stages]]></target>
+      </trans-unit>
+      <trans-unit id="ITg06do" resname="Create Stage">
+        <source>Create Stage</source>
+        <target>Criar Etapa</target>
+      </trans-unit>
+      <trans-unit id="oMmZiGB" resname="Stages Details">
+        <source>Stages Details</source>
+        <target>Detalhes das Etapas</target>
+      </trans-unit>
+      <trans-unit id="JwDDwya" resname="Create Status">
+        <source>Create Status</source>
+        <target>Criar Estado</target>
+      </trans-unit>
+      <trans-unit id="ZcBvrYz" resname="Status Details">
+        <source>Status Details</source>
+        <target>Detalhes dos Estados</target>
+      </trans-unit>
+      <trans-unit id="ctupru2" resname="Phone Number">
+        <source>Phone Number</source>
+        <target>Número de Telemóvel</target>
+      </trans-unit>
+      <trans-unit id="Vu_PIJV" resname="Address">
+        <source>Address</source>
+        <target>Morada</target>
+      </trans-unit>
+      <trans-unit id="3.9u._l" resname="User Details">
+        <source>User Details</source>
+        <target>Detalhes dos Utilizadores</target>
+      </trans-unit>
+      <trans-unit id=".6taSLw" resname="Update At">
+        <source>Update At</source>
+        <target>Atualizado</target>
+      </trans-unit>
+      <trans-unit id="1g27oHk" resname="Priority">
+        <source>Priority</source>
+        <target>Prioridade</target>
+      </trans-unit>
+      <trans-unit id="FV_BbAQ" resname="Submit">
+        <source>Submit</source>
+        <target>Submeter</target>
+      </trans-unit>
+      <trans-unit id="w4EvxKy" resname="Remove">
+        <source>Remove</source>
+        <target>Remover</target>
+      </trans-unit>
+      <trans-unit id="xLN_hLV" resname="Personal Information">
+        <source>Personal Information</source>
+        <target>Informação Pessoal</target>
+      </trans-unit>
+      <trans-unit id="Cb8l7zC" resname="Email Address">
+        <source>Email Address</source>
+        <target>Endereço de Email</target>
+      </trans-unit>
+      <trans-unit id="qUn0YjB" resname="Change Password">
+        <source>Change Password</source>
+        <target>Mudar Palavra Passe</target>
+      </trans-unit>
+      <trans-unit id="isdgmcx" resname="Current Password">
+        <source>Current Password</source>
+        <target>Palavra Passe Atual</target>
+      </trans-unit>
+      <trans-unit id="MMHY0_k" resname="Forgot password?">
+        <source>Forgot password?</source>
+        <target>Esqueceste-te da Palavra Passe ?</target>
+      </trans-unit>
+      <trans-unit id="fEUeD0N" resname="New Password">
+        <source>New Password</source>
+        <target>Nova Palavra Passe</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Registar</target>
+      </trans-unit>
+      <trans-unit id="li3UhRy" resname="Create your password!">
+        <source>Create your password!</source>
+        <target>Cria a tua Palavra Passe!</target>
+      </trans-unit>
+      <trans-unit id="_hrBFRr" resname="Create password">
+        <source>Create password</source>
+        <target>Criar Palavra Passe</target>
+      </trans-unit>
+      <trans-unit id="ylHOH7F" resname="Hi!">
+        <source>Hi!</source>
+        <target>Olá!</target>
+      </trans-unit>
+      <trans-unit id="vQH5j0c" resname="To reset your password, please visit the following link">
+        <source>To reset your password, please visit the following link</source>
+        <target>Para redefinir sua Palavra Psse, por favor, visite o seguinte link</target>
+      </trans-unit>
+      <trans-unit id="87wG9uu" resname="This link will expire in">
+        <source>This link will expire in</source>
+        <target>Este link irá expirar em</target>
+      </trans-unit>
+      <trans-unit id="F7WctIl" resname="Cheers!">
+        <source>Cheers!</source>
+        <target>Saúde!</target>
+      </trans-unit>
+      <trans-unit id="TnDx.SS" resname="Reset Password">
+        <source>Reset Password</source>
+        <target>Redefinir Palavra Passe</target>
+      </trans-unit>
+      <trans-unit id="H.pjiw2" resname="Enter your Email and instructions will be sent to you!">
+        <source>Enter your Email and instructions will be sent to you!</source>
+        <target>Introduza o seu e-mail e as instruções serão enviadas para si!</target>
+      </trans-unit>
+      <trans-unit id="2u52BrM" resname="Reset">
+        <source>Reset</source>
+        <target>Redefinir</target>
+      </trans-unit>
+      <trans-unit id="QX9tJ5T" resname="Remember It ?">
+        <source>Remember It ?</source>
+        <target>Lembrar ?</target>
+      </trans-unit>
+      <trans-unit id="WSYrjp_" resname="Sign in here">
+        <source>Sign in here</source>
+        <target>regista te aqui</target>
+      </trans-unit>
+      <trans-unit id="iwaXLS7" resname="Enter your new Password!">
+        <source>Enter your new Password!</source>
+        <target>Insira a sua nova palavra passe!</target>
+      </trans-unit>
+      <trans-unit id="PdnfREH" resname="New password">
+        <source>New password</source>
+        <target>Nova Palavra Passe</target>
+      </trans-unit>
+      <trans-unit id="c8J8gdO" resname="Sign in to continue.">
+        <source>Sign in to continue.</source>
+        <target>Registe se para continuar.</target>
+      </trans-unit>
+      <trans-unit id="Le1KPuZ" resname="Log In">
+        <source>Log In</source>
+        <target>Log In</target>
+      </trans-unit>
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Dashboard</target>
+      </trans-unit>
+      <trans-unit id="EEq5IT4" resname="Work">
+        <source>Work</source>
+        <target>Trabalho</target>
+      </trans-unit>
+      <trans-unit id="id10hEL" resname="Apps">
+        <source>Apps</source>
+        <target>Apps</target>
+      </trans-unit>
+      <trans-unit id="vpGUC3n" resname="Support">
+        <source>Support</source>
+        <target>Suporte</target>
+      </trans-unit>
+      <trans-unit id="2syjy6P" resname="Reports">
+        <source>Reports</source>
+        <target>Relatórios</target>
+      </trans-unit>
+      <trans-unit id="0XAAeD3" resname="All Settings">
+        <source>All Settings</source>
+        <target>Todas as Definições</target>
+      </trans-unit>
+      <trans-unit id="iYAmWv." resname="All Authentications">
+        <source>All Authentications</source>
+        <target>Todas as Autenticações</target>
+      </trans-unit>
+      <trans-unit id="bZrhEtg" resname="Create Stages">
+        <source>Create Stages</source>
+        <target>Criar Etapas</target>
+      </trans-unit>
+      <trans-unit id="ts54jZe" resname="Report">
+        <source>Report</source>
+        <target>Relatório</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Palavra Passe</target>
+      </trans-unit>
+      <trans-unit id="AJRcifd" resname="Qualification">
+        <source>Qualification</source>
+        <target>Qualificação</target>
+      </trans-unit>
+      <trans-unit id="XUJ2bH7" resname="Proposal">
+        <source>Proposal</source>
+        <target>Proposta</target>
+      </trans-unit>
+      <trans-unit id="Phji2rb" resname="Negotiation">
+        <source>Negotiation</source>
+        <target>Negociação</target>
+      </trans-unit>
+      <trans-unit id="6MJujRK" resname="Close Won">
+        <source>Close Won</source>
+        <target>Fechado como Ganho</target>
+      </trans-unit>
+      <trans-unit id="AIWJu49" resname="Close Lost">
+        <source>Close Lost</source>
+        <target>Fechado como Perdido</target>
+      </trans-unit>
+      <trans-unit id="AIWJu50" resname="Logout">
+        <source>Logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="AIWJu51" resname="Select Language">
+        <source>Select Language</source>
+        <target>Selecionar Idioma</target>
+      </trans-unit>
+      <trans-unit id="AIWJu52" resname="Portuguese">
+        <source>Portuguese</source>
+        <target>Português</target>
+      </trans-unit>
+      <trans-unit id="AIWJu53" resname="English">
+        <source>English</source>
+        <target>Inglês</target>
+      </trans-unit>
+      <trans-unit id="AIWJu54" resname="Profile">
+        <source>Profile</source>
+        <target>Perfil</target>
+      </trans-unit>
+      <trans-unit id="AIWJu55" resname="Wins(Opportunities)">
+        <source>Wins(Opportunities)</source>
+        <target>Ganho(Oportunidades)</target>
+      </trans-unit>
+      <trans-unit id="AIWJu56" resname="Company">
+        <source>Company</source>
+        <target>Empresa</target>
+      </trans-unit>
+      <trans-unit id="AIWJu57" resname="Photos">
+        <source>Photos</source>
+        <target>Fotos</target>
+      </trans-unit>
+       <trans-unit id="AIWJu58" resname="Contact Us">
+        <source>Contact Us</source>
+        <target>Contacte-nos</target>
+      </trans-unit>
+      <trans-unit id="AIWJu59" resname="HOME">
+        <source>HOME</source>
+        <target>CASA</target>
+      </trans-unit>
+      <trans-unit id="AIWJu62" resname="ABOUT">
+        <source>ABOUT</source>
+        <target>SOBRE</target>
+      </trans-unit>
+      <trans-unit id="AIWJu64" resname="PHOTOS">
+        <source>PHOTOS</source>
+        <target>FOTOS</target>
+      </trans-unit>
+      <trans-unit id="AIWJu70" resname="CONTACT">
+        <source>CONTACT</source>
+        <target>CONTACTO</target>
+      </trans-unit>
+      <trans-unit id="AIWJu99" resname="We are a company specializing in the provision of services associated with energy, telecommunications, Contact-Center, business management.Additionally, we have a proprietary platform in Software as a Service format aimed at business management, Contact-Center and marketing.">
+        <source>We are a company specializing in the provision of services associated with energy, telecommunications, Contact-Center, business management.Additionally, we have a proprietary platform in Software as a Service format aimed at business management, Contact-Center and marketing.</source>
+        <target>Somos uma empresa especializada na prestação de serviços relacionados à energia, telecomunicações, Contact-Center e gestão empresarial. Além disso, temos uma plataforma própria no formato de Software como Serviço voltada para gestão empresarial, Contact-Center e marketing.</target>
+      </trans-unit>
+      <trans-unit id="AIWJu71" resname="Account Info">
+        <source>Account Info</source>
+        <target>Informações da Conta</target>
+      </trans-unit>
+      <trans-unit id="AIWJu72" resname="Contact Info">
+        <source>Contact Info</source>
+        <target>Informações do Contacto</target>
+      </trans-unit>
+      <trans-unit id="AIWJu73" resname="Relative Accounts">
+        <source>Relative Accounts</source>
+        <target>Contas Relacionadas</target>
+      </trans-unit>
+      <trans-unit id="AIWJu74" resname="Here you see all the accounts and the opportunities for each account.">
+        <source>Here you see all the accounts and the opportunities for each account.</source>
+        <target>Aqui vê-se todas as contas e as oportunidades de cada conta</target>
+      </trans-unit>
+      <trans-unit id="AIWJu75" resname="Here you see all the Opportunities Converted.">
+        <source>Here you see all the Opportunities Converted.</source>
+        <target>Aqui vê-se todas as Oportunidades Convertidas.</target>
+      </trans-unit>
+      <trans-unit id="AIWJu76" resname="Accounts Report">
+        <source>Accounts Report</source>
+        <target>Relatório de Contas</target>
+      </trans-unit>
+      <trans-unit id="AIWJu77" resname="Converted Report">
+        <source>Converted Report</source>
+        <target>Relatório de Converções</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

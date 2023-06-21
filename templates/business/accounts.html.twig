@@ -16,12 +16,12 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/index">Business</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item"><a href="/business/accounts">Accounts</a>
+                                        <li class="breadcrumb-item"><a href="/business/accounts">{% trans %}Accounts{% endtrans %}</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item active">List</li>
+                                        <li class="breadcrumb-item active">{% trans %}List{% endtrans %}</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Accounts</h4>
+                                <h4 class="page-title">{% trans %}Accounts{% endtrans %}</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
 
@@ -40,7 +40,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Accounts Details</h4>             
+                                            <h4 class="card-title">{% trans %}Accounts Details{% endtrans %}</h4>             
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
@@ -49,12 +49,12 @@
                                         <table class="table mb-0" id="pagination">
                                             <thead>
                                                 <tr>
-                                                    <th onclick="sortTable(0)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Id</th>
-                                                    <th onclick="sortTable(1)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Name</th>
-                                                    <th onclick="sortTable(2)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Adresses</th>
-                                                    <th onclick="sortTable(3)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Email</th>
-                                                    <th onclick="sortTable(4)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">Phone</th>
-                                                    <th style="margin:auto" scope="col">Actions</th>
+                                                    <th onclick="sortTable(0)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">{% trans %}Id{% endtrans %}</th>
+                                                    <th onclick="sortTable(1)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">{% trans %}Name{% endtrans %}</th>
+                                                    <th onclick="sortTable(2)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">{% trans %}Adresses{% endtrans %}</th>
+                                                    <th onclick="sortTable(3)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">{% trans %}Email{% endtrans %}</th>
+                                                    <th onclick="sortTable(4)" style="-webkit-user-select: none; cursor: pointer" style="margin:auto" scope="col">{% trans %}Phone{% endtrans %}</th>
+                                                    <th style="margin:auto" scope="col">{% trans %}Actions{% endtrans %}</th>
                                                 </tr><!--end tr-->
                                             </thead>
                                             <tbody id="myTable">
@@ -64,9 +64,9 @@
 
                                                             <td style="vertical-align: middle">{{ account.id }}</td>
                                                             <td style="vertical-align: middle">{{ account.name }}</td>
-                                                            <td style="vertical-align: middle">{{ account.phones }}</td>
-                                                            <td style="vertical-align: middle">{{ account.emails }}</td>
                                                             <td style="vertical-align: middle">{{ account.addresses }}</td>
+                                                            <td style="vertical-align: middle">{{ account.emails }}</td>
+                                                            <td style="vertical-align: middle">{{ account.phones }}</td>
                                                             <td style="-webkit-user-select: none; vertical-align: middle">
 
                                                         {% if app.user.id is defined%} 

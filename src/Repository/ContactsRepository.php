@@ -59,17 +59,15 @@ class ContactsRepository extends ServiceEntityRepository
         $conn = $this->getEntityManager()->getConnection();
 
         $sql = '
-            SELECT c.id, c.name,c.id_account_id,c.surname,c.id_user_id,c.id_account_id AS account,
+            SELECT c.id, c.name,c.surname,c.id_user_id,
                 (SELECT GROUP_CONCAT(ph.phone SEPARATOR " / ") 
                     FROM phones ph
                     WHERE ph.id_entity_id = 4 AND ph.id_in_relation = c.id ) AS phones ,
                 (SELECT GROUP_CONCAT(e.email SEPARATOR " / ") 
                     FROM emails e
                     WHERE e.id_entity_id = 4 AND e.id_in_relation = c.id )
-                as emails, acc.name as accname
+                as emails
             FROM contacts c
-            LEFT JOIN accounts acc ON acc.id = c.id_account_id 
-
             ';
 
         $stmt = $conn->prepare($sql);
@@ -89,6 +87,34 @@ class ContactsRepository extends ServiceEntityRepository
 
         return $resultSet->fetchAllAssociative();
     }
+
+    public function listContact($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT c.id, c.name, c.surname, c.id_user_id, c.created_by_id, c.created_at, c.updated_at, c.updated_by_id, c.description,
+                (SELECT GROUP_CONCAT(ph.phone SEPARATOR " / ") 
+                    FROM phones ph
+                    WHERE ph.id_entity_id = 4 AND ph.id_in_relation = c.id ) AS phones ,
+                (SELECT GROUP_CONCAT(e.email SEPARATOR " / ") 
+                    FROM emails e
+                    WHERE e.id_entity_id = 4 AND e.id_in_relation = c.id )
+                as emails, acc.name as accname,u.name as name_created,u2.name as name_updated
+            FROM contacts c
+            INNER JOIN users u ON u.id = c.created_by_id
+            INNER JOIN users u2 ON u2.id = c.updated_by_id
+            WHERE c.id = '.$id
+                    ;
+
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    
+    
 
 //    public function findOneBySomeField($value): ?VinylMix
 //    {

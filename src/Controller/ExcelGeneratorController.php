@@ -770,9 +770,9 @@ class ExcelGeneratorController extends AbstractController
             $loggedincontacts = $security->getUser()->getId();
             $spreadsheet = new Spreadsheet();
 
-            $spreadsheet->getActiveSheet()->setCellValue('A1', "Id");
-            $spreadsheet->getActiveSheet()->setCellValue('B1', "Name");
-            $spreadsheet->getActiveSheet()->setCellValue('C1', "Id");
+            $spreadsheet->getActiveSheet()->setCellValue('A1', "Id Account");
+            $spreadsheet->getActiveSheet()->setCellValue('B1', "Name Account");
+            $spreadsheet->getActiveSheet()->setCellValue('C1', "Id Opportunity");
             $spreadsheet->getActiveSheet()->setCellValue('D1', "Name Opportunity");
             $spreadsheet->getActiveSheet()->setCellValue('E1', "Product");
             $spreadsheet->getActiveSheet()->setCellValue('F1', "Description");

@@ -90,6 +90,16 @@ class OpportunitiesRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findByWon(): array
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.id_stage = 4')
+            ->orderBy('o.updated_at', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Opportunities[] Returns an array of Opportunities objects
 //     */

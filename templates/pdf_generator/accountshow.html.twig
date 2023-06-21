@@ -39,9 +39,10 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
 <div id="banner">
-  <h1>Accounts Details</h1>
+  <h1>{% trans %}Accounts Details{% endtrans %}</h1>
   </div>
   <br>
   <table>
@@ -50,37 +51,49 @@
       <td>{{ accounts.id }}</td>
     </tr>
     <tr>
-      <td>Name</td>
+      <td>{% trans %}Name{% endtrans %}</td>
       <td>{{ accounts.name }}</td>
     </tr>
     <tr>
-      <td>Created By</td>
-      <td>{{ accounts.createdby.name }}</td>
+      <td>{% trans %}Created By{% endtrans %}</td>
+      <td>{{ accounts.name_created }}</td>
     </tr>
     <tr>
-      <td>Created At</td>
-      <td>{{ accounts.createdat|date('Y-m-d H:i:s') }}</td>
+      <td>{% trans %}Created At{% endtrans %}</td>
+      <td>{{ accounts.created_at|date('Y-m-d H:i:s') }}</td>
     </tr>
     <tr>
-      <td>Update By</td>
-      <td>{{ accounts.updatedBy.name }}</td>
+      <td>{% trans %}Update By{% endtrans %}</td>
+      <td>{{ accounts.name_updated }}</td>
     </tr>
     <tr>
-      <td>Updated At</td>
-      <td>{{ accounts.updatedAt|date('Y-m-d H:i:s') }}</td>
+      <td>{% trans %}Updated At{% endtrans %}</td>
+      <td>{{ accounts.updated_at|date('Y-m-d H:i:s') }}</td>
     </tr>
     <tr>
-      <td>Departments</td>
-      <td>{% for department in accounts.departments %}
-            {{ department.name }}<br>
-        {% endfor %}</td>
+      <td>{% trans %}Area{% endtrans %}</td>
+      <td> {{ accounts.name_area }}</td>
     </tr>
     <tr>
-      <td>Description</td>
+      <td>{% trans %}Description{% endtrans %}</td>
       <td>{{ accounts.description }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Email{% endtrans %}</td>
+      <td>{{ accounts.emails }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Phone{% endtrans %}</td>
+      <td>{{ accounts.phones }}</td>
     </tr>
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start"> 
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 {% endblock %}

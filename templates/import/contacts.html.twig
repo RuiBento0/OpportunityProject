@@ -9,25 +9,25 @@
 	<div class="upload-files-container">
 		<div class="drag-file-area">
 			<span class="material-icons-outlined upload-icon"> file_upload </span>
-			<h3 class="dynamic-message">Insert your contacts excel </h3>
-			<label class="label"><span class="browse-files"> <input type="file" id="fileupload" name="fileupload" class="default-file-input"/> <span class="browse-files-text">browse file</span> <span>from device</span> </span> </label>
+			<h3 class="dynamic-message">{% trans %}Insert your contacts excel {% endtrans %}</h3>
+			<label class="label"><span class="browse-files"> <input type="file" id="fileupload" name="fileupload" class="default-file-input"/> <span class="browse-files-text">{% trans %}browse file{% endtrans %}</span> <span>{% trans %}from device{% endtrans %}</span> </span> </label>
 		</div>
-		<span class="cannot-upload-message"> <span class="material-icons-outlined">error</span> Please select a file first <span class="material-icons-outlined cancel-alert-button">cancel</span> </span>
-    <span class="can-upload-xlsx"> <span class="material-icons-outlined">error</span> Only Excel files (.xlsx) are allowed <span class="material-icons-outlined cancel-alert-button2">cancel</span> </span>
+		<span class="cannot-upload-message"> <span class="material-icons-outlined">{% trans %}error{% endtrans %}</span>{% trans %} Please select a file first {% endtrans %}<span class="material-icons-outlined cancel-alert-button">{% trans %}cancel{% endtrans %}</span> </span>
+    <span class="can-upload-xlsx"> <span class="material-icons-outlined">{% trans %}error{% endtrans %}</span>{% trans %} Only Excel files (.xlsx) are allowed {% endtrans %}<span class="material-icons-outlined cancel-alert-button2">{% trans %}cancel{% endtrans %}</span> </span>
 		<div class="file-block">
   			<div class="file-info">
-  			  <span class="material-icons-outlined file-icon">description</span>
+  			  <span class="material-icons-outlined file-icon">{% trans %}description{% endtrans %}</span>
   			  <span class="file-name">
   			    <span id="selected-file-name"></span> <!-- Adicione essa linha -->
   			  </span>
   			  | <span class="file-size"> </span>
   		</div>
-  <span class="material-icons remove-file-icon">delete</span>
+  <span class="material-icons remove-file-icon">{% trans %}delete{% endtrans %}</span>
   <div class="progress-bar"> </div>
 </div>
-		<a type="button" class="normal-button" href="/excel/import/contacts/template"> Download Template </a>
+		<a type="button" class="normal-button" href="/excel/import/contacts/template">{% trans %} Download Template {% endtrans %}</a>
 		<button type="button" class="upload-button"> Import </button><br>
-        <button type="button" class="normal-button" onclick="window.history.back()"> Back </button>
+        <button type="button" class="normal-button" onclick="window.history.back()">{% trans %} Back {% endtrans %}</button>
 	</div>
 </form>
 

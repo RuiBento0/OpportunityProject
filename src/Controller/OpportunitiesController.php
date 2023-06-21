@@ -100,8 +100,13 @@ class OpportunitiesController extends AbstractController
     {
         $opportunities = $this->opportunitiesRepository->find($id);
 
+        $accountid = $opportunities->getIdAccount();
+        
+        $oldopp = $this->opportunitiesRepository->findByAccounts($accountid->getId());
+
         return $this->render('opportunities/show.html.twig',[
-            'opportunities' => $opportunities
+            'opportunities' => $opportunities,
+            'oldopp' => $oldopp
         ]);
     }
 

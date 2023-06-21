@@ -8,6 +8,11 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
+        '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
+        '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
+        '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
+        '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/business/accounts/create' => [[['_route' => 'accounts_create', '_controller' => 'App\\Controller\\AccountsController::createaccounts'], null, null, null, false, false, null]],
         '/authentication/users/create' => [[['_route' => 'user_create', '_controller' => 'App\\Controller\\AuthenticationController::createuser'], null, null, null, false, false, null]],
         '/authentication/role/create' => [[['_route' => 'role_create', '_controller' => 'App\\Controller\\AuthenticationController::createrole'], null, null, null, false, false, null]],
@@ -32,8 +37,9 @@ return [
         '/business/leads/create' => [[['_route' => 'leads_create', '_controller' => 'App\\Controller\\LeadsController::createleads'], null, null, null, false, false, null]],
         '/email' => [[['_route' => 'app_mailer_sendemail', '_controller' => 'App\\Controller\\MailerController::sendEmail'], null, null, null, false, false, null]],
         '/email2' => [[['_route' => 'app_mailer_sendemail2', '_controller' => 'App\\Controller\\MailerController::sendEmail2'], null, null, null, false, false, null]],
-        '/index' => [[['_route' => 'app_index', '_controller' => 'App\\Controller\\MainController::index2'], null, null, null, false, false, null]],
-        '/options' => [[['_route' => 'app_options', '_controller' => 'App\\Controller\\MainController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/business/index' => [[['_route' => 'app_index', '_controller' => 'App\\Controller\\MainController::index2'], null, null, null, false, false, null]],
+        '/options/list' => [[['_route' => 'app_options', '_controller' => 'App\\Controller\\MainController::options'], null, ['GET' => 0], null, false, false, null]],
+        '/authentication/list' => [[['_route' => 'app_authentication', '_controller' => 'App\\Controller\\MainController::authentication'], null, ['GET' => 0], null, false, false, null]],
         '/authentication/users' => [[['_route' => 'app_authentication_users', '_controller' => 'App\\Controller\\MainController::listusers'], null, null, null, false, false, null]],
         '/authentication/roles' => [[['_route' => 'app_authentication_roles', '_controller' => 'App\\Controller\\MainController::listroles'], null, null, null, false, false, null]],
         '/options/departments' => [[['_route' => 'app_options_departments', '_controller' => 'App\\Controller\\MainController::listdepartments'], null, ['GET' => 0], null, false, false, null]],
@@ -47,7 +53,7 @@ return [
         '/options/campaign' => [[['_route' => 'app_options_campaign', '_controller' => 'App\\Controller\\MainController::listcampaign'], null, null, null, false, false, null]],
         '/options/source' => [[['_route' => 'app_options_sources', '_controller' => 'App\\Controller\\MainController::listsources'], null, null, null, false, false, null]],
         '/options/locations' => [[['_route' => 'app_options_locations', '_controller' => 'App\\Controller\\MainController::listlocations'], null, null, null, false, false, null]],
-        '/work' => [[['_route' => 'app_work', '_controller' => 'App\\Controller\\MainController::listwork'], null, ['GET' => 0], null, false, false, null]],
+        '/business/work' => [[['_route' => 'app_work', '_controller' => 'App\\Controller\\MainController::listwork'], null, ['GET' => 0], null, false, false, null]],
         '/business/contacts' => [[['_route' => 'app_business_contacts', '_controller' => 'App\\Controller\\MainController::listcontacts'], null, ['GET' => 0], null, false, false, null]],
         '/business/accounts' => [[['_route' => 'app_business_accounts', '_controller' => 'App\\Controller\\MainController::listaccounts'], null, ['GET' => 0], null, false, false, null]],
         '/business/leads' => [[['_route' => 'app_business_leads', '_controller' => 'App\\Controller\\MainController::listleads'], null, ['GET' => 0], null, false, false, null]],
@@ -74,187 +80,213 @@ return [
     ],
     [ // $regexpList
         0 => '{^(?'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:35)'
+                .'|/_(?'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:38)'
+                    .'|wdt/([^/]++)(*:57)'
+                    .'|profiler/([^/]++)(?'
+                        .'|/(?'
+                            .'|search/results(*:102)'
+                            .'|router(*:116)'
+                            .'|exception(?'
+                                .'|(*:136)'
+                                .'|\\.css(*:149)'
+                            .')'
+                        .')'
+                        .'|(*:159)'
+                    .')'
+                .')'
                 .'|/business/(?'
                     .'|accounts/(?'
-                        .'|show/([^/]++)(*:80)'
-                        .'|edit/([^/]++)(*:100)'
-                        .'|delete/([^/]++)(*:123)'
+                        .'|show/([^/]++)(*:207)'
+                        .'|edit/([^/]++)(*:228)'
+                        .'|delete/([^/]++)(*:251)'
                     .')'
                     .'|con(?'
                         .'|tacts/(?'
-                            .'|show/([^/]++)(*:160)'
-                            .'|edit/([^/]++)(*:181)'
-                            .'|delete/([^/]++)(*:204)'
+                            .'|show/([^/]++)(*:288)'
+                            .'|edit/([^/]++)(*:309)'
+                            .'|delete/([^/]++)(*:332)'
                         .')'
-                        .'|vert/lead/([^/]++)(*:231)'
+                        .'|vert/lead/([^/]++)(*:359)'
                     .')'
-                    .'|leads/(?'
-                        .'|show/([^/]++)(*:262)'
-                        .'|edit/([^/]++)(*:283)'
-                        .'|delete/([^/]++)(*:306)'
+                    .'|l(?'
+                        .'|eads/(?'
+                            .'|show/([^/]++)(*:393)'
+                            .'|edit/([^/]++)(*:414)'
+                            .'|delete/([^/]++)(*:437)'
+                        .')'
+                        .'|ang/([^/]++)(*:458)'
                     .')'
                     .'|opportunities/(?'
-                        .'|show/([^/]++)(*:345)'
-                        .'|edit/([^/]++)(*:366)'
-                        .'|delete/([^/]++)(*:389)'
+                        .'|show/([^/]++)(*:497)'
+                        .'|edit/([^/]++)(*:518)'
+                        .'|delete/([^/]++)(*:541)'
                     .')'
                 .')'
                 .'|/authentication/(?'
                     .'|users/(?'
-                        .'|show/([^/]++)(*:440)'
-                        .'|edit/([^/]++)(*:461)'
-                        .'|delete/([^/]++)(*:484)'
+                        .'|show/([^/]++)(*:592)'
+                        .'|edit/([^/]++)(*:613)'
+                        .'|delete/([^/]++)(*:636)'
                     .')'
                     .'|role/(?'
-                        .'|show/([^/]++)(*:514)'
-                        .'|edit/([^/]++)(*:535)'
-                        .'|delete/([^/]++)(*:558)'
+                        .'|show/([^/]++)(*:666)'
+                        .'|edit/([^/]++)(*:687)'
+                        .'|delete/([^/]++)(*:710)'
                     .')'
                 .')'
                 .'|/p(?'
-                    .'|rofile/([^/]++)(*:588)'
+                    .'|rofile/([^/]++)(*:740)'
                     .'|df/generator/(?'
-                        .'|([^/]++)(*:620)'
-                        .'|accounts/([^/]++)(*:645)'
-                        .'|contacts/([^/]++)(*:670)'
-                        .'|leads/([^/]++)(*:692)'
-                        .'|opportunities/([^/]++)(*:722)'
+                        .'|([^/]++)(*:772)'
+                        .'|accounts/([^/]++)(*:797)'
+                        .'|contacts/([^/]++)(*:822)'
+                        .'|leads/([^/]++)(*:844)'
+                        .'|opportunities/([^/]++)(*:874)'
+                        .'|users/([^/]++)(*:896)'
                     .')'
-                    .'|assword/([^/]++)(*:747)'
+                    .'|assword/([^/]++)(*:921)'
                 .')'
                 .'|/options/(?'
                     .'|locations/(?'
-                        .'|show/([^/]++)(*:794)'
-                        .'|edit/([^/]++)(*:815)'
-                        .'|delete/([^/]++)(*:838)'
+                        .'|show/([^/]++)(*:968)'
+                        .'|edit/([^/]++)(*:989)'
+                        .'|delete/([^/]++)(*:1012)'
                     .')'
                     .'|departments/(?'
-                        .'|show/([^/]++)(*:875)'
-                        .'|edit/([^/]++)(*:896)'
-                        .'|delete/([^/]++)(*:919)'
+                        .'|show/([^/]++)(*:1050)'
+                        .'|edit/([^/]++)(*:1072)'
+                        .'|delete/([^/]++)(*:1096)'
                     .')'
                     .'|ca(?'
                         .'|tegories/(?'
-                            .'|show/([^/]++)(*:958)'
-                            .'|edit/([^/]++)(*:979)'
-                            .'|delete/([^/]++)(*:1002)'
+                            .'|show/([^/]++)(*:1136)'
+                            .'|edit/([^/]++)(*:1158)'
+                            .'|delete/([^/]++)(*:1182)'
                         .')'
                         .'|mpaign/(?'
-                            .'|show/([^/]++)(*:1035)'
-                            .'|edit/([^/]++)(*:1057)'
-                            .'|delete/([^/]++)(*:1081)'
+                            .'|show/([^/]++)(*:1215)'
+                            .'|edit/([^/]++)(*:1237)'
+                            .'|delete/([^/]++)(*:1261)'
                         .')'
                     .')'
                     .'|entities/(?'
-                        .'|show/([^/]++)(*:1117)'
-                        .'|edit/([^/]++)(*:1139)'
-                        .'|delete/([^/]++)(*:1163)'
+                        .'|show/([^/]++)(*:1297)'
+                        .'|edit/([^/]++)(*:1319)'
+                        .'|delete/([^/]++)(*:1343)'
                     .')'
                     .'|priorities/(?'
-                        .'|show/([^/]++)(*:1200)'
-                        .'|edit/([^/]++)(*:1222)'
-                        .'|delete/([^/]++)(*:1246)'
+                        .'|show/([^/]++)(*:1380)'
+                        .'|edit/([^/]++)(*:1402)'
+                        .'|delete/([^/]++)(*:1426)'
                     .')'
                     .'|s(?'
                         .'|ta(?'
                             .'|tus/(?'
-                                .'|show/([^/]++)(*:1285)'
-                                .'|edit/([^/]++)(*:1307)'
-                                .'|delete/([^/]++)(*:1331)'
+                                .'|show/([^/]++)(*:1465)'
+                                .'|edit/([^/]++)(*:1487)'
+                                .'|delete/([^/]++)(*:1511)'
                             .')'
                             .'|ges/(?'
-                                .'|show/([^/]++)(*:1361)'
-                                .'|edit/([^/]++)(*:1383)'
-                                .'|delete/([^/]++)(*:1407)'
+                                .'|show/([^/]++)(*:1541)'
+                                .'|edit/([^/]++)(*:1563)'
+                                .'|delete/([^/]++)(*:1587)'
                             .')'
                         .')'
                         .'|ources/(?'
-                            .'|show/([^/]++)(*:1441)'
-                            .'|edit/([^/]++)(*:1463)'
-                            .'|delete/([^/]++)(*:1487)'
+                            .'|show/([^/]++)(*:1621)'
+                            .'|edit/([^/]++)(*:1643)'
+                            .'|delete/([^/]++)(*:1667)'
                         .')'
                     .')'
                     .'|a(?'
                         .'|rea/(?'
-                            .'|show/([^/]++)(*:1522)'
-                            .'|edit/([^/]++)(*:1544)'
-                            .'|delete/([^/]++)(*:1568)'
+                            .'|show/([^/]++)(*:1702)'
+                            .'|edit/([^/]++)(*:1724)'
+                            .'|delete/([^/]++)(*:1748)'
                         .')'
                         .'|ccountstype/(?'
-                            .'|show/([^/]++)(*:1606)'
-                            .'|edit/([^/]++)(*:1628)'
-                            .'|delete/([^/]++)(*:1652)'
+                            .'|show/([^/]++)(*:1786)'
+                            .'|edit/([^/]++)(*:1808)'
+                            .'|delete/([^/]++)(*:1832)'
                         .')'
                     .')'
                 .')'
-                .'|/logint/([^/]++)(*:1680)'
-                .'|/newpassword/([^/]++)(*:1710)'
+                .'|/logint/([^/]++)(*:1860)'
+                .'|/newpassword/([^/]++)(*:1890)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        35 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        80 => [[['_route' => 'accounts_show', '_controller' => 'App\\Controller\\AccountsController::showaccounts'], ['id'], null, null, false, true, null]],
-        100 => [[['_route' => 'accounts_edit', '_controller' => 'App\\Controller\\AccountsController::editaccounts'], ['id'], null, null, false, true, null]],
-        123 => [[['_route' => 'accounts_delete', '_controller' => 'App\\Controller\\AccountsController::deletecontacts'], ['id'], ['GET' => 0], null, false, true, null]],
-        160 => [[['_route' => 'contacts_show', '_controller' => 'App\\Controller\\ContactsController::showcontacts'], ['id'], null, null, false, true, null]],
-        181 => [[['_route' => 'contacts_edit', '_controller' => 'App\\Controller\\ContactsController::editcontacts'], ['id'], null, null, false, true, null]],
-        204 => [[['_route' => 'contacts_delete', '_controller' => 'App\\Controller\\ContactsController::deletecontacts'], ['id'], ['GET' => 0], null, false, true, null]],
-        231 => [[['_route' => 'leads_convert', '_controller' => 'App\\Controller\\LeadsController::convertleads'], ['id'], null, null, false, true, null]],
-        262 => [[['_route' => 'leads_show', '_controller' => 'App\\Controller\\LeadsController::showlead'], ['id'], ['GET' => 0], null, false, true, null]],
-        283 => [[['_route' => 'leads_edit', '_controller' => 'App\\Controller\\LeadsController::editlead'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        306 => [[['_route' => 'leads_delete', '_controller' => 'App\\Controller\\LeadsController::deleteleads'], ['id'], null, null, false, true, null]],
-        345 => [[['_route' => 'opportunities_show', '_controller' => 'App\\Controller\\OpportunitiesController::showlead'], ['id'], ['GET' => 0], null, false, true, null]],
-        366 => [[['_route' => 'opportunities_edit', '_controller' => 'App\\Controller\\OpportunitiesController::editlead'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        389 => [[['_route' => 'opportunities_delete', '_controller' => 'App\\Controller\\OpportunitiesController::deleteopportunities'], ['id'], null, null, false, true, null]],
-        440 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\AuthenticationController::showuser'], ['id'], null, null, false, true, null]],
-        461 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\AuthenticationController::edituser'], ['id'], null, null, false, true, null]],
-        484 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\AuthenticationController::deleteuser'], ['id'], ['GET' => 0], null, false, true, null]],
-        514 => [[['_route' => 'role_show', '_controller' => 'App\\Controller\\AuthenticationController::showrole'], ['id'], null, null, false, true, null]],
-        535 => [[['_route' => 'role_edit', '_controller' => 'App\\Controller\\AuthenticationController::editrole'], ['id'], null, null, false, true, null]],
-        558 => [[['_route' => 'role_delete', '_controller' => 'App\\Controller\\AuthenticationController::deleterole'], ['id'], ['GET' => 0], null, false, true, null]],
-        588 => [[['_route' => 'app_profile', '_controller' => 'App\\Controller\\MainController::listprofile'], ['id'], null, null, false, true, null]],
-        620 => [[['_route' => 'app_pdf_generator', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgenerator'], ['entity'], ['GET' => 0], null, false, true, null]],
-        645 => [[['_route' => 'app_pdf_generator_accounts', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratoraccounts'], ['id'], ['GET' => 0], null, false, true, null]],
-        670 => [[['_route' => 'app_pdf_generator_contacts', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratorcontacts'], ['id'], ['GET' => 0], null, false, true, null]],
-        692 => [[['_route' => 'app_pdf_generator_leads', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratorleads'], ['id'], ['GET' => 0], null, false, true, null]],
-        722 => [[['_route' => 'app_pdf_generator_opportunities', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratoropportunities'], ['id'], ['GET' => 0], null, false, true, null]],
-        747 => [[['_route' => 'app_password', '_controller' => 'App\\Controller\\SecurityController::createpassword'], ['token'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        794 => [[['_route' => 'locations_show', '_controller' => 'App\\Controller\\OptionsController::showlocations'], ['id'], null, null, false, true, null]],
-        815 => [[['_route' => 'locations_edit', '_controller' => 'App\\Controller\\OptionsController::editlocations'], ['id'], null, null, false, true, null]],
-        838 => [[['_route' => 'locations_delete', '_controller' => 'App\\Controller\\OptionsController::deletelocations'], ['id'], ['GET' => 0], null, false, true, null]],
-        875 => [[['_route' => 'departments_show', '_controller' => 'App\\Controller\\OptionsController::showdepartments'], ['id'], null, null, false, true, null]],
-        896 => [[['_route' => 'departments_edit', '_controller' => 'App\\Controller\\OptionsController::editdepartments'], ['id'], null, null, false, true, null]],
-        919 => [[['_route' => 'departments_delete', '_controller' => 'App\\Controller\\OptionsController::deletedepartments'], ['id'], ['GET' => 0], null, false, true, null]],
-        958 => [[['_route' => 'categories_show', '_controller' => 'App\\Controller\\OptionsController::showcategories'], ['id'], null, null, false, true, null]],
-        979 => [[['_route' => 'categories_edit', '_controller' => 'App\\Controller\\OptionsController::editcategories'], ['id'], null, null, false, true, null]],
-        1002 => [[['_route' => 'categories_delete', '_controller' => 'App\\Controller\\OptionsController::deletecategories'], ['id'], ['GET' => 0], null, false, true, null]],
-        1035 => [[['_route' => 'campaign_show', '_controller' => 'App\\Controller\\OptionsController::showcampaign'], ['id'], null, null, false, true, null]],
-        1057 => [[['_route' => 'campaign_edit', '_controller' => 'App\\Controller\\OptionsController::editcampaign'], ['id'], null, null, false, true, null]],
-        1081 => [[['_route' => 'campaign_delete', '_controller' => 'App\\Controller\\OptionsController::deletecampaign'], ['id'], ['GET' => 0], null, false, true, null]],
-        1117 => [[['_route' => 'entities_show', '_controller' => 'App\\Controller\\OptionsController::showentities'], ['id'], null, null, false, true, null]],
-        1139 => [[['_route' => 'entities_edit', '_controller' => 'App\\Controller\\OptionsController::editentities'], ['id'], null, null, false, true, null]],
-        1163 => [[['_route' => 'entities_delete', '_controller' => 'App\\Controller\\OptionsController::deleteentities'], ['id'], ['GET' => 0], null, false, true, null]],
-        1200 => [[['_route' => 'priorities_show', '_controller' => 'App\\Controller\\OptionsController::showpriorities'], ['id'], null, null, false, true, null]],
-        1222 => [[['_route' => 'priorities_edit', '_controller' => 'App\\Controller\\OptionsController::editpriorities'], ['id'], null, null, false, true, null]],
-        1246 => [[['_route' => 'priorities_delete', '_controller' => 'App\\Controller\\OptionsController::deletepriorities'], ['id'], ['GET' => 0], null, false, true, null]],
-        1285 => [[['_route' => 'status_show', '_controller' => 'App\\Controller\\OptionsController::showstatus'], ['id'], null, null, false, true, null]],
-        1307 => [[['_route' => 'status_edit', '_controller' => 'App\\Controller\\OptionsController::editstatus'], ['id'], null, null, false, true, null]],
-        1331 => [[['_route' => 'status_delete', '_controller' => 'App\\Controller\\OptionsController::deletestatus'], ['id'], ['GET' => 0], null, false, true, null]],
-        1361 => [[['_route' => 'stages_show', '_controller' => 'App\\Controller\\OptionsController::showstages'], ['id'], null, null, false, true, null]],
-        1383 => [[['_route' => 'stages_edit', '_controller' => 'App\\Controller\\OptionsController::editstages'], ['id'], null, null, false, true, null]],
-        1407 => [[['_route' => 'stages_delete', '_controller' => 'App\\Controller\\OptionsController::deletestages'], ['id'], ['GET' => 0], null, false, true, null]],
-        1441 => [[['_route' => 'sources_show', '_controller' => 'App\\Controller\\OptionsController::showcsource'], ['id'], null, null, false, true, null]],
-        1463 => [[['_route' => 'sources_edit', '_controller' => 'App\\Controller\\OptionsController::editcsource'], ['id'], null, null, false, true, null]],
-        1487 => [[['_route' => 'sources_delete', '_controller' => 'App\\Controller\\OptionsController::deletesources'], ['id'], null, null, false, true, null]],
-        1522 => [[['_route' => 'area_show', '_controller' => 'App\\Controller\\OptionsController::showarea'], ['id'], null, null, false, true, null]],
-        1544 => [[['_route' => 'area_edit', '_controller' => 'App\\Controller\\OptionsController::editarea'], ['id'], null, null, false, true, null]],
-        1568 => [[['_route' => 'area_delete', '_controller' => 'App\\Controller\\OptionsController::deletearea'], ['id'], ['GET' => 0], null, false, true, null]],
-        1606 => [[['_route' => 'accountstype_show', '_controller' => 'App\\Controller\\OptionsController::showaccountstype'], ['id'], null, null, false, true, null]],
-        1628 => [[['_route' => 'accountstype_edit', '_controller' => 'App\\Controller\\OptionsController::editaccountstype'], ['id'], null, null, false, true, null]],
-        1652 => [[['_route' => 'accountstype_delete', '_controller' => 'App\\Controller\\OptionsController::deleteaccountstype'], ['id'], ['GET' => 0], null, false, true, null]],
-        1680 => [[['_route' => 'app_login_token', '_controller' => 'App\\Controller\\SecurityController::loginwithtoken'], ['token'], null, null, false, true, null]],
-        1710 => [
+        38 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        57 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        102 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        207 => [[['_route' => 'accounts_show', '_controller' => 'App\\Controller\\AccountsController::showaccounts'], ['id'], null, null, false, true, null]],
+        228 => [[['_route' => 'accounts_edit', '_controller' => 'App\\Controller\\AccountsController::editaccounts'], ['id'], null, null, false, true, null]],
+        251 => [[['_route' => 'accounts_delete', '_controller' => 'App\\Controller\\AccountsController::deletecontacts'], ['id'], ['GET' => 0], null, false, true, null]],
+        288 => [[['_route' => 'contacts_show', '_controller' => 'App\\Controller\\ContactsController::showcontacts'], ['id'], null, null, false, true, null]],
+        309 => [[['_route' => 'contacts_edit', '_controller' => 'App\\Controller\\ContactsController::editcontacts'], ['id'], null, null, false, true, null]],
+        332 => [[['_route' => 'contacts_delete', '_controller' => 'App\\Controller\\ContactsController::deletecontacts'], ['id'], ['GET' => 0], null, false, true, null]],
+        359 => [[['_route' => 'leads_convert', '_controller' => 'App\\Controller\\LeadsController::convertleads'], ['id'], null, null, false, true, null]],
+        393 => [[['_route' => 'leads_show', '_controller' => 'App\\Controller\\LeadsController::showlead'], ['id'], ['GET' => 0], null, false, true, null]],
+        414 => [[['_route' => 'leads_edit', '_controller' => 'App\\Controller\\LeadsController::editlead'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        437 => [[['_route' => 'leads_delete', '_controller' => 'App\\Controller\\LeadsController::deleteleads'], ['id'], null, null, false, true, null]],
+        458 => [[['_route' => 'lang_business', '_controller' => 'App\\Controller\\MainController::language'], ['lang'], null, null, false, true, null]],
+        497 => [[['_route' => 'opportunities_show', '_controller' => 'App\\Controller\\OpportunitiesController::showlead'], ['id'], ['GET' => 0], null, false, true, null]],
+        518 => [[['_route' => 'opportunities_edit', '_controller' => 'App\\Controller\\OpportunitiesController::editlead'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        541 => [[['_route' => 'opportunities_delete', '_controller' => 'App\\Controller\\OpportunitiesController::deleteopportunities'], ['id'], null, null, false, true, null]],
+        592 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\AuthenticationController::showuser'], ['id'], null, null, false, true, null]],
+        613 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\AuthenticationController::edituser'], ['id'], null, null, false, true, null]],
+        636 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\AuthenticationController::deleteuser'], ['id'], ['GET' => 0], null, false, true, null]],
+        666 => [[['_route' => 'role_show', '_controller' => 'App\\Controller\\AuthenticationController::showrole'], ['id'], null, null, false, true, null]],
+        687 => [[['_route' => 'role_edit', '_controller' => 'App\\Controller\\AuthenticationController::editrole'], ['id'], null, null, false, true, null]],
+        710 => [[['_route' => 'role_delete', '_controller' => 'App\\Controller\\AuthenticationController::deleterole'], ['id'], ['GET' => 0], null, false, true, null]],
+        740 => [[['_route' => 'app_profile', '_controller' => 'App\\Controller\\MainController::listprofile'], ['id'], null, null, false, true, null]],
+        772 => [[['_route' => 'app_pdf_generator', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgenerator'], ['entity'], ['GET' => 0], null, false, true, null]],
+        797 => [[['_route' => 'app_pdf_generator_accounts', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratoraccounts'], ['id'], ['GET' => 0], null, false, true, null]],
+        822 => [[['_route' => 'app_pdf_generator_contacts', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratorcontacts'], ['id'], ['GET' => 0], null, false, true, null]],
+        844 => [[['_route' => 'app_pdf_generator_leads', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratorleads'], ['id'], ['GET' => 0], null, false, true, null]],
+        874 => [[['_route' => 'app_pdf_generator_opportunities', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratoropportunities'], ['id'], ['GET' => 0], null, false, true, null]],
+        896 => [[['_route' => 'app_pdf_generator_users', '_controller' => 'App\\Controller\\PdfGeneratorController::pdfgeneratorusers'], ['id'], ['GET' => 0], null, false, true, null]],
+        921 => [[['_route' => 'app_password', '_controller' => 'App\\Controller\\SecurityController::createpassword'], ['token'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        968 => [[['_route' => 'locations_show', '_controller' => 'App\\Controller\\OptionsController::showlocations'], ['id'], null, null, false, true, null]],
+        989 => [[['_route' => 'locations_edit', '_controller' => 'App\\Controller\\OptionsController::editlocations'], ['id'], null, null, false, true, null]],
+        1012 => [[['_route' => 'locations_delete', '_controller' => 'App\\Controller\\OptionsController::deletelocations'], ['id'], ['GET' => 0], null, false, true, null]],
+        1050 => [[['_route' => 'departments_show', '_controller' => 'App\\Controller\\OptionsController::showdepartments'], ['id'], null, null, false, true, null]],
+        1072 => [[['_route' => 'departments_edit', '_controller' => 'App\\Controller\\OptionsController::editdepartments'], ['id'], null, null, false, true, null]],
+        1096 => [[['_route' => 'departments_delete', '_controller' => 'App\\Controller\\OptionsController::deletedepartments'], ['id'], ['GET' => 0], null, false, true, null]],
+        1136 => [[['_route' => 'categories_show', '_controller' => 'App\\Controller\\OptionsController::showcategories'], ['id'], null, null, false, true, null]],
+        1158 => [[['_route' => 'categories_edit', '_controller' => 'App\\Controller\\OptionsController::editcategories'], ['id'], null, null, false, true, null]],
+        1182 => [[['_route' => 'categories_delete', '_controller' => 'App\\Controller\\OptionsController::deletecategories'], ['id'], ['GET' => 0], null, false, true, null]],
+        1215 => [[['_route' => 'campaign_show', '_controller' => 'App\\Controller\\OptionsController::showcampaign'], ['id'], null, null, false, true, null]],
+        1237 => [[['_route' => 'campaign_edit', '_controller' => 'App\\Controller\\OptionsController::editcampaign'], ['id'], null, null, false, true, null]],
+        1261 => [[['_route' => 'campaign_delete', '_controller' => 'App\\Controller\\OptionsController::deletecampaign'], ['id'], ['GET' => 0], null, false, true, null]],
+        1297 => [[['_route' => 'entities_show', '_controller' => 'App\\Controller\\OptionsController::showentities'], ['id'], null, null, false, true, null]],
+        1319 => [[['_route' => 'entities_edit', '_controller' => 'App\\Controller\\OptionsController::editentities'], ['id'], null, null, false, true, null]],
+        1343 => [[['_route' => 'entities_delete', '_controller' => 'App\\Controller\\OptionsController::deleteentities'], ['id'], ['GET' => 0], null, false, true, null]],
+        1380 => [[['_route' => 'priorities_show', '_controller' => 'App\\Controller\\OptionsController::showpriorities'], ['id'], null, null, false, true, null]],
+        1402 => [[['_route' => 'priorities_edit', '_controller' => 'App\\Controller\\OptionsController::editpriorities'], ['id'], null, null, false, true, null]],
+        1426 => [[['_route' => 'priorities_delete', '_controller' => 'App\\Controller\\OptionsController::deletepriorities'], ['id'], ['GET' => 0], null, false, true, null]],
+        1465 => [[['_route' => 'status_show', '_controller' => 'App\\Controller\\OptionsController::showstatus'], ['id'], null, null, false, true, null]],
+        1487 => [[['_route' => 'status_edit', '_controller' => 'App\\Controller\\OptionsController::editstatus'], ['id'], null, null, false, true, null]],
+        1511 => [[['_route' => 'status_delete', '_controller' => 'App\\Controller\\OptionsController::deletestatus'], ['id'], ['GET' => 0], null, false, true, null]],
+        1541 => [[['_route' => 'stages_show', '_controller' => 'App\\Controller\\OptionsController::showstages'], ['id'], null, null, false, true, null]],
+        1563 => [[['_route' => 'stages_edit', '_controller' => 'App\\Controller\\OptionsController::editstages'], ['id'], null, null, false, true, null]],
+        1587 => [[['_route' => 'stages_delete', '_controller' => 'App\\Controller\\OptionsController::deletestages'], ['id'], ['GET' => 0], null, false, true, null]],
+        1621 => [[['_route' => 'sources_show', '_controller' => 'App\\Controller\\OptionsController::showcsource'], ['id'], null, null, false, true, null]],
+        1643 => [[['_route' => 'sources_edit', '_controller' => 'App\\Controller\\OptionsController::editcsource'], ['id'], null, null, false, true, null]],
+        1667 => [[['_route' => 'sources_delete', '_controller' => 'App\\Controller\\OptionsController::deletesources'], ['id'], null, null, false, true, null]],
+        1702 => [[['_route' => 'area_show', '_controller' => 'App\\Controller\\OptionsController::showarea'], ['id'], null, null, false, true, null]],
+        1724 => [[['_route' => 'area_edit', '_controller' => 'App\\Controller\\OptionsController::editarea'], ['id'], null, null, false, true, null]],
+        1748 => [[['_route' => 'area_delete', '_controller' => 'App\\Controller\\OptionsController::deletearea'], ['id'], ['GET' => 0], null, false, true, null]],
+        1786 => [[['_route' => 'accountstype_show', '_controller' => 'App\\Controller\\OptionsController::showaccountstype'], ['id'], null, null, false, true, null]],
+        1808 => [[['_route' => 'accountstype_edit', '_controller' => 'App\\Controller\\OptionsController::editaccountstype'], ['id'], null, null, false, true, null]],
+        1832 => [[['_route' => 'accountstype_delete', '_controller' => 'App\\Controller\\OptionsController::deleteaccountstype'], ['id'], ['GET' => 0], null, false, true, null]],
+        1860 => [[['_route' => 'app_login_token', '_controller' => 'App\\Controller\\SecurityController::loginwithtoken'], ['token'], null, null, false, true, null]],
+        1890 => [
             [['_route' => 'app_newpassword', '_controller' => 'App\\Controller\\SecurityController::newpassword'], ['token'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

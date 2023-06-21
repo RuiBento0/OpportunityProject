@@ -30,13 +30,22 @@ class ConvertedFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('probability', TextType::class, [
+        ->add('name', TextType::class, [
             'attr' => [
                 'class' => 'form-control',
-                'placeholder' => 'probability'
+                'placeholder' => 'Name'
             ],
             'label' => false,
         ])
+
+        ->add('probability', TextType::class, [
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'Probability'
+            ],
+            'label' => false,
+        ])
+
         ->add('closedate', DateType::class, [
             'attr' => [
                 'class' => 'form-control',
@@ -44,6 +53,7 @@ class ConvertedFormType extends AbstractType
             ],
             'label' => false,
         ])
+
         ->add('product', TextType::class, [
             'attr' => [
                 'class' => 'form-control',
@@ -51,17 +61,16 @@ class ConvertedFormType extends AbstractType
             ],
             'label' => false,
         ])
-        ->add('id_contact', EntityType::class, [
-            'class' => Contacts::class,
-            'choice_label' => 'getName',
+
+        ->add('description', TextAreaType::class, [
             'attr' => [
-                'class' => 'form-select',
-                'placeholder' => 'form.placeholder.id_contact'
+                'class' => 'form-control',
+                'placeholder' => 'Description'
             ],
             'label' => false,
             'required' => false,
             'empty_data' => null,
-           ])
+        ])
     
         ->add('id_department', EntityType::class, [
             'class' => Departments::class,

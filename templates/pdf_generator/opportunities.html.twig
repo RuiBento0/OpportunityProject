@@ -27,25 +27,26 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
   <div id="banner">
-    <h1>opportunities</h1>
+    <h1>{% trans %}Opportunities{% endtrans %}</h1>
   </div>
   <br>
   <table>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Account</th>
-      <th>User</th>
-      <th>Contact</th>
-      <th>Stage</th>
-      <th>Source</th>
-      <th>Department</th>
-      <th>Amount</th>
-      <th>Probability</th>
-      <th>Description</th>
-      <th>Close Date</th>
+      <th>{% trans %}Name{% endtrans %}</th>
+      <th>{% trans %}Account{% endtrans %}</th>
+      <th>{% trans %}User{% endtrans %}</th>
+      <th>{% trans %}Contact{% endtrans %}</th>
+      <th>{% trans %}Stage{% endtrans %}</th>
+      <th>{% trans %}Source{% endtrans %}</th>
+      <th>{% trans %}Department{% endtrans %}</th>
+      <th>{% trans %}Amount{% endtrans %}</th>
+      <th>{% trans %}Probability{% endtrans %}</th>
+      <th>{% trans %}Description{% endtrans %}</th>
+      <th>{% trans %}Close Date{% endtrans %}</th>
     </tr>
 {% for opportunity in opportunities %}
     <tr>
@@ -66,6 +67,12 @@
     <!-- Add more rows as needed -->
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 {% endblock %}

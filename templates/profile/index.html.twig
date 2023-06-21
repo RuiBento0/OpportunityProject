@@ -68,8 +68,8 @@
                                                      </div>
 
                                                      <input type="file" id="imageToUpload" name="imageToUpload" class="custom-file-input">
-                                                     <button type="submit" id="removeSubmitButton" class="btn btn-de-success btn-sm text-light px-4 mt-3 remove-file-button">Submit</button>
-                                                     <button type="button" id="removeFileButton" class="btn btn-de-danger btn-sm text-light px-4 mt-3 remove-file-button">Remove</button>
+                                                     <button type="submit" id="removeSubmitButton" class="btn btn-de-success btn-sm text-light px-4 mt-3 remove-file-button">{% trans %}Submit{% endtrans %}</button>
+                                                     <button type="button" id="removeFileButton" class="btn btn-de-danger btn-sm text-light px-4 mt-3 remove-file-button">{% trans %}Remove{% endtrans %}</button>
                                                      <input type="text" id="UserId" name="UserId" value="{{ app.user.name }}" hidden>
                                                  </form>
                                                 <div class="met-profile_user-detail">
@@ -81,7 +81,7 @@
                                         
                                     <div class="col-lg-4 ms-auto align-self-center">
                                             <ul class="list-unstyled personal-detail mb-0">
-                                                <li class="mt-2"><i class="las la-envelope text-secondary font-22 align-middle mr-2"></i> <b> Email </b> : {{ app.user.email }} </li>                                                   
+                                                <li class="mt-2"><i class="las la-envelope text-secondary font-22 align-middle mr-2"></i> <b> {% trans %}Email{% endtrans %} </b> : {{ app.user.email }} </li>                                                   
                                             </ul>
                                            </div>
                                         </div><!--end col-->
@@ -99,21 +99,21 @@
                                                     <div class="card-header">
                                                         <div class="row align-items-center">
                                                             <div class="col">                      
-                                                                <h4 class="card-title">Personal Information</h4>                      
+                                                                <h4 class="card-title">{% trans %}Personal Information{% endtrans %}</h4>                      
                                                             </div><!--end col-->                                                       
                                                         </div>  <!--end row-->                                  
                                                     </div><!--end card-header-->
                                                     <div class="card-body">
                                                     <form action="/profile/{{ app.user.id }}" method="POST">                       
                                                         <div class="form-group mb-3 row">
-                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">Name</label>
+                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">{% trans %}Name{% endtrans %}</label>
                                                             <div class="col-lg-9 col-xl-8">
                                                                 <input class="form-control" type="text" id="name" name="name" value="{{ app.user.name }}" style=" border-color:#608E34">
                                                             </div>
                                                         </div>
                                                         <br>
                                                         <div class="form-group mb-3 row">
-                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">Email Address</label>
+                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">{% trans %}Email Address{% endtrans %}</label>
                                                             <div class="col-lg-9 col-xl-8">
                                                                 <div class="input-group">
                                                                     <span class="input-group-text" style=" border-color:#608E34"><i class="las la-at"></i></span>
@@ -123,7 +123,7 @@
                                                         </div>
                                                         <div class="form-group mb-3 row">
                                                             <div class="col-lg-9 col-xl-8 offset-lg-3">
-                                                                <button type="submit" class="btn btn-primary" style="background-color: #608E34; border-color: #608E34">Submit</button>
+                                                                <button type="submit" class="btn btn-primary" style="background-color: #608E34; border-color: #608E34">{% trans %}Submit{% endtrans %}</button>
                                                             </div>
                                                         </div>
                                                         </form>                                                  
@@ -133,20 +133,20 @@
                                             <div class="col-lg-6 col-xl-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h4 class="card-title">Change Password</h4>
+                                                        <h4 class="card-title">{% trans %}Change Password{% endtrans %}</h4>
                                                     </div><!--end card-header-->
                                                     <div class="card-body" >
                                                     <form action="/profile/{{ app.user.id }}" method="POST">
                                                         <div class="form-group mb-3 row">
-                                                            <label  class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label" style="border-color:#608E34">Current Password</label>
+                                                            <label  class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label" style="border-color:#608E34">{% trans %}Current Password{% endtrans %}</label>
                                                             <div class="col-lg-9 col-xl-8">
                                                                 <input name="passwordOld" id="passwordOld" class="form-control" type="password" placeholder="Password" style=" border-color:#608E34">
-                                                                <a href="/resetpassword" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a> 
+                                                                <a href="/resetpassword" class="text-muted font-13"><i class="dripicons-lock"></i>{% trans %}Forgot password?{% endtrans %}</a> 
                                                             </div>
                                                             
                                                         </div>
                                                         <div class="form-group mb-3 row">
-                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">New Password</label>
+                                                            <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">{% trans %}New Password{% endtrans %}</label>
                                                             <div class="col-lg-9 col-xl-8">
                                                                 <input name="passwordNew" id="passwordNew" class="form-control" type="password" placeholder="New Password" style=" border-color:#608E34">
                                                             </div>
@@ -154,7 +154,7 @@
                                                         
                                                         <div class="form-group mb-3 row">
                                                             <div class="col-lg-9 col-xl-8 offset-lg-3">
-                                                                <button type="submit" class="btn btn-primary" style="background-color: #608E34; border-color: #608E34">Change Password</button>
+                                                                <button type="submit" class="btn btn-primary" style="background-color: #608E34; border-color: #608E34">{% trans %}Change Password{% endtrans %}</button>
                                                             </div>
                                                         </div>
                                                         </form>

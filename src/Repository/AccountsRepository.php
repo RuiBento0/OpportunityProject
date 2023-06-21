@@ -111,6 +111,57 @@ class AccountsRepository extends ServiceEntityRepository
         return $resultSet->fetchAllAssociative();
     }
 
+    public function listAccount($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+        SELECT a.id, a.name,a.created_by_id,a.created_at,a.updated_by_id,a.updated_at,a.description,a.id_user_id,a.id_type_id,a.id_area_id,
+        (SELECT GROUP_CONCAT(ph.phone SEPARATOR " / ") 
+            FROM phones ph
+            WHERE ph.id_entity_id = 3 AND ph.id_in_relation = a.id ) AS phones ,
+        (SELECT GROUP_CONCAT(e.email SEPARATOR " / ") 
+            FROM emails e
+            WHERE e.id_entity_id = 3 AND e.id_in_relation = a.id )
+        as emails,
+        (SELECT GROUP_CONCAT(ad.address SEPARATOR " / ") 
+            FROM addresses ad
+            WHERE ad.id_entity_id = 3 AND ad.id_in_relation = a.id )
+        as addresses,u.name as name_created,u2.name as name_updated,a1.name as name_area
+    FROM accounts a
+    INNER JOIN users u ON u.id = a.created_by_id
+    INNER JOIN users u2 ON u2.id = a.updated_by_id
+    INNER JOIN area a1 ON a1.id = a.id_area_id
+    WHERE a.id = '.$id
+            ;
+
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    public function FindbyAccount($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 'SELECT a.id,a.name,a.created_by_id,a.created_at,a.updated_by_id,a.updated_at,a.description,a.id_user_id,a.id_type_id,a.id_area_id,u.name AS createdby, uu.name AS updateby
+        FROM accounts a 
+        LEFT JOIN contacts c ON c.id = a.contacts_id
+        LEFT JOIN users u ON u.id = a.created_by_id 
+        LEFT JOIN users uu ON uu.id = a.updated_by_id 
+        WHERE a.id ='.$id
+            ;
+
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery([]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+
+     
+
 
 //    /**
 //     * @return Accounts[] Returns an array of Accounts objects

@@ -113,16 +113,6 @@ class LeadsFormType extends AbstractType
             ],
             'label' => false,
            ])
-
-           ->add('id_user', EntityType::class, [
-            'class' => Users::class,
-            'choice_label' => 'getName',
-            'attr' => [
-                'class' => 'form-control',
-                'placeholder' => 'form.placeholder.user'
-            ],
-            'label' => false,
-           ])
         
         ;
     }

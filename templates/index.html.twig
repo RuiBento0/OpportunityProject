@@ -31,7 +31,7 @@
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col">
-                                            <p class="text-dark mb-1 fw-semibold">Accounts</p>
+                                            <p class="text-dark mb-1 fw-semibold">{% trans %}Accounts{% endtrans %}</p>
                                             <h4 class="my-1">
                                             {% for accountscount in accountscount %}
                                             {{ accountscount.counter }}
@@ -52,7 +52,7 @@
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center">                                                
                                         <div class="col">
-                                            <p class="text-dark mb-1 fw-semibold">New Accounts</p>
+                                            <p class="text-dark mb-1 fw-semibold">{% trans %}New Accounts{% endtrans %}</p>
                                             <h4 class="my-1">
                                             {% for newcountaccounts in newcountaccounts %}
                                             {{ newcountaccounts.counter }}
@@ -73,7 +73,7 @@
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col">  
-                                            <p class="text-dark mb-1 fw-semibold">New Opportunities</p>  
+                                            <p class="text-dark mb-1 fw-semibold">{% trans %}New Opportunities{% endtrans %}</p>  
                                             <h4 class="my-1">
                                             {% for newcountopportunities in newcountopportunities %}
                                             {{ newcountopportunities.counter }}
@@ -94,7 +94,7 @@
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center">                                                
                                         <div class="col">
-                                            <p class="text-dark mb-1 fw-semibold">New Leads</p>
+                                            <p class="text-dark mb-1 fw-semibold">{% trans %}New Leads{% endtrans %}</p>
                                             <h4 class="my-1">
                                             {% for newcountleads in newcountleads %}
                                             {{ newcountleads.counter }}
@@ -120,28 +120,21 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Monthly Trends</h4>                   
+                                            <h4 class="card-title">{% trans %}Monthly Trends{% endtrans %}</h4>                   
                                         </div><!--end col-->                                      
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-xxl-6">
-                                            <div id="email_report" class="apex-charts"></div>
-                                        </div><!--end col-->
-                                        <div class="col-xxl-6 align-self-center">
-                                            <ul class="list-unstyled">
-                                                <li class="list-item mb-2">
-                                                    <i class="fas fa-play text-primary me-2"></i>Leads
-                                                </li>
-                                                <li class="list-item mb-2">
-                                                    <i class="fas fa-play text-info me-2"></i>Opportunities
-                                                </li>
-                                                <li class="list-item">
-                                                    <i class="fas fa-play me-2" style="color: #fdb5c8;"></i>Wins
-                                                </li>
-                                            </ul>
-                                        </div><!--end col-->
+                                         <div class="row py-2">
+                                            
+                                                
+                                                    <div class="card-body">
+                                                        <canvas id="chDonut3"></canvas>
+                                                    </div>
+                                                
+                                            
+                                        </div>
                                     </div> <!--end row--> 
                                 </div><!--end card-body-->
                             </div><!--end  card-->                                                                                                          
@@ -156,13 +149,13 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Users</h4>                      
+                                            <h4 class="card-title">{% trans %}Users{% endtrans %}</h4>                      
                                         </div><!--end col-->
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table mb-0" id="pagination">
+                                        <table class="table mb-0" >
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th onclick="sortTable(0)" style="cursor: pointer">{% trans %}Users{% endtrans %}</th>
@@ -179,13 +172,13 @@
                                                         <td><img src="{{ asset('uploads/userimg/' ~ user.photo ~ '') }}" alt="profile-user" class="rounded-circle me-2 thumb-sm" />{{ user.name }}</td>
                                                         <td>{{ user.email }}</td>
                                                         <td>{{ user.userRole.role }}</td>
-                                                        <td>{% if user.active == 1 %}Active{% endif %}{% if user.active == 0 %}Disable{% endif %}</td>
+                                                        <td>{% if user.active == 1 %}{% trans %}Active{% endtrans %}{% endif %}{% if user.active == 0 %}{% trans %}Disable{% endtrans %}{% endif %}</td>
 
                                                         <td style="-webkit-user-select: none; vertical-align: middle">
 
                                                     {% if app.user.id is defined%}
-                                                        <a href="options/user/edit/{{ user.id }}"><i class="las la-pen text-secondary font-16"></i></a>
-                                                        <a href="options/user/delete/{{ user.id }}"><i class="las la-trash-alt text-secondary font-16"></i></a>
+                                                        <a href="/authentication/users/edit/{{ user.id }}"><i class="las la-pen text-secondary font-16"></i></a>
+                                                        <a href="/authentication/users/delete/{{ user.id }}"><i class="las la-trash-alt text-secondary font-16"></i></a>
                                                     {% endif %} 
                                                         </td>
                                                     </tr>
@@ -204,19 +197,40 @@
             <!-- end page content -->
         </div>
         <!-- end page-wrapper -->
+        
+    <script src="{{ asset('js/chart.js') }}"></script>
 
-        <!-- Javascript  -->   
-        <script src="assets/plugins/lightpicker/litepicker.js"></script>
-        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
-        <script src="assets/pages/projects-index.init.js"></script>
-        <!-- App js -->
-        <script src="assets/js/app.js"></script>
+    
 
-        <script src="{{ asset('plugins/metric/dist/assets/js/litepicker.js') }}"></script>
-        <script src="{{ asset('plugins/metric/dist/assets/js/apexcharts.min.js') }}"></script>
-        <script src="{{ asset('plugins/metric/dist/assets/js/projects-index.init.js') }}"></script>
-    </body>
-    <!--end body-->
-</html>
+    <script type="text/javascript">
+            
+            var colors = ['#007bff','#fd3c97','#00FF00','#c3e6cb','#dc3545','#6c757d'];
+            var donutOptions = {
+            cutoutPercentage: 85, 
+            legend: {position:'bottom', padding:5, labels: {pointStyle:'circle', usePointStyle:true}}
+            };
+            var chDonutData3 = {
+                labels: ['{% trans %} Leads {% endtrans %}', '{% trans %} Opportunities {% endtrans %}', '{% trans %} Wins(Opportunities) {% endtrans %}'],
+                datasets: [
+                {
+                    backgroundColor: colors.slice(0,2),
+                    borderWidth: 0,
+                    data: [{{ countleads }}, {{ countopportunities }}, {{ countopportunitieswon }}]
+                }
+                ]
+            };
+
+            var chDonut3 = document.getElementById("chDonut3");
+                if (chDonut3) {
+                    new Chart(chDonut3, {
+                        type: 'pie',
+                        data: chDonutData3,
+                        options: donutOptions
+                    });
+                }
+
+
+           
+    </script>
 
 {% endblock %}

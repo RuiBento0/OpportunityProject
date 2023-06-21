@@ -100,6 +100,8 @@ class OpportunitiesFormType extends AbstractType
                 'placeholder' => 'form.placeholder.id_contact'
             ],
             'label' => false,
+            'required' => false,
+            'empty_data' => null,
            ])
 
         ->add('id_department', EntityType::class, [

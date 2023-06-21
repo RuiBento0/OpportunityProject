@@ -26,6 +26,7 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
   <div id="banner">
     <h1>Users</h1>
@@ -34,9 +35,9 @@
   <table>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Roles</th>
+      <th>{% trans %}Name{% endtrans %}</th>
+      <th>{% trans %}Email{% endtrans %}</th>
+      <th>{% trans %}Roles{% endtrans %}</th>
     </tr>
 {% for user in users %}
     <tr>
@@ -49,6 +50,12 @@
     <!-- Add more rows as needed -->
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 

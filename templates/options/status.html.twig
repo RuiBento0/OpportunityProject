@@ -16,12 +16,12 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/index">Business</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item"><a href="/options">Settings</a>
+                                        <li class="breadcrumb-item"><a href="/options">{% trans %}Settings{% endtrans %}</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item active">Status</li>
+                                        <li class="breadcrumb-item active">{% trans %}Status{% endtrans %}</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Settings</h4>
+                                <h4 class="page-title">{% trans %}Settings{% endtrans %}</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
 
@@ -38,7 +38,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Status Details</h4>             
+                                            <h4 class="card-title">{% trans %}Status Details{% endtrans %}</h4>             
                                         </div><!--end col-->                                       
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
@@ -50,7 +50,7 @@
                                                 <th onclick="sortTable(0)" style="-webkit-user-select: none; cursor: pointer" scope="col">{% trans %}Id{% endtrans %}</th>
                                                 <th onclick="sortTable(1)" style="-webkit-user-select: none; cursor: pointer" scope="col">{% trans %}Name{% endtrans %}</th>
                                                 <th onclick="sortTable(2)" style="-webkit-user-select: none; cursor: pointer" scope="col">{% trans %}Status{% endtrans %}</th>
-                                                <th style="width: 25%;cursor: default; -webkit-user-select: none;" scope="col">{% trans %}Actions{% endtrans %}</th>
+                                                <th style="width: 10%;cursor: default; -webkit-user-select: none;" scope="col">{% trans %}Actions{% endtrans %}</th>
                                             </tr><!--end tr-->
                                             </thead>
                                             <tbody id="myTable">
@@ -78,24 +78,6 @@
                                 </div><!--end row-->                                     
                             </div><!--end card-body--> 
                         </div><!--end card--> 
-                            <div>
-                            <div class="col-auto" style="float:right">
-                                            <nav aria-label="...">
-                                                <ul class="pagination pagination-sm mb-0">
-                                                    <li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                    </li>
-                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">Next</a>
-                                                    </li>
-                                                </ul><!--end pagination-->
-                                            </nav><!--end nav-->       
-                                         </div> <!--end col-->    
                         </div> <!--end col-->                               
                     </div><!--end row-->
 

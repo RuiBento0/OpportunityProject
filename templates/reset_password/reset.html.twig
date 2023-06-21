@@ -26,27 +26,27 @@
                                     <a href="/login" class="logo logo-admin">
                                         <img src="img/CRM2.png" height="50" alt="logo" class="auth-logo">
                                     </a>
-                                    <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Reset Password</h4>   
-                                    <p class="mb-0" style="color:white">Enter your new Password!</p>  
+                                    <h4 class="mt-3 mb-1 fw-semibold text-white font-18">{% trans %}Reset Password{% endtrans %}</h4>   
+                                    <p class="mb-0" style="color:white">{% trans %}Enter your new Password!{% endtrans %}</p>  
                                 </div>
                             </div>
                             <div class="card-body pt-0">
                                 <form class="my-4" method="POST" action="/newpassword/{{token}}">
                                     <div class="form-group mb-3">
-                                        <label class="form-label" for="newpassword">New password</label>
+                                        <label class="form-label" for="newpassword">{% trans %}New password{% endtrans %}</label>
                                         <input type="password" class="form-control" name="newpassword" style="border-color:#608E34"> </input>
                                         <br>
                                         </div><!--end form-group--> 
 
                                     <div class="form-group mb-0 row">
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit" style="background-color:#608E34 ; border-color:#608E34">Reset <i class="fas fa-sign-in-alt ms-1"></i></button>
+                                            <button class="btn btn-primary w-100" type="submit" style="background-color:#608E34 ; border-color:#608E34">{% trans %}Reset{% endtrans %}<i class="fas fa-sign-in-alt ms-1"></i></button>
                                         </div><!--end col--> 
                                     </div> <!--end form-group-->  
                                                           
                                 </form><!--end form-->
                                 <div class="text-center text-muted">
-                                    <p class="mb-1">Remember It ?  <a href="/login" style="color:#608E34">Sign in here</a></p>
+                                    <p class="mb-1">{% trans %}Remember It ?{% endtrans %}<a href="/login" style="color:#608E34">{% trans %}Sign in here{% endtrans %}</a></p>
                                 </div>
                         </div><!--end card-->
                     </div><!--end col-->

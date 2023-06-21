@@ -48,9 +48,10 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
             switch ($entity) {
             case 'accounts':
 
-                $accounts = $this->accountsRepository->findAll();
+                $accounts = $this->accountsRepository->listAccounts();
 
                 $data = [
+                   'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                    'accounts' => $accounts,
                 ];
                 $html =  $this->renderView('pdf_generator/accounts.html.twig', $data);
@@ -58,10 +59,11 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
 
             case 'contacts':
 
-                $contacts = $this->contactsRepository->findAll();
+                $contacts = $this->contactsRepository->listContacts();
 
                 $data = [
                     'contacts' => $contacts,
+                    'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/contacts.html.twig', $data);
 
@@ -73,6 +75,7 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
 
                 $data = [
                     'users' => $users,
+                    'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/users.html.twig', $data);
 
@@ -83,6 +86,7 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
 
                 $data = [
                     'leads' => $leads,
+                    'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/leads.html.twig', $data);
 
@@ -93,6 +97,7 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
 
                 $data = [
                     'opportunities' => $opportunities,
+                    'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/opportunities.html.twig', $data);
 
@@ -119,34 +124,37 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
     #[Route('/pdf/generator/accounts/{id}', methods:['GET'], name: 'app_pdf_generator_accounts')]
     public function pdfgeneratoraccounts($id): Response
     {
-                $accounts = $this->accountsRepository->find($id);
+                $accounts = $this->accountsRepository->listAccount($id);
 
+               
                 $data = [
-                   'accounts' => $accounts,
+                   'accounts' => $accounts[0],
+                   'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/accountshow.html.twig', $data);
 
         
 
         $dompdf = new Dompdf();
-        $dompdf->set_option("enable_remote", true);
+        //$dompdf->set_option("enable_remote", true);
         $dompdf->loadHtml($html);
         $dompdf->render();
 
         return new Response (
             $dompdf->stream('Accounts', ["Attachment" => false]),
             Response::HTTP_OK,
-            ['Content-Type' => 'application/pdf']
+            ['Content-Type' => 'application/pdf'],
         );
     }
 
     #[Route('/pdf/generator/contacts/{id}', methods:['GET'], name: 'app_pdf_generator_contacts')]
     public function pdfgeneratorcontacts($id): Response
     {
-                $contacts = $this->contactsRepository->find($id);
+                $contacts = $this->contactsRepository->listContact($id);
 
                 $data = [
-                   'contacts' => $contacts,
+                   'contacts' => $contacts[0],
+                   'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/contactshow.html.twig', $data);
 
@@ -170,6 +178,7 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
 
                 $data = [
                    'leads' => $leads,
+                   'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/leadshow.html.twig', $data);
 
@@ -193,6 +202,7 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
 
                 $data = [
                    'opportunities' => $opportunities,
+                   'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
                 ];
                 $html =  $this->renderView('pdf_generator/opportunitieshow.html.twig', $data);
 
@@ -204,6 +214,30 @@ public function __construct(AccountsRepository $accountsRepository, ContactsRepo
 
         return new Response (
             $dompdf->stream('Opportunities', ["Attachment" => false]),
+            Response::HTTP_OK,
+            ['Content-Type' => 'application/pdf']
+        );
+    }
+
+    #[Route('/pdf/generator/users/{id}', methods:['GET'], name: 'app_pdf_generator_users')]
+    public function pdfgeneratorusers($id): Response
+    {
+                $users = $this->usersRepository->find($id);
+
+                $data = [
+                    'users' => $users,
+                    'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/Business.png'),
+                ];
+                $html =  $this->renderView('pdf_generator/usersshow.html.twig', $data);
+
+
+        $dompdf = new Dompdf();
+        $dompdf->set_option("enable_remote", true);
+        $dompdf->loadHtml($html);
+        $dompdf->render();
+
+        return new Response (
+            $dompdf->stream('Users', ["Attachment" => false]),
             Response::HTTP_OK,
             ['Content-Type' => 'application/pdf']
         );

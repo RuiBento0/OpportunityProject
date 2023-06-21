@@ -17,14 +17,12 @@
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="/index">Business</a>
                                             </li><!--end nav-item-->
-                                            <li class="breadcrumb-item"><a href="/business">Business</a>
+                                            <li class="breadcrumb-item"><a href="/business/contacts">{% trans %}Contacts{% endtrans %}</a>
                                             </li><!--end nav-item-->
-                                            <li class="breadcrumb-item"><a href="/business/contacts">Contacts</a>
-                                            </li><!--end nav-item-->
-                                            <li class="breadcrumb-item active">Edit</li>
+                                            <li class="breadcrumb-item active">{% trans %}Edit{% endtrans %}</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Edit {{ contacts.name }}</h4>
+                                    <h4 class="page-title">{% trans %}Edit{% endtrans %} {{ contacts.name }}</h4>
                                 </div><!--end page-title-box-->
                             </div><!--end col-->
                         </div>
@@ -35,27 +33,17 @@
                                     <div class="card-body">
                                             <div class="form-group row">
                                                 <div class="col-md-6 mb-3">
-                                                        <label for="projectName" class="form-label">Name</label>
+                                                        <label for="projectName" class="form-label">{% trans %}Name{% endtrans %}</label>
                                                         {{ form_row(form.name) }}
                                                 </div>
 
                                                 <div class="col-md-6 mb-3">
-                                                        <label for="projectName" class="form-label">Surname</label>
+                                                        <label for="projectName" class="form-label">{% trans %}Surname{% endtrans %}</label>
                                                         {{ form_row(form.surname) }}
                                                 </div>
 
-                                                <div class="col-md-6 mb-3">
-                                                        <label for="projectName" class="form-label">User</label>
-                                                        {{ form_row(form.iduser) }}
-                                                </div>
-
-                                                <div class="col-md-6 mb-3">
-                                                        <label for="projectName" class="form-label">Account</label>
-                                                        {{ form_row(form.idaccount) }}
-                                                </div>
-
                                                 <div class="col-md-16 mb-3">
-                                                        <label for="projectName" class="form-label">Description</label>
+                                                        <label for="projectName" class="form-label">{% trans %}Description{% endtrans %}</label>
                                                         {{ form_row(form.description) }}
                                                </div>
                                         </div>           
@@ -70,7 +58,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div id="containerphone">
-                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('phone')">Add Phone Field</button>
+                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('phone')">{% trans %}Add Phone Field{% endtrans %}</button>
                                     </div> <!--end container-->
                                 </div> <!--end card-body-->
                             </div> <!--end card-body-->
@@ -79,7 +67,7 @@
                             <div class="card-body">
                                 
                                     <div id="containeremail">
-                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('email')">Add Email Field</button>
+                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('email')">{% trans %}Add Email Field{% endtrans %}</button>
                                     </div> <!--end container-->
                                 </div> <!--end card-body-->
                             </div> <!--end card-body-->
@@ -93,7 +81,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div id="containeraddress">
-                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('address')">Add Address Field</button>
+                                        <button type="button" style="float:right" class="btn btn-de-success btn-sm text-light px-4 mb-0" onclick="addInputField('address')">{% trans %}Add Address Field{% endtrans %}</button>
                                     </div> <!--end container-->
                                 </div> <!--end card-body-->
                             </div> <!--end card-body-->
@@ -105,18 +93,19 @@
                     <div class="row">
                         <div class="col-12 col-lg-8 mx-auto">
                             <div class="form-group">
-                                <a style="float:right" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0" onclick="window.history.back()" >Back</a>                                                                                           
+                                <a style="float:right" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0" onclick="window.history.back()" >{% trans %}Back{% endtrans %}</a>                                                                                           
                             </div>
                         
                             <div class="form-group">
-                                <button type="submit" style="float:right; margin-right:15px" class="btn btn-de-success btn-sm text-light px-4 mt-3 mb-0">Edit</button>                                                                                                                                                                                     
+                                <button type="submit" style="float:right; margin-right:15px" class="btn btn-de-success btn-sm text-light px-4 mt-3 mb-0">{% trans %}Edit{% endtrans %}</button>                                                                                                                                                                                     
                             </div>                 
                         </div> <!--end col-->                                          
                     </div><!--end row-->
 
             {{ form_end(form) }}
             </form>
-
+            
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type="text/javascript">
 
         $(document).ready(function () {

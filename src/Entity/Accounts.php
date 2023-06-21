@@ -17,36 +17,42 @@ class Accounts
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
-    private ?string $name = null;
+    public ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    public ?string $description = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $created_at = null;
+    public ?\DateTimeInterface $created_at = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $updated_at = null;
+    public ?\DateTimeInterface $updated_at = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Users $id_user = null;
+    public ?Users $id_user = null;
 
     #[ORM\ManyToOne]
-    private ?AccountsType $id_type = null;
+    public ?AccountsType $id_type = null;
 
     #[ORM\ManyToOne]
-    private ?Users $created_by = null;
+    public ?Users $created_by = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Users $updated_by = null;
+    public ?Users $updated_by = null;
 
     #[ORM\ManyToMany(targetEntity: Departments::class, inversedBy: 'accounts')]
-    private Collection $departments;
+    public Collection $departments;
 
     #[ORM\ManyToOne]
-    private ?Area $id_area = null;
+    public ?Area $id_area = null;
+
+    #[ORM\Column]
+    public ?int $NIF = null;
+
+    #[ORM\ManyToOne(inversedBy: 'accounts')]
+    private ?Contacts $contacts = null;
 
     public function __construct()
     {
@@ -186,6 +192,30 @@ class Accounts
     public function setIdArea(?area $id_area): self
     {
         $this->id_area = $id_area;
+
+        return $this;
+    }
+
+    public function getNIF(): ?int
+    {
+        return $this->NIF;
+    }
+
+    public function setNIF(int $NIF): self
+    {
+        $this->NIF = $NIF;
+
+        return $this;
+    }
+
+    public function getContacts(): ?Contacts
+    {
+        return $this->contacts;
+    }
+
+    public function setContacts(?Contacts $contacts): self
+    {
+        $this->contacts = $contacts;
 
         return $this;
     }

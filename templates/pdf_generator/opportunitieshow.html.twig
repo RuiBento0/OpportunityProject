@@ -39,9 +39,10 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
 <div id="banner">
-  <h1>opportunities Details</h1>
+  <h1>{% trans %}Opportunities Details{% endtrans %}</h1>
   </div>
   <br>
   <table>
@@ -50,52 +51,58 @@
       <td>{{ opportunities.id }}</td>
     </tr>
     <tr>
-      <td>Name</td>
+      <td>{% trans %}Name{% endtrans %}</td>
       <td>{{ opportunities.name }}</td>
     </tr>
     <tr>
-      <td>Probability</td>
+      <td>{% trans %}Probability{% endtrans %}</td>
       <td>{{ opportunities.probability }} %</td>
     </tr>
     <tr>
-      <td>Stage</td>
+      <td>{% trans %}Stage{% endtrans %}</td>
       <td>{{ opportunities.idsource.name }}</td>
     </tr>
     <tr>
-      <td>Account</td>
+      <td>{% trans %}Account{% endtrans %}</td>
       <td>{{ opportunities.idaccount.name }}</td>
     </tr>
     <tr>
-      <td>User</td>
+      <td>{% trans %}User{% endtrans %}</td>
       <td>{{ opportunities.iduser.name }}</td>
     </tr>
     <tr>
-      <td>Contact</td>
+      <td>{% trans %}Contact{% endtrans %}</td>
       <td>{{ opportunities.idcontact.name }}</td>
     </tr>
     <tr>
-      <td>Created By</td>
+      <td>{% trans %}Created By{% endtrans %}</td>
       <td>{{ opportunities.createdby.name }}</td>
     </tr>
     <tr>
-      <td>Created At</td>
+      <td>{% trans %}Created At{% endtrans %}</td>
       <td>{{ opportunities.createdat|date('Y-m-d H:i:s') }}</td>
     </tr>
     <tr>
-      <td>Update By</td>
+      <td>{% trans %}Update By{% endtrans %}</td>
       <td>{{ opportunities.updatedBy.name }}</td>
     </tr>
     <tr>
-      <td>Updated At</td>
+      <td>{% trans %}Updated At{% endtrans %}</td>
       <td>{{ opportunities.updatedAt|date('Y-m-d H:i:s') }}</td>
     </tr>
     
     <tr>
-      <td>Description</td>
+      <td>{% trans %}Description{% endtrans %}</td>
       <td>{{ opportunities.description }}</td>
     </tr>
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 {% endblock %}

@@ -26,8 +26,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-
-
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\Security\Core\Security;
 
 class MainController extends AbstractController
 {
@@ -49,8 +50,9 @@ class MainController extends AbstractController
     private $contactsRepository;
     private $leadsRepository;
     private $opportunitiesRepository;
+    private $security;
 
-    public function __construct(EntityManagerInterface $em, UsersRepository $usersRepository, RolesRepository $rolesRepository, DepartmentsRepository $departmentsRepository, CategoriesRepository $categoriesRepository, EntitiesRepository $entitiesRepository, PrioritiesRepository $prioritiesRepository, StatusRepository $statusRepository, StagesRepository $stagesRepository, AreaRepository $areaRepository, AccountsTypeRepository $accountstypeRepository, CampaignRepository $campaignRepository, SourcesRepository $sourcesRepository, LocationsRepository $locationsRepository, ContactsRepository $contactsRepository, AccountsRepository $accountsRepository, LeadsRepository $leadsRepository, OpportunitiesRepository $opportunitiesRepository)
+    public function __construct(Security $security, TranslatorInterface $translator, EntityManagerInterface $em, UsersRepository $usersRepository, RolesRepository $rolesRepository, DepartmentsRepository $departmentsRepository, CategoriesRepository $categoriesRepository, EntitiesRepository $entitiesRepository, PrioritiesRepository $prioritiesRepository, StatusRepository $statusRepository, StagesRepository $stagesRepository, AreaRepository $areaRepository, AccountsTypeRepository $accountstypeRepository, CampaignRepository $campaignRepository, SourcesRepository $sourcesRepository, LocationsRepository $locationsRepository, ContactsRepository $contactsRepository, AccountsRepository $accountsRepository, LeadsRepository $leadsRepository, OpportunitiesRepository $opportunitiesRepository)
     {
         $this->em = $em;
         $this->usersRepository = $usersRepository;
@@ -70,9 +72,25 @@ class MainController extends AbstractController
         $this->contactsRepository = $contactsRepository;
         $this->leadsRepository = $leadsRepository;
         $this->opportunitiesRepository = $opportunitiesRepository;
+        $this->translator = $translator;
+        $this->security = $security;
     }
 
-    #[Route('/index', name: 'app_index')]
+    #[Route('/business/lang/{lang}', name: 'lang_business')]
+    public function language($lang, Request $request, Security $security)
+    {
+        $session = $request->getSession();
+        $session->set('_locale', $lang);
+        
+        if($security->getUser()){
+            return $this->redirectToRoute('app_index');
+        }else{
+            return $this->redirectToRoute('app_main');
+        }
+    }
+
+
+    #[Route('/business/index', name: 'app_index')]
     public function index2(): Response
     {
         $accounts = $this->accountsRepository->findAll();
@@ -80,6 +98,9 @@ class MainController extends AbstractController
         $newcountaccounts = $this->accountsRepository->newcountAccounts();
         $newcountopportunities = $this->opportunitiesRepository->newcountOpportunities();
         $newcountleads = $this->leadsRepository->newcountLeads();
+        $countleads = $this->leadsRepository->findAll();
+        $countopportunities = $this->opportunitiesRepository->findAll();
+        $countopportunitieswon = $this->opportunitiesRepository->findByWon();
         $users = $this->usersRepository->findAll();
 
         return $this->render('/index.html.twig',[
@@ -88,14 +109,25 @@ class MainController extends AbstractController
             'accountscount' => $accountscount,
             'newcountaccounts' => $newcountaccounts,
             'newcountopportunities' => $newcountopportunities,
-            'newcountleads' => $newcountleads
+            'newcountleads' => $newcountleads,
+            'countleads' => count($countleads),
+            'countopportunities' => count($countopportunities),
+            'countopportunitieswon' => count($countopportunitieswon),
         ]);
     }
 
-    #[Route('/options', methods:['GET'], name: 'app_options')]
-    public function index(): Response
+    #[Route('/options/list', methods:['GET'], name: 'app_options')]
+    public function options(): Response
     {
         return $this->render('options/options.html.twig', [
+      
+        ]);
+    }
+
+    #[Route('/authentication/list', methods:['GET'], name: 'app_authentication')]
+    public function authentication(): Response
+    {
+        return $this->render('authentication/authentication.html.twig', [
       
         ]);
     }
@@ -230,7 +262,7 @@ class MainController extends AbstractController
         ]);
     }
 
-    #[Route('/work', methods:['GET'], name: 'app_work')]
+    #[Route('/business/work', methods:['GET'], name: 'app_work')]
     public function listwork(): Response
     {
         $leads = $this->leadsRepository->findAll();

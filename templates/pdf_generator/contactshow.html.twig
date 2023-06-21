@@ -39,9 +39,10 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
 <div id="banner">
-  <h1>Contacts Details</h1>
+  <h1>{% trans %}Contacts Details{% endtrans %}</h1>
   </div>
   <br>
   <table>
@@ -50,36 +51,54 @@
       <td>{{ contacts.id }}</td>
     </tr>
     <tr>
-      <td>Name</td>
+      <td>{% trans %}Name{% endtrans %}</td>
       <td>{{ contacts.name }}</td>
     </tr>
     <tr>
-      <td>Surname</td>
+      <td>{% trans %}Surname{% endtrans %}</td>
       <td>{{ contacts.surname }}</td>
     </tr>
     <tr>
-      <td>Created By</td>
-      <td>{{ contacts.createdby.name }}</td>
+      <td>{% trans %}Account{% endtrans %}</td>
+      <td>{{ contacts.accname }}</td>
     </tr>
     <tr>
-      <td>Created At</td>
-      <td>{{ contacts.createdat|date('Y-m-d H:i:s') }}</td>
+      <td>{% trans %}Created By{% endtrans %}</td>
+      <td>{{ contacts.name_created }}</td>
     </tr>
     <tr>
-      <td>Update By</td>
-      <td>{{ contacts.updatedBy.name }}</td>
+      <td>{% trans %}Created At{% endtrans %}</td>
+      <td>{{ contacts.created_at|date('Y-m-d H:i:s') }}</td>
     </tr>
     <tr>
-      <td>Updated At</td>
-      <td>{{ contacts.updatedAt|date('Y-m-d H:i:s') }}</td>
+      <td>{% trans %}Update By{% endtrans %}</td>
+      <td>{{ contacts.name_updated }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Updated At{% endtrans %}</td>
+      <td>{{ contacts.updated_at|date('Y-m-d H:i:s') }}</td>
     </tr>
     
     <tr>
-      <td>Description</td>
+      <td>{% trans %}Description{% endtrans %}</td>
       <td>{{ contacts.description }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Email{% endtrans %}</td>
+      <td>{{ contacts.emails }}</td>
+    </tr>
+    <tr>
+      <td>{% trans %}Phone{% endtrans %}</td>
+      <td>{{ contacts.phones }}</td>
     </tr>
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 {% endblock %}

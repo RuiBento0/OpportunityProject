@@ -67,10 +67,10 @@ class Contacts extends \App\Entity\Contacts implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'surname', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id_account', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'opportunities'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'surname', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'opportunities', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'accounts'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'surname', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id_account', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'opportunities'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'surname', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'updated_by', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'opportunities', '' . "\0" . 'App\\Entity\\Contacts' . "\0" . 'accounts'];
     }
 
     /**
@@ -327,28 +327,6 @@ class Contacts extends \App\Entity\Contacts implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getIdAccount(): ?\App\Entity\accounts
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdAccount', []);
-
-        return parent::getIdAccount();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setIdAccount(?\App\Entity\accounts $id_account): \App\Entity\Contacts
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdAccount', [$id_account]);
-
-        return parent::setIdAccount($id_account);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getCreatedBy(): ?\App\Entity\users
     {
 
@@ -421,6 +399,39 @@ class Contacts extends \App\Entity\Contacts implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeOpportunity', [$opportunity]);
 
         return parent::removeOpportunity($opportunity);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAccounts(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAccounts', []);
+
+        return parent::getAccounts();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAccount(\App\Entity\Accounts $account): \App\Entity\Contacts
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAccount', [$account]);
+
+        return parent::addAccount($account);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAccount(\App\Entity\Accounts $account): \App\Entity\Contacts
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAccount', [$account]);
+
+        return parent::removeAccount($account);
     }
 
 }

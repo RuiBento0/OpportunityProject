@@ -16,12 +16,12 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/index">Business</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item"><a href="/business/leads">Leads</a>
+                                        <li class="breadcrumb-item"><a href="/business/leads">{% trans %}Leads{% endtrans %}</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item active">Edit</li>
+                                        <li class="breadcrumb-item active">{% trans %}Edit{% endtrans %}</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Edit {{ leads.name }}</h4>
+                                <h4 class="page-title">{% trans %}Edit{% endtrans %} {{ leads.name }}</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                     </div>
@@ -34,52 +34,47 @@
                                     {{ form_start(form) }}
                                         <div class="form-group row">
                                           <div class="col-md-6 mb-3">
-                                                    <label for="projectName" class="form-label">Name</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Name{% endtrans %}</label>
                                                     {{ form_row(form.name) }}
                                             </div>
 
                                             <div class="col-md-6 mb-3">
-                                                    <label for="projectName" class="form-label">Amount</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Amount{% endtrans %}</label>
                                                     {{ form_row(form.amount) }} 
                                             </div>
 
                                             <div class="col-md-3 mb-3">
-                                                    <label for="projectName" class="form-label">Area</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Area{% endtrans %}</label>
                                                     {{ form_row(form.id_area) }}
                                             </div>
 
                                             <div class="col-md-3 mb-6">
-                                                    <label for="projectName" class="form-label">Department</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Department{% endtrans %}</label>
                                                     {{ form_row(form.id_department) }}
                                             </div>
 
                                             <div class="col-md-3 mb-6">
-                                                    <label for="projectName" class="form-label">Campaign</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Campaign{% endtrans %}</label>
                                                     {{ form_row(form.id_campaign) }}
                                             </div>
 
                                             <div class="col-md-3 mb-6">
-                                                    <label for="projectName" class="form-label">Source</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Source{% endtrans %}</label>
                                                     {{ form_row(form.id_source) }}
                                             </div>
 
                                             <div class="col-md-4 mb-6">
-                                                    <label for="projectName" class="form-label">User</label>
-                                                    {{ form_row(form.id_user) }}
-                                            </div>
-
-                                            <div class="col-md-4 mb-6">
-                                                    <label for="projectName" class="form-label">Status</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Status{% endtrans %}</label>
                                                     {{ form_row(form.id_status) }}
                                             </div>
 
                                              <div class="col-md-4 mb-6">
-                                                    <label for="projectName" class="form-label">Account</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Account{% endtrans %}</label>
                                                     {{ form_row(form.account) }}
                                             </div><!--end col-->  
 
                                             <div class="col-md-12 mb-6">
-                                                    <label for="projectName" class="form-label">Description</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Description{% endtrans %}</label>
                                                     {{ form_row(form.description) }}
                                             </div>
                                            
@@ -87,15 +82,15 @@
                                      
                                         <br>
                                     <div class="form-group">
-                                            <a style="float:right; margin-right: 5px;" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0" onclick="window.history.back()" >Back</a>                                                                                           
+                                            <a style="float:right; margin-right: 5px;" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0" onclick="window.history.back()" >{% trans %}Back{% endtrans %}</a>                                                                                           
                                         </div>
                                     
                                         <div class="form-group">
-                                            <button type="submit" style="float:right; margin-right:15px" class="btn btn-de-success btn-sm text-light px-4 mt-3 mb-0">Edit</button>                                                                                                                                                                                     
+                                            <button type="submit" style="float:right; margin-right:15px" class="btn btn-de-success btn-sm text-light px-4 mt-3 mb-0">{% trans %}Edit{% endtrans %}</button>                                                                                                                                                                                     
                                         </div>
 
                                         <div class="form-group">
-                                            <a  href="/business/convert/lead/{{leads.id}}" style="float:right; margin-right:15px" class="btn btn-de-danger btn-sm text-light px-4 mt-3 mb-0">Converted</a>                                                                                                                                                                                     
+                                            <a  href="/business/convert/lead/{{leads.id}}" style="float:right; margin-right:15px" class="btn btn-de-danger btn-sm text-light px-4 mt-3 mb-0">{% trans %}Convert{% endtrans %}</a>                                                                                                                                                                                     
                                         </div>
                                         </div>
                                         {{ form_end(form) }}

@@ -14,6 +14,7 @@ use App\Repository\PhonesRepository;
 use App\Repository\EmailsRepository;
 use App\Repository\AddressesRepository;
 use App\Repository\EntitiesRepository;
+use App\Repository\AccountsRepository;
 
 
 use App\Form\ContactsFormType;
@@ -34,9 +35,10 @@ class ContactsController extends AbstractController
     private $emailsRepository;
     private $addressesRepository;
     private $entitiesRepository;
+    private $accountsRepository;
     
 
-    public function __construct(Security $security, ContactsRepository $contactsRepository, EntityManagerInterface $em, PhonesRepository $phonesRepository, EmailsRepository $emailsRepository, AddressesRepository $addressesRepository, EntitiesRepository $entitiesRepository)
+    public function __construct(Security $security,AccountsRepository $accountsRepository, ContactsRepository $contactsRepository, EntityManagerInterface $em, PhonesRepository $phonesRepository, EmailsRepository $emailsRepository, AddressesRepository $addressesRepository, EntitiesRepository $entitiesRepository)
     {
         $this->em = $em;
         $this->security = $security;
@@ -45,6 +47,7 @@ class ContactsController extends AbstractController
         $this->emailsRepository = $emailsRepository;
         $this->addressesRepository = $addressesRepository;
         $this->entitiesRepository = $entitiesRepository;
+        $this->accountsRepository = $accountsRepository;
         
     }
 
@@ -54,8 +57,11 @@ class ContactsController extends AbstractController
     {
         $contacts = $this->contactsRepository->find($id);
 
+        $accountswithcontact = $this->accountsRepository->FindbyAccount($id);
+
         return $this->render('contacts/show.html.twig',[
-            'contacts' => $contacts
+            'contacts' => $contacts,
+            'accounts' => $accountswithcontact
         ]);
     }
 
@@ -171,6 +177,7 @@ class ContactsController extends AbstractController
 
             $contacts = $form->getData();
 
+            $contacts->setIdUser($loggedinUser);
             $contacts->setUpdatedAt(new \DateTimeImmutable($now));
             $contacts->setCreatedAt(new \DateTimeImmutable($now));
             $contacts->setCreatedBy($loggedinUser);

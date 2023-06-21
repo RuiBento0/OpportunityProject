@@ -16,14 +16,14 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/index">Business</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item"><a href="/options">Options</a>
+                                        <li class="breadcrumb-item"><a href="/options">{% trans %}Settings{% endtrans %}</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item"><a href="/options/location">Location</a>
+                                        <li class="breadcrumb-item"><a href="/options/location">{% trans %}Location{% endtrans %}</a>
                                         </li><!--end nav-item-->
-                                        <li class="breadcrumb-item active">Show</li>
+                                        <li class="breadcrumb-item active">{% trans %}Show{% endtrans %}</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Location {{ locations.name }}</h4>
+                                <h4 class="page-title">{% trans %}Location{% endtrans %} {{ locations.name }}</h4>
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                                        
@@ -36,7 +36,7 @@
                                     <form action="/options/departments">
                                         <div class="form-group row">
                                             <div class="col-md-4 mb-3">
-                                                    <label for="projectName" class="form-label">Name</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Name{% endtrans %}</label>
                                                     <div class="form-control">
                                                         {{ locations.name }}
                                                     </div>
@@ -50,14 +50,14 @@
                                             </div>
 
                                             <div class="col-md-2 mb-3">
-                                                    <label for="projectName" class="form-label">Status</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Status{% endtrans %}</label>
                                                     <div class="form-control">
                                                     {% if locations.active == 1 %}
-                                                            Active
+                                                            {% trans %}Active{% endtrans %}
                                                     {% endif %}
 
                                                     {% if locations.active == 0 %}
-                                                            Disable
+                                                            {% trans %}Disable{% endtrans %}
                                                     {% endif %}
                                                     </div>
                                             </div>
@@ -67,14 +67,14 @@
                                         <div class="form-group row">
 
                                             <div class="col-md-6 mb-3">
-                                                    <label for="projectName" class="form-label">Created By</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Created By{% endtrans %}</label>
                                                     <div class="form-control">
                                                         {{ locations.createdby.name }}
                                                     </div>
                                             </div> 
                                             
                                             <div class="col-md-6 mb-3">
-                                                    <label for="projectName" class="form-label">Created At</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Created At{% endtrans %}</label>
                                                     <div class="form-control">
                                                         {{ locations.createdat|date('Y-m-d H:i:s') }}
                                                     </div>
@@ -85,14 +85,14 @@
                                         <div class="form-group row">
 
                                             <div class="col-md-6 mb-3">
-                                                    <label for="projectName" class="form-label">Update By</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Update By{% endtrans %}</label>
                                                     <div class="form-control">
                                                         {{ locations.updatedby.name }}
                                                     </div>
                                             </div> 
                                             
                                             <div class="col-md-6 mb-3">
-                                                    <label for="projectName" class="form-label">Updated At</label>
+                                                    <label for="projectName" class="form-label">{% trans %}Updated At{% endtrans %}</label>
                                                     <div class="form-control">
                                                         {{ locations.updatedat|date('Y-m-d H:i:s') }}
                                                     </div>
@@ -103,7 +103,7 @@
                                         <br>
 
                                         <div class="form-group"> 
-                                            <a style="float:right" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0 " onclick="window.history.back()" >Back</a>
+                                            <a style="float:right" class="btn btn-de-secondary btn-sm text-light px-4 mt-3 mb-0 " onclick="window.history.back()" >{% trans %}Back{% endtrans %}</a>
                                         </div>
                                     </form>
                                 </div> <!--end card-body-->                                           

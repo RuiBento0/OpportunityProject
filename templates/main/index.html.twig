@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <link href="/css/datatables.css" rel="stylesheet" type="text/css" />
+            <link href="/plugins/metric/dist/assets/plugins/dragula/dragula.min.css" rel="stylesheet" type="text/css" />
+            <link href="/plugins/metric/dist/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
@@ -21,58 +26,78 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </style>
 </head>
 <body class="w3-black">
-
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
   
+  <a href="/login" class="w3-bar-item w3-button w3-padding-large">
+    <img src="{{ asset('img/language/login.png') }}" alt="" width= "50px;" height= "auto;">
+    <p>{% trans %}LOGIN{% endtrans %}</p>
+  </a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">
     <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
+    <p>{% trans %}HOME{% endtrans %}</p>
   </a>
   <a href="#about" class="w3-bar-item w3-button w3-padding-large ">
     <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
+    <p>{% trans %}ABOUT{% endtrans %}</p>
   </a>
   <a href="#photos" class="w3-bar-item w3-button w3-padding-large">
     <i class="fa fa-eye w3-xxlarge"></i>
-    <p>PHOTOS</p>
+    <p>{% trans %}PHOTOS{% endtrans %}</p>
   </a>
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large">
     <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
+    <p>{% trans %}CONTACT{% endtrans %}</p>
   </a>
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+    <a href="/login" class="w3-bar-item w3-button" style="width:25% !important">{% trans %}LOGIN{% endtrans %}</a>
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">{% trans %}HOME{% endtrans %}</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">{% trans %}ABOUT{% endtrans %}</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">{% trans %}PHOTOS{% endtrans %}</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">{% trans %}CONTACT{% endtrans %}</a>
   </div>
 </div>
 
 <!-- Page Content -->
 <div class="w3-padding-large" id="main" style="background-color: white">
+
+    <div class="top-bar">
+  <!-- Conteúdo da top bar -->
+  <div class="dropdown">
+    <a role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="{{ asset('img/language/traducao.png') }}" style="width:24px">
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+      <a class="dropdown-item" href="/business/lang/en">
+        <img src="{{ asset('img/language/en.jpg') }}" alt="">
+        {% trans %}English{% endtrans %}
+      </a>
+      <a class="dropdown-item" href="/business/lang/pt">
+        <img src="{{ asset('img/language/pt.png') }}" alt="">
+        {% trans %}Portuguese{% endtrans %}
+      </a>
+    </div>
+  </div>
+</div>
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center" id="home" style="background-color: white">
     <h1 class="w3-jumbo" style="color:black"> Business.</h1>
   </header>
-
-    <a href="/login" style="margin-left:21%; border-color: #608E34; background-color: #608E34;" class="w3-button w3-justify  w3-padding-large" type="submit"> Login </a>
-
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="text-muted  mb-0">Company</h2>
+    <h2 class="w3-text-grey mb-0">{% trans %}Company{% endtrans %}</h2>
     <hr style="width: 200px; border-color: #608E34; background-color: #608E34;" class="w3-opacity">
-    <p>We are a company specializing in the provision of services associated with energy, telecommunications, Contact-Center, business management.Additionally, we have a proprietary platform in Software as a Service format aimed at business management, Contact-Center and marketing.We are official Iberdrola partners with customer support stores in the main cities and partners of the main telecommunications operators.</p>
+    <p>{% trans %}We are a company specializing in the provision of services associated with energy, telecommunications, Contact-Center, business management.Additionally, we have a proprietary platform in Software as a Service format aimed at business management, Contact-Center and marketing.{% endtrans %}</p>
   </div>
   
   <!-- Portfolio Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="photos">
-    <h2 class="text-muted  mb-0">My Photos</h2>
+    <h2 class="w3-text-grey  mb-0">{% trans %}Photos{% endtrans %}</h2>
     <hr style="width: 200px; border-color: #608E34; background-color: #608E34;" class="w3-opacity">
 
     <!-- Grid for photos -->
@@ -96,13 +121,13 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
   <!-- Contact Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="contact">
-    <h2 class="text-muted  mb-0">Contact Us</h2>
+    <h2 class="w3-text-grey  mb-0">{% trans %}Contact Us{% endtrans %}</h2>
     <hr style="width: 200px; border-color: #608E34; background-color: #608E34;" class="w3-opacity">
 
     <div class="w3-section">
       <p><i class="fa fa-map-marker fa-fw w3-text-grey w3-xxlarge w3-margin-right"></i> Trofa, Portugal</p>
-      <p><i class="fa fa-phone fa-fw w3-text-grey w3-xxlarge w3-margin-right"></i> Phone: 220 934 494/</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-grey w3-xxlarge w3-margin-right"> </i> Email: Business@mail.com</p>
+      <p><i class="fa fa-phone fa-fw w3-text-grey w3-xxlarge w3-margin-right"></i>{% trans %} Phone{% endtrans %}: 220 934 494</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-grey w3-xxlarge w3-margin-right"> </i>{% trans %} Email{% endtrans %}: Business@mail.com</p>
     </div><br>
   </div>
 
@@ -110,4 +135,109 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </div>
 
 </body>
+
+<style>
+
+.top-bar {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .top-bar .dropdown {
+    margin-left: auto; /* Alinha o dropdown à direita da top bar */
+  }
+
+  .top-bar .dropdown-menu {
+    min-width: 160px;
+    padding: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .top-bar .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    padding: 4px 8px;
+  }
+
+  .top-bar .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .top-bar img {
+    width: 24px;
+  }
+
+.dropdown-menu img {
+  width: 24px; /* Defina o valor desejado para a largura das imagens */
+}
+
+
+h2 {
+  font-size: 24px; /* Defina o valor desejado para o tamanho da fonte */
+  color: #888888; /* Defina a cor cinza desejada */
+}
+
+
+p {
+  font-size: 16px; /* Defina o valor desejado para o tamanho da fonte */
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  min-width: 160px;
+  padding: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown .nav-icon img {
+  width: 24px;
+}
+
+.dropdown .thumb-xxs {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+
+</style>
+
+        <script src="{{ asset('js/datatables.js') }}"></script>
+        <script src="{{ asset('js/googleapis.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/js/app.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/select/selectr.min.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/huebee/huebee.pkgd.min.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/datepicker/datepicker-full.min.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/moment/moment.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/imask/imask.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/pages/forms-advanced.js') }}"></script>
 </html>

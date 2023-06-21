@@ -15,6 +15,8 @@ use App\Repository\EmailsRepository;
 use App\Repository\AddressesRepository;
 use App\Repository\EntitiesRepository;
 use App\Repository\DepartmentsRepository;
+use App\Repository\ContactsRepository;
+use App\Repository\OpportunitiesRepository;
 
 use App\Form\AccountsFormType;
 use App\Form\DepartmentsFormType;
@@ -36,9 +38,12 @@ class AccountsController extends AbstractController
     private $addressesRepository;
     private $entitiesRepository;
     private $departmentsRepository;
+    private $contactsRepository;
+    private $opportunitiesRepository;
 
 
-    public function __construct(Security $security, AccountsRepository $accountsRepository, EntityManagerInterface $em, PhonesRepository $phonesRepository, EmailsRepository $emailsRepository, AddressesRepository $addressesRepository, EntitiesRepository $entitiesRepository, DepartmentsRepository $departmentsRepository)
+
+    public function __construct(Security $security,OpportunitiesRepository $opportunitiesRepository, AccountsRepository $accountsRepository,ContactsRepository $contactsRepository, EntityManagerInterface $em, PhonesRepository $phonesRepository, EmailsRepository $emailsRepository, AddressesRepository $addressesRepository, EntitiesRepository $entitiesRepository, DepartmentsRepository $departmentsRepository)
     {
         $this->em = $em;
         $this->security = $security;
@@ -46,8 +51,10 @@ class AccountsController extends AbstractController
         $this->phonesRepository = $phonesRepository;
         $this->emailsRepository = $emailsRepository;
         $this->addressesRepository = $addressesRepository;
+        $this->contactsRepository = $contactsRepository;
         $this->entitiesRepository = $entitiesRepository;
         $this->departmentsRepository = $departmentsRepository;
+        $this->opportunitiesRepository = $opportunitiesRepository;
     }
 
 
@@ -56,8 +63,20 @@ class AccountsController extends AbstractController
     {
         $accounts = $this->accountsRepository->find($id);
 
+        $contactsinaccounts = $this->accountsRepository->FindbyAccount($id);
+
+        $relativeopportunities = $this->opportunitiesRepository->FindbyAccounts($id);
+
+        foreach($contactsinaccounts as $cont){
+            print_r($cont);
+           
+            
+        }
+
         return $this->render('accounts/show.html.twig',[
-            'accounts' => $accounts
+            'accounts' => $accounts,
+            'contacts' => $contactsinaccounts,
+            'opportunities' => $relativeopportunities
         ]);
     }
 
@@ -169,7 +188,8 @@ class AccountsController extends AbstractController
             $now = date('m/d/Y h:i:s');
 
             $newAccount = $form->getData();
-
+            
+            $newAccount->setIdUser($loggedinUser);
             $newAccount->setUpdatedAt(new \DateTimeImmutable($now));
             $newAccount->setCreatedAt(new \DateTimeImmutable($now));
             $newAccount->setCreatedBy($loggedinUser);

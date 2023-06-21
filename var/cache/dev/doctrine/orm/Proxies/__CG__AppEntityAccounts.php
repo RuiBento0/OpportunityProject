@@ -35,6 +35,17 @@ class Accounts extends \App\Entity\Accounts implements \Doctrine\ORM\Proxy\Proxy
      * @var array<string, null> properties to be lazy loaded, indexed by property name
      */
     public static $lazyPropertiesNames = array (
+  'name' => NULL,
+  'description' => NULL,
+  'created_at' => NULL,
+  'updated_at' => NULL,
+  'id_user' => NULL,
+  'id_type' => NULL,
+  'created_by' => NULL,
+  'updated_by' => NULL,
+  'departments' => NULL,
+  'id_area' => NULL,
+  'NIF' => NULL,
 );
 
     /**
@@ -43,22 +54,76 @@ class Accounts extends \App\Entity\Accounts implements \Doctrine\ORM\Proxy\Proxy
      * @see \Doctrine\Common\Proxy\Proxy::__getLazyProperties
      */
     public static $lazyPropertiesDefaults = array (
+  'name' => NULL,
+  'description' => NULL,
+  'created_at' => NULL,
+  'updated_at' => NULL,
+  'id_user' => NULL,
+  'id_type' => NULL,
+  'created_by' => NULL,
+  'updated_by' => NULL,
+  'id_area' => NULL,
+  'NIF' => NULL,
 );
 
 
 
     public function __construct(?\Closure $initializer = null, ?\Closure $cloner = null)
     {
+        unset($this->name, $this->description, $this->created_at, $this->updated_at, $this->id_user, $this->id_type, $this->created_by, $this->updated_by, $this->departments, $this->id_area, $this->NIF);
 
         $this->__initializer__ = $initializer;
         $this->__cloner__      = $cloner;
     }
 
+    /**
+     * 
+     * @param string $name
+     */
+    public function __get($name)
+    {
+        if (\array_key_exists($name, self::$lazyPropertiesNames)) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__get', [$name]);
+            return $this->$name;
+        }
 
+        trigger_error(sprintf('Undefined property: %s::$%s', __CLASS__, $name), E_USER_NOTICE);
 
+    }
 
+    /**
+     * 
+     * @param string $name
+     * @param mixed  $value
+     */
+    public function __set($name, $value)
+    {
+        if (\array_key_exists($name, self::$lazyPropertiesNames)) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__set', [$name, $value]);
 
+            $this->$name = $value;
 
+            return;
+        }
+
+        $this->$name = $value;
+    }
+
+    /**
+     * 
+     * @param  string $name
+     * @return boolean
+     */
+    public function __isset($name)
+    {
+        if (\array_key_exists($name, self::$lazyPropertiesNames)) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__isset', [$name]);
+
+            return isset($this->$name);
+        }
+
+        return false;
+    }
 
     /**
      * 
@@ -67,10 +132,10 @@ class Accounts extends \App\Entity\Accounts implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id_type', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'updated_by', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'departments', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id_area'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id', 'name', 'description', 'created_at', 'updated_at', 'id_user', 'id_type', 'created_by', 'updated_by', 'departments', 'id_area', 'NIF', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'contacts'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'updated_at', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id_type', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'created_by', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'updated_by', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'departments', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id_area'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Accounts' . "\0" . 'contacts'];
     }
 
     /**
@@ -92,6 +157,7 @@ class Accounts extends \App\Entity\Accounts implements \Doctrine\ORM\Proxy\Proxy
                 }
             };
 
+            unset($this->name, $this->description, $this->created_at, $this->updated_at, $this->id_user, $this->id_type, $this->created_by, $this->updated_by, $this->departments, $this->id_area, $this->NIF);
         }
     }
 
@@ -421,6 +487,50 @@ class Accounts extends \App\Entity\Accounts implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdArea', [$id_area]);
 
         return parent::setIdArea($id_area);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNIF(): ?int
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNIF', []);
+
+        return parent::getNIF();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setNIF(int $NIF): \App\Entity\Accounts
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNIF', [$NIF]);
+
+        return parent::setNIF($NIF);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getContacts(): ?\App\Entity\Contacts
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContacts', []);
+
+        return parent::getContacts();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setContacts(?\App\Entity\Contacts $contacts): \App\Entity\Accounts
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContacts', [$contacts]);
+
+        return parent::setContacts($contacts);
     }
 
 }

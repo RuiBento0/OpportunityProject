@@ -36,9 +36,6 @@ class Contacts
     private ?Users $id_user = null;
 
     #[ORM\ManyToOne]
-    private ?Accounts $id_account = null;
-
-    #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?Users $created_by = null;
 
@@ -49,10 +46,14 @@ class Contacts
     #[ORM\ManyToMany(targetEntity: Opportunities::class, inversedBy: 'contacts')]
     private Collection $opportunities;
 
+    #[ORM\OneToMany(mappedBy: 'contacts', targetEntity: Accounts::class)]
+    private Collection $accounts;
+
     public function __construct()
     {
         $this->department = new ArrayCollection();
         $this->opportunities = new ArrayCollection();
+        $this->accounts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -132,18 +133,6 @@ class Contacts
         return $this;
     }
 
-    public function getIdAccount(): ?accounts
-    {
-        return $this->id_account;
-    }
-
-    public function setIdAccount(?accounts $id_account): self
-    {
-        $this->id_account = $id_account;
-
-        return $this;
-    }
-
     public function getCreatedBy(): ?users
     {
         return $this->created_by;
@@ -188,6 +177,36 @@ class Contacts
     public function removeOpportunity(opportunities $opportunity): self
     {
         $this->opportunities->removeElement($opportunity);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Accounts>
+     */
+    public function getAccounts(): Collection
+    {
+        return $this->accounts;
+    }
+
+    public function addAccount(Accounts $account): self
+    {
+        if (!$this->accounts->contains($account)) {
+            $this->accounts->add($account);
+            $account->setContacts($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAccount(Accounts $account): self
+    {
+        if ($this->accounts->removeElement($account)) {
+            // set the owning side to null (unless already changed)
+            if ($account->getContacts() === $this) {
+                $account->setContacts(null);
+            }
+        }
 
         return $this;
     }

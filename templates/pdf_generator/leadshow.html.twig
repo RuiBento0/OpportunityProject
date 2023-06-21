@@ -39,9 +39,10 @@
     }
   </style>
 </head>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
 <div id="banner">
-  <h1>Leads Details</h1>
+  <h1>{% trans %}Leads Details{% endtrans %}</h1>
   </div>
   <br>
   <table>
@@ -50,60 +51,66 @@
       <td>{{ leads.id }}</td>
     </tr>
     <tr>
-      <td>Name</td>
+      <td>{% trans %}Name{% endtrans %}</td>
       <td>{{ leads.name }}</td>
     </tr>
     <tr>
-      <td>Status</td>
+      <td>{% trans %}Status{% endtrans %}</td>
       <td>{{ leads.idstatus.name }}</td>
     </tr>
     <tr>
-      <td>Stage</td>
+      <td>{% trans %}Stage{% endtrans %}</td>
       <td>{{ leads.idsource.name }}</td>
     </tr>
     <tr>
-      <td>Area</td>
+      <td>{% trans %}Area{% endtrans %}</td>
       <td>{{ leads.idarea.name }}</td>
     </tr>
     <tr>
-      <td>Department</td>
+      <td>{% trans %}Department{% endtrans %}</td>
       <td>{{ leads.iddepartment.name }}</td>
     </tr>
     <tr>
-      <td>Amount</td>
+      <td>{% trans %}Amount{% endtrans %}</td>
       <td>{{ leads.amount }} $</td>
     </tr>
     <tr>
-      <td>Account</td>
+      <td>{% trans %}Account{% endtrans %}</td>
       <td>{{ leads.account }}</td>
     </tr>
     <tr>
-      <td>User</td>
+      <td>{% trans %}User{% endtrans %}</td>
       <td>{{ leads.iduser.name }}</td>
     </tr>
     <tr>
-      <td>Created By</td>
+      <td>{% trans %}Created By{% endtrans %}</td>
       <td>{{ leads.createdby.name }}</td>
     </tr>
     <tr>
-      <td>Created At</td>
+      <td>{% trans %}Created At{% endtrans %}</td>
       <td>{{ leads.createdat|date('Y-m-d H:i:s') }}</td>
     </tr>
     <tr>
-      <td>Update By</td>
+      <td>{% trans %}Update By{% endtrans %}</td>
       <td>{{ leads.updatedBy.name }}</td>
     </tr>
     <tr>
-      <td>Updated At</td>
+      <td>{% trans %}Updated At{% endtrans %}</td>
       <td>{{ leads.updatedAt|date('Y-m-d H:i:s') }}</td>
     </tr>
     
     <tr>
-      <td>Description</td>
+      <td>{% trans %}Description{% endtrans %}</td>
       <td>{{ leads.description }}</td>
     </tr>
   </table>
 </body>
+<br>
+    <footer class="footer text-center text-sm-start">
+              &copy; <script>
+                    document.write(new Date().getFullYear())
+            </script> Business 
+    </footer>
 </html>
 
 {% endblock %}

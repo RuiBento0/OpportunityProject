@@ -1,13 +1,99 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+<style>
+.button-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            height: 100px;
+			margin-top:50px;
+        }
 
-     <form action="/support/reports">
-                                        <div class="form-group">
-                                            <a href="/reports/accounts" style="float:left; margin-right: 5px;" class="btn btn-de-danger btn-sm text-light px-4 mt-3 mb-0">Report</a>                                                                                           
-                                        </div>
-                                        <div class="form-group">
-                                            <a href="/reports/converted" style="float:left; margin-right: 5px;" class="btn btn-de-danger btn-sm text-light px-4 mt-3 mb-0">Report</a>                                                                                         
-                                        </div>
-                                    </form>
-{% endblock %} 
+        .button-wrapper {
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            opacity: 0.7;
+        }
+
+        .explanation-container {
+            display: flex;
+            justify-content: center;
+           
+        }
+
+        .explanation-box {
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 0 10px;
+        }
+</style>
+
+
+
+
+	<div class="button-container">
+        <div class="button-wrapper">
+            <p>{% trans %}Accounts Report{% endtrans %}</p>
+			<form action="/reports/accounts">
+                    <button class="button">{% trans %}Report{% endtrans %}</button>
+                </form>
+        </div>
+        <div class="button-wrapper">
+            <p>{% trans %}Converted Report{% endtrans %}</p>
+            	<form action="/reports/converted">
+                    <button class="button">{% trans %}Report{% endtrans %}</button>
+                </form>
+        </div>
+    </div>
+
+    <div class="explanation-container">
+        <div class="explanation-box">
+            <h3>{% trans %}Accounts Report{% endtrans %}</h3>
+            <p>{% trans %}Here you see all the accounts and the opportunities for each account.{% endtrans %}</p>
+        </div>
+        <div class="explanation-box">
+            <h3>{% trans %}Converted Report{% endtrans %}</h3>
+            <p>{% trans %}Here you see all the Opportunities Converted.{% endtrans %}</p>
+        </div>
+    </div>
+
+        {# 
+            <div class="button-container">
+                <h3>Report 1</h3> <!-- Added inline style to set the color to white -->
+                <form action="/support/reports">
+                    <button href="/reports/accounts" class="btn btn-de-danger btn-sm text-light px-4 mt-3 mb-0">{% trans %}Generate Report{% endtrans %}</button>
+                </form>
+            </div>
+        </div>
+        <div class="box">
+            <div class="button-container">
+                <h3>Report 2</h3> <!-- Added inline style to set the color to white -->
+                <form action="/support/reports">
+                    <button href="/reports/converted" class="btn btn-de-danger btn-sm text-light px-4 mt-3 mb-0">{% trans %}Generate Report{% endtrans %}</button>
+                </form>
+            </div>
+        </div> #}
+  
+
+{% endblock %}

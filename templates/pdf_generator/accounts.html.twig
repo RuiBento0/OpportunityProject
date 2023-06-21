@@ -26,28 +26,27 @@
     }
   </style>
 </head>
-<img src="https://sosconsultoria.pt/wp-content/uploads/2017/02/header-logo.jpg"  width="120" height="70" alt="Logo"/>
-<img src="https://127.0.0.1:8000/img/business.png"  width="120" height="70" alt="Logo"/>
+<img src="{{ imageSrc }}"  width="80" alt="Logo"/>
 <body>
   <div id="banner" style="margin-top: 20px">
-    <h1>Accounts</h1>
+    <h1>{% trans %}Accounts{% endtrans %}</h1>
   </div>
   <br>
   <table>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-      <th>Adress</th>
+      <th>{% trans %}Name{% endtrans %}</th>
+      <th>{% trans %}Email{% endtrans %}</th>
+      <th>{% trans %}Phone Number{% endtrans %}</th>
+      <th>{% trans %}Address{% endtrans %}</th>
     </tr>
 {% for account in accounts %}
     <tr>
       <td>{{ account.id }}</td>
       <td>{{ account.name }}</td>
-      <td>jonas@gmail.com</td>
-      <td>1234567890</td>
-      <td>Rua do Cão</td>
+      <td>{{ account.emails }}</td>
+      <td>{{ account.phones }}</td>
+      <td>{{ account.addresses }}</td>
     </tr>
 {% endfor %}
     <!-- Add more rows as needed -->

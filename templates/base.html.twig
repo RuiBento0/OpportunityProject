@@ -8,13 +8,15 @@
 
         {% block stylesheets %}
             <link rel="shortcut icon" href="/images/logoheader.jpg">
-            <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.css" rel="stylesheet"/>
+            <link href="/css/datatables.css" rel="stylesheet" type="text/css" />
             <link href="/plugins/metric/dist/assets/plugins/dragula/dragula.min.css" rel="stylesheet" type="text/css" />
             <link href="/plugins/metric/dist/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
             <link href="/plugins/metric/dist/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
             <link href="/plugins/metric/dist/assets/css/app.min.css" rel="stylesheet" type="text/css" />
             <link href="/plugins/metric/dist/assets/css/app.css" rel="stylesheet" type="text/css" />
-            <link href="assets/plugins/lightpicker/litepicker.css" rel="stylesheet" type="text/css" />
+            <link href="/plugins/metric/dist/assets/plugins/lightpicker/litepicker.css" rel="stylesheet" type="text/css" />
+            <link href="/plugins/metric//dist/assets/plugins/select/selectr.min.css" rel="stylesheet" type="text/css" />
+            {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> #}
             
         {% endblock %}
    
@@ -26,9 +28,22 @@
             <!-- Navbar -->
             <nav class="navbar-custom" id="navbar-custom">    
                 <ul class="list-unstyled topbar-nav float-end mb-0">
-                    <li class="dropdown">
-                        <!-- Add fields here-->
-                    </li><!--end topbar-language-->
+
+                    <div class="dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none nav-icon"  role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ asset('img/language/traducao.png') }}" style="width:24px">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="/business/lang/en">
+                        <img src="{{ asset('img/language/en.jpg') }}" alt="" class="thumb-xxs rounded-circle">
+                        {% trans %}English{% endtrans %}
+                        </a>
+                        <a class="dropdown-item" href="/business/lang/pt">
+                        <img src="{{ asset('img/language/pt.png') }}" alt="" class="thumb-xxs rounded-circle">
+                        {% trans %}Portuguese{% endtrans %}
+                        </a>
+                    </div>
+                    </div>
 
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle nav-user" data-bs-toggle="dropdown" href="#" role="button"
@@ -43,11 +58,11 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="/profile/{{ app.user.id }}"><i class="ti ti-user font-16 me-1 align-text-bottom"></i> Profile</a>
+                            <a class="dropdown-item" href="/profile/{{ app.user.id }}"><i class="ti ti-user font-16 me-1 align-text-bottom"></i>{% trans %} Profile{% endtrans %}</a>
                              {% if app.user.id is defined%} 
 
                             {% if app.user.userRole.role == "SUPERADMIN" %} 
-                            <a class="dropdown-item" href="/settings"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i> Settings</a>
+                            <a class="dropdown-item" href="/options/list"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i>{% trans %} Settings{% endtrans %}</a>
                             {% endif %} 
 
                             {% if app.user.userRole.role == "USER" %} 
@@ -55,7 +70,7 @@
                             {% endif %}  
                          {% endif %}
                             <div class="dropdown-divider mb-0"></div>
-                            <a class="dropdown-item" href="/logout"><i class="ti ti-power font-16 me-1 align-text-bottom"></i> Logout</a>
+                            <a class="dropdown-item" href="/logout"><i class="ti ti-power font-16 me-1 align-text-bottom"></i>{% trans %} Logout{% endtrans %}</a>
                         </div>
                     </li><!--end topbar-profile-->
 
@@ -63,7 +78,7 @@
 
                             {% if app.user.userRole.role == "SUPERADMIN" %} 
                     <li class="notification-list">
-                        <a class="nav-link arrow-none nav-icon offcanvas-btn" href="/settings"  type="button" >
+                        <a class="nav-link arrow-none nav-icon offcanvas-btn" href="/options/list"  type="button" >
                             <i class="ti ti-settings ti-spin"></i>
                         </a>
                     </li>
@@ -125,24 +140,40 @@
                 {% endblock %}
             </div>
         </div>
-            
+            </div>
          {% block javascripts %}
-
-        <script src="{{ asset('plugins/metric/dist/assets/js/teste.js') }}"></script>
-        <script src="{{ asset('plugins/metric/dist/assets/plugins/dragula/dragula.min.js') }}"></script>
-        <script src="{{ asset('plugins/metric/dist/assets/pages/dragula.init.js') }}"></script>
-        <script src="{{ asset('plugins/metric/dist/assets/plugins/apexcharts/apexcharts.min.js') }}"></script>
-        <script src="{{ asset('plugins/metric/dist/assets/pages/crm-index.init.js') }}"></script>
+ 
+        {# <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> #}
+        {# <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>  #}
+        <script src="{{ asset('js/datatables.js') }}"></script>
+        <script src="{{ asset('js/googleapis.js') }}"></script>
         <script src="{{ asset('plugins/metric/dist/assets/js/app.js') }}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/select/selectr.min.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/huebee/huebee.pkgd.min.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/datepicker/datepicker-full.min.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/moment/moment.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/plugins/imask/imask.js') }}"></script>
+        <script src="{{ asset('plugins/metric/dist/assets/pages/forms-advanced.js') }}"></script>
 
-      <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+          
+        
 
-            <script>
+            <script  type="text/javascript">
+
+            
             $(document).ready(function () {
+
                 $('#pagination').DataTable();
+
+                
+
             });
+
+
             </script>
+
+
+
     </body>
 </html>
 {% endblock %}
